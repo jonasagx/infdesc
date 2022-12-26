@@ -11,7 +11,7 @@ To compile the source, you will need a LaTeX implementation on your computer, or
 
 The root document is `infdesc.tex`, which calls all the other files it needs to compile the document.
 
-The `book` folder contains the bulk of the actual content of the book, and is fairly easy to navigate. For example, to find the source for Section 5.2 (_Equivalence relations_), navigate to `book/ch05-relations/s2-equivalence-relations.tex`.
+The `book` folder contains the bulk of the actual content of the book, and is fairly easy to navigate. For example, to find the source for Section 5.2 (_Equivalence relations_) in Chapter 5 (_Relations_), navigate to `book/relations/equivalence-relations.tex`.
 
 The `book/includes` folder contains all the code used for calling packages, taking care of formatting, custom commands and environments, and so on.
 
