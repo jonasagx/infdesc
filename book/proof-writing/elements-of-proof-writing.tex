@@ -71,7 +71,7 @@ Despite the fact that \Cref{xtrInjectiveWithProse} is not written exclusively us
 Here is a transcription of how \Cref{xtrInjectiveWithProse} might be read aloud, with all the variables' letter names spelt out in italics.
 
 \begin{quote}
-Let \textit{ex}, \textit{wye} and \textit{zed} be sets, let \textit{ef} be a function from \textit{ex} to \textit{wye} and \textit{gee} be a function from \textit{wye} to \textit{zed}, and assume that \textit{ef} and \textit{gee} are injective. Let \textit{a} and \textit{bee} be elements of \textit{ex} and assume that \textit{gee} \textit{ef} of \textit{a} is equal to \textit{gee} \textit{ef} of \textit{bee}. Then \textit{gee} of \textit{ef} of \textit{a} equals \textit{gee} of \textit{ef} of \textit{bee} by definition of function composition, so \textit{ef} of \textit{a} equals \textit{ef} of \textit{bee} by injectivity of \textit{gee}, and so \textit{a} equals \textit{bee} by injectivity of \textit{ef}. Hence \textit{gee} \textit{ef} is injective, as required.
+Let X, Y and Z be sets, let F be a function from X to Y and G be a function from Y to Z, and assume that F and G are injective. Let A and B be elements of X and assume that G F of A is equal to G F of B. Then G of F of A equals G of F of B by definition of function composition, so F of A equals F of B by injectivity of G, and so A equals B by injectivity of F. Hence G F is injective, as required.
 \end{quote}
 
 \begin{exercise}
@@ -185,7 +185,7 @@ In line with \Cref{wpFullSentences}, when we use mathematical notation, we shoul
 The uses of notation are highlighted in the following transcription.
 
 \begin{quote}
-Let \textit{ex}, \textit{wye} and \textit{zed} be sets, let \xtremph{\textit{ef} be a function from \textit{ex} to \textit{wye}} and \xtremph{\textit{gee} be a function from \textit{wye} to \textit{zed}}, and assume that \textit{ef} and \textit{gee} are injective. Let \xtremph{\textit{a} and \textit{bee} be elements of \textit{ex}} and assume that \xtremph{\textit{gee} \textit{ef} of \textit{a} is equal to \textit{gee} \textit{ef} of \textit{bee}}. Then \xtremph{\textit{gee} of \textit{ef} of \textit{a} equals \textit{gee} of \textit{ef} of \textit{bee}} by definition of \xtremph{function composition}, \xtremph{so} \, \xtremph{\textit{ef} of \textit{a} equals \textit{ef} of \textit{bee}} by injectivity of \textit{gee}, \xtremph{and so} \, \xtremph{\textit{a} equals \textit{bee}} by injectivity of \textit{ef}. Hence \xtremph{\textit{gee} \textit{ef}} is injective, as required.
+Let X, Y and Z be sets, let \xtremph{F be a function from X to Y} and \xtremph{G be a function} \xtremph{from Y to Z}, and assume that F and G are injective. Let \xtremph{A and B be elements} \xtremph{of X} and assume that \xtremph{G F of A is equal to G F of B}. Then \xtremph{G of F of A equals} \xtremph{G of F of B} by definition of \xtremph{function composition}, \xtremph{so} \, \xtremph{F of A equals F of B} by injectivity of G, \xtremph{and so} \, \xtremph{A equals B} by injectivity of F. Hence \xtremph{G F} is injective, as required.
 \end{quote}
 
 Observe that the kind of phrase that is read aloud depends on how the notation is being used within a larger sentence. For example, consider the following extract.
@@ -196,7 +196,7 @@ Let $n \in \mathbb{Z}$ and suppose that $n$ is even. Then $n=2k$ for some $k \in
 
 Read aloud, we would say something like:
 \begin{quote}
-Let \xtremph{\textit{en} be an integer} and suppose that \textit{en} is even. Then \textit{en} equals two \textit{kay} for some \xtremph{integer \textit{kay}}.
+Let \xtremph{N be an integer} and suppose that N is even. Then N equals two K for some \xtremph{integer K}.
 \end{quote}
 Despite the fact that `$n \in \mathbb{N}$' and `$k \in \mathbb{N}$' here differ only in the letter that is used, they are read aloud differently because they are playing different roles in the sentence---the former is used as a verb phrase, and the latter as a noun phrase.
 
@@ -262,12 +262,12 @@ Greek letters are often used as variables in mathematical texts---sometimes the 
 \end{tabular}
 \end{center}
 
-Note that several of the upper-case Greek letters are identical to upper-case Latin letters---in mathematics, these are not typically distinguished so that, for example, the letter `H' will always be interpreted as an upper-case Latin letter \textit{aitch}, rather than an upper-case Greek letter \textit{eta}. For the same reason, the lower-case Greek letter \textit{omicron} is not distinguished from the lower-case Latin letter \textit{o}.
+Note that several of the upper-case Greek letters are identical to upper-case Latin letters---in mathematics, these are not typically distinguished so that, for example, the letter `H' will always be interpreted as an upper-case Latin letter H, rather than an upper-case Greek letter \textit{eta}. For the same reason, the lower-case Greek letter \textit{omicron} is not distinguished from the lower-case Latin letter O.
 
 \begin{latextip}
 In order to use Greek letters as mathematical variables using \LaTeX{}:
 \begin{itemize}
-\item For the upper-case letters that are identical to a letter in the Latin alphabet, use the \texcodebs{mathrm} command together with the Latin letter. For example, upper-case \textit{rho} can be input as \texcodebs{mathrm\{P\}}, even though \textit{rho} corresponds phonemically with the Latin letter \textit{R}.
+\item For the upper-case letters that are identical to a letter in the Latin alphabet, use the \texcodebs{mathrm} command together with the Latin letter. For example, upper-case \textit{rho} can be input as \texcodebs{mathrm\{P\}}, even though \textit{rho} corresponds phonemically with the Latin letter R.
 \item For the upper-case letters that are not identical to a letter in the Latin alphabet, the \LaTeX{} command is given by their Greek name with an upper-case first letter. For example, the command \texcodebs{Gamma} produces the ouput $\Gamma$.
 \item For the lower-case letters (except \textit{epsilon} and \textit{phi}---see below), the \LaTeX{} command is given by their Greek name in lower case. For example, the command \texcodebs{eta} produces the output $\eta$.
 \end{itemize}
