@@ -67,7 +67,7 @@ as required.
 We prove that $p \Rightarrow q \equiv (\neg p) \vee q$, where $p$, $q$ and $r$ are propositional variables.
 
 \begin{itemize}
-\item First assume that $p \Rightarrow q$ is true. By the law of exluded middle (\Cref{axLEM}), either $p$ is true or $\neg p$ is true---we derive $(\neg p) \vee q$ in each case.
+\item First assume that $p \Rightarrow q$ is true. By the law of excluded middle (\Cref{axLEM}), either $p$ is true or $\neg p$ is true---we derive $(\neg p) \vee q$ in each case.
 \begin{itemize}
 \item If $p$ is true, then since $p \Rightarrow q$ is true, it follows from \elimrule{\Rightarrow} that $q$ is true, and so $(\neg p) \vee q$ is true by \introrulesub{\vee}{2};
 \item If $\neg p$ is true, then $(\neg p) \vee q$ is true by \introrulesub{\vee}{1}.
@@ -544,7 +544,7 @@ The formula being negated here is univerally quantified, so using de Morgan's la
 We're almost there! The statement being negated here is an implication, so applying the rule $\neg (p \Rightarrow q) \equiv p \wedge (\neg q)$ again yields:
 \[ \forall a \in \mathbb{R},\, \exists \varepsilon \in \mathbb{R},\, (\varepsilon > 0 \wedge \forall N \in \mathbb{N},\, \exists n \in \mathbb{N},\, [n \ge N \wedge \neg (|x_n - a| < \varepsilon)])\]
 %
-At this point, strictly speaking, the formula is maximally negated, since the statement being negated does not involve any other logical opreators or quantifiers. However, since $\neg (|x_n-a| < \varepsilon)$ is equivalent to $|x_n - a| \ge \varepsilon$, we can go one step further to obtain:
+At this point, strictly speaking, the formula is maximally negated, since the statement being negated does not involve any other logical operators or quantifiers. However, since $\neg (|x_n-a| < \varepsilon)$ is equivalent to $|x_n - a| \ge \varepsilon$, we can go one step further to obtain:
 \[ \forall a \in \mathbb{R},\, \exists \varepsilon \in \mathbb{R},\, (\varepsilon > 0 \wedge \forall N \in \mathbb{N},\, \exists n \in \mathbb{N},\, [n \ge N \wedge |x_n - a| \ge \varepsilon])\]
 %
 This is as negated as we could ever dream of, and so we stop here.
