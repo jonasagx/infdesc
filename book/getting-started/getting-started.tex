@@ -2,11 +2,19 @@
 \hintsection{\Cref*{chGettingStarted}}
 
 Before we can start proving things, we need to eliminate certain kinds of statements that we might try to prove. Consider the following statement:
-\begin{center} \textit{This sentence is false.} \end{center}
+
+\begin{center}
+\textit{This sentence is false.}
+\end{center}
+
 Is it true or false? If you think about this for a couple of seconds then you'll get into a bit of a pickle.
 
 Now consider the following statement:
-\begin{center} \textit{The happiest donkey in the world.} \end{center}
+
+\begin{center}
+\textit{The happiest donkey in the world.}
+\end{center}
+
 Is it true or false? Well it's not even a sentence; it doesn't make sense to even \textit{ask} if it's true or false!
 
 Clearly we'll be wasting our time trying to write proofs of statements like the two listed above---we need to narrow our scope to statements that we might actually have a chance of proving (or perhaps refuting)! This motivates the following (informal) definition.
@@ -38,9 +46,9 @@ It is not much good trying to prove results if we don't have anything to prove r
 
 We will not go into very much depth in this chapter. Rather, think of this as a warm-up exercise---a quick, light introduction, with more proofs to be provided in the rest of the book.
 
-\subsection*{Number sets}
+\subsection*{Sets}
 
-Later in this chapter, and then in much more detail in \Cref{chSets}, we will encounter the notion of a \textit{set}; a set can be thought of as being a collection of objects. This seemingly simple notion is fundamental to mathematics, and is so involved that we will not treat sets formally in this book. For now, the following definition will suffice.
+Fundamental to mathematics is the notion of a \textit{set}. We will study sets in great detail in \Cref{chSets}, but you will find them in every chapter of the textbook, so we will take some time to think about them now. We will not treat sets formally at this stage---for now, the following definition will suffice.
 
 \begin{definition}[to be revised in \Cref{defSet}]
 \label{defSetsPreliminary}
@@ -58,14 +66,18 @@ So here we go. Here is an infinite line:
 \draw[latex-latex] (-5.5, 0) -- (5.5, 0) ;
 \end{tikzpicture}
 \end{center}
-The arrows indicate that it is supposed to extend in both directions without end. The points on the line will represent numbers (specifically, \textit{real numbers}, a misleading term that will be defined in \Cref{defRealsInformal}). Now let's fix a point on this line, and label it `$0$':
+The arrows indicate that it is supposed to extend in both directions without end. The points on the line will represent numbers (specifically, \textit{real numbers}, a misleading term that will be defined in \Cref{defRealsInformal}).
+
+Now let's fix a point on this line, and label it `$0$':
 \begin{center}
 \begin{tikzpicture}
 \draw[latex-latex] (-5.5, 0) -- (5.5, 0) ; 
 \draw (0, 0) -- (0, 0.1) node[above] {$0$} ;
 \end{tikzpicture}
 \end{center}
-This point can be thought of as representing the number zero; it is the point against which all other numbers will be measured. Finally, let's fix a unit of length:
+This point can be thought of as representing the number zero; it is the point against which all other numbers will be measured. Numbers to the left of $0$ on the number line are said to be \textit{negative}, and those to the right are \textit{positive}; $0$ itself is neither positive nor negative.
+
+Finally, let's fix a unit of length:
 \begin{center}
 \begin{tikzpicture}
 \draw (0, 0) -- (1, 0) ; 
@@ -79,20 +91,14 @@ This unit of length will be used, amongst other things, to compare the extent to
 The above infinite line, together with its fixed zero point and fixed unit length, constitute the (\textbf{real}) \textbf{number line}.
 \end{definition}
 
-We will use the number line to construct five sets of numbers of interest to us:
-\begin{itemize}
-\item The set $\mathbb{N}$ of \textit{natural numbers}---\Cref{defNaturalNumbersInformal};
-\item The set $\mathbb{Z}$ of \textit{integers}---\Cref{defIntegersInformal};
-\item The set $\mathbb{Q}$ of \textit{rational numbers}---\Cref{defRationalsInformal};
-\item The set $\mathbb{R}$ of \textit{real numbers}---\Cref{defRealsInformal}; and
-\item The set $\mathbb{C}$ of \textit{complex numbers}---\Cref{defComplexNumbersInformal}.
-\end{itemize}
+We will use the number line to construct five sets of numbers of interest to us: the set $\mathbb{N}$ of \textit{natural numbers} (\Cref{defNaturalNumbersInformal}), the set $\mathbb{Z}$ of \textit{integers} (\Cref{defIntegersInformal}), the set $\mathbb{Q}$ of \textit{rational numbers} (\Cref{defRationalsInformal}), the $\mathbb{R}$ of \textit{real numbers} (\Cref{defRealsInformal}), and
+the set $\mathbb{C}$ of \textit{complex numbers} (\Cref{defComplexNumbersInformal}).
 
-Each of these sets has a different character and is used for different purposes, as we will see both later in this chapter and throughout this book.
+Each of these sets has a different character and is used for different purposes, as we will seeu later in this chapter and throughout this book.
 
 \subsection*{Natural numbers ($\mathbb{N}$)}
 
-The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, I have \textit{three} uncles, \textit{one} dog and \textit{zero} cats.
+The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, I have \textit{three} uncles, \textit{three} guinea pigs and \textit{zero} cats.
 
 Counting is a skill humans have had for a very long time; we know this because there is evidence of people using tally marks tens of thousands of years ago. Tally marks provide one method of counting small numbers: starting with nothing, proceed through the objects you want to count one by one, and make a mark for every object. When you are finished, there will be as many marks as there are objects. We are taught from a young age to count with our fingers; this is another instance of making tally marks, where now instead of making a mark we raise a finger.
 
@@ -124,7 +130,7 @@ In English, the \textit{Arabic numerals} are used as the ten digits:
 \[ 0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9 \]
 The right-most digit in a string is in the units place, and the value of each digit increases by a factor of ten moving to the left. For example, when we write `$2812$', the left-most `$2$' represents the number two thousand, whereas the last `$2$' represents the number two.
 
-The fact that there are ten digits, and that the numeral system is based on powers of ten, is a biological accident corresponding with the fact that most humans have ten fingers. For many purposes, this is inconvenient. For example, ten does not have many positive divisors (only four)---this has implications for the ease of performing arithmetic; a system based on the number twelve, which has six positive divisors, might be more convenient. Another example is in computing and digital electronics, where it is more convenient to work in a \textit{binary} system, with just two digits, which represent `off' and `on' (or `low voltage' and `high voltage'), respectively; arithmetic can then be performed directly using sequences of \textit{logic gates} in an electrical circuit.
+The fact that there are ten digits, and that the numeral system is based on powers of ten, is a biological accident corresponding with the fact that most humans have ten fingers. For many purposes, this is inconvenient. For example, ten does not have many positive divisors (only four: $1$, $2$, $5$ and $10$)---this has implications for the ease of performing arithmetic; a system based on the number twelve, which has six positive divisors ($1$, $2$, $3$, $4$, $6$ and $12$), might be more convenient. Another example is in computing and digital electronics, where it is more convenient to work in a \textit{binary} system, with just two digits---$0$ and $1$---which represent `off' and `on' (or `low voltage' and `high voltage'), respectively; arithmetic can then be performed directly using sequences of \textit{logic gates} in an electrical circuit.
 
 It is therefore worthwhile to have some understanding of positional numeral systems based on numbers other than ten. The mathematical abstraction we make leads to the definition of \textit{base-$b$ expansion}.
 
@@ -132,14 +138,21 @@ It is therefore worthwhile to have some understanding of positional numeral syst
 \label{defBaseBExpansionPreliminary}
 \index{base-$b$ expansion}
 \index{number base}
-Let $b>1$. The \textbf{base-$b$ expansion} of a natural number $n$ is the\footnote{The use of the word `the' is troublesome here, since it assumes that every natural number has only one base-$b$ expansion. This fact actually requires proof---see \Cref{thmBaseBExpansion}.} string $d_r d_{r-1} \dots d_0$ such that
-\begin{itemize}
+Let $b$ be a natural number greater than $1$. The \textbf{base-$b$ expansion} of a natural number $n$ is the\footnote{The use of the word `the' is troublesome here, since it assumes that every natural number has only one base-$b$ expansion. This fact actually requires proof---see \Cref{thmBaseBExpansion}.} string $d_r d_{r-1} \dots d_0$ such that:
+\begin{enumerate}[(i)]
 \item $n = d_r \cdot b^r + d_{r-1} \cdot b^{r-1} + \cdots + d_0 \cdot b^0$;
 \item $0 \le d_i < b$ for each $i$; and
 \item If $n>0$ then $d_r \ne 0$---the base-$b$ expansion of zero is $0$ in all bases $b$.
-\end{itemize}
+\end{enumerate}
 Certain number bases have names; for instance, the base-$2$, $3$, $8$, $10$ and $16$ expansions are respectively called \textit{binary}, \textit{ternary}, \textit{octal}, \textit{decimal} and \textit{hexadecimal}.
 \end{definition}
+
+Before we look at an example of \Cref{defBaseBExpansionPreliminary} in action, let's examine the definition, which is a little terse on first sight.
+\begin{itemize}
+\item Condition (i) tells us that the digits in the string tell us how many of each power of $b$ are added up to obtain $n$. For example, when $b=10$, the digits from right to left tell us the units, tens, hundreds, thousands, and so on.
+\item Condition (ii) tells us that the digits in a base-$b$ expansion must be less than $b$---for example, the base-$4$ digits are $0$, $1$, $2$ and $3$. If we allowed more digits then silly things would happen---for example, if `$\mathrm{X}$' were a new base-$10$ digit representing the number ten, then `$\mathrm{X}2$' and `$102$' would be different strings both representing the number one hundred and two.
+\item Condition (iii) ensures that the string representing a positive number doesn't have any leading `$0$'s---otherwise, for example, `$01423$' and `$1423$' would be different strings representing the same natural number.
+\end{itemize}
 
 \begin{example}
 Consider the number $1023$. Its decimal (base-$10$) expansion is $1023$, since
@@ -151,7 +164,7 @@ We can express numbers in base-$36$ by using the ten usual digits $0$ through $9
 \end{example}
 
 \begin{exercise}
-Find the binary, ternary, octal, decimal, hexadecimal and base-$36$ expansions of the number $21127$, using the letters $\mathrm{A}$--$\mathrm{F}$ as additional digits for the hexadecimal expansion and the letters $\mathrm{A}$--$\mathrm{Z}$ as additional digits for the base-$36$ expansion.
+Find the binary, ternary, octal, decimal, hexadecimal and base-$36$ expansions of the number $21127$, using the letters $\mathrm{A}$--$\mathrm{F}$ as additional digits for the hexadecimal expansion (representing the numbers $10$--$15$, respectively), and the letters $\mathrm{A}$--$\mathrm{Z}$ as additional digits for the base-$36$ expansion.
 \end{exercise}
 
 We sometimes wish to specify a natural number in terms of its base-$b$ expansion; we have some notation for this.
@@ -169,7 +182,7 @@ Using our new notation, we have
 
 \subsection*{Integers ($\mathbb{Z}$)}
 
-The \textit{integers} can be used for measuring the difference between two instances of counting. For example, suppose I have five apples and five bananas. Another person, also holding apples and bananas, wishes to trade. After our exchange, I have seven apples and only one banana. Thus I have two more apples and four fewer bananas.
+The \textit{integers} can be used for measuring the difference between two natural numbers. For example, suppose I have five apples and five bananas. Another person, also holding apples and bananas, wishes to trade. After our exchange, I have seven apples and only one banana. Thus I have two more apples and four fewer bananas.
 
 Since an increment in quantity can be represented by moving to the right on the number line by the unit length, a \textit{decrement} in quantity can therefore be represented by moving to the \textit{left} by the unit length. Doing so gives rise to the integers.
 
@@ -198,8 +211,10 @@ The motivation we will soon give for the definition of the rational numbers (\Cr
 \index{divisor}
 \index{factor}
 \index{multiple}
-Let $a,b \in \mathbb{Z}$. We say $b$ \textbf{divides} $a$ if $a=qb$ for some integer $q$. Other ways of saying that $b$ divides $a$ are: $b$ is a \textit{divisor} of $a$, $b$ is a \textit{factor} of $a$, or $a$ is a \textit{multiple} of $b$.
+Let $a,b \in \mathbb{Z}$. We say $b$ \textbf{divides} $a$ if $a=qb$ for some integer $q$. There are many other ways of saying that $b$ divides $a$, such as: $a$ is \textit{divisible by} $b$, $b$ is a \textit{divisor} of $a$, $b$ is a \textit{factor} of $a$, or $a$ is a \textit{multiple} of $b$.
 \end{definition}
+
+Note that, perhaps counterintuitively, the definition if divisibility does not involve the arithmetic operation of division: it is defined in terms of multiplication.
 
 \begin{example}
 The integer $12$ is divisible by $1$, $2$, $3$, $4$, $6$ and $12$, since
@@ -208,8 +223,11 @@ It is also divisible by the negatives of all of those numbers; for example, $12$
 \end{example}
 
 \begin{exercise}
+\label{exOneDividesEveryIntegerDividesZero}
 Prove that $1$ divides every integer, and that every integer divides $0$.
 \end{exercise}
+
+Note that a consequence of \Cref{exOneDividesEveryIntegerDividesZero} is that $0$ is divisible by $0$. This is surprising: we've been told our whole lives that we can't divide by zero, but now we discover that we can divide zero by zero\dots{} how can that be? This highlights why it was so important for the definition of divisibility (\Cref{defDivisionPreliminary}) to be given in terms of multiplication, without using the division operation: saying that $0$ divides $0$ simply means that $0$ can be multiplied by an integer to obtain $0$ (which is true)---but this does not imply that the expression `$\frac{0}{0}$' can (or should) be meaningfully defined.
 
 Using \Cref{defDivisionPreliminary}, we can prove some general basic facts about divisibility.
 
@@ -288,7 +306,7 @@ This suggests the following algorithm for computing the base-$b$ expansion of a 
 \begin{itemize}
 \item \textbf{Step 1.} Let $d_0$ be the remainder when $n$ is divided by $b$, and let $n_0=\frac{n-d_0}{b}$ be the quotient. Fix $i=0$.
 \item \textbf{Step 2.} Suppose $n_i$ and $d_i$ have been defined. If $n_i=0$, then proceed to Step 3. Otherwise, define $d_{i+1}$ to be the remainder when $n_i$ is divided by $b$, and define $n_{i+1} = \frac{n_i-d_{i+1}}{b}$. Increment $i$, and repeat Step 2.
-\item \textbf{Step 3.} The base-$b$ expansion of $n$, is
+\item \textbf{Step 3.} The base-$b$ expansion of $n$ is
 \[ d_id_{i-1} \cdots d_0 \]
 \end{itemize}
 
@@ -442,16 +460,16 @@ Before we can talk about irrational numbers, we should say what they are.
 An \textbf{irrational number} is a real number that is not rational.
 \end{definition}
 
-Unlike $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$, there is no standard single letter expressing the irrational numbers. However, by the end of \Cref{secSetOperations}, we will be able to write the set of irrational numbers as $\mathbb{R} \setminus \mathbb{Q}$.
+Unlike $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$, there is no standard single letter expressing the irrational numbers. However, by the end of \Cref{secSetOperations}, we will be able to write the set of irrational numbers as `$\mathbb{R} \setminus \mathbb{Q}$'.
 
-Note in particular that `irrational' does not simply mean `not rational'---that would imply that all complex numbers which are not real are irrational---rather, the term `irrational' means `real and not rational'.
-
-Proving that a real number is \textit{irrational} is not particularly easy. We will get our foot in the door by allowing ourselves to assume the following result, which is restated and proved in \Cref{propSqrt2Irrational}.
+Proving that a real number is \textit{irrational} is not particularly easy, in general. We will get our foot in the door by allowing ourselves to assume the following result, which is restated and proved in \Cref{propSqrt2Irrational}.
 
 \begin{proposition}
 \label{propSqrt2IrrationalPreliminary}
 The real number $\sqrt{2}$ is irrational. \qed
 \end{proposition}
+
+% To do: include proof, note that we will prove that fractions can be cancelled to lowest terms later.
 
 We can use the fact that $\sqrt{2}$ is irrational to prove some facts about the relationship between rational numbers and irrational numbers.
 
@@ -466,6 +484,8 @@ Let $a=b=\sqrt{2}$. Then $a$ and $b$ are irrational, and $ab=2=\frac{2}{1}$, whi
 \begin{exercise}
 Let $r$ be a rational number and let $a$ be an irrational number. Prove that it is possible that $ra$ be rational, and it is possible that $ra$ be irrational.
 \end{exercise}
+
+% To do: set-builder notation and intervals
 
 \subsection*{Complex numbers ($\mathbb{C}$)}
 
