@@ -1,343 +1,346 @@
 % !TeX root = ../../infdesc.tex
 \hintsection{\Cref*{chGettingStarted}}
 
-Before we can start proving things, we need to eliminate certain kinds of statements that we might try to prove. Consider the following statement:
+Antes de podermos começar a provar coisas, precisamos eliminar certos tipos de afirmações que poderíamos tentar provar. Considere a seguinte afirmação:
 
 \begin{center}
-\textit{This sentence is false.}
+\textit{Essa sentença é falsa.}
 \end{center}
 
-Is it true or false? If you think about this for a couple of seconds then you'll get into a bit of a pickle.
+Isso e verdadeiro ou falso? Se você pensar sobre isso por alguns segundos, você ficará em apuros.
 
-Now consider the following statement:
+Agora considere a seguinte sentença :
 
 \begin{center}
-\textit{The happiest donkey in the world.}
+\textit{O burro mais feliz do mundo.}
 \end{center}
 
-Is it true or false? Well it's not even a sentence; it doesn't make sense to even \textit{ask} if it's true or false!
+Isso e verdadeiro ou falso? Bem, não é nem uma frase; não faz sentido nem \textit{perguntar} se é verdadeiro ou falso!
 
-Clearly we'll be wasting our time trying to write proofs of statements like the two listed above---we need to narrow our scope to statements that we might actually have a chance of proving (or perhaps refuting)! This motivates the following (informal) definition.
+É claro que estaremos desperdiçando nosso tempo tentando escrever provas de afirmações como as duas listadas acima – precisamos restringir nosso escopo a afirmações que possamos realmente ter uma chance de provar (ou talvez refutar)! Isso motiva a seguinte definição (informal).
 
 \begin{definition}
 \label{defProposition}
 \label{defProof}
-\index{proposition}
-\index{proof}
-A \textbf{proposition} \index{proposition} is a statement to which it is possible to assign a \textbf{truth value} (`true' or `false'). If a proposition is true, a \textbf{proof} of the proposition is a logically valid argument demonstrating that it is true, which is pitched at such a level that a member of the intended audience can verify its correctness.
+\index{proposição}
+\index{prova}
+Uma \textbf{proposição} \index{proposição} é a declaração na qual é possível atribuir a \textbf{Valor verdadeiro} (`verdadeiro' ou `falso'). Se uma proposição é verdadeira, uma \textbf{prova} da preposição é um argumento logicamente válido que demonstra que é verdadeiro, apresentado a um nível tal que um membro do público-alvo possa verificar a sua veracidade.
 \end{definition}
 
-Thus the statements given above are not propositions because there is no possible way of assigning them a truth value. Note that, in \Cref{defProposition}, all that matters is that it \textit{makes sense} to say that it is true or false, regardless of whether it actually \textit{is} true or false---the truth value of many propositions is unknown, even very simple ones.
+Assim, as afirmações dadas acima são proposições porque não há forma possível de lhes atribuir um valor de verdade. Observe que, em \Cref{defProposition}, tudo o que importa é que \textit{faz sentido} dizer que é verdadeiro ou falso, independentemente de realmente \textit{ser} verdadeiro ou falso --- o valor de verdade de muitas proposições é desconhecida, mesmo as muito simples.
 
 \begin{exercise}
-Think of an example of a true proposition, a false proposition, a proposition whose truth value you don't know, and a statement that is not a proposition.
+Pense em um exemplo de proposição verdadeira, de proposição falsa, de proposição cujo valor de verdade você não conhece e de uma afirmação que não é uma proposição.
+
 \end{exercise}
 
-Results in mathematical papers and textbooks may be referred to as \textit{propositions}, but they may also be referred to as \textit{theorems}, \textit{lemmas} or \textit{corollaries} depending on their intended usage.
-\begin{itemize} 
-\item A \textbf{proposition} is an umbrella term which can be used for any result.
-\item A \textbf{theorem} is a key result which is particularly important.
-\item A \textbf{lemma} is a result which is proved for the purposes of being used in the proof of a theorem. 
-\item A \textbf{corollary} is a result which follows from a theorem without much additional effort.
+Os resultados em artigos e livros didáticos de matemática podem ser chamados de \textit{proposições}, mas também podem ser chamados de \textit{teoremas}, \textit{lemas} ou \textit{corolários} dependendo do uso pretendido.
+\begin{itemize}
+\item Uma \textbf{proposição} é um termo abrangente que pode ser usado para qualquer resultado.
+\item Um \textbf{teorema} é um resultado chave que é particularmente importante.
+\item Um \textbf{lema} é um resultado que é provado com o propósito de ser usado na prova de um teorema.
+\item Um \textbf{corolário} é um resultado que segue de um teorema sem muito esforço adicional.
 \end{itemize}
-These are not precise definitions, and they are not meant to be---you could call every result a \textit{proposition} if you wanted to---but using these words appropriately helps readers work out how to read a paper. For example, if you just want to skim a paper and find its key results, you'd look for results labelled as \textit{theorems}.
+Estas não são definições precisas e não pretendem ser --- você poderia chamar cada resultado de \textit{proposição} se quisesse --- mas usar essas palavras apropriadamente ajuda os leitores a descobrir como ler um artigo. Por exemplo, se você quiser apenas folhear um artigo e encontrar seus principais resultados, procure resultados rotulados como \textit{teoremas}.
 
-It is not much good trying to prove results if we don't have anything to prove results about. With this in mind, we will now introduce the \textit{number sets} and prove some results about them in the context of four topics, namely: division of integers, number bases, rational and irrational numbers, and polynomials. These topics will provide context for the material in \Cref{ptCoreConcepts}, and serve as an introduction to the topics covered in \Cref{ptTopics}.
+Não adianta muito tentar provar resultados se não temos nada para provar os resultados. Com isso em mente, apresentaremos agora os \textit{conjuntos de números} e provaremos alguns resultados sobre eles no contexto de quatro tópicos, a saber: divisão de inteiros, bases numéricas, números racionais e irracionais e polinômios. Estes tópicos fornecerão contexto para o material em \Cref{ptCoreConcepts}, e servirão como uma introdução aos tópicos abordados em \Cref{ptTopics}.
 
-We will not go into very much depth in this chapter. Rather, think of this as a warm-up exercise---a quick, light introduction, with more proofs to be provided in the rest of the book.
 
-\subsection*{Sets}
+Não nos aprofundaremos muito neste capítulo. Em vez disso, pense nisso como um exercício de aquecimento – uma introdução rápida e leve, com mais provas a serem fornecidas no restante do livro.
 
-Fundamental to mathematics is the notion of a \textit{set}. We will study sets in great detail in \Cref{chSets}, but you will find them in every chapter of the textbook, so we will take some time to think about them now. We will not treat sets formally at this stage---for now, the following definition will suffice.
+\subsection*{Conjuntos}
 
-\begin{definition}[to be revised in \Cref{defSet}]
+Fundamental para a matemática é a noção de \textit{conjunto}. Estudaremos conjuntos detalhadamente em \Cref{chSets}, mas você os encontrará em todos os capítulos do livro, então levaremos algum tempo para pensar sobre eles agora. Não trataremos conjuntos formalmente neste estágio – por enquanto, a definição a seguir será o suficiente.
+
+\begin{definition}[a ser revisado em \Cref{defSet}]
 \label{defSetsPreliminary}
 \lindexmmc{in}{$\in$}
-A \textbf{set} is a collection of objects. The objects in the set are called \textbf{elements} of the set. If $X$ is a set and $x$ is an object, then we write $x \in X$ \inlatexnb{x \textbackslash{}in X} to denote the assertion that $x$ is an element of $X$.
+Um \textbf{conjunto} é uma coleção de objetos. Os objetos nesse conjunto são chamados \textbf{elementos} do conjunto. Se $X$ é um conjunto e $x$ é um objeto, então escrevemos $x \in X$ \inlatexnb{x \textbackslash{} in X} para denotar a afirmação que $x$ é um elemento de $X$.
 \end{definition}
 
-The sets of concern to us first and foremost are the \textit{number sets}---that is, sets whose elements are particular types of \textit{number}. At this introductory level, many details will be temporarily swept under the rug; we will work at a level of precision which is appropriate for our current stage, but still allows us to develop a reasonable amount of intuition.
+Os conjuntos que nos interessam em primeiro lugar são os \textit{conjuntos de números}---isto é, conjuntos cujos elementos são tipos particulares de \textit{número}. Neste nível introdutório, muitos detalhes serão temporariamente varridos para debaixo do tapete; trabalharemos com um nível de precisão apropriado ao nosso estágio atual, mas que ainda nos permita desenvolver uma quantidade razoável de intuição.
 
-In order to define the number sets, we will need three things: an infinite line, a fixed point on this line, and a fixed unit of length.
-
-So here we go. Here is an infinite line:
+Então aqui vamos nós. Aqui está uma linha infinita:
 \begin{center}
 \begin{tikzpicture}
 \draw[latex-latex] (-5.5, 0) -- (5.5, 0) ;
 \end{tikzpicture}
 \end{center}
-The arrows indicate that it is supposed to extend in both directions without end. The points on the line will represent numbers (specifically, \textit{real numbers}, a misleading term that will be defined in \Cref{defRealsInformal}).
+As setas indicam que se supõe que se estenda em ambas as direções sem fim. Os pontos na linha representarão números (especificamente, \textit{números reais}, um termo enganoso que será definido em \Cref{defRealsInformal}).
 
-Now let's fix a point on this line, and label it `$0$':
+Agora vamos fixar um ponto nesta linha e rotulá-lo `$0$':
 \begin{center}
 \begin{tikzpicture}
-\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ; 
+\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ;
 \draw (0, 0) -- (0, 0.1) node[above] {$0$} ;
 \end{tikzpicture}
 \end{center}
-This point can be thought of as representing the number zero; it is the point against which all other numbers will be measured. Numbers to the left of $0$ on the number line are said to be \textit{negative}, and those to the right are \textit{positive}; $0$ itself is neither positive nor negative.
+Este ponto pode ser considerado como uma representação do número zero; é o ponto contra o qual todos os outros números serão medidos. Os números à esquerda de $0$ na reta numérica são considerados \textit{negativos}, e os à direita são \textit{positivos}; $0$ em si não é positivo nem negativo.
 
-Finally, let's fix a unit of length:
+Finalmente, vamos fixar uma unidade de comprimento:
 \begin{center}
 \begin{tikzpicture}
-\draw (0, 0) -- (1, 0) ; 
+\draw (0, 0) -- (1, 0) ;
 \foreach \x in {0,1} \draw (\x, -0.1) -- (\x, 0.1)  ;
 \end{tikzpicture}
 \end{center}
-This unit of length will be used, amongst other things, to compare the extent to which the other numbers differ from zero.
-
+Esta unidade de comprimento será utilizada, entre outras coisas, para comparar até que ponto os outros números diferem de zero.
 \begin{definition}
 \label{defNumberLine}
-The above infinite line, together with its fixed zero point and fixed unit length, constitute the (\textbf{real}) \textbf{number line}.
+Uma linha infinita acima, junto com seu ponto zero fixo e comprimento unitário fixo, constituem a (\textbf{real})\textbf{linha numérica}.
 \end{definition}
 
-We will use the number line to construct five sets of numbers of interest to us: the set $\mathbb{N}$ of \textit{natural numbers} (\Cref{defNaturalNumbersInformal}), the set $\mathbb{Z}$ of \textit{integers} (\Cref{defIntegersInformal}), the set $\mathbb{Q}$ of \textit{rational numbers} (\Cref{defRationalsInformal}), the $\mathbb{R}$ of \textit{real numbers} (\Cref{defRealsInformal}), and
-the set $\mathbb{C}$ of \textit{complex numbers} (\Cref{defComplexNumbersInformal}).
+Usaremos a reta numérica para construir cinco conjuntos de números de nosso interesse: o conjunto $\mathbb{N}$ de \textit{números naturais} (\Cref{defNaturalNumbersInformal}), o conjunto $\mathbb{Z}$ de \textit{inteiros} (\Cref{defIntegersInformal}), o conjunto $\mathbb{Q}$ de \textit{números racionais} (\Cref{defRationalsInformal}), o $\mathbb{R}$ de \textit{ números reais} (\Cref{defRealsInformal}), e
 
-Each of these sets has a different character and is used for different purposes, as we will seeu later in this chapter and throughout this book.
 
-\subsection*{Natural numbers ($\mathbb{N}$)}
+Cada um desses conjuntos tem um caráter diferente e é usado para propósitos diferentes, como veremos mais adiante neste capítulo e ao longo deste livro.
 
-The \textit{natural numbers} are the numbers used for counting---they are the answers to questions of the form `how many'---for example, I have \textit{three} uncles, \textit{three} guinea pigs and \textit{zero} cats.
+\subsection*{Números Naturais ($\mathbb{N}$)}
 
-Counting is a skill humans have had for a very long time; we know this because there is evidence of people using tally marks tens of thousands of years ago. Tally marks provide one method of counting small numbers: starting with nothing, proceed through the objects you want to count one by one, and make a mark for every object. When you are finished, there will be as many marks as there are objects. We are taught from a young age to count with our fingers; this is another instance of making tally marks, where now instead of making a mark we raise a finger.
+Os \textit{números naturais} são os números usados para contar---são as respostas a questões da forma `quantos'---por exemplo, tenho \textit{três} tios, \textit{três} guinéus porcos e \textit{zero} gatos.
 
-Making a tally mark represents an \textit{increment} in quantity---that is, adding one. On our number line, we can represent an increment in quantity by moving to the right by the unit length. Then the distance from zero we have moved, which is equal to the number of times we moved right by the unit length, is therefore equal to the number of objects being counted.
+Contar é uma habilidade que os humanos possuem há muito tempo; sabemos disso porque há evidências de pessoas que usaram marcadores há dezenas de milhares de anos. As marcas de contagem fornecem um método de contar números pequenos: começando do zero, prossiga pelos objetos que deseja contar um por um e faça uma marca para cada objeto. Quando terminar, haverá tantas marcas quantos objetos. Somos ensinados desde pequenos a contar com os dedos; este é outro exemplo de fazer marcas de registro, onde agora, em vez de fazer uma marca, levantamos um dedo.
+
+Fazer uma marca representa um \textit{incremento} na quantidade --- isto é, adicionar um. Na nossa reta numérica, podemos representar um incremento na quantidade movendo para a direita pela unidade de comprimento. Então, a distância do zero que nos movemos, que é igual ao número de vezes que nos movemos para a direita pela unidade de comprimento, é portanto, igual ao número de objetos que estão sendo contados.
 
 \begin{definition}
 \label{defNaturalNumbersInformal}
-The \textbf{natural numbers} are represented by the points on the number line which can be obtained by starting at $0$ and moving right by the unit length any number of times:
+Os \textbf{números naturais} são representados pelos pontos na reta numérica que podem ser obtidos começando em $0$ e movendo-se para a direita pela unidade de comprimento qualquer número de vezes:
 \begin{center}
 \begin{tikzpicture}
-\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ; 
+\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ;
 \foreach \x in {0,1,2,3,4,5} \draw (\x, 0) -- (\x, 0.1) node[above] {$\x$} ;
 \end{tikzpicture}
 \end{center}
-In more familiar terms, they are the \textit{non-negative whole numbers}. We write $\mathbb{N}$ \inlatex{mathbb\{N\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} for the set of all natural numbers; thus, the notation `$n \in \mathbb{N}$' means that $n$ is a natural number.
+Em termos mais familiares, eles são  \textit{os números inteiros não negativos}. Nós escrevemos $\mathbb{N}$ \inlatex{mathbb\{N\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} para o conjunto de todos os números naturais; assim, a notação `$n \in \mathbb{N}$' significa que $n$ é um número natural.
 \end{definition}
 
-The natural numbers have very important and interesting mathematical structure, and are central to the material in \Cref{chCombinatorics}. A more precise characterisation of the natural numbers will be provided in \Cref{secPeanosAxioms}, and a mathematical construction of the set of natural numbers can be found in \Cref{secZFC} (see \Cref{cnsNaturalNumbersVonNeumann}). Central to these more precise characterisations will be the notions of `zero' and of `adding one'---just like making tally marks.
+Os números naturais possuem uma estrutura matemática muito importante e interessante, e são centrais no material em \Cref{chCombinatorics}. Uma caracterização mais precisa dos números naturais será fornecida em \Cref{secPeanosAxioms}, e uma construção matemática do conjunto de números naturais pode ser encontrada em \Cref{secZFC} (ver \Cref{cnsNaturalNumbersVonNeumann}). No centro destas caracterizações mais precisas estarão as noções de “zero” e de “adicionar um” – tal como fazer marcas de contagem.
 
-\begin{aside}
-Some authors define the natural numbers to be the \textit{positive} whole numbers, thus excluding zero. We take $0$ to be a natural number since our main use of the natural numbers will be for counting finite sets, and a set with nothing in it is certainly finite! That said, as with any mathematical definition, the choice about whether $0 \in \mathbb{N}$ or $0 \not \in \mathbb{N}$ is a matter of taste or convenience, and is merely a convention---it is not something that can be proved or refuted.
-\end{aside}
+\begin{Nota}
+Alguns autores definem os números naturais como sendo os números inteiros \textit{positivos}, excluindo assim o zero. Consideramos $0$ um número natural, pois nosso principal uso dos números naturais será para contar conjuntos finitos, e um conjunto sem nada é certamente finito! Dito isto, como acontece com qualquer definição matemática, a escolha sobre se $0 \in \mathbb{N}$ ou $0 \not \in \mathbb{N}$ é uma questão de gosto ou conveniência, e é apenas uma convenção --- não é algo que possa ser provado ou refutado.
+\end{Nota}
 
-\subsection*{Number bases}
+\subsection*{Bases Numéricas}
 
-Writing numbers down is something that may seem easy to you now, but it likely took you several years as a child to truly understand what was going on. Historically, there have been many different systems for representing numbers symbolically, called \textit{numeral systems}.\index{numeral system} First came the most primitive of all, tally marks, appearing in the Stone Age and still being used for some purposes today. Thousands of years and hundreds of numeral systems later, there is one dominant numeral system, understood throughout the world: the \textbf{Hindu--Arabic numeral system}.\index{numeral system!Hindu--Arabic} This numeral system consists of ten symbols, called \textit{digits}. It is a \textit{positional} numeral system, meaning that the position of a symbol in a string determines its numerical value.
+Escrever números é algo que pode parecer fácil para você agora, mas provavelmente levou vários anos quando criança para realmente entender o que estava acontecendo. Historicamente, existiram muitos sistemas diferentes para representar números simbolicamente, chamados \textit{sistemas numéricos}.\index{sistema numérico} Primeiro veio o mais primitivo de todos, os marcadores de contagem, aparecendo na Idade da Pedra e ainda sendo usados para alguns propósitos hoje. Milhares de anos e centenas de sistemas de numeração depois, existe um sistema de numeração dominante, compreendido em todo o mundo: o \textbf{sistema de numeração hindu-árabe}.\index{sistema de numeração!Hindu--árabe} Este sistema de numeração consiste em dez símbolos, chamados \textit{dígitos}. É um sistema numérico \textit{posicional}, o que significa que a posição de um símbolo em uma cadeia determina seu valor numérico.
 
-In English, the \textit{Arabic numerals} are used as the ten digits:
-\[ 0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9 \]
-The right-most digit in a string is in the units place, and the value of each digit increases by a factor of ten moving to the left. For example, when we write `$2812$', the left-most `$2$' represents the number two thousand, whereas the last `$2$' represents the number two.
+Em inglês, os \textit{algarismos arábicos} são usados como os dez dígitos:
+\[0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9 \]
+O dígito mais à direita em uma cadeia está na casa das unidades e o valor de cada dígito aumenta por um fator de dez movendo-se para a esquerda. Por exemplo, quando escrevemos `$2812$', o `$2$' mais à esquerda representa o número dois mil, enquanto o último `$2$' representa o número dois.
 
-The fact that there are ten digits, and that the numeral system is based on powers of ten, is a biological accident corresponding with the fact that most humans have ten fingers. For many purposes, this is inconvenient. For example, ten does not have many positive divisors (only four: $1$, $2$, $5$ and $10$)---this has implications for the ease of performing arithmetic; a system based on the number twelve, which has six positive divisors ($1$, $2$, $3$, $4$, $6$ and $12$), might be more convenient. Another example is in computing and digital electronics, where it is more convenient to work in a \textit{binary} system, with just two digits---$0$ and $1$---which represent `off' and `on' (or `low voltage' and `high voltage'), respectively; arithmetic can then be performed directly using sequences of \textit{logic gates} in an electrical circuit.
+O fato de existirem dez dígitos e de o sistema numérico ser baseado em potências de dez é um acidente biológico que corresponde ao fato de a maioria dos humanos ter dez dedos. Para muitos propósitos, isso é inconveniente. Por exemplo, dez não tem muitos divisores positivos (apenas quatro: $1$, $2$, $5$ e $10$) --- isto tem implicações para a facilidade de realizar aritmética; um sistema baseado no número doze, que possui seis divisores positivos ($1$, $2$, $3$, $4$, $6$ e $12$), pode ser mais conveniente. Outro exemplo é na computação e na eletrônica digital, onde é mais conveniente trabalhar em um sistema \textit{binário}, com apenas dois dígitos ---$0$ e $1$---que representam `off' e `on' ( ou «baixa tensão» e «alta tensão»), respetivamente; a aritmética pode então ser realizada diretamente usando sequências de \textit{portas lógicas} em um circuito elétrico.
 
-It is therefore worthwhile to have some understanding of positional numeral systems based on numbers other than ten. The mathematical abstraction we make leads to the definition of \textit{base-$b$ expansion}.
+Portanto, vale a pena ter alguma compreensão dos sistemas numéricos posicionais baseados em números diferentes de dez. A abstração matemática que fazemos leva à definição de \textit{expansão base-$b$}.
 
 \begin{definition}
 \label{defBaseBExpansionPreliminary}
 \index{base-$b$ expansion}
 \index{number base}
-Let $b$ be a natural number greater than $1$. The \textbf{base-$b$ expansion} of a natural number $n$ is the\footnote{The use of the word `the' is troublesome here, since it assumes that every natural number has only one base-$b$ expansion. This fact actually requires proof---see \Cref{thmBaseBExpansion}.} string $d_r d_{r-1} \dots d_0$ such that:
+Seja $b$ um número natural maior que $1$. A \textbf{base-$b$ expansão} de um número natural $n$ é a\footnote{Essa frase é problemática, pois assume que todo número natural tem apenas uma base-$b$ expansão. Na verdade, esse fato requer prova --- veja \Cref{thmBaseBExpansion}.} cadeia $d_r d_{r-1} \dots d_0$ tal que:
+
 \begin{enumerate}[(i)]
 \item $n = d_r \cdot b^r + d_{r-1} \cdot b^{r-1} + \cdots + d_0 \cdot b^0$;
-\item $0 \le d_i < b$ for each $i$; and
-\item If $n>0$ then $d_r \ne 0$---the base-$b$ expansion of zero is $0$ in all bases $b$.
+\item $0 \le d_i < b$ para cada $i$; e
+\item If $n>0$ então $d_r \ne 0$---a base de expansão-$b$ de zero é $0$ em todas as bases $b$.
 \end{enumerate}
-Certain number bases have names; for instance, the base-$2$, $3$, $8$, $10$ and $16$ expansions are respectively called \textit{binary}, \textit{ternary}, \textit{octal}, \textit{decimal} and \textit{hexadecimal}.
+Certas bases numéricas têm nomes; por exemplo, as expansões base $2$, $3$, $8$, $10$ e $16$ são chamadas respectivamente de \textit{binário}, \textit{ternário}, \textit{octal}, \textit{decimal} e \textit {hexadecimal}.
 \end{definition}
 
-Before we look at an example of \Cref{defBaseBExpansionPreliminary} in action, let's examine the definition, which is a little terse on first sight.
+Antes de olharmos um exemplo de \Cref{defBaseBExpansionPreliminary} em ação, vamos examinar a definição, que é um pouco concisa à primeira vista.
 \begin{itemize}
-\item Condition (i) tells us that the digits in the string tell us how many of each power of $b$ are added up to obtain $n$. For example, when $b=10$, the digits from right to left tell us the units, tens, hundreds, thousands, and so on.
-\item Condition (ii) tells us that the digits in a base-$b$ expansion must be less than $b$---for example, the base-$4$ digits are $0$, $1$, $2$ and $3$. If we allowed more digits then silly things would happen---for example, if `$\mathrm{X}$' were a new base-$10$ digit representing the number ten, then `$\mathrm{X}2$' and `$102$' would be different strings both representing the number one hundred and two.
-\item Condition (iii) ensures that the string representing a positive number doesn't have any leading `$0$'s---otherwise, for example, `$01423$' and `$1423$' would be different strings representing the same natural number.
+\item Condição (i) nos diz que os dígitos na cadeia nos dizem quantos de cada potência de $b$ são somados para obter $n$. Por exemplo, quando $b=10$, os dígitos da direita para a esquerda indicam as unidades, dezenas, centenas, milhares e assim por diante.
+\item Condição (ii) nos diz que os dígitos em uma expansão de base $b$ devem ser menores que $b$ --- por exemplo, os dígitos de base $4$ são $0$, $1$, $2$ e $3$. Se permitíssemos mais dígitos, então coisas bobas aconteceriam --- por exemplo, se `$\mathrm{X}$' fosse um novo dígito de base $10$ representando o número dez, então `$\mathrm{X}2$' e `$102$' seriam cadeias diferentes, ambas representando o número cento e dois.
+\item Condição (iii) garante que a cadeia que representa um número positivo não tenha nenhum `$0$' inicial --- caso contrário, por exemplo, `$01423$' e `$1423$' seriam cadeias diferentes representando o mesmo número natural.
 \end{itemize}
 
 \begin{example}
-Consider the number $1023$. Its decimal (base-$10$) expansion is $1023$, since
+Considere o número $1023$. Sua expansão decimal (base-$10$) é $1023$, já que
 \[ 1023 = 1 \cdot 10^3 + 0 \cdot 10^2 + 2 \cdot 10^1 + 3 \cdot 10^0 \]
-Its binary (base-$2$) expansion is $1111111111$, since
-\[ 1023 = 1 \cdot 2^9 + 1 \cdot 2^8 + 1 \cdot 2^7 + 1 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 \]
-We can express numbers in base-$36$ by using the ten usual digits $0$ through $9$ and the twenty-six letters $\mathrm{A}$ through $\mathrm{Z}$; for instance, $\mathrm{A}$ represents $10$, $\mathrm{M}$ represents $22$ and $\mathrm{Z}$ represents $35$. The base-$36$ expansion of $1023$ is $\mathrm{SF}$, since
+Sua expansão binária (base-$2$) é $1111111111$, já que\[ 1023 = 1 \cdot 2^9 + 1 \cdot 2^8 + 1 \cdot 2^7 + 1 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 \]
+
+Podemos expressar números na base $36$ usando os dez dígitos usuais de $0$ a $9$ e as vinte e seis letras de $\mathrm{A}$ a $\mathrm{Z}$; por exemplo, $\mathrm{A}$ representa $10$, $\mathrm{M}$ representa $22$ e $\mathrm{Z}$ representa $35$. A expansão de base $36$ de $1023$ é $\mathrm{SF}$, já que:
 \[ 1023 = 28 \cdot 36^1 + 15 \cdot 36^0 = \mathrm{S} \cdot 36^1 + \mathrm{F} \cdot 36^0 \]
 \end{example}
 
 \begin{exercise}
-Find the binary, ternary, octal, decimal, hexadecimal and base-$36$ expansions of the number $21127$, using the letters $\mathrm{A}$--$\mathrm{F}$ as additional digits for the hexadecimal expansion (representing the numbers $10$--$15$, respectively), and the letters $\mathrm{A}$--$\mathrm{Z}$ as additional digits for the base-$36$ expansion.
+Encontre as expansões binária, ternária, octal, decimal, hexadecimal e de base $36$ do número $21127$, usando as letras $\mathrm{A}$--$\mathrm{F}$ como dígitos adicionais para a expansão hexadecimal ( representando os números $10$--$15$, respectivamente) e as letras $\mathrm{A}$--$\mathrm{Z}$ como dígitos adicionais para a expansão da base $36$.
 \end{exercise}
 
-We sometimes wish to specify a natural number in terms of its base-$b$ expansion; we have some notation for this.
+Às vezes desejamos especificar um número natural em termos de sua expansão de base $b$; temos alguma notação para isso.
 
 \begin{notation}
-Let $b>1$. If the numbers $d_0,d_1,\dots,d_r$ are base-$b$ digits (in the sense of \Cref{defBaseBExpansionPreliminary}), then we write
+Seja $b>1$. Se os números $d_0,d_1,\dots,d_r$  são dígitos base-$b$  (no sentido de \Cref{defBaseBExpansionPreliminary}), então nós escrevemos:
 \[ {d_rd_{r-1} \dots d_0}_{(b)} = d_r \cdot b^r + d_{r-1} \cdot b^{r-1} + \cdots + d_0 \cdot b^0 \]
-for the natural number whose base-$b$ expansion is $d_rd_{r-1} \dots d_0$. If there is no subscript $(b)$ and a base is not specified explicitly, the expansion will be assumed to be in base-$10$.
+para o número natural cuja expansão de base $b$ é $d_rd_{r-1} \dots d_0$. Se não houver subscrito $(b)$ e uma base não for especificada explicitamente, a expansão será assumida como base-$10$.
 \end{notation}
 
 \begin{example}
-Using our new notation, we have
+Usando nossa nova notação,nós temos:
 \[ 1023 = 1111111111_{(2)} = 1101220_{(3)} = 1777_{(8)} = 1023_{(10)} = 3\mathrm{FF}_{(16)} = \mathrm{SF}_{(36)} \]
 \end{example}
 
-\subsection*{Integers ($\mathbb{Z}$)}
+\subsection*{Inteiros ($\mathbb{Z}$)}
 
-The \textit{integers} can be used for measuring the difference between two natural numbers. For example, suppose I have five apples and five bananas. Another person, also holding apples and bananas, wishes to trade. After our exchange, I have seven apples and only one banana. Thus I have two more apples and four fewer bananas.
+ \textit{inteiros} podem ser usados para medir a diferença entre dois números naturais. Por exemplo, suponha que eu tenha cinco maçãs e cinco bananas. Outra pessoa, também segurando maçãs e bananas, deseja negociar. Após a nossa troca, tenho sete maçãs e apenas uma banana. Assim, tenho mais duas maçãs e quatro bananas a menos.
 
-Since an increment in quantity can be represented by moving to the right on the number line by the unit length, a \textit{decrement} in quantity can therefore be represented by moving to the \textit{left} by the unit length. Doing so gives rise to the integers.
+Como um incremento na quantidade pode ser representado movendo-se para a direita na reta numérica pela unidade de comprimento, um \textit{decremento} na quantidade pode, portanto, ser representado movendo-se para a \textit{esquerda} pela unidade de comprimento. Fazer isso dá origem aos inteiros.
 
 \begin{definition}
 \label{defIntegersInformal}
-The \textbf{integers} are represented by the points on the number line which can be obtained by starting at $0$ and moving in either direction by the unit length any number of times:
+Os \textbf{inteiros} são representados pelos pontos na reta numérica que podem ser obtidos começando em $0$ e movendo-se em qualquer direção pela unidade de comprimento qualquer número de vezes:
+
 \begin{center}
 \begin{tikzpicture}
-\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ; 
+\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ;
 \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5} \draw (\x, 0) -- (\x, 0.1) node[above] {$\x$} ;
 \end{tikzpicture}
 \end{center}
-We write $\mathbb{Z}$ \inlatex{mathbb\{Z\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} for the set of all integers; thus, the notation `$n \in \mathbb{Z}$' means that $n$ is an integer.
+Nós escrevemos  $\mathbb{Z}$ \inlatex{mathbb\{Z\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} para o conjunto de todos os inteiros; portanto,a notação `$n \in \mathbb{Z}$' significa que $n$ é um inteiro.
 \end{definition}
 
-The integers have such a fascinating structure that a whole chapter of this book is devoted to them---see \Cref{chNumberTheory}. This is to do with the fact that, although you can add, subtract and multiply two integers and obtain another integer, the same is not true of division. This `bad behaviour' of division is what makes the integers interesting. We will now see some basic results about division.
+Os inteiros têm uma estrutura tão fascinante que um capítulo inteiro deste livro é dedicado a eles --- veja \Cref{chNumberTheory}. Isso tem a ver com o fato de que, embora seja possível somar, subtrair e multiplicar dois números inteiros e obter outro número inteiro, o mesmo não acontece com a divisão. Este “mau comportamento” da divisão é o que torna os números inteiros interessantes. Veremos agora alguns resultados básicos sobre divisão.
 
-\subsection*{Division of integers}
+
+\subsection*{Divisão de Inteiros}
 \label{pGettingStartedDivision}
 
-The motivation we will soon give for the definition of the rational numbers (\Cref{defRationalsInformal}) is that the result of dividing one integer by another integer is not necessarily another integer. However, the result is \textit{sometimes} another integer; for example, I can divide six apples between three people, and each person will receive an integral number of apples. This makes division interesting: how can we measure the failure of one integer's divisibility by another? How can we deduce when one integer is divisible by another? What is the structure of the set of integers when viewed through the lens of division? This motivates \Cref{defDivisionPreliminary}.
+A motivação que daremos em breve para a definição dos números racionais (\Cref{defRationalsInformal}) é que o resultado da divisão de um inteiro por outro inteiro não é necessariamente outro inteiro. Contudo, o resultado é \textit{às vezes} outro número inteiro; por exemplo, posso dividir seis maçãs entre três pessoas e cada pessoa receberá um número inteiro de maçãs. Isto torna a divisão interessante: como podemos medir o fracasso da divisibilidade de um número inteiro por outro? Como podemos deduzir quando um número inteiro é divisível por outro? Qual é a estrutura do conjunto de inteiros quando visto pelas lentes da divisão? Isso motiva \Cref{defDivisionPreliminary}.
 
-\begin{definition}[to be repeated in \Cref{defDivision}]
+\begin{definition}[Para ser repetido in \Cref{defDivision}]
 \label{defDivisionPreliminary}
-\index{division}
+\index{divisão}
 \index{divisor}
-\index{factor}
-\index{multiple}
-Let $a,b \in \mathbb{Z}$. We say $b$ \textbf{divides} $a$ if $a=qb$ for some integer $q$. There are many other ways of saying that $b$ divides $a$, such as: $a$ is \textit{divisible by} $b$, $b$ is a \textit{divisor} of $a$, $b$ is a \textit{factor} of $a$, or $a$ is a \textit{multiple} of $b$.
+\index{fator}
+\index{múltiplo}
+Seja $a,b \in \mathbb{Z}$. Dizemos $b$ \textbf{divide} $a$ se $a=qb$ para algum inteiro $q$. Existem muitas outras maneiras de dizer que $b$ divide $a$, como: $a$ é \textit{divisível por} $b$, $b$ é um \textit{divisor} de $a$, $b $ é um \textit{fator} de $a$, ou $a$ é um \textit{múltiplo} de $b$.
 \end{definition}
 
-Note that, perhaps counterintuitively, the definition if divisibility does not involve the arithmetic operation of division: it is defined in terms of multiplication.
+Observe que, talvez de forma contraintuitiva, a definição de divisibilidade não envolve a operação aritmética de divisão: ela é definida em termos de multiplicação.
 
 \begin{example}
-The integer $12$ is divisible by $1$, $2$, $3$, $4$, $6$ and $12$, since
+O inteiro $12$ é divisível por $1$, $2$, $3$, $4$, $6$ e $12$, desde que
 \[ 12 = 12 \cdot 1 = 6 \cdot 2 = 4 \cdot 3 = 3 \cdot 4 = 2 \cdot 6 = 1 \cdot 12 \]
-It is also divisible by the negatives of all of those numbers; for example, $12$ is divisible by $-3$ since $12 = (-4) \cdot (-3)$.
+Também é divisível pelos negativos de todos esses números; por exemplo, $12$ é divisível por $-3$ desde que $12 = (-4) \cdot (-3)$.
 \end{example}
 
 \begin{exercise}
 \label{exOneDividesEveryIntegerDividesZero}
-Prove that $1$ divides every integer, and that every integer divides $0$.
+Prove que $1$ divide todo número inteiro e que todo número inteiro divide $0$.
 \end{exercise}
 
-A consequence of \Cref{exOneDividesEveryIntegerDividesZero} is that $0$ is divisible by $0$. This is surprising: we've been told our whole lives that we can't divide by zero, but now we discover that we can divide zero by zero\dots{} how can that be? This highlights why it was so important for the definition of divisibility (\Cref{defDivisionPreliminary}) to be given in terms of multiplication, without using the division operation: saying that $0$ divides $0$ simply means that $0$ can be multiplied by an integer to obtain $0$ (which is true)---but this does not imply that the expression `$\frac{0}{0}$' can (or should) be meaningfully defined.
+Uma consequência de \Cref {exOneDividesEveryIntegerDividesZero} é que $0$ é divisível por $0$. Isto é surpreendente: durante toda a nossa vida ouvimos que não podemos dividir por zero, mas agora descobrimos que podemos dividir zero por zero\points{} como pode ser isso? Isso destaca por que era tão importante que a definição de divisibilidade (\Cref{defDivisionPreliminary}) fosse dada em termos de multiplicação, sem usar a operação de divisão: dizer que $0$ divide $0$ significa simplesmente que $0$ pode ser multiplicado por um inteiro para obter $0$ (o que é verdade)---mas isso não implica que a expressão `$\frac{0}{0}$' possa (ou deva) ser definida de forma significativa.
 
-Using \Cref{defDivisionPreliminary}, we can prove some general basic facts about divisibility.
+usando \Cref{defDivisionPreliminary}, podemos provar alguns fatos básicos gerais sobre a divisibilidade.
+
 
 \begin{proposition}
 \label{propDivisibilityIsTransitive}
-Let $a,b,c \in \mathbb{Z}$. If $c$ divides $b$ and $b$ divides $a$, then $c$ divides $a$.
+Seja $a,b,c \in \mathbb{Z}$. Se $c$ divide $b$ e $b$ divide $a$, então $c$ divide $a$.
 \end{proposition}
 
 \begin{cproof}
-Suppose that $c$ divides $b$ and $b$ divides $a$. By \Cref{defDivisionPreliminary}, it follows that
-\[ b=qc \quad \text{and} \quad a=rb \]
-for some integers $q$ and $r$. Using the first equation, we may substitute $qc$ for $b$ in the second equation, to obtain
+
+
+Suponha que $c$ divide $b$ e $b$ divide $a$. Por \Cref{defDivisionPreliminary}, segue que
+\[ b=qc \quad \text{e} \quad a=rb \]
+para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter
 \[ a=r(qc) \]
-But $r(qc) = (rq)c$, and $rq$ is an integer, so it follows from \Cref{defDivisionPreliminary} that $c$ divides $a$.
+Mas $r(qc) = (rq)c$, e $rq$ é um número inteiro, então segue de \Cref{defDivisionPreliminary} que $c$ divide $a$.
 \end{cproof}
 
 % To do: draw attention to the wording of the proof, and the 'unpack definition - do something - apply definition' style of the proof.
 
 \begin{exercise}
 \label{exDivisibilityIsLinear}
-Let $a,b,d \in \mathbb{Z}$. Suppose that $d$ divides $a$ and $d$ divides $b$. Given integers $u$ and $v$, prove that $d$ divides $au+bv$.
+Sejam $a,b,d \in \mathbb{Z}$. Suponha que $d$ divide $a$ e $d$ divide $b$. Dados inteiros $u$ e $v$, prove que $d$ divide $au+bv$.
 \end{exercise}
 
-Some familiar concepts, such as evenness and oddness, can be characterised in terms of divisibility.
+Alguns conceitos familiares, como par e impar, podem ser caracterizados em termos de divisibilidade.
 
 \begin{definition}
 \label{defEvenOdd}
-\index{even!integer}
-\index{odd!integer}
-An integer $n$ is \textbf{even} if it is divisible by $2$; otherwise, $n$ is \textbf{odd}.
+\index{Inteiro!par}
+\index{Inteiro!´impar}
+Um inteiro $n$ é \textbf{par} se é divisível por $2$; de outra forma, $n$ é \textbf{impar}.
 \end{definition}
+Não é apenas interessante saber quando um inteiro \textit{divide} outro; entretanto, provar que um inteiro \textit{não} divide outro é muito mais difícil. Na verdade, para provar que um inteiro $b$ não divide um inteiro $a$, devemos provar que $a \ne qb$ para \textit{qualquer} inteiro $q$. Veremos métodos para fazer isso em \Cref{chLogicalStructure}; esses métodos usam o seguinte resultado extremamente importante, que será a base de toda a \Cref{chNumberTheory}.
 
-It is not just interesting to know when one integer \textit{does} divide another; however, proving that one integer \textit{doesn't} divide another is much harder. Indeed, to prove that an integer $b$ does not divide an integer $a$, we must prove that $a \ne qb$ for \textit{any} integer $q$ at all. We will look at methods for doing this in \Cref{chLogicalStructure}; these methods use the following extremely important result, which will underlie all of \Cref{chNumberTheory}.
-
-\begin{theorem}[Division theorem, to be repeated in \Cref{thmDivisionTheorem}]
+\begin{theorem}[Teorema da divisão, para ser repetido in \Cref{thmDivisionTheorem}]
 \label{thmDivisionPreliminary}
-\index{division theorem}
-Let $a,b \in \mathbb{Z}$ with $b \ne 0$. There is exactly one way to write
+\index{teorema da divisão}
+Seja $a,b \in \mathbb{Z}$ com $b \ne 0$. Existe exatamente uma maneira de escrever
 \[ a = qb + r \]
-such that $q$ and $r$ are integers, and $0 \le r < b$ (if $b > 0$) or $0 \le r < -b$ (if $b < 0$).
+de tal modo que $q$ e $r$ são inteiros, e $0 \le r < b$ (se $b > 0$) ou $0 \le r < -b$ (se $b < 0$).
 \end{theorem}
 
-The number $q$ in \Cref{thmDivisionPreliminary} is called the \textbf{quotient}\index{quotient} of $a$ when divided by $b$, and the number $r$ is called the \textbf{remainder}\index{remainder}.
+O número $q$ em \Cref{thmDivisionPreliminary} é chamado o \textbf{quociente}\index{quociente} de $a$ quando dividido por $b$, e o número $r$ é chamado o \textbf{restante}\index{restante}.
 
 \begin{example}
-The number $12$ leaves a remainder of $2$ when divided by $5$, since $12 = 2 \cdot 5 + 2$.
+O número $12$ deixa um  restante de $2$ quando dividido por $5$, desde que $12 = 2 \cdot 5 + 2$.
 \end{example}
 
-Here's a slightly more involved example.
+Aqui está um exemplo um pouco mais complicado.
 
 \begin{proposition}
-Suppose an integer $a$ leaves a remainder of $r$ when divided by an integer $b$, and that $r>0$. Then $-a$ leaves a remainder of $b-r$ when divided by $b$.
+Suponha um número inteiro $a$ deixa um resto de $r$ quando dividido por um número inteiro $b$, e que $r>0$. Então $-a$ deixa um resto de $b-r$ quando dividido por $b$.
 \end{proposition}
 
 \begin{cproof}
-Suppose $a$ leaves a remainder of $r$ when divided by $b$. Then
+Suponha que $a$ deixa um resto de $r$ quando dividido por $b$. Então
 \[ a=qb+r \]
-for some integer $q$. A bit of algebra yields
+Para algum número inteiro $q$. Um pouco de rendimento de álgebra
 \[ -a = -qb-r = -qb-r+(b-b) = -(q+1)b + (b-r) \]
-Since $0<r<b$, we have $0<b-r<b$. Hence $-(q+1)$ is the quotient of $-a$ when divided by $b$, and $b-r$ is the remainder.
+Since $0<r<b$, Nós temos $0<b-r<b$. Por isso $-(q+1)$ é o quociente de $-a$ quando dividido por $b$, e $b-r$ é o restante.
 \end{cproof}
 
 \begin{exercise}
-Prove that if an integer $a$ leaves a remainder of $r$ when divided by an integer $b$, then $a$ leaves a remainder of $r$ when divided by $-b$.
+Prove que se um inteiro $a$ deixa um resto de $r$ quando dividido por um inteiro $b$, então $a$ deixa um resto de $r$ quando dividido por $-b$.
 \end{exercise}
 
-We will finish this part on division of integers by connecting it with the material on number bases---we can use the division theorem (\Cref{thmDivisionPreliminary}) to find the base-$b$ expansion of a given natural number. It is based on the following observation: the natural number $n$ whose base-$b$ expansion is $d_rd_{r-1} \cdots d_1 d_0$ is equal to
+Terminaremos esta parte sobre divisão de inteiros conectando-a com o material em bases numéricas --- podemos usar o teorema da divisão (\Cref{thmDivisionPreliminary}) para encontrar a expansão de base $b$ de um determinado número natural. É baseado na seguinte observação: o número natural $n$ cuja expansão de base $b$ é $d_rd_{r-1} \cdots d_1 d_0$ é igual a
 \[ d_0 + b(d_1 + b(d_2 + \cdots + b(d_{r-1} + bd_r) \cdots)) \]
-Moreover, $0 \le d_i < b$ for all $i$. In particular $n$ leaves a remainder of $d_0$ when divided by $b$. Hence
+Além disso, $0 \le d_i < b$ para todo $i$. Em particular, $n$ deixa um resto de $d_0$ quando dividido por $b$. Por isso
 \[ \frac{n-d_0}{b} = d_1 + d_2b + \cdots + d_rb^{r-1} \]
-The base-$b$ expansion of $\frac{n-d_0}{b}$ is therefore
+A base -b $b$ expansão de $\frac{n-d_0}{b}$ é portanto
 \[ d_rd_{r-1} \cdots d_1 \]
-In other words, the remainder of $n$ when divided by $b$ is the last base-$b$ digit of $n$, and then subtracting this number from $n$ and dividing the result by $b$ truncates the final digit. Repeating this process gives us $d_1$, and then $d_2$, and so on, until we end up with $0$.
-
-This suggests the following algorithm for computing the base-$b$ expansion of a number $n$:
+Em outras palavras, o resto de $n$ quando dividido por $b$ é o último dígito de base $b$ de $n$, e então subtrair esse número de $n$ e dividir o resultado por $b$ trunca o final dígito. Repetir esse processo nos dá $d_1$, e depois $d_2$, e assim por diante, até chegarmos a $0$.
+Isso sugere o seguinte algoritmo para calcular a expansão de base $b$ de um número $n$:
 \begin{itemize}
-\item \textbf{Step 1.} Let $d_0$ be the remainder when $n$ is divided by $b$, and let $n_0=\frac{n-d_0}{b}$ be the quotient. Fix $i=0$.
-\item \textbf{Step 2.} Suppose $n_i$ and $d_i$ have been defined. If $n_i=0$, then proceed to Step 3. Otherwise, define $d_{i+1}$ to be the remainder when $n_i$ is divided by $b$, and define $n_{i+1} = \frac{n_i-d_{i+1}}{b}$. Increment $i$, and repeat Step 2.
-\item \textbf{Step 3.} The base-$b$ expansion of $n$ is
+\item \textbf{Passo 1.} SeJA $d_0$ seja o resto quando $n$ é dividido por $b$, e Seja $n_0=\frac{n-d_0}{b}$ seja o quociente. Consertar $i=0$.
+\item \textbf{Step 2.} Suponha $n_i$ e $d_i$ foram definidos. Se $n_i=0$, em seguida, prossiga para o Passo 3. Por outro lado define $d_{i+1}$ o seja o resto quando $n_i$ é dividido por $b$ e defina $n_{i+1} = \frac{n_i-d_{i+1}}{b}$. Aumente $i$ e repita a Etapa 2.
+\item \textbf{Etapa 3.} A expansão base-$b$ de $n$ é
 \[ d_id_{i-1} \cdots d_0 \]
 \end{itemize}
 
 \begin{example}
-We compute the base-$17$ expansion of $15213$, using the letters $\mathrm{A}$--$\mathrm{G}$ to represent the numbers $10$ through $16$.
+Calculamos a expansão de base $17$ de $15213$, usando as letras $\mathrm{A}$--$\mathrm{G}$ para representar os números $10$ até $16$.
 \begin{itemize}
-\item $15213 = 894 \cdot 17 + 15$, so $d_0=15=\mathrm{F}$ and $n_0=894$.
-\item $894 = 52 \cdot 17 + 10$, so $d_1=10 = \mathrm{A}$ and $n_1=52$.
-\item $52 = 3 \cdot 17 + 1$, so $d_2 = 1$ and $n_2=3$.
-\item $3 = 0 \cdot 17 + 3$, so $d_3 = 3$ and $n_3=0$.
-\item The base-$17$ expansion of $15213$ is therefore $31\mathrm{AF}$.
+\item $15213 = 894 \cdot 17 + 15$, então $d_0=15=\mathrm{F}$ e $n_0=894$.
+\item $894 = 52 \cdot 17 + 10$, então $d_1=10 = \mathrm{A}$ e $n_1=52$.
+\item $52 = 3 \cdot 17 + 1$, então $d_2 = 1$ and $n_2=3$.
+\item $3 = 0 \cdot 17 + 3$, então $d_3 = 3$ e $n_3=0$.
+\item A base -$17$ expansão de $15213$ é portanto $31\mathrm{AF}$.
 \end{itemize}
-A quick verification gives
+Uma rápida verificação
 \[ 31\mathrm{AF}_{(17)} = 3 \cdot 17^3 + 1 \cdot 17^2 + 10 \cdot 17 + 15 = 15213 \]
-as desired.
+como desejado.
 \end{example}
 
 \begin{exercise}
-Find the base-$17$ expansion of $408\,735\,787$ and the base-$36$ expansion of $1\,442\,151\,747$.
+Encontre a expansão de base $ 17$ de $ 408\,735\,787$ e a expansão de base $36$ de $1\,442\,151\,747$.
 \end{exercise}
 
-\subsection*{Rational numbers ($\mathbb{Q}$)}
+\subsection*{Números Racionais ($\mathbb{Q}$)}
 
-Bored of eating apples and bananas, I buy a pizza which is divided into eight slices. A friend and I decide to share the pizza. I don't have much of an appetite, so I eat three slices and my friend eats five. Unfortunately, we cannot represent the proportion of the pizza each of us has eaten using natural numbers or integers. However, we're not far off: we can count the number of equal parts the pizza was split into, and of those parts, we can count how many we had. On the number line, this could be represented by splitting the unit line segment from $0$ to $1$ into eight equal pieces, and proceeding from there. This kind of procedure gives rise to the \textit{rational numbers}.
+Cansado de comer maçã e banana, compro uma pizza dividida em oito fatias. Um amigo e eu decidimos dividir a pizza. Não tenho muito apetite, então como três fatias e meu amigo come cinco. Infelizmente, não podemos representar a proporção da pizza que cada um de nós comeu usando números naturais ou inteiros. Porém, não estamos muito longe: podemos contar o número de partes iguais em que a pizza foi dividida e, dessas partes, podemos contar quantas tivemos. Na reta numérica, isso poderia ser representado dividindo o segmento de reta unitária de $0$ a $1$ em oito partes iguais e procedendo a partir daí. Este tipo de procedimento dá origem aos \textit{números racionais}.
 
 \begin{definition}
 \label{defRationalsInformal}
-The \textbf{rational numbers} are represented by the points at the number line which can be obtained by dividing any of the unit line segments between integers into an equal number of parts.
+Os \textbf{números racionais} são representados pelos pontos na reta numérica que podem ser obtidos dividindo qualquer um dos segmentos da reta unitária entre inteiros em um número igual de partes.
 \begin{center}
 \begin{tikzpicture}
-\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ; 
+\draw[latex-latex] (-5.5, 0) -- (5.5, 0) ;
 \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5} \draw (\x, 0) -- (\x, 0.25) node[above] {$\x$} ;
 \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5} {
   \foreach \i in {-0.33,0.33} {
@@ -346,35 +349,33 @@ The \textbf{rational numbers} are represented by the points at the number line w
 }
 \end{tikzpicture}
 \end{center}
-The rational numbers are those of the form $\frac{a}{b}$, where $a,b \in \mathbb{Z}$ and $b \ne 0$. We write $\mathbb{Q}$ \inlatex{mathbb\{Q\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} for the set of all rational numbers; thus, the notation `$q \in \mathbb{Q}$' means that $q$ is a rational number.
-\end{definition}
+Os números racionais são aqueles da forma $\frac{a}{b}$, onde $a,b \in \mathbb{Z}$ e $b \ne 0$. Escrevemos $\mathbb{Q}$ \inlatex{mathbb\{Q\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} para o conjunto de todos os números racionais; portanto, a notação `$q \in \mathbb{Q}$' significa que $q$ é um número racional.\end{definition}
 
-The rational numbers are a very important example of a type of algebraic structure known as a \textit{field}---they are particularly central to algebraic number theory and algebraic geometry.
+Os números racionais são um exemplo muito importante de um tipo de estrutura algébrica conhecida como \textit{campo} --- eles são particularmente centrais para a teoria algébrica dos números e para a geometria algébrica.
 
-\subsection*{Real numbers ($\mathbb{R}$)}
+\subsection*{Números reais ($\mathbb{R}$)}
 
-Quantity and change can be measured in the abstract using \textit{real numbers}.
+Quantidade e mudança podem ser medidas abstratamente usando \textit{números reais}.
 
 \begin{definition}
 \label{defRealsInformal}
-The \textbf{real numbers} are the points on the number line. We write $\mathbb{R}$ \inlatex{mathbb\{R\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} for the set of all real numbers; thus, the notation `$a \in \mathbb{R}$' means that $a$ is a real number.
+Os \textbf{números reais} são os pontos na reta numérica. Escrevemos $\mathbb{R}$ \inlatex{mathbb\{R\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} para o conjunto de todos os números reais; portanto, a notação `$a \in \mathbb{R}$' significa que $a$ é um número real.
+
 \end{definition}
 
-The real numbers are central to real analysis, a branch of mathematics introduced in \Cref{chRealNumbers}. They turn the rationals into a \textit{continuum} by `filling in the gaps'---specifically, they have the property of \textit{completeness}, meaning that if a quantity can be approximated with arbitrary precision by real numbers, then that quantity is itself a real number.
+Os números reais são centrais para a análise real, um ramo da matemática introduzido em \Cref{chRealNumbers}. Eles transformam os racionais em um \textit{continuum} ao `preencher as lacunas'---especificamente, eles têm a propriedade de \textit{completude}, o que significa que se uma quantidade pode ser aproximada com precisão arbitrária por números reais, então essa quantidade é em si um número real.
 
-We can define the basic arithmetic operations (addition, subtraction, multiplication and division) on the real numbers, and a notion of ordering of the real numbers, in terms of the infinite number line.
-
+Podemos definir as operações aritméticas básicas (adição, subtração, multiplicação e divisão) sobre os números reais, e uma noção de ordenação dos números reais, em termos da reta numérica infinita.
 \begin{itemize}
-\item \textbf{Ordering.} A real number $a$ is less than a real number $b$, written $a<b$, if $a$ lies to the left of $b$ on the number line. The usual conventions for the symbols $\le$ \inlatex{le}\lindexmmc{le}{$\le$}, $>$ and $\ge$ \inlatex{ge}\lindexmmc{ge}{$\ge$} apply, for instance `$a \le b$' means that either $a < b$ or $a = b$.
+\item \textbf{Ordenando.} Um número real $a$ é menor que um número real $b$, escrito $a<b$, se $a$ estiver à esquerda de $b$ na reta numérica. As convenções usuais para os símbolos $\le$ \inlatex{le}\lindexmmc{le}{$\le$}, $>$ e $\ge$ \inlatex{ge}\lindexmmc{ge}{$\ge$ } se aplicam, por exemplo `$a \le b$' significa que $a < b$ ou $a = b$.
 
-\item \textbf{Addition.} Suppose we want to add a real number $a$ to a real number $b$. To do this, we \textit{translate} $a$ by $b$ units to the right---if $b<0$ then this amounts to translating $a$ by an equivalent number of units to the left. Concretely, take two copies of the number line, one above the other, with the same choice of unit length; move the $0$ of the lower number line beneath the point $a$ of the upper number line. Then $a+b$ is the point on the upper number line lying above the point $b$ of the lower number line.
-
-Here is an illustration of the fact that $(-3) + 5 = 2$:
+\item \textbf{Adição.} Suponha que queiramos adicionar um número real $a$ a um número real $b$. Para fazer isso, \textit{traduzimos} $a$ em $b$ unidades para a direita --- se $b<0$ então isso equivale a traduzir $a$ em um número equivalente de unidades para a esquerda. Concretamente, faça duas cópias da reta numérica, uma acima da outra, com a mesma escolha de comprimento unitário; mova o $0$ da reta numérica inferior abaixo do ponto $a$ da reta numérica superior. Então $a+b$ é o ponto na reta numérica superior situado acima do ponto $b$ da reta numérica inferior.
+ $(-3) + 5 = 2$:
 
 \begin{center}
 \fitwidthc{0.9}{\begin{tikzpicture}
 % Adapted from http://tex.stackexchange.com/questions/148252/
-\draw[latex-latex] (-8.5,0) -- (5.5,0) ; 
+\draw[latex-latex] (-8.5,0) -- (5.5,0) ;
 \foreach \x in  {-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5}
 \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
 \foreach \x in {-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5}
@@ -382,7 +383,7 @@ Here is an illustration of the fact that $(-3) + 5 = 2$:
 \draw[*-*] (-3.08,0) -- (2.08,0);
 \draw[very thick] (-3,0) -- (2,0);
 
-\draw[latex-latex] (-8.5,-1) -- (5.5,-1) ; 
+\draw[latex-latex] (-8.5,-1) -- (5.5,-1) ;
 \foreach \x in  {-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8}
 \draw[shift={(\x-3,-1)},color=black] (0pt,3pt) -- (0pt,-3pt);
 \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8}
@@ -392,14 +393,13 @@ Here is an illustration of the fact that $(-3) + 5 = 2$:
 \end{tikzpicture}}
 \end{center}
 
-\item \textbf{Multiplication.} This one is fun. Suppose we want to multiply a real number $a$ by a real number $b$. To do this, we \textit{scale} the number line, and perhaps \textit{reflect} it. Concretely, take two copies of the number line, one above the other; align the $0$ points on both number lines, and stretch the lower number line evenly until the point $1$ on the lower number line is below the point $a$ on the upper number line---note that if $a<0$ then the number line must be reflected in order for this to happen. Then $a \cdot b$ is the point on the upper number line lying above $b$ on the lower number line.
-
-Here is an illustration of the fact that $5 \cdot 4 = 20$.
+\item \textbf{Multiplicação.} Este é divertido. Suponha que queiramos multiplicar um número real $a$ por um número real $b$. Para fazer isso, \textit{escala} a reta numérica e talvez a \textit{reflete}. Concretamente, faça duas cópias da reta numérica, uma acima da outra; alinhe os pontos $0$ em ambas as retas numéricas e estique a reta numérica inferior uniformemente até que o ponto $1$ na reta numérica inferior esteja abaixo do ponto $a$ na reta numérica superior --- observe que se $a<0$ então a reta numérica deve ser refletida para que isso aconteça. Então $a \cdot b$ é o ponto na reta numérica superior situado acima de $b$ na reta numérica inferior.
+ $5 \cdot 4 = 20$.
 
 \begin{center}
 \fitwidthc{0.9}{\begin{tikzpicture}
 % Adapted from http://tex.stackexchange.com/questions/148252/
-\draw[latex-latex] (-5.5,0) -- (8.5,0) ; 
+\draw[latex-latex] (-5.5,0) -- (8.5,0) ;
 \foreach \x in  {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}
 \draw[shift={(0.5*\x-4,0)}] (0pt,3pt) -- (0pt,-3pt);
 \foreach \x in {-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}
@@ -407,7 +407,7 @@ Here is an illustration of the fact that $5 \cdot 4 = 20$.
 \draw[*-*] (-1.58,0) -- (6.08,0);
 \draw[very thick] (-1.5,0) -- (6,0);
 
-\draw[latex-latex] (-5.5,-1) -- (8.5,-1) ; 
+\draw[latex-latex] (-5.5,-1) -- (8.5,-1) ;
 \foreach \x in  {0,1,2,3,4}
 \draw[shift={(2.5*\x-4,-1)},color=black] (0pt,3pt) -- (0pt,-3pt);
 \foreach \x in {0,1,2,3,4}
@@ -418,11 +418,11 @@ Here is an illustration of the fact that $5 \cdot 4 = 20$.
 \end{tikzpicture}}
 \end{center}
 
-and here is an illustration of the fact that $(-5) \cdot 4 = -20$:
+e aqui está uma ilustração do fato de que $(-5) \cdot 4 = -20$:
 \begin{center}
 \fitwidthc{0.9}{\begin{tikzpicture}
 % Adapted from http://tex.stackexchange.com/questions/148252/
-\draw[latex-latex] (-5.5,0) -- (8.5,0) ; 
+\draw[latex-latex] (-5.5,0) -- (8.5,0) ;
 \foreach \x in  {-22,-21,...,4}
 \draw[shift={(0.5*\x+6,0)}] (0pt,3pt) -- (0pt,-3pt);
 \foreach \x in {-22,-21,...,4}
@@ -430,7 +430,7 @@ and here is an illustration of the fact that $(-5) \cdot 4 = -20$:
 \draw[*-*] (-4.08,0) -- (3.58,0);
 \draw[very thick] (-4,0) -- (3.5,0);
 
-\draw[latex-latex] (-5.5,-1) -- (8.5,-1) ; 
+\draw[latex-latex] (-5.5,-1) -- (8.5,-1) ;
 \foreach \x in  {0,1,2,3,4}
 \draw[shift={(6-2.5*\x,-1)},color=black] (0pt,3pt) -- (0pt,-3pt);
 \foreach \x in {0,1,2,3,4}
@@ -443,59 +443,57 @@ and here is an illustration of the fact that $(-5) \cdot 4 = -20$:
 \end{itemize}
 
 \begin{exercise}
-Interpret the operations of subtraction and division as geometric transformations of the real number line.
-\end{exercise}
+Interprete as operações de subtração e divisão como transformações geométricas da reta numérica real.\end{exercise}
 
-We will take for granted the arithmetic properties of the real numbers in this chapter, waiting until \Cref{secInequalitiesMeans} to sink our teeth into the details. For example, we will take for granted the basic properties of rational numbers, for instance
+Tomaremos como certas as propriedades aritméticas dos números reais neste capítulo, esperando até \Cref{secInequalitiesMeans} para afundar nossos dentes nos detalhes. Por exemplo, tomaremos como certas as propriedades básicas dos números racionais, por exemplo
 \[ \frac{a}{b}+\frac{c}{d} = \frac{ad+bc}{bd} \quad \text{and} \quad \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} \]
 
-\subsection*{Rational and irrational numbers}
+\subsection*{Números Racionais e Irracionais}
 \label{pGettingStartedRationalNumbers}
 
-Before we can talk about irrational numbers, we should say what they are.
+Antes de podermos falar sobre números irracionais, devemos dizer o que são.
 
 \begin{definition}
 \label{defIrrationalNumber}
-\index{irrational number}
-An \textbf{irrational number} is a real number that is not rational.
+\index{numéro irracional}
+An \textbf{Número irracional}é um número que não é racional.
 \end{definition}
 
-Unlike $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$, there is no standard single letter expressing the irrational numbers. However, by the end of \Cref{secSetOperations}, we will be able to write the set of irrational numbers as `$\mathbb{R} \setminus \mathbb{Q}$'.
+Ao contrário de $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$, não existe uma única letra padrão que expresse os números irracionais. No entanto, até ao final de \Cref{secSetOperations}, seremos capazes de escrever o conjunto de números irracionais como `$\mathbb{R} \setminus \mathbb{Q}$'.
 
-Proving that a real number is \textit{irrational} is not particularly easy, in general. We will get our foot in the door by allowing ourselves to assume the following result, which is restated and proved in \Cref{propSqrt2Irrational}.
+Provar que um número real é \textit{irracional} não é particularmente fácil, em geral. Colocaremos o pé na porta permitindo-nos assumir o seguinte resultado, que é reafirmado e provado em \Cref{propSqrt2Irrational}.
 
 \begin{proposition}
 \label{propSqrt2IrrationalPreliminary}
-The real number $\sqrt{2}$ is irrational. \qed
+O número real $\sqrt{2}$ é irracional. \qed
 \end{proposition}
 
 % To do: include proof, note that we will prove that fractions can be cancelled to lowest terms later.
 
-We can use the fact that $\sqrt{2}$ is irrational to prove some facts about the relationship between rational numbers and irrational numbers.
+Podemos usar o fato de que $\sqrt{2}$ é irracional para provar alguns fatos sobre a relação entre números racionais e números irracionais.
 
 \begin{proposition}
-Let $a$ and $b$ be irrational numbers. It is possible that $ab$ be rational.
+Sejam $a$ e $b$ números irracionais. É possível que $ab$ seja racional.
 \end{proposition}
 
 \begin{cproof}
-Let $a=b=\sqrt{2}$. Then $a$ and $b$ are irrational, and $ab=2=\frac{2}{1}$, which is rational.
+Seja $a=b=\sqrt{2}$. Então $a$ e $b$ são irracionais,e $ab=2=\frac{2}{1}$, o que é racional.
 \end{cproof}
 
 \begin{exercise}
-Let $r$ be a rational number and let $a$ be an irrational number. Prove that it is possible that $ra$ be rational, and it is possible that $ra$ be irrational.
-\end{exercise}
+Seja $r$ um número racional e $a$ um número irracional. Prove que é possível que $ra$ seja racional, e é possível que $ra$ seja irracional.\end{exercise}
 
 % To do: set-builder notation and intervals
 
-\subsection*{Complex numbers ($\mathbb{C}$)}
+\subsection*{Números Complexos ($\mathbb{C}$)}
 
-We have seen that multiplication by real numbers corresponds with scaling and reflection of the number line---scaling alone when the multiplicand is positive, and scaling with reflection when it is negative. We could alternatively interpret this reflection as a \textit{rotation} by half a turn, since the effect on the number line is the same. You might then wonder what happens if we rotate by arbitrary angles, rather than only half turns.
+Vimos que a multiplicação por números reais corresponde ao escalonamento e reflexão da reta numérica – escalonamento sozinho quando o multiplicando é positivo, e escalonamento com reflexão quando é negativo. Poderíamos alternativamente interpretar esta reflexão como uma \textit{rotação} de meia volta, uma vez que o efeito na reta numérica é o mesmo. Você pode então se perguntar o que acontece se girarmos em ângulos arbitrários, em vez de apenas meias voltas.
 
-What we end up with is a \textit{plane} of numbers, not merely a line---see \Cref{figComplexNumbers}. Moreover, it happens that the rules that we expect arithmetic operations to satisfy still hold---addition corresponds with translation, and multiplication corresponds with scaling and rotation. This resulting number set is that of the \textit{complex numbers}.
+O que obtemos é um \textit{plano} de números, não apenas uma linha --- veja \Cref{figComplexNumbers}. Além disso, acontece que as regras que esperamos que as operações aritméticas satisfaçam ainda são válidas – a adição corresponde à translação e a multiplicação corresponde à escala e à rotação. Este conjunto de números resultante é o dos \textit{números complexos}.
 
 \begin{definition}
 \label{defComplexNumbersInformal}
-The \textbf{complex numbers} are those obtained by the non-negative real numbers upon rotation by any angle about the point $0$. We write $\mathbb{C}$ \inlatex{mathbb\{C\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} for the set of all complex numbers; thus, the notation `$z \in \mathbb{C}$' means that $z$ is a complex number.
+Os \textbf{números complexos} são aqueles obtidos pelos números reais não negativos após rotação de qualquer ângulo em torno do ponto $0$. Escrevemos $\mathbb{C}$ \inlatex{mathbb\{C\}}\lindexmmc{mathbb}{$\mathbb{A}, \mathbb{B}, \dots$} para o conjunto de todos os números complexos; portanto, a notação `$z \in \mathbb{C}$' significa que $z$ é um número complexo.
 \end{definition}
 
 \begin{figure}[p!]
@@ -531,92 +529,92 @@ The \textbf{complex numbers} are those obtained by the non-negative real numbers
 \draw (-3pt,-1) -- (3pt,-1);
 \end{tikzpicture}
 }
-\caption{Illustration of the complex plane, with some points labelled.}
+\caption{Ilustração do plano complexo, com alguns pontos rotulados.}
 \label{figComplexNumbers}
 \end{figure}
 
-There is a particularly important complex number, $i$, which is the point in the complex plane exactly one unit above $0$---this is illustrated in \Cref{figComplexNumbers}. Multiplication by $i$ has the effect of rotating the plane by a quarter turn anticlockwise. In particular, we have $i^2 = i \cdot i = -1$; the complex numbers have the astonishing property that square roots of \textit{all} complex numbers exist (including all the real numbers).
+Existe um número complexo particularmente importante, $i$, que é o ponto no plano complexo exatamente uma unidade acima de $0$ --- isso é ilustrado em \Cref{figComplexNumbers}. A multiplicação por $i$ tem o efeito de girar o plano um quarto de volta no sentido anti-horário. Em particular, temos $i^2 = i \cdot i = -1$; os números complexos têm a surpreendente propriedade de que existem raízes quadradas de \textit{todos} os números complexos (incluindo todos os números reais).
 
-In fact, every complex number can be written in the form $a+bi$, where $a,b \in \mathbb{R}$; this number corresponds with the point on the complex plane obtained by moving $a$ units to the right and $b$ units up, reversing directions as usual if $a$ or $b$ is negative. Arithmetic on the complex numbers works just as with the real numbers; in particular, using the fact that $i^2=-1$, we obtain
-\[ (a+bi)+(c+di) = (a+c)+(b+d)i \quad \text{and} \quad (a+bi) \cdot (c+di) = (ac-bd) + (ad+bc)i \]
+Na verdade, todo número complexo pode ser escrito na forma $a+bi$, onde $a,b \in \mathbb{R}$; este número corresponde ao ponto no plano complexo obtido movendo $a$ unidades para a direita e $b$ unidades para cima, invertendo as direções como de costume se $a$ ou $b$ for negativo. A aritmética nos números complexos funciona da mesma forma que nos números reais; em particular, usando o fato de que $i^2=-1$, obtemos
+\[ (a+bi)+(c+di) = (a+c)+(b+d)i \quad \text{e} \quad (a+bi) \cdot (c+di) = (ac -bd) + (anúncio+bc)i \]
 
-We will discuss complex numbers further in the portion of this chapter on polynomials below.
+Discutiremos números complexos mais detalhadamente na parte deste capítulo sobre polinômios abaixo.
 
-\subsection*{Polynomials}
+\subsection*{Polinômios}
 \label{pGettingStartedPolynomials}
 
-The natural numbers, integers, rational numbers, real numbers and complex numbers are all examples of \textit{semirings}, which means that they come equipped with nicely behaving notions of addition and multiplication.
+Os números naturais, inteiros, números racionais, números reais e números complexos são todos exemplos de \textit{semirings}, o que significa que eles vêm equipados com noções de adição e multiplicação bem comportadas.
 
 \begin{definition}
 \label{defPolynomialPreliminary}
-\index{polynomial}
-Let $\mathbb{S} = \mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ or $\mathbb{C}$. A (\textbf{univariate}) \textbf{polynomial over $\mathbb{S}$} in the \textbf{indeterminate} $x$ is an expression of the form
+\index{polinômios}
+Seja $\mathbb{S} = \mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ ou $\mathbb{C}$. Um (\textbf{univariado}) \textbf{polinômio sobre $\mathbb{S}$} no \textbf{indeterminado} $x$ é uma expressão da forma
 \[ a_0 + a_1x + \cdots + a_nx^n \]
-where $n \in \mathbb{N}$ and each $a_k \in \mathbb{S}$. The numbers $a_k$ are called the \textbf{coefficients} of the polynomial. If not all coefficients are zero, the largest value of $k$ for which $a_k \ne 0$ is called the \textbf{degree} of the polynomial. By convention, the degree of the polynomial $0$ is $-\infty$.
+onde $n \in \mathbb{N}$ e cada $a_k \in \mathbb{S}$. Os números $a_k$ são chamados de \textbf{coeficientes} do polinômio. Se nem todos os coeficientes forem zero, o maior valor de $k$ para o qual $a_k \ne 0$ é chamado de \textbf{grau} do polinômio. Por convenção, o grau do polinômio $0$ é $-\infty$.
 \end{definition}
 
-Polynomials of degree $1$, $2$, $3$, $4$ and $5$ are respectively called \textit{linear}, \textit{quadratic}, \textit{cubic}, \textit{quartic} and \textit{quintic} polynomials.
+Polinômios de grau $1$, $2$, $3$, $4$ e $5$ são respectivamente chamados \textit{lineares}, \textit{quadratic}, \textit{cubic}, \textit{quartic} and \textit{quintic} polynomials.
 
 \begin{example}
-The following expressions are all polynomials:
+As seguintes expressões são todas polinômios:
 \[ 3 \qquad 2x-1 \qquad (3+i)x^2-x \]
-Their degrees are $0$, $1$ and $2$, respectively. The first two are polynomials over $\mathbb{Z}$, and the third is a polynomial over $\mathbb{C}$.
+Seus diplomas são $0$, $1$ e $2$, respectivamente. Os dois primeiros são polinômios sobre $\mathbb{Z}$, e o terceiro é um polinômio sobre $\mathbb{C}$.
 \end{example}
 
 \begin{exercise}
-Write down a polynomial of degree $4$ over $\mathbb{R}$ which is not a polynomial over $\mathbb{Q}$.
+Escreva um polinômio de grau $4$ sobre $\mathbb{R}$ que não seja um polinômio sobre $\mathbb{Q}$.
 \end{exercise}
 
 \begin{notation}
-Instead of writing out the coefficients of a polynomial each time, we may write something like $p(x)$ or $q(x)$. The `$(x)$' indicates that $x$ is the indeterminate of the polynomial. If $\alpha$ is a number\footnote{When dealing with polynomials, we will typically reserve the letter $x$ for the indeterminate variable, and use the Greek letters $\alpha,\beta,\gamma$ \inlatex{alpha, \textbackslash{}beta, \textbackslash{}gamma} for numbers to be substituted into a polynomial.} and $p(x)$ is a polynomial in indeterminate $x$, we write $p(\alpha)$ for the result of \textbf{substituting} $\alpha$ for $x$ in the expression $p(x)$.
+Em vez de escrever os coeficientes de um polinômio todas as vezes, podemos escrever algo como $p(x)$ ou $q(x)$. O `$(x)$' indica que $x$ é o indeterminado do polinômio. Se $\alpha$ for um número\footnote{Ao lidar com polinômios, normalmente reservaremos a letra $x$ para a variável indeterminada e usaremos as letras gregas $\alpha,\beta,\gamma$ \inlatex{alpha, \textbackslash{}beta, \textbackslash{}gamma} para números a serem substituídos em um polinômio.} e $p(x)$ é um polinômio em $x$ indeterminado, escrevemos $p(\alpha)$ para o resultado de \textbf{substituir} $\alpha$ por $x$ na expressão $p(x)$.
 \end{notation}
 
-Note that, if $A$ is any of the sets $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ or $\mathbb{C}$, and $p(x)$ is a polynomial over $A$, then $p(\alpha) \in A$ for all $\alpha \in A$.
+Note que, se $A$ é qualquer um dos conjuntos $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ ou $\mathbb{C}$, e $p(x)$ é um polinômio sobre $A$, então $p(\alpha) \in A$ para toda $\alpha \in A$.
 
 \begin{example}
-Let $p(x)=x^3-3x^2+3x-1$. Then $p(x)$ is a polynomial over $\mathbb{Z}$ with indeterminate $x$. For any integer $\alpha$, the value $p(\alpha)$ will also be an integer. For example
+Seja $p(x)=x^3-3x^2+3x-1$. então $p(x)$ é um polinômio sobre $\mathbb{Z}$ com indeterminado $x$. Para qualquer número inteiro $\alpha$, o valor $p(\alpha)$ também será um número inteiro. Por exemplo
 \[ p(0) = 0^3-3 \cdot 0^2 + 3 \cdot 0 - 1 = -1 \quad \text{and} \quad p(3) = 3^3 - 3 \cdot 3^2 + 3 \cdot 3 - 1 = 8 \]
 \end{example}
 
 \begin{definition}
 \label{defRootOfPolynomial}
-\index{root}
-Let $p(x)$ be a polynomial. A \textbf{root} of $p(x)$ is a complex number $\alpha$ such that $p(\alpha)=0$.
+\index{raiz}
+Seja $p(x)$ m polinômio. Uma \textbf{raiz} de $p(x)$ é um número complexo $\alpha$ de tal modo que $p(\alpha)=0$.
 \end{definition}
 
-The \textit{quadratic formula} (\Cref{thmQuadraticFormula}) tells us that the roots of the polynomial $x^2+ax+b$, where $a,b \in \mathbb{C}$, are precisely the complex numbers
-\[ \frac{-a+\sqrt{a^2-4b}}{2} \quad \text{and} \quad \frac{-a-\sqrt{a^2-4b}}{2} \]
+A \textit{fórmula quadrática} (\Cref{thmQuadraticFormula}) nos diz que as raízes do polinômio $x^2+ax+b$, onde $a,b \in \mathbb{C}$, são precisamente o complexo números
+\[ \frac{-a+\sqrt{a^2-4b}}{2} \quad \text{e} \quad \frac{-a-\sqrt{a^2-4b}}{2} \]
 
-Note our avoidance of the symbol `$\pm$', which is commonly found in discussions of quadratic polynomials. The symbol `$\pm$' is dangerous because it may suppress the word `and' or the word `or', depending on context---this kind of ambiguity is not something that we will want to deal with when discussing the logical structure of a proposition in \Cref{chLogicalStructure}!
+Observe que evitamos o símbolo `$\pm$', que é comumente encontrado em discussões sobre polinômios quadráticos. O símbolo `$\pm$' é perigoso porque pode suprimir a palavra `e' ou a palavra `ou', dependendo do contexto --- este tipo de ambigüidade não é algo com o qual desejaremos lidar ao discutir a lógica estrutura de uma proposição em \Cref{chLogicalStructure}!
 
 \begin{example}
 \label{exApplicationOfQuadraticFormula}
-Let $p(x)=x^2-2x+5$. The quadratic formula tells us that the roots of $p$ are
+Seja $p(x)=x^2-2x+5$. A fórmula quadrática nos diz que as raízes de $p$ são
 \begin{center}
 $\dfrac{2 + \sqrt{4 - 4 \cdot 5}}{2} = 1 + \sqrt{-4} = 1+2i$
 \quad and \quad
 $\dfrac{2 - \sqrt{4 - 4 \cdot 5}}{2} = 1-\sqrt{-4} = 1-2i$
 \end{center}
-The numbers $1+2i$ and $1-2i$ are related in that their real parts are equal and their imaginary parts differ only by a sign. \Cref{exComplexNumberAsRootOfQuadraticOverR} generalises this observation.
+Os números $1+2i$ e $1-2i$ estão relacionados porque suas partes reais são iguais e suas partes imaginárias diferem apenas por um sinal. \Cref{exComplexNumberAsRootOfQuadraticOverR} generaliza esta observação.
 \end{example}
 
 \begin{exercise}
 \label{exComplexNumberAsRootOfQuadraticOverR}
-Let $\alpha = a+bi$ be a complex number, where $a,b \in \mathbb{R}$. Prove that $\alpha$ is the root of a quadratic polynomial over $\mathbb{R}$, and find the other root of this polynomial.
+Seja $\alpha = a+bi$ um número complexo, onde $a,b \in \mathbb{R}$. Prove que $\alpha$ é a raiz de um polinômio quadrático sobre $\mathbb{R}$ e encontre a outra raiz desse polinômio.
 \end{exercise}
 
-The following exercise proves the well-known result which classifies the number of real roots of a polynomial over $\mathbb{R}$ in terms of its coefficients.
+O exercício a seguir prova o conhecido resultado que classifica o número de raízes reais de um polinômio sobre $\mathbb{R}$ em termos de seus coeficientes.
 
 \begin{exercise}
 \label{exDiscriminantRealRoots}
-\index{discriminant}
-Let $a,b \in \mathbb{C}$ and let $p(x)=x^2+ax+b$. The value $\Delta=a^2-4b$ is called the \textbf{discriminant} of $p$. Prove that $p$ has two roots if $\Delta \ne 0$ and one root if $\Delta = 0$. Moreover, if $a,b \in \mathbb{R}$, prove that $p$ has no real roots if $\Delta < 0$, one real root if $\Delta = 0$, and two real roots if $\Delta > 0$.
+\index{discriminante}
+Seja $a,b \in \mathbb{C}$ e seja $p(x)=x^2+ax+b$. O valor $\Delta=a^2-4b$ é chamado de \textbf{discriminante} de $p$. Prove que $p$ tem duas raízes se $\Delta \ne 0$ e uma raiz se $\Delta = 0$. Além disso, se $a,b \in \mathbb{R}$, prove que $p$ não tem raízes reais se $\Delta < 0$, uma raiz real se $\Delta = 0$, e duas raízes reais se $ \Delta > 0$.
 \end{exercise}
 
 \begin{example}
-Consider the polynomial $x^2-2x+5$. Its discriminant is equal to $(-2)^2-4 \cdot 5 = -16$, which is negative. \Cref{exDiscriminantRealRoots} tells us that it has two roots, neither of which are real. This was verified by \Cref{exApplicationOfQuadraticFormula}, where we found that the roots of $x^2-2x+5$ are $1+2i$ and $1-2i$.
+Considere o polinômio $x^2-2x+5$. Seu discriminante é igual a $(-2)^2-4 \cdot 5 = -16$, que é negativo. \Cref{exDiscriminantRealRoots} nos diz que tem duas raízes, nenhuma das quais é real. Isto foi verificado por \Cref{exApplicationOfQuadraticFormula}, onde descobrimos que as raízes de $x^2-2x+5$ are $1+2i$ e $1-2i$.
 
-Now consider the polynomial $x^2-2x-3$. Its discriminant is equal to $(-2)^2-4\cdot(-3) = 16$, which is positive. \Cref{exDiscriminantRealRoots} tells us that it has two roots, both of which are real; and indeed
+Agora considere o polinômio $x^2-2x-3$. Seu discriminante é igual a $(-2)^2-4\cdot(-3) = 16$, o que é positivo. \Cref{exDiscriminantRealRoots} nos diz que tem duas raízes, ambas reais; e realmente
 \[ x^2-2x-3 = (x+1)(x-3) \]
-so the roots of $x^2-2x-3$ are $-1$ and $3$.
+então as raízes de $x^2-2x-3$ são $-1$ e $3$.
 \end{example}
