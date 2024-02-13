@@ -264,7 +264,7 @@ Alguns conceitos familiares, como par e impar, podem ser caracterizados em termo
 \index{Inteiro!´impar}
 Um inteiro $n$ é \textbf{par} se é divisível por $2$; de outra forma, $n$ é \textbf{impar}.
 \end{definition}
-Não é apenas interessante saber quando um inteiro \textit{divide} outro; entretanto, provar que um inteiro \textit{não} divide outro é muito mais difícil. Na verdade, para provar que um inteiro $b$ não divide um inteiro $a$, devemos provar que $a \ne qb$ para \textit{qualquer} inteiro $q$. Veremos métodos para fazer isso em \Cref{chLogicalStructure}; esses métodos usam o seguinte resultado extremamente importante, que será a base de toda a \Cref{chNumberTheory}.
+Não é apenas interessante saber quando um inteiro \textit{divide} outro; entretanto, provar que um inteiro \textit{não} divide outro é muito mais difícil. Na verdade, para provar que um inteiro $b$ não divide um inteiro $a$, devemos provar que $a \ne qb$ para \textit{qualquer} inteiro $q$. Veremos métodos para fazer isso em \Cref{chLogicalStructure}; esses métodos usam o seguinte resultado extremamente importante, que será a base de todo o \Cref{chNumberTheory}.
 
 \begin{theorem}[Teorema da divisão, para ser repetido in \Cref{thmDivisionTheorem}]
 \label{thmDivisionPreliminary}
@@ -289,26 +289,26 @@ Suponha um número inteiro $a$ deixa um resto de $r$ quando dividido por um núm
 \begin{cproof}
 Suponha que $a$ deixa um resto de $r$ quando dividido por $b$. Então
 \[ a=qb+r \]
-Para algum número inteiro $q$. Um pouco de rendimento de álgebra
+Para algum número inteiro $q$. Um pouco de álgebra nos dá
 \[ -a = -qb-r = -qb-r+(b-b) = -(q+1)b + (b-r) \]
-Since $0<r<b$, Nós temos $0<b-r<b$. Por isso $-(q+1)$ é o quociente de $-a$ quando dividido por $b$, e $b-r$ é o restante.
+Com $0<r<b$, nós temos $0<b-r<b$. Por isso $-(q+1)$ é o quociente de $-a$ quando dividido por $b$, e $b-r$ é o restante.
 \end{cproof}
 
 \begin{exercise}
-Prove que se um inteiro $a$ deixa um resto de $r$ quando dividido por um inteiro $b$, então $a$ deixa um resto de $r$ quando dividido por $-b$.
+Prove que se um inteiro $a$ deixa um resto $r$ quando dividido por um inteiro $b$, então $a$ deixa um resto de $r$ quando dividido por $-b$.
 \end{exercise}
 
 Terminaremos esta parte sobre divisão de inteiros conectando-a com o material em bases numéricas --- podemos usar o teorema da divisão (\Cref{thmDivisionPreliminary}) para encontrar a expansão de base $b$ de um determinado número natural. É baseado na seguinte observação: o número natural $n$ cuja expansão de base $b$ é $d_rd_{r-1} \cdots d_1 d_0$ é igual a
 \[ d_0 + b(d_1 + b(d_2 + \cdots + b(d_{r-1} + bd_r) \cdots)) \]
 Além disso, $0 \le d_i < b$ para todo $i$. Em particular, $n$ deixa um resto de $d_0$ quando dividido por $b$. Por isso
 \[ \frac{n-d_0}{b} = d_1 + d_2b + \cdots + d_rb^{r-1} \]
-A base -b $b$ expansão de $\frac{n-d_0}{b}$ é portanto
+A expansão de base $b$ de $\frac{n-d_0}{b}$ é portanto
 \[ d_rd_{r-1} \cdots d_1 \]
-Em outras palavras, o resto de $n$ quando dividido por $b$ é o último dígito de base $b$ de $n$, e então subtrair esse número de $n$ e dividir o resultado por $b$ trunca o final dígito. Repetir esse processo nos dá $d_1$, e depois $d_2$, e assim por diante, até chegarmos a $0$.
+Em outras palavras, o resto de $n$ quando dividido por $b$ é o último dígito de base $b$ de $n$, e então subtrair esse número de $n$ e dividir o resultado por $b$ trunca o dígito final. Repetir esse processo nos dá $d_1$, e depois $d_2$, e assim por diante, até chegarmos a $0$.
 Isso sugere o seguinte algoritmo para calcular a expansão de base $b$ de um número $n$:
 \begin{itemize}
 \item \textbf{Passo 1.} SeJA $d_0$ seja o resto quando $n$ é dividido por $b$, e Seja $n_0=\frac{n-d_0}{b}$ seja o quociente. Consertar $i=0$.
-\item \textbf{Step 2.} Suponha $n_i$ e $d_i$ foram definidos. Se $n_i=0$, em seguida, prossiga para o Passo 3. Por outro lado define $d_{i+1}$ o seja o resto quando $n_i$ é dividido por $b$ e defina $n_{i+1} = \frac{n_i-d_{i+1}}{b}$. Aumente $i$ e repita a Etapa 2.
+\item \textbf{Step 2.} Suponha $n_i$ e $d_i$ foram definidos. Se $n_i=0$, em seguida, prossiga para o Passo 3. Senão, defina $d_{i+1}$ como resto quando $n_i$ é dividido por $b$ e defina $n_{i+1} = \frac{n_i-d_{i+1}}{b}$. Incremente $i$ e repita a Etapa 2.
 \item \textbf{Etapa 3.} A expansão base-$b$ de $n$ é
 \[ d_id_{i-1} \cdots d_0 \]
 \end{itemize}
@@ -320,7 +320,7 @@ Calculamos a expansão de base $17$ de $15213$, usando as letras $\mathrm{A}$--$
 \item $894 = 52 \cdot 17 + 10$, então $d_1=10 = \mathrm{A}$ e $n_1=52$.
 \item $52 = 3 \cdot 17 + 1$, então $d_2 = 1$ and $n_2=3$.
 \item $3 = 0 \cdot 17 + 3$, então $d_3 = 3$ e $n_3=0$.
-\item A base -$17$ expansão de $15213$ é portanto $31\mathrm{AF}$.
+\item A expansão base -$17$ de $15213$ é portanto $31\mathrm{AF}$.
 \end{itemize}
 Uma rápida verificação
 \[ 31\mathrm{AF}_{(17)} = 3 \cdot 17^3 + 1 \cdot 17^2 + 10 \cdot 17 + 15 = 15213 \]
@@ -355,7 +355,7 @@ Os números racionais são um exemplo muito importante de um tipo de estrutura a
 
 \subsection*{Números reais ($\mathbb{R}$)}
 
-Quantidade e mudança podem ser medidas abstratamente usando \textit{números reais}.
+Quantidade e mudança podem ser medidas de forma abstrata usando \textit{números reais}.
 
 \begin{definition}
 \label{defRealsInformal}
@@ -363,7 +363,7 @@ Os \textbf{números reais} são os pontos na reta numérica. Escrevemos $\mathbb
 
 \end{definition}
 
-Os números reais são centrais para a análise real, um ramo da matemática introduzido em \Cref{chRealNumbers}. Eles transformam os racionais em um \textit{continuum} ao `preencher as lacunas'---especificamente, eles têm a propriedade de \textit{completude}, o que significa que se uma quantidade pode ser aproximada com precisão arbitrária por números reais, então essa quantidade é em si um número real.
+Os números reais são centrais para a análise real, um ramo da matemática introduzido em \Cref{chRealNumbers}. Eles transformam os racionais em um \textit{continuo} ao `preencher as lacunas'---especificamente, eles têm a propriedade de \textit{completude}, o que significa que se uma quantidade pode ser aproximada com precisão arbitrária por números reais, então essa quantidade é em si um número real.
 
 Podemos definir as operações aritméticas básicas (adição, subtração, multiplicação e divisão) sobre os números reais, e uma noção de ordenação dos números reais, em termos da reta numérica infinita.
 \begin{itemize}
