@@ -445,7 +445,7 @@ e aqui está uma ilustração do fato de que $(-5) \cdot 4 = -20$:
 \begin{exercise}
 Interprete as operações de subtração e divisão como transformações geométricas da reta numérica real.\end{exercise}
 
-Tomaremos como certas as propriedades aritméticas dos números reais neste capítulo, esperando até \Cref{secInequalitiesMeans} para afundar nossos dentes nos detalhes. Por exemplo, tomaremos como certas as propriedades básicas dos números racionais, por exemplo
+Tomaremos como certas as propriedades aritméticas dos números reais neste capítulo, esperando até \Cref{secInequalitiesMeans} para nos aprofundamos nos detalhes. Por exemplo, tomaremos como certas as propriedades básicas dos números racionais, por exemplo
 \[ \frac{a}{b}+\frac{c}{d} = \frac{ad+bc}{bd} \quad \text{and} \quad \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} \]
 
 \subsection*{Números Racionais e Irracionais}
@@ -456,12 +456,12 @@ Antes de podermos falar sobre números irracionais, devemos dizer o que são.
 \begin{definition}
 \label{defIrrationalNumber}
 \index{numéro irracional}
-An \textbf{Número irracional}é um número que não é racional.
+Um \textbf{Número irracional} é um número que não é racional.
 \end{definition}
 
 Ao contrário de $\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$, não existe uma única letra padrão que expresse os números irracionais. No entanto, até ao final de \Cref{secSetOperations}, seremos capazes de escrever o conjunto de números irracionais como `$\mathbb{R} \setminus \mathbb{Q}$'.
 
-Provar que um número real é \textit{irracional} não é particularmente fácil, em geral. Colocaremos o pé na porta permitindo-nos assumir o seguinte resultado, que é reafirmado e provado em \Cref{propSqrt2Irrational}.
+Provar que um número real é \textit{irracional} não é particularmente fácil, em geral. Por hora vamos assumir o seguinte resultado, que é reafirmado e provado em \Cref{propSqrt2Irrational}.
 
 \begin{proposition}
 \label{propSqrt2IrrationalPreliminary}
@@ -536,7 +536,7 @@ Os \textbf{números complexos} são aqueles obtidos pelos números reais não ne
 Existe um número complexo particularmente importante, $i$, que é o ponto no plano complexo exatamente uma unidade acima de $0$ --- isso é ilustrado em \Cref{figComplexNumbers}. A multiplicação por $i$ tem o efeito de girar o plano um quarto de volta no sentido anti-horário. Em particular, temos $i^2 = i \cdot i = -1$; os números complexos têm a surpreendente propriedade de que existem raízes quadradas de \textit{todos} os números complexos (incluindo todos os números reais).
 
 Na verdade, todo número complexo pode ser escrito na forma $a+bi$, onde $a,b \in \mathbb{R}$; este número corresponde ao ponto no plano complexo obtido movendo $a$ unidades para a direita e $b$ unidades para cima, invertendo as direções como de costume se $a$ ou $b$ for negativo. A aritmética nos números complexos funciona da mesma forma que nos números reais; em particular, usando o fato de que $i^2=-1$, obtemos
-\[ (a+bi)+(c+di) = (a+c)+(b+d)i \quad \text{e} \quad (a+bi) \cdot (c+di) = (ac -bd) + (anúncio+bc)i \]
+\[ (a+bi)+(c+di) = (a+c)+(b+d)i \quad \text{and} \quad (a+bi) \cdot (c+di) = (ac-bd) + (ad+bc)i \]
 
 Discutiremos números complexos mais detalhadamente na parte deste capítulo sobre polinômios abaixo.
 
@@ -558,7 +558,7 @@ Polinômios de grau $1$, $2$, $3$, $4$ e $5$ são respectivamente chamados \text
 \begin{example}
 As seguintes expressões são todas polinômios:
 \[ 3 \qquad 2x-1 \qquad (3+i)x^2-x \]
-Seus diplomas são $0$, $1$ e $2$, respectivamente. Os dois primeiros são polinômios sobre $\mathbb{Z}$, e o terceiro é um polinômio sobre $\mathbb{C}$.
+Seus graus são $0$, $1$ e $2$, respectivamente. Os dois primeiros são polinômios sobre $\mathbb{Z}$, e o terceiro é um polinômio sobre $\mathbb{C}$.
 \end{example}
 
 \begin{exercise}
@@ -582,10 +582,10 @@ Seja $p(x)=x^3-3x^2+3x-1$. então $p(x)$ é um polinômio sobre $\mathbb{Z}$ com
 Seja $p(x)$ m polinômio. Uma \textbf{raiz} de $p(x)$ é um número complexo $\alpha$ de tal modo que $p(\alpha)=0$.
 \end{definition}
 
-A \textit{fórmula quadrática} (\Cref{thmQuadraticFormula}) nos diz que as raízes do polinômio $x^2+ax+b$, onde $a,b \in \mathbb{C}$, são precisamente o complexo números
+A \textit{fórmula quadrática} (\Cref{thmQuadraticFormula}) nos diz que as raízes do polinômio $x^2+ax+b$, onde $a,b \in \mathbb{C}$, são precisamente os números complexos
 \[ \frac{-a+\sqrt{a^2-4b}}{2} \quad \text{e} \quad \frac{-a-\sqrt{a^2-4b}}{2} \]
 
-Observe que evitamos o símbolo `$\pm$', que é comumente encontrado em discussões sobre polinômios quadráticos. O símbolo `$\pm$' é perigoso porque pode suprimir a palavra `e' ou a palavra `ou', dependendo do contexto --- este tipo de ambigüidade não é algo com o qual desejaremos lidar ao discutir a lógica estrutura de uma proposição em \Cref{chLogicalStructure}!
+Observe que evitamos o símbolo `$\pm$', que é comumente encontrado em discussões sobre polinômios quadráticos. O símbolo `$\pm$' é perigoso porque pode suprimir a palavra `e' ou a palavra `ou', dependendo do contexto --- este tipo de ambigüidade não é algo com o qual desejaremos lidar ao discutir a estrutura lógica de uma proposição em \Cref{chLogicalStructure}!
 
 \begin{example}
 \label{exApplicationOfQuadraticFormula}
