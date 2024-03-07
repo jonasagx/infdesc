@@ -1,0 +1,5434 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{quote}
+Uma descida infinita em Matemática Pura
+
+\emph{∞∞∞∞∞∞∞}\\
+...
+\end{quote}
+
+POR CLIVE NEWSTEAD\\
+\emph{Com adaptações de Jonas Galvao Xavier/Tradução por George Galvao
+Moreira}
+
+\emph{Última atualização em Thursday 7thMarch 2024}
+
+Trabalho Original © 2023 Clive Newstead, Todos Direitos Reservados.
+Adaptatações © 2024 Jonas Galvao Xavier, Todos Direitos Reservados.
+
+Prévia da Primeira Edição(Em breve)
+
+ISBN 978-1-950215-00-3 (Brochura)\\
+ISBN 978-1-950215-01-0 (Capa dura)
+
+Uma cópia gratuita de \emph{Uma Descida Infinita Em Matemática Pura}
+pode ser obtido através do site do livro:
+
+Este livro, suas figuras e fontes TEX são lançadas sob uma atribuição
+cri-ativa internacional "Creative Commons Attribution--ShareAlike 4.0
+In-ternational Licence". O texto completo da licença está replicado no
+fim do livro, e pode ser achada no site Creative Commons:
+
+\begin{quote}
+\emph{Para meus Pais,}\\
+\emph{Imogen e Matthew (1952--2021),}\\
+\emph{Que me ensinaram tanto.}
+\end{quote}
+
+\textbf{Contents}
+
+\textbf{Preface} \textbf{vii}
+
+\textbf{Reconhecimentos} \textbf{xiii}
+
+\textbf{0} \textbf{Começando} \textbf{1}
+
+\begin{quote}
+0.E Chapter 0 exercises . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . 20
+\end{quote}
+
+\textbf{I} \textbf{Conceitos centrais} \textbf{23}
+
+v
+
+vi \emph{Contents}
+
+\textbf{Apêndice} \textbf{27}
+
+\textbf{A Miscelânea matemática} \textbf{27}
+
+\begin{quote}
+A.1 Definir fundamentos teóricos . . . . . . . . . . . . . . . . . . . .
+. . . 28
+
+A.2 Construções dos conjuntos de números . . . . . . . . . . . . . . . .
+. . 29
+
+A.3 Limites de funções . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . 47
+\end{quote}
+
+\textbf{B} \textbf{Dicas para exercícios selecionados} \textbf{51}
+
+\textbf{Indices} \textbf{55}
+
+\textbf{Índice de tópicos} \textbf{55}
+
+\textbf{Índice de vocabulário} \textbf{55}
+
+\textbf{Índice de notação} \textbf{57}
+
+\textbf{Índices de comandos LATEX} \textbf{57}
+
+\textbf{Licence} \textbf{61}
+
+vi
+
+\textbf{Prefácio}
+
+Olá, e obrigado por tirar tempo pra ler essa rápida introdução à
+\emph{Uma Descida Infinita em Pura Matemática}! A versão mais recente do
+livro, em inglês, está gratuitamente disponível para download no
+seguinte site:
+
+O site também inclui informações sobre mudanças entre diferentes versões
+do livro, um arquivo de versões prévias, e alguns recursos para usar
+LATEX (veja também \textbf{??}).
+
+\textbf{Sobre o livro}
+
+Um estudante em uma típica classe de cálculo vai aprender sobre a "regra
+da cadeia" e posteriormente a como usa-lá para resolver alguns problemas
+pré-escritos de "regra da cadeia" assim como calcular a derivada de
+sin(1 + \emph{x}2) com respeito a \emph{x}, ou talvez re-solver um
+problema de palavras envolvendo taxas de variação relacionadas a
+mudança. A expectativa é que o estudante aplique corretamente a regra da
+cadeia para derivar a re-sposta correta, e mostrar trabalho suficiente
+para ser crível . Nesse sentido, o estudante é um \emph{consumidor} da
+matemática. Eles recebem a regra da cadeia como uma ferramenta, a ser
+aceita sem questionamento, para então resolver um grupo pequeno de
+problemas.
+
+O objetivo desse livro é ajudar o leitor a fazer a transição: de um
+\emph{consumidor} da matemática para um \emph{produtor} dela. É isso que
+significa `pura' matemática. Enquanto um consumidor da matemática pode
+aprender a regra da cadeia e usa-la para calcular uma derivada, um
+produtor da matemática pode derivar a regra da cadeia a partir de uma
+rigorosa definição de uma derivada, e então provar mais versões
+abstratas da regra da cadeia em contextos mais gerais (como análise
+multivariável).
+
+Dos consumidores da matemática é esperado que digam como usaram suas
+ferramentas para encontrar suas respostas. Produtores da matemática, por
+outro lado, tem muito mais a fazer: Eles precisam estar prontos para
+acompanhar as definições e hipóteses,
+
+vii
+
+viii \emph{Prefácio}
+
+juntar os dados em novas e interessantes formas, e fazer suas próprias
+definições de conceitos matemáticos. Ainda mais, uma vez que eles
+fizeram isso, eles devem comu-nicar suas descobertas de uma forma que
+outros considerem inteligível, e eles precisam convencer outros que
+aquilo que eles fizeram está correto, apropriado e que vale a pena.
+
+É essa a transição do consumo para produção de matemática que guiou os
+princípios usados para planejar e escrever esse livro. Em particular:
+
+• \textbf{Comunicação.} Acima de tudo, este livro visa ajudar o leitor a
+obter alfabetização matemática e se expressar matematicamente. Isso
+ocorre em muitos níveis de ampli-ação. Por exemplo, considere a seguinte
+expressão:
+
+\emph{∀x ∈} R\emph{,} {[}\emph{¬}(\emph{x} = 0) \emph{⇒} (\emph{∃y ∈}
+R\emph{, y}2\emph{\textless{} x}2){]}
+
+\begin{quote}
+Depois de trabalhar com esse livro, você será capaz de dizer o que os
+símbolos \emph{∀}, \emph{∈}, R, \emph{¬}, \emph{⇒} e \emph{∃} significam
+intuitivamente e como eles são definidos precisamente. Mas você terá
+também que saber interpretar o que a expressão significa como um todo,
+explicar o que significa em termos simples para que outra pessoa entenda
+\emph{sem} usar símbolos confusos, provar que aquilo é verdade, e
+comunicar sua prova para outra pessoa de uma forma clara e concisa.
+
+Os tipos de ferramentas necessárias para fazer isso estão desenvolvidas
+nos capítulos principais do livro, e mais foco é dado para o lado
+escrito das coisas em \textbf{??}.
+\end{quote}
+
+• \textbf{Inquérito.} As pessoas aprendem mais quando elas descobrem as
+coisas por elas mesmas. Usando esse principio ao extremo o livro estaria
+em branco. No entanto, eu acredito que é importante incorporar aspectos
+da aprendizagem baseada em invest-igação no texto.
+
+\begin{quote}
+Este principio manifesta-se na medida que existem exercícios espalhados
+pelo texto, muitos dos quais simplesmente requerem que você prove um
+resultado. Muitos leitores vão achar isso frustrante, mas isso é por um
+bom motivo: esses exercícios servem como pontos de controle para
+garantir que seu entendimento desse material é suficiente para proceder.
+Aquele sentimento de frustração é o que se chamaria de aprendizado ---
+abrace-o!
+\end{quote}
+
+• \textbf{Estrategia.} Uma prova matemática é muito parecida com um
+quebra-cabeça. Em qualquer fase dada em uma prova, você vai ter algumas
+definições, premissas e res-ultados que estão disponíveis para ser
+usados, e você precisa junta-los usando as re-gras lógicas à sua
+disposição. Por todo livro, e particularmente nos primeiros capítu-los,
+eu fiz um esforço para destacar estratégias úteis de prova em qualquer
+lugar que elas surjam.
+
+• \textbf{Conteúdo.} Não há muito sentido em aprender matemática se você
+não tem nenhum conceito para prova. Com isso em mente, \textbf{??}
+inclui vários capítulos dedicados à introdução de algumas áreas
+temáticas em matemática pura, tanto quanto teoria dos números,
+combinatórias, análise e teoria da probabilidade.
+
+viii
+
+\emph{Prefácio} ix
+
+• \textbf{LATEX.} O \emph{de facto} padrão para composição matemática é
+o LATEX. Eu acho que é importante para matemáticos aprender sobre ele
+cedo de uma forma guiada, então eu escrevi um breve tutorial no
+\textbf{??} e inclui código LATEX para toda nova notação conforme
+definida ao longo do livro.
+
+\textbf{Navegando o livro}
+
+Esse livro não precisa, e enfaticamente \emph{não deve}, ser lido de
+frente para trás. A ordem desse material foi escolhida de forma que o
+material que aparece depois depende apenas do material que aparece
+antes, mas seguir o material na ordem que é apresentado pode ser uma
+experiência bastante seca.
+
+A maioria do cursos introdutórios de matemática pura abrange, no mínimo,
+lógica simbólica, conjuntos, funções e relações. Este material é o
+conteúdo do Part I. Tais cursos frequentemente abrangem tópicos
+adicionais da matemática pura, com exata-mente \emph{quais} tópicos
+dependendo do que o curso está preparando os estudantes. Com isso em
+mente, \textbf{??} serve como uma introdução para uma gama de áreas de
+matemática pura, incluindo teoria dos números, combinatórias, teoria dos
+conjuntos, análise real, teoria das probabilidade e teoria da ordem.
+
+Não é necessário cobrir toda a Part I antes de seguir os tópicos na
+\textbf{??}. Na verdade, intercalar material da \textbf{??} pode ser uma
+maneira útil de motivar muitos dos conceitos abstratos que surgem na
+Part I.
+
+A seguinte tabela mostra dependências entre seções. Seções prévias
+dentro do mesmo capítulo que uma seção deveria ser considerado
+`essencial' pré-requisitos, a menos que indicado de outra forma.
+
+ix
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+x
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Prefácio}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Parte}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Seção}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Essencial}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Recomendado}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{útil}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{I} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}
+\end{quote}\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} &
+\multirow{4}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} &
+\multirow{4}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{??} & \textbf{??} & \multirow{2}{*}{\textbf{??}, \textbf{??}} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{??}, \textbf{??}
+\end{quote}
+\end{minipage} & \textbf{??} \\
+\bottomrule()
+\end{longtable}
+\end{minipage} \\
+\textbf{??} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}\\
+\textbf{??}
+\end{quote}\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}, \textbf{??}
+\end{minipage} &
+\multirow{3}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} \\
+& \multirow{4}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} \\
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} \\
+& & \multirow{3}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{??}, \textbf{??}
+\end{quote}
+\end{minipage} \\
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage}} \\
+& & \multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}, \textbf{??}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{??}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{??} & \multirow{4}{*}{\textbf{??}, \textbf{??}} &
+\multirow{6}{*}{\textbf{??}} \\
+\textbf{??} \\
+\textbf{??} \\
+\multirow{2}{*}{\textbf{??}} \\
+& \multirow{2}{*}{\textbf{??}} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{??}, \textbf{??}
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+Pré-requisitos são cumulativos. Por exemplo, a fim de cobrir
+\textbf{??}, você deveria primeiro cobrir 0--\textbf{??} e
+\textbf{????????}.
+
+\textbf{O que os números, cores e símbolos significam}\\
+Falando amplamente, o material nesse livro está fragmentado em itens
+enumerados que em em uma de cinco categorias: definições, resultados,
+observações, exemplos e exercí-cios. Na \textbf{??}, nós também temos
+extratos de provas. Para melhorar navegabilidade, essas categorias são
+distintas por nome, cor e símbolo, como indicado na seguinte tabela.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Categoria}
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Símbolo}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Cor}
+\end{minipage} \\
+\midrule()
+\endhead
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Definições
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+✦} & \textbf{Vermelho} \\
+Resultados &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+✣} & \textbf{Azul} \\
+Observações &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+❖} & \textbf{Roxo} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Categoria}
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+\textbf{Símbolo}} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Cor}
+\end{quote}
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Exemplos
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+✐} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Verde}
+\end{quote}
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Exercícios
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+✎} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Dourado}
+\end{quote}
+\end{minipage} \\
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Extratos de provas
+\end{quote}
+\end{minipage}} & ❝ & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Verde}
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+Estes itens estão enumerados de acordo com próprias seções ---por
+exemplo, \textbf{??} é em \textbf{??}. Definições e teoremas (Resultados
+importantes) aparecem em uma caixa .
+
+x
+
+\begin{quote}
+\emph{Prefácio} xi
+
+Você também vai encontrar os símbolos □ e ◁ cujos significados são os
+seguintes:
+\end{quote}
+
+□ \textbf{Fim de uma prova.} É um padrão em documentos matemáticos para
+identifi- car quando uma prova acabou por desenhar um pequeno quadrado
+ou por escre- ver `\emph{Q.E.D.}' (Este último significa \emph{quod erat
+demonstrandum}, que é latin para \emph{que} \emph{deveria ser
+mostrado}.)
+
+◁ \textbf{Fim do item.} Isso \emph{não é} um uso padrão, e está incluído
+apenas para ajudá-lo a identificar quando um item foi concluído e o
+conteúdo principal do livro continua.
+
+\begin{quote}
+Algumas subjeções são rotuladas com o símbolo \emph{⋆}. Isso indica que
+o material dessa subseção pode ser ignorada sem consequências drásticas.
+
+\textbf{Licença}
+
+Este livro está licenciado sob Creative Commons Attribution-ShareAlike
+4.0 (CC BY-SA 4.0) licence. Isso significa que você está convidado a
+compartilhar o conteúdo desse livro,desde que você dê crédito ao autor e
+que qualquer cópia ou derivados desde livro sejam liberados sob a mesma
+licença.
+
+A licenca pode ser lida em sua totalidade no final do livro ou seguindo
+o URL:
+
+\textbf{Comentários e correções}
+
+Qualquer feedback, seja de alunos, professores assistentes, instrutores
+ou quaisquer outros leitores, será muito apreciado. Particularmente
+úteis são correções de erros tipo-gráficos, sugestões de formas
+alternativas de descrever conceitos ou provar teoremas e solicitações de
+novos conteúdos. (e.g. se você conhecer um bom exemplo que possa
+ilustrar um conceito,ou se tiver um conceito relevante que você
+desejaria ver nesse livro).
+
+Tal feedback pode ser mandado para o autor e adaptador por email (clive@
+infinitedescent.xyz e jonas.agx@gmail.com, respectivamente).
+\end{quote}
+
+xi
+
+xii \emph{Prefácio}
+
+xii
+
+\textbf{Reconhecimentos}
+
+Quando reflito sobre o tempo que passei escrevendo este livro, fico
+impressionado com o número de pessoas que tiveram algum tipo de
+influência em seu conteúdo.
+
+Este livro nunca teria existido se não fosse pelo curso 38-801 de Chad
+Hershock\emph{Ensinos Baseados em Evidências ciêntificas},No qual fiz no
+outono de 2014 como estudante de pós-graduação na Carnegie Mellon
+University. Seu curso influenciou fortemente minha abordagem de ensino
+e, em primeiro lugar, motivou-me a escrever este livro. Muitas das
+decisões pedagógicas que tomei ao escrever este livro foram informadas
+por pesquisas às quais fui exposto quando era aluno da turma de Chad.
+
+O lendário professor da Carnegie Mellon, John Mackey, tem usado este
+livro (em vários formatos) como notas de curso para 21-128
+\emph{Conceitos Matemáticos e Provas} e 15-151 \emph{Fudamentos
+Matemáticos da Ciência da Computação} Desde o outono de 2016. Sua
+influência pode ser sentida ao longo de todo o livro: graças às
+discussões com John, muitas provas foram reformuladas, seções
+reestruturadas e explicações melhoradas. Como resultado, há alguma
+sobreposição entre os exercícios deste livro e as questões nas folhas de
+problemas. Estou extremamente grato por seu apoio contínuo.
+
+Steve Awodey, que foi meu orientador de tese de doutorado, tem sido uma
+fonte de inspiração para mim há muito tempo. Muitas das escolhas que fiz
+ao escolher como apresentar o material deste livro baseiam-se no meu
+desejo de fazer matemática. \emph{O caminho certo}---foi esse desejo que
+me levou a estudar a teoria das categorias e, por fim, a me tornar aluno
+de doutorado de Steve. Aprendi muito com ele e apreciei muito sua
+paciência e flexibilidade em ajudar a direcionar minha pesquisa, apesar
+de minha agenda lotada de ensino e de meus interesses extracurriculares
+(como escrever este livro).
+
+Talvez sem o conhecimento deles, muitas conversas esclarecedoras com as
+seguintes pessoas ajudaram a moldar o material deste livro de uma forma
+ou de outra: Jeremy Avigad, Deb Brandon, Santiago Cañez, Heather Dwyer,
+Thomas Forster, Will Gunther, Kate Hamilton, Jessica Harrell, Bob
+Harper, Brian Kell, Marsha Lovett, Ben Millwood,
+
+xiii
+
+xiv \emph{Reconhecimentos}
+
+David Offner, Ruth Poproski, Emily Riehl, Hilary Schuldt, Gareth Taylor,
+Katie Walsh, Emily Weiss e Andy Zucker.
+
+Uma rede \emph{Stack Exchange} influenciou o desenvolvimento deste livro
+de duas maneiras importantes. Primeiro, sou um membro ativo do
+\emph{Mathematics Stack Exchange} () desde o início de 2012 e aprendi
+muito sobe maneira eficaz; ocasionalmente, uma pergunta sobre
+Mathematics Stack Exchange me inspira a adicionar um novo exemplo ou
+exercício ao livro. Em segundo lugar, tenho feito uso frequente do
+\emph{LATEX Stack Exchange} () para implementar alguns dos aspectos mais
+técAEX .
+
+O Departamento de Ciências Matemáticas da Carnegie Mellon University
+apoiou-me academicamente, profissionalmente e financeiramente ao longo
+do meu doutoramento e me apresentou mais oportunidades do que eu poderia
+esperar para me desenvolver como professor. Este apoio é agora
+continuado pelo Departamento de Matemática da Northwestern University,
+onde trabalho atualmente como professor.
+
+Gostaria também de agradecer a todos nos centros de ensino da Carnegie
+Mellon e da Northwestern, no Eberly Center e no Searle Center,
+respectivamente. Através de vários workshops, programas e bolsas em
+ambos os centros de ensino, aprendi muito sobre como as pessoas aprendem
+e transformei-me como professor. Sua abordagem da ciência do ensino e da
+aprendizagem, centrada no aluno e baseada em evidências, está subjacente
+a tudo o que faço como professor, inclusive ao escrever este livro ---
+sua influência não pode ser subestimada.
+
+Finalmente, e mais importante, sou grato aos mais de 1.000 alunos que já
+usaram este livro para aprender matemática. Cada vez que um aluno entra
+em contato comigo para tirar uma dúvida ou apontar um erro, o livro fica
+melhor; isso se reflete nas dezenas de erros tipográficos que foram
+corrigidos como consequência.
+
+\begin{quote}
+Clive Newstead\\
+Janeiro de 2020\\
+Evanston, Illinois
+\end{quote}
+
+xiv
+
+\begin{quote}
+Chapter 0
+
+\textbf{Começando}
+
+Antes de podermos começar a provar coisas, precisamos eliminar certos
+tipos de afirm-ações que poderíamos tentar provar. Considere a seguinte
+afirmação:
+\end{quote}
+
+\emph{Essa sentença é falsa.}
+
+\begin{quote}
+Isso e verdadeiro ou falso? Se você pensar sobre isso por alguns
+segundos, você ficará em apuros.
+
+Agora considere a seguinte sentença :
+\end{quote}
+
+\emph{O burro mais feliz do mundo.}
+
+\begin{quote}
+Isso e verdadeiro ou falso? Bem, não é nem uma frase; não faz sentido
+nem \emph{perguntar} se é verdadeiro ou falso!
+
+É claro que estaremos desperdiçando nosso tempo tentando escrever provas
+de afirm-ações como as duas listadas acima -- precisamos restringir
+nosso escopo a afirmações que possamos realmente ter uma chance de
+provar (ou talvez refutar)! Isso motiva a seguinte definição (informal).
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.1}\\
+Uma \textbf{proposição} é a declaração na qual é possível atribuir a
+\textbf{Valor verdadeiro} (`ver-dadeiro' ou `falso'). Se uma proposição
+é verdadeira, uma \textbf{prova} da preposição é um argumento
+logicamente válido que demonstra que é verdadeiro, apresentado a um
+nível tal que um membro do público-alvo possa verificar a sua
+veracidade.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+1
+
+\begin{quote}
+2 \emph{Capítulo 0. Começando}
+
+Assim, as afirmações dadas acima são proposições porque não há forma
+possível de lhes atribuir um valor de verdade. Observe que, em
+Definition 0.0.1, tudo o que importa é que \emph{faz sentido} dizer que
+é verdadeiro ou falso, independentemente de realmente \emph{ser}
+verdadeiro ou falso --- o valor de verdade de muitas proposições é
+desconhecida, mesmo as muito simples.
+\end{quote}
+
+✎ \textbf{Exercise 0.0.2}\\
+Pense em um exemplo de proposição verdadeira, de proposição falsa, de
+proposição cujo valor de verdade você não conhece e de uma afirmação que
+não é uma proposição.
+
+◁
+
+\begin{quote}
+Os resultados em artigos e livros didáticos de matemática podem ser
+chamados de \emph{pro-posições}, mas também podem ser chamados de
+\emph{teoremas}, \emph{lemas} ou \emph{corolários} depend-endo do uso
+pretendido.
+
+• Uma \textbf{proposição} é um termo abrangente que pode ser usado para
+qualquer resultado.
+
+• Um \textbf{teorema} é um resultado chave que é particularmente
+importante.
+
+• Um \textbf{lema} é um resultado que é provado com o propósito de ser
+usado na prova de um teorema.
+
+• Um \textbf{corolário} é um resultado que segue de um teorema sem muito
+esforço adicional.
+
+Estas não são definições precisas e não pretendem ser --- você poderia
+chamar cada resultado de \emph{proposição} se quisesse --- mas usar
+essas palavras apropriadamente ajuda os leitores a descobrir como ler um
+artigo. Por exemplo, se você quiser apenas folhear um artigo e encontrar
+seus principais resultados, procure resultados rotulados como
+\emph{teoremas}.
+
+Não adianta muito tentar provar resultados se não temos nada para provar
+os resulta-dos. Com isso em mente, apresentaremos agora os
+\emph{conjuntos de números} e provaremos alguns resultados sobre eles no
+contexto de quatro tópicos, a saber: divisão de inteiros, bases
+numéricas, números racionais e irracionais e polinômios. Estes tópicos
+forne-cerão contexto para o material em Part I, e servirão como uma
+introdução aos tópicos abordados em \textbf{??}.
+
+Não nos aprofundaremos muito neste capítulo. Em vez disso, pense nisso
+como um exercício de aquecimento -- uma introdução rápida e leve, com
+mais provas a serem fornecidas no restante do livro.
+\end{quote}
+
+2
+
+\begin{quote}
+\emph{Capítulo 0. Começando} 3
+
+\textbf{Conjuntos}
+
+Fundamental para a matemática é a noção de \emph{conjunto}. Estudaremos
+conjuntos detalha-damente em \textbf{??}, mas você os encontrará em
+todos os capítulos do livro, então levaremos algum tempo para pensar
+sobre eles agora. Não trataremos conjuntos formalmente neste estágio --
+por enquanto, a definição a seguir será o suficiente.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.3} (a ser revisado em \textbf{??})\\
+Um \textbf{conjunto} é uma coleção de objetos. Os objetos nesse conjunto
+são chamados \textbf{elementos} do conjunto. Se \emph{X} é um conjunto e
+\emph{x} é um objeto, então escrevemos \emph{x ∈ X} (LATEX code: x
+\textbackslash{} in X) para denotar a afirmação que \emph{x} é um
+elemento de \emph{X}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Os conjuntos que nos interessam em primeiro lugar são os \emph{conjuntos
+de números}---isto é, conjuntos cujos elementos são tipos particulares
+de \emph{número}. Neste nível introdutório, muitos detalhes serão
+temporariamente varridos para debaixo do tapete; trabalharemos com um
+nível de precisão apropriado ao nosso estágio atual, mas que ainda nos
+permita desenvolver uma quantidade razoável de intuição.
+
+Então aqui vamos nós. Aqui está uma linha infinita:
+
+\includegraphics[width=4.33333in,height=\textheight]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image1.png}
+
+As setas indicam que se supõe que se estenda em ambas as direções sem
+fim. Os pontos na linha representarão números (especificamente,
+\emph{números reais}, um termo enganoso que será definido em Definition
+0.0.25).
+
+Agora vamos fixar um ponto nesta linha e rotulá-lo `0':
+\end{quote}
+
+0
+
+\begin{quote}
+\includegraphics[width=4.33333in,height=\textheight]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image2.png}
+
+Este ponto pode ser considerado como uma representação do número zero; é
+o ponto contra o qual todos os outros números serão medidos. Os números
+à esquerda de 0 na reta numérica são considerados \emph{negativos}, e os
+à direita são \emph{positivos}; 0 em si não é positivo nem negativo.
+
+Finalmente, vamos fixar uma unidade de comprimento:
+
+Esta unidade de comprimento será utilizada, entre outras coisas, para
+comparar até que ponto os outros números diferem de zero.
+\end{quote}
+
+3
+
+\includegraphics[width=4.875in,height=1.88889in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image3.png}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+4
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Capítulo 0. Começando}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.4}\\
+Uma linha infinita acima, junto com seu ponto zero fixo e comprimento
+unitário fixo, constituem a (\textbf{real})\textbf{linha
+numérica}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Usaremos a reta numérica para construir cinco conjuntos de números de
+nosso interesse: o conjunto N de \emph{números naturais} (Definition
+0.0.5), o conjunto Z de \emph{inteiros} (Defini-tion 0.0.11), o conjunto
+Q de \emph{números racionais} (Definition 0.0.24), o R de \emph{números
+reais} (Definition 0.0.25), e
+
+Cada um desses conjuntos tem um caráter diferente e é usado para
+propósitos diferentes, como veremos mais adiante neste capítulo e ao
+longo deste livro.
+
+\textbf{Números Naturais (}N\textbf{)}
+
+Os \emph{números naturais} são os números usados para contar---são as
+respostas a questões da forma `quantos'---por exemplo, tenho \emph{três}
+tios, \emph{três} guinéus porcos e \emph{zero} gatos.
+
+Contar é uma habilidade que os humanos possuem há muito tempo; sabemos
+disso porque há evidências de pessoas que usaram marcadores há dezenas
+de milhares de anos. As marcas de contagem fornecem um método de contar
+números pequenos: começando do zero, prossiga pelos objetos que deseja
+contar um por um e faça uma marca para cada objeto. Quando terminar,
+haverá tantas marcas quantos objetos. Somos ensinados desde pequenos a
+contar com os dedos; este é outro exemplo de fazer marcas de registro,
+onde agora, em vez de fazer uma marca, levantamos um dedo.
+
+Fazer uma marca representa um \emph{incremento} na quantidade --- isto
+é, adicionar um. Na nossa reta numérica, podemos representar um
+incremento na quantidade movendo para a direita pela unidade de
+comprimento. Então, a distância do zero que nos move-mos, que é igual ao
+número de vezes que nos movemos para a direita pela unidade de
+comprimento, é portanto, igual ao número de objetos que estão sendo
+contados.
+\end{quote}
+
+✦ \textbf{Definition 0.0.5}\\
+Os \textbf{números naturais} são representados pelos pontos na reta
+numérica que podem ser obtidos começando em 0 e movendo-se para a
+direita pela unidade de comprimento qualquer número de vezes:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Em termos mais familiares, eles são \emph{os números inteiros não
+negativos}. Nós escrevemos N (LATEX code: \textbackslash mathbb\{N\})
+para o conjunto de todos os números naturais; assim, a notação `\emph{n
+∈} N' significa que \emph{n} é um número natural.
+\end{quote}
+
+4
+
+\emph{Capítulo 0. Começando} 5
+
+Os números naturais possuem uma estrutura matemática muito importante e
+interess-ante, e são centrais no material em \textbf{??}. Uma
+caracterização mais precisa dos números naturais será fornecida em
+\textbf{??}, e uma construção matemática do conjunto de números naturais
+pode ser encontrada em Section A.1 (ver Construction A.2.5). No centro
+des-tas caracterizações mais precisas estarão as noções de ``zero'' e de
+``adicionar um'' -- tal como fazer marcas de contagem.
+
+Alguns autores definem os números naturais como sendo os números
+inteiros \emph{positivos}, excluindo assim o zero. Consideramos 0 um
+número natural, pois nosso principal uso dos números naturais será para
+contar conjuntos finitos, e um conjunto sem nada é cer-tamente finito!
+Dito isto, como acontece com qualquer definição matemática, a escolha
+sobre se 0 \emph{∈} N ou 0 \emph{̸∈} N é uma questão de gosto ou
+conveniência, e é apenas uma convenção --- não é algo que possa ser
+provado ou refutado.
+
+\textbf{Bases Numéricas}
+
+Escrever números é algo que pode parecer fácil para você agora, mas
+provavelmente levou vários anos quando criança para realmente entender o
+que estava acontecendo. Historicamente, existiram muitos sistemas
+diferentes para representar números simbol-icamente, chamados
+\emph{sistemas numéricos}. Primeiro veio o mais primitivo de todos, os
+marcadores de contagem, aparecendo na Idade da Pedra e ainda sendo
+usados para alguns propósitos hoje. Milhares de anos e centenas de
+sistemas de numeração de-pois, existe um sistema de numeração dominante,
+compreendido em todo o mundo: o \textbf{sistema de numeração
+hindu-árabe}. Este sistema de numeração consiste em dez símbolos,
+chamados \emph{dígitos}. É um sistema numérico \emph{posicional}, o que
+significa que a posição de um símbolo em uma cadeia determina seu valor
+numérico.
+
+Em inglês, os \emph{algarismos arábicos} são usados como os dez dígitos:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+9
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+O dígito mais à direita em uma cadeia está na casa das unidades e o
+valor de cada dígito aumenta por um fator de dez movendo-se para a
+esquerda. Por exemplo, quando escrevemos `2812', o `2' mais à esquerda
+representa o número dois mil, enquanto o último `2' representa o número
+dois.
+
+O fato de existirem dez dígitos e de o sistema numérico ser baseado em
+potências de dez é um acidente biológico que corresponde ao fato de a
+maioria dos humanos ter dez dedos. Para muitos propósitos, isso é
+inconveniente. Por exemplo, dez não tem muitos divisores positivos
+(apenas quatro: 1, 2, 5 e 10) --- isto tem implicações para a facilidade
+de realizar aritmética; um sistema baseado no número doze, que possui
+seis divisores positivos (1, 2, 3, 4, 6 e 12), pode ser mais
+conveniente. Outro exemplo é na computação e na eletrônica digital, onde
+é mais conveniente trabalhar em um
+
+5
+
+\begin{quote}
+6 \emph{Capítulo 0. Começando}
+
+sistema \emph{binário}, com apenas dois dígitos ---0 e 1---que
+representam `off' e `on' ( ou«baixa tensão» e «alta tensão»),
+respetivamente; a aritmética pode então ser realizada diretamente usando
+sequências de \emph{portas lógicas} em um circuito elétrico.
+
+Portanto, vale a pena ter alguma compreensão dos sistemas numéricos
+posicionais baseados em números diferentes de dez. A abstração
+matemática que fazemos leva à definição de \emph{expansão base-b}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.6}\\
+Seja \emph{b} um número natural maior que 1. A \textbf{base-}\emph{b}
+\textbf{expansão} de um número natural \emph{n} é a\emph{a}cadeia
+\emph{drdr−}1 \emph{...d}0 tal que:
+
+\begin{quote}
+(i) \emph{n} = \emph{dr ·br}+\emph{dr−}1
+\emph{·br−}1+\emph{···}+\emph{d}0 \emph{·b}0;\\
+(ii) 0 ⩽ \emph{di \textless{} b} para cada \emph{i}; e
+
+(iii) If \emph{n \textgreater{}} 0 então \emph{dr ̸}= 0---a base de
+expansão-\emph{b} de zero é 0 em todas as bases \emph{b}.
+
+Certas bases numéricas têm nomes; por exemplo, as expansões base 2, 3,
+8, 10 e 16 são chamadas respectivamente de \emph{binário},
+\emph{ternário}, \emph{octal}, \emph{decimal} e \emph{hexadecimal}.
+
+\emph{a}Essa frase é problemática, pois assume que todo número natural
+tem apenas uma base-\emph{b} expansão. Na verdade, esse fato requer
+prova --- veja \textbf{??}.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Antes de olharmos um exemplo de Definition 0.0.6 em ação, vamos examinar
+a defin-ição, que é um pouco concisa à primeira vista.
+
+• Condição (i) nos diz que os dígitos na cadeia nos dizem quantos de
+cada potência de \emph{b} são somados para obter \emph{n}. Por exemplo,
+quando \emph{b} = 10, os dígitos da direita para a esquerda indicam as
+unidades, dezenas, centenas, milhares e assim por diante.
+
+• Condição (ii) nos diz que os dígitos em uma expansão de base \emph{b}
+devem ser menores que \emph{b} --- por exemplo, os dígitos de base 4 são
+0, 1, 2 e 3. Se permitíssemos mais dígitos, então coisas bobas
+aconteceriam --- por exemplo, se `X' fosse um novo dígito de base 10
+representando o número dez, então `X2' e `102' seriam cadeias
+diferentes, ambas representando o número cento e dois.
+
+• Condição (iii) garante que a cadeia que representa um número positivo
+não tenha nenhum `0' inicial --- caso contrário, por exemplo, `01423' e
+`1423' seriam cadeias diferentes representando o mesmo número natural.
+\end{quote}
+
+✐ \textbf{Example 0.0.7}\\
+Considere o número 1023. Sua expansão decimal (base-10) é 1023, já que
+
+1023 = 1\emph{·}103+0\emph{·}102+2\emph{·}101+3\emph{·}100
+
+6
+
+\begin{quote}
+\emph{Capítulo 0. Começando} 7
+
+Sua expansão binária (base-2) é 1111111111, já que
+
+1023 =
+1\emph{·}29+1\emph{·}28+1\emph{·}27+1\emph{·}26+1\emph{·}25+1\emph{·}24+1\emph{·}23+1\emph{·}22+1\emph{·}21+1\emph{·}20
+
+Podemos expressar números na base 36 usando os dez dígitos usuais de 0 a
+9 e as vinte e seis letras de A a Z; por exemplo, A representa 10, M
+representa 22 e Z representa 35.
+
+A expansão de base 36 de 1023 é SF, já que:
+\end{quote}
+
+1023 = 28\emph{·}361+15\emph{·}360= S\emph{·}361+F\emph{·}360
+
+◁
+
+✎ \textbf{Exercise 0.0.8}\\
+Encontre as expansões binária, ternária, octal, decimal, hexadecimal e
+de base 36 do número 21127, usando as letras A--F como dígitos
+adicionais para a expansão hexa- decimal ( representando os números
+10--15, respectivamente) e as letras A--Z como dígitos adicionais para a
+expansão da base 36. ◁
+
+\begin{quote}
+Às vezes desejamos especificar um número natural em termos de sua
+expansão de base \emph{b}; temos alguma notação para isso.
+
+✦ \textbf{Notation 0.0.9}\\
+Seja \emph{b \textgreater{}} 1. Se os números
+\emph{d}0\emph{,d}1\emph{,...,dr} são dígitos base-\emph{b} (no sentido
+de Defini-tion 0.0.6), então nós escrevemos:
+
+\emph{drdr−}1 \emph{...d}0(\emph{b}) = \emph{dr ·br}+\emph{dr−}1
+\emph{·br−}1+\emph{···}+\emph{d}0 \emph{·b}0
+
+para o número natural cuja expansão de base \emph{b} é \emph{drdr−}1
+\emph{...d}0. Se não houver subscrito (\emph{b}) e uma base não for
+especificada explicitamente, a expansão será assumida como base-10.
+\end{quote}
+
+✐ \textbf{Example 0.0.10}\\
+Usando nossa nova notação,nós temos:
+
+\begin{quote}
+1023 = 1111111111(2) = 1101220(3) = 1777(8) = 1023(10) = 3FF(16) =
+SF(36)
+\end{quote}
+
+◁
+
+\begin{quote}
+\textbf{Inteiros (}Z\textbf{)}
+
+\emph{inteiros} podem ser usados para medir a diferença entre dois
+números naturais. Por exemplo, suponha que eu tenha cinco maçãs e cinco
+bananas. Outra pessoa, também segurando maçãs e bananas, deseja
+negociar. Após a nossa troca, tenho sete maçãs e apenas uma banana.
+Assim, tenho mais duas maçãs e quatro bananas a menos.
+\end{quote}
+
+7
+
+\includegraphics[width=4.875in,height=1.79167in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image4.png}
+
+\begin{quote}
+8 \emph{Capítulo 0. Começando}
+
+Como um incremento na quantidade pode ser representado movendo-se para a
+direita na reta numérica pela unidade de comprimento, um
+\emph{decremento} na quantidade pode, portanto, ser representado
+movendo-se para a \emph{esquerda} pela unidade de comprimento. Fazer
+isso dá origem aos inteiros.
+\end{quote}
+
+✦ \textbf{Definition 0.0.11}\\
+Os \textbf{inteiros} são representados pelos pontos na reta numérica que
+podem ser obtidos começando em 0 e movendo-se em qualquer direção pela
+unidade de comprimento qualquer número de vezes:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Nós escrevemos Z (LATEX code: \textbackslash mathbb\{Z\}) para o
+conjunto de todos os inteiros; portanto,a notação `\emph{n ∈} Z'
+significa que \emph{n} é um inteiro.
+
+Os inteiros têm uma estrutura tão fascinante que um capítulo inteiro
+deste livro é ded-icado a eles --- veja \textbf{??}. Isso tem a ver com
+o fato de que, embora seja possível somar, subtrair e multiplicar dois
+números inteiros e obter outro número inteiro, o mesmo não acontece com
+a divisão. Este ``mau comportamento'' da divisão é o que torna os
+números inteiros interessantes. Veremos agora alguns resultados básicos
+sobre divisão.
+
+\textbf{Divisão de Inteiros}
+
+A motivação que daremos em breve para a definição dos números racionais
+(Defini-tion 0.0.24) é que o resultado da divisão de um inteiro por
+outro inteiro não é neces-sariamente outro inteiro. Contudo, o resultado
+é \emph{às vezes} outro número inteiro; por exemplo, posso dividir seis
+maçãs entre três pessoas e cada pessoa receberá um número inteiro de
+maçãs. Isto torna a divisão interessante: como podemos medir o fracasso
+da divisibilidade de um número inteiro por outro? Como podemos deduzir
+quando um número inteiro é divisível por outro? Qual é a estrutura do
+conjunto de inteiros quando visto pelas lentes da divisão? Isso motiva
+Definition 0.0.12.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.12} (Para ser repetido in \textbf{??})\\
+Seja \emph{a,b ∈} Z. Dizemos \emph{b} \textbf{divide} \emph{a} se
+\emph{a} = \emph{qb} para algum inteiro \emph{q}. Existem muitas outras
+maneiras de dizer que \emph{b} divide \emph{a}, como: \emph{a} é
+\emph{divisível por b}, \emph{b} é um \emph{divisor} de \emph{a},
+\emph{b} é um \emph{fator} de \emph{a}, ou \emph{a} é um \emph{múltiplo}
+de \emph{b}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Observe que, talvez de forma contraintuitiva, a definição de
+divisibilidade não envolve a operação aritmética de divisão: ela é
+definida em termos de multiplicação.
+\end{quote}
+
+8
+
+\begin{quote}
+\emph{Capítulo 0. Começando} 9
+\end{quote}
+
+✐ \textbf{Example 0.0.13}\\
+O inteiro 12 é divisível por 1, 2, 3, 4, 6 e 12, desde que
+
+\begin{quote}
+12 = 12\emph{·}1 = 6\emph{·}2 = 4\emph{·}3 = 3\emph{·}4 = 2\emph{·}6 =
+1\emph{·}12\\
+Também é divisível pelos negativos de todos esses números; por exemplo,
+12 é divisível por \emph{−}3 desde que 12 =
+(\emph{−}4)\emph{·}(\emph{−}3). ◁
+\end{quote}
+
+✎ \textbf{Exercise 0.0.14}\\
+Prove que 1 divide todo número inteiro e que todo número inteiro divide
+0. ◁
+
+\begin{quote}
+Uma consequência de Exercise 0.0.14 é que 0 é divisível por 0. Isto é
+surpreendente: durante toda a nossa vida ouvimos que não podemos dividir
+por zero, mas agora descobrimos que podemos dividir zero por zero como
+pode ser isso? Isso destaca por que era tão importante que a definição
+de divisibilidade (Definition 0.0.12) fosse dada em termos de
+multiplicação, sem usar a operação de divisão: dizer que 0 divide 0
+sig-nifica simplesmente que 0 pode ser multiplicado por um inteiro para
+obter 0 (o que é verdade)---mas isso não implica que a expressão
+`\uline{0 0}' possa (ou deva) ser definida de forma significativa.
+
+usando Definition 0.0.12, podemos provar alguns fatos básicos gerais
+sobre a divisibil-idade.
+
+✣ \textbf{Proposition 0.0.15}\\
+Seja \emph{a,b,c ∈} Z. Se \emph{c} divide \emph{b} e \emph{b} divide
+\emph{a}, então \emph{c} divide \emph{a}.
+
+\emph{\textbf{Proof}}\\
+Suponha que \emph{c} divide \emph{b} e \emph{b} divide \emph{a}. Por
+Definition 0.0.12, segue que
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{b} = \emph{qc}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+e
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{a} = \emph{rb}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+para alguns inteiros \emph{q} e \emph{r}. Usando a primeira equação,
+podemos substituir \emph{qc} por \emph{b} na segunda equação, para
+obter\\
+\emph{a} = \emph{r}(\emph{qc})
+
+Mas \emph{r}(\emph{qc}) = (\emph{rq})\emph{c}, e \emph{rq} é um número
+inteiro, então segue de Definition 0.0.12 que \emph{c} divide \emph{a}.
+□
+\end{quote}
+
+✎ \textbf{Exercise 0.0.16}\\
+Sejam \emph{a,b,d ∈} Z. Suponha que \emph{d} divide \emph{a} e \emph{d}
+divide \emph{b}. Dados inteiros \emph{u} e \emph{v}, prove que \emph{d}
+divide \emph{au}+\emph{bv}. ◁
+
+\begin{quote}
+Alguns conceitos familiares, como par e impar, podem ser caracterizados
+em termos de divisibilidade.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.17}\\
+Um inteiro \emph{n} é \textbf{par} se é divisível por 2; de outra forma,
+\emph{n} é \textbf{impar}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+9
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+10
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Capítulo 0. Começando}
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Não é apenas interessante saber quando um inteiro \emph{divide} outro;
+entretanto, provar que um inteiro \emph{não} divide outro é muito mais
+difícil. Na verdade, para provar que um inteiro \emph{b} não divide um
+inteiro \emph{a}, devemos provar que \emph{a ̸}= \emph{qb} para
+\emph{qualquer} inteiro \emph{q}. Veremos métodos para fazer isso em
+\textbf{??}; esses métodos usam o seguinte resultado extremamente
+importante, que será a base de toda a \textbf{??}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Theorem 0.0.18} (Teorema da divisão, para ser repetido in
+\textbf{??}) Seja \emph{a,b ∈} Z com \emph{b ̸}= 0. Existe exatamente
+uma maneira de escrever
+
+\emph{a} = \emph{qb}+\emph{r}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+de tal modo que \emph{q} e \emph{r} são inteiros, e 0 ⩽ \emph{r
+\textless{} b} (se \emph{b \textgreater{}} 0) ou 0 ⩽ \emph{r \textless{}
+−b} (se \emph{b \textless{}} 0).
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+O número \emph{q} em Theorem 0.0.18 é chamado o \textbf{quociente} de
+\emph{a} quando dividido por \emph{b}, e o número \emph{r} é chamado o
+\textbf{restante}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✐ \textbf{Example 0.0.19}\\
+O número 12 deixa um restante de 2 quando dividido por 5, desde que 12 =
+2\emph{·}5+2.\strut
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+◁
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Aqui está um exemplo um pouco mais complicado.
+
+✣ \textbf{Proposition 0.0.20}\\
+Suponha um número inteiro \emph{a} deixa um resto de \emph{r} quando
+dividido por um número inteiro \emph{b}, e que \emph{r \textgreater{}}
+0. Então \emph{−a} deixa um resto de \emph{b−r} quando dividido por
+\emph{b}.
+\end{quote}
+
+\emph{\textbf{Proof}}\\
+Suponha que \emph{a} deixa um resto de \emph{r} quando dividido por
+\emph{b}. Então\\
+\emph{a} = \emph{qb}+\emph{r}\\
+Para algum número inteiro \emph{q}. Um pouco de rendimento de álgebra\\
+\emph{−a} = \emph{−qb−r} = \emph{−qb−r} +(\emph{b−b}) =
+\emph{−}(\emph{q}+1)\emph{b}+(\emph{b−r})\\
+Since 0 \emph{\textless{} r \textless{} b}, Nós temos 0
+\emph{\textless{} b − r \textless{} b}. Por isso \emph{−}(\emph{q} + 1)
+é o quociente de \emph{−a} quando dividido por \emph{b}, e \emph{b−r} é
+o restante. □✎ \textbf{Exercise 0.0.21}\\
+Prove que se um inteiro \emph{a} deixa um resto de \emph{r} quando
+dividido por um inteiro \emph{b}, então \emph{a} deixa um resto de
+\emph{r} quando dividido por \emph{−b}. ◁
+
+\begin{quote}
+Terminaremos esta parte sobre divisão de inteiros conectando-a com o
+material em bases numéricas --- podemos usar o teorema da divisão
+(Theorem 0.0.18) para encon-trar a expansão de base \emph{b} de um
+determinado número natural. É baseado na seguinte observação: o número
+natural \emph{n} cuja expansão de base \emph{b} é \emph{drdr−}1
+\emph{···d}1\emph{d}0 é igual a \emph{d}0 +\emph{b}(\emph{d}1
++\emph{b}(\emph{d}2 +\emph{···}+\emph{b}(\emph{dr−}1
++\emph{bdr})\emph{···}))\\
+10
+
+\emph{Capítulo 0. Começando} 11
+
+Além disso, 0 ⩽ \emph{di \textless{} b} para todo \emph{i}. Em
+particular, \emph{n} deixa um resto de \emph{d}0 quando dividido por
+\emph{b}. Por isso
+
+\emph{n−d}0 \emph{b} = \emph{d}1
++\emph{d}2\emph{b}+\emph{···}+\emph{drbr−}1
+
+A base -b \emph{b} expansão de\emph{\uline{n}\sout{−}\uline{d}}\uline{0
+\emph{b }} é portanto
+
+\emph{drdr−}1 \emph{···d}1\\
+Em outras palavras, o resto de \emph{n} quando dividido por \emph{b} é o
+último dígito de base \emph{b} de \emph{n}, e então subtrair esse número
+de \emph{n} e dividir o resultado por \emph{b} trunca o final dígito.
+Repetir esse processo nos dá \emph{d}1, e depois \emph{d}2, e assim por
+diante, até chegarmos a 0. Isso sugere o seguinte algoritmo para
+calcular a expansão de base \emph{b} de um número \emph{n}:
+
+• \textbf{Passo 1.} Seja \emph{d}0 seja o resto quando \emph{n} é
+dividido por \emph{b}, e Seja \emph{n}0
+=\emph{\uline{n}\sout{−}\uline{d}}\uline{0 \emph{b }} seja o quociente.
+Conserte \emph{i} = 0.
+
+• \textbf{Step 2.} Suponha \emph{ni} e \emph{di} foram definidos. Se
+\emph{ni} = 0, em seguida, prossiga para o Passo 3. Por outro lado
+define \emph{di}+1 o seja o resto quando \emph{ni} é dividido por
+\emph{b} e defina \emph{ni}+1
+=\emph{n\uline{i}\sout{−}d\uline{i}}\uline{+1 \emph{b }} . Aumente
+\emph{i} e repita a Etapa 2.
+
+• \textbf{Etapa 3.} A expansão base-\emph{b} de \emph{n} é
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✐ \textbf{Example 0.0.22}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{didi−}1 \emph{···d}0
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Calculamos a expansão de base 17 de 15213, usando as letras A--G para
+representar os números 10 até 16.
+
+• 15213 = 894\emph{·}17+15, então \emph{d}0 = 15 = F e \emph{n}0 = 894.•
+894 = 52\emph{·}17+10, então \emph{d}1 = 10 = A e \emph{n}1 = 52.• 52 =
+3\emph{·}17+1, então \emph{d}2 = 1 and \emph{n}2 = 3.
+
+• 3 = 0\emph{·}17+3, então \emph{d}3 = 3 e \emph{n}3 = 0.
+
+• A base -17 expansão de 15213 é portanto 31AF.
+
+Uma rápida verificação
+
+31AF(17) = 3\emph{·}173+1\emph{·}172+10\emph{·}17+15 = 15213
+
+como desejado. ◁
+\end{quote}
+
+✎ \textbf{Exercise 0.0.23}\\
+Encontre a expansão de base 17 de 408735787 e a expansão de base 36 de
+1442151747. ◁
+
+11
+
+\includegraphics[width=4.875in,height=1.95833in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image5.png}
+
+\begin{quote}
+12 \emph{Capítulo 0. Começando}
+
+\textbf{Números Racionais (}Q\textbf{)}
+
+Cansado de comer maçã e banana, compro uma pizza dividida em oito
+fatias. Um amigo e eu decidimos dividir a pizza. Não tenho muito
+apetite, então como três fatias e meu amigo come cinco. Infelizmente,
+não podemos representar a proporção da pizza que cada um de nós comeu
+usando números naturais ou inteiros. Porém, não estamos muito longe:
+podemos contar o número de partes iguais em que a pizza foi dividida e,
+dessas partes, podemos contar quantas tivemos. Na reta numérica, isso
+poderia ser representado dividindo o segmento de reta unitária de 0 a 1
+em oito partes iguais e procedendo a partir daí. Este tipo de
+procedimento dá origem aos \emph{números racionais}.
+\end{quote}
+
+✦ \textbf{Definition 0.0.24}\\
+Os \textbf{números racionais} são representados pelos pontos na reta
+numérica que podem ser obtidos dividindo qualquer um dos segmentos da
+reta unitária entre inteiros em um número igual de partes.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{−}1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Os números racionais são aqueles da forma\emph{a b}, onde \emph{a,b ∈} Z
+e \emph{b ̸}= 0. Escrevemos Q (LATEX code: \textbackslash mathbb\{Q\})
+para o conjunto de todos os números racionais; portanto, a notação
+`\emph{q ∈} Q' significa que \emph{q} é um número racional.
+
+Os números racionais são um exemplo muito importante de um tipo de
+estrutura al-gébrica conhecida como \emph{campo} --- eles são
+particularmente centrais para a teoria al-gébrica dos números e para a
+geometria algébrica.
+
+\textbf{Números reais (}R\textbf{)}
+
+Quantidade e mudança podem ser medidas abstratamente usando
+\emph{números reais}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.25}\\
+Os \textbf{números reais} são os pontos na reta numérica. Escrevemos R
+(LATEX code: \textbackslash mathbb\{R\}) para o conjunto de todos os
+números reais; portanto, a notação `\emph{a ∈} R'significa que \emph{a}
+é um número real.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Os números reais são centrais para a análise real, um ramo da matemática
+introduzido em \textbf{??}. Eles transformam os racionais em um
+\emph{continuum} ao `preencher as lacunas'---especificamente, eles têm a
+propriedade de \emph{completude}, o que significa que se uma
+\end{quote}
+
+12
+
+\emph{Capítulo 0. Começando} 13
+
+quantidade pode ser aproximada com precisão arbitrária por números
+reais, então essa
+
+quantidade é em si um número real.
+
+Podemos definir as operações aritméticas básicas (adição, subtração,
+multiplicação e
+
+divisão) sobre os números reais, e uma noção de ordenação dos números
+reais, em
+
+termos da reta numérica infinita.
+
+• \textbf{Ordenando.} Um número real \emph{a} é menor que um número real
+\emph{b}, escrito \emph{a \textless{} b}, se
+
+\begin{quote}
+\emph{a} estiver à esquerda de \emph{b} na reta numérica. As convenções
+usuais para os símbolos
+
+⩽ (LATEX code: \textbackslash le), \emph{\textgreater{}} e ⩾ (LATEX
+code: \textbackslash ge) se aplicam, por exemplo `\emph{a} ⩽ \emph{b}'
+
+significa que \emph{a \textless{} b} ou \emph{a} = \emph{b}.
+\end{quote}
+
+• \textbf{Adição.} Suponha que queremos adicionar um número real
+\emph{a} a um número real \emph{b}. Para
+
+\begin{quote}
+fazer isso, \emph{traduzimos a} em \emph{b} unidades para a direita ---
+se \emph{b \textless{}} 0 então isso equivale
+
+a traduzir \emph{a} em um número equivalente de unidades para a
+esquerda. Concretamente,
+
+faça duas cópias da reta numérica, uma acima da outra, com a mesma
+escolha de
+
+comprimento unitário; mova o 0 da reta numérica inferior abaixo do ponto
+\emph{a} da reta
+
+numérica superior. Então \emph{a}+\emph{b} é o ponto na reta numérica
+superior situado acima do
+
+ponto \emph{b} da reta numérica inferior. (\emph{−}3)+5 = 2:
+
+\emph{−}8 \emph{−}7 \emph{−}6 \emph{−}5 \emph{−}4 \emph{−}3 \emph{−}2
+\emph{−}1 0 1 2 3 4 5
+
+\includegraphics[width=4.31944in,height=0.38889in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image6.png}
+
+\emph{−}5 \emph{−}4 \emph{−}3 \emph{−}2 \emph{−}1 0 1 2 3 4 5 6 7 8
+\end{quote}
+
+• \textbf{Multiplicação.} Essa é divertida. Suponha-se que queiramos
+multiplicar um número
+
+\begin{quote}
+real a por um número real b. Para fazer isso, escala-se a reta numérica
+e talvez
+
+ambas as partes se refletirão. Concretamente, façamos duas cópias da
+reta numérica,
+
+uma acima da outra; alinhe os pontos 0 em ambas as retas numéricas e
+estique a
+
+reta numérica inferior uniformemente até que o ponto 1 na reta numérica
+inferior
+
+esteja abaixo do ponto a na reta numérica superior --- observe que se a
+\textless{} 0 então a
+
+reta numérica deve ser refletida para que isso aconteça. Então a·b é o
+ponto na reta
+
+numérica superior situado acima de b na reta numérica inferior. 5·4 =
+20. 5\emph{·}4 = 20.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0769}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+-2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+-1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\includegraphics[width=4.31944in,height=0.38889in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image7.png}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+e aqui está uma ilustração do fato de que (\emph{−}5)\emph{·}4 =
+\emph{−}20:
+
+-22 -21 -20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3
+-2 -1 0 1 2 3 4
+
+\includegraphics[width=4.31944in,height=0.38889in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image8.png}
+
+4 3 2 1 0
+\end{quote}
+
+13
+
+\begin{quote}
+14 \emph{Capítulo 0. Começando}
+\end{quote}
+
+✎ \textbf{Exercise 0.0.26}\\
+Interprete as operações de subtração e divisão como transformações
+geométricas da reta numérica real. ◁
+
+\begin{quote}
+Tomaremos como certas as propriedades aritméticas dos números reais
+neste capítulo, esperando até \textbf{??} para afundar nossos dentes nos
+detalhes. Por exemplo, tomaremos como certas as propriedades básicas dos
+números racionais, por exemplo
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{b}+ \emph{c d}= \emph{ad} +\emph{bc}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+and
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{b· c d}= \emph{ac}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{Números Racionais e Irracionais}
+
+Antes de podermos falar sobre números irracionais, devemos dizer o que
+são.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.27}\\
+An \textbf{Número irracional}é um número que não é racional.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Ao contrário de N\emph{,}Z\emph{,}Q\emph{,}R\emph{,}C, não existe uma
+única letra padrão que expresse os números irracionais. No entanto, até
+ao final de \textbf{??}, seremos capazes de escrever o conjunto de
+números irracionais como `R\emph{\textbackslash{}}Q'.
+
+Provar que um número real é \emph{irracional} não é particularmente
+fácil, em geral. Colo-caremos o pé na porta permitindo-nos assumir o
+seguinte resultado, que é reafirmado e provado em \textbf{??}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6667} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✣ \textbf{Proposition 0.0.28}\\
+O número real\emph{√}2 é irracional.
+\end{quote}\strut
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+\end{minipage} \\
+\midrule()
+\endhead
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Podemos usar o fato de que
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6667} + 2\tabcolsep}@{}}{%
+\emph{√}2 é irracional para provar alguns fatos sobre a relação} \\
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{1.0000} + 4\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+entre números racionais e números irracionais.
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+✣ \textbf{Proposition 0.0.29}\\
+Sejam \emph{a} e \emph{b} números irracionais. É possível que \emph{ab}
+seja racional.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{\textbf{Proof}}
+\end{quote}
+\end{minipage} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{√}2. Então \emph{a} e \emph{b} são irracionais,e \emph{ab} = 2
+=\uline{2 1}, o que é racional.
+\end{quote}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Seja \emph{a} = \emph{b} =
+\end{quote}
+\end{minipage} & & \begin{minipage}[b]{\linewidth}\raggedright
+□
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+✎ \textbf{Exercise 0.0.30}\\
+Seja \emph{r} um número racional e \emph{a} um número irracional. Prove
+que é possível que \emph{ra} seja racional, e é possível que \emph{ra}
+seja irracional. ◁
+
+14
+
+\begin{quote}
+\emph{Capítulo 0. Começando} 15
+
+\textbf{Números Complexos (}C\textbf{)}
+
+Vimos que a multiplicação por números reais corresponde ao escalar e
+reflexão da reta numérica -- escalonamento sozinho quando o
+multiplicando é positivo, e escalando com reflexão quando é negativo.
+Poderíamos alternativamente interpretar esta reflexão como uma
+\emph{rotação} de meia volta, uma vez que o efeito na reta numérica é o
+mesmo. Você pode então se perguntar o que acontece se girarmos em
+ângulos arbitrários, em vez de apenas meias voltas.
+
+O que obtemos é um \emph{plano} de números, não apenas uma linha ---
+veja Figure 1. Além disso, acontece que as regras que esperamos que as
+operações aritméticas satisfaçam ainda são válidas -- a adição
+corresponde à translação e a multiplicação corresponde à escala e à
+rotação. Este conjunto de números resultante é o dos \emph{números
+complexos}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{1.0000} + 4\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.31}\\
+Os \textbf{números complexos} são aqueles obtidos pelos números reais
+não negativos após rotação de qualquer ângulo em torno do ponto 0.
+Escrevemos C (LATEX code: \textbackslash mathbb\{C\}) para o conjunto de
+todos os números complexos; portanto, a notação\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+`\emph{z ∈} C' significa que \emph{z} é um número complexo.
+
+Existe um número complexo particularmente importante, \emph{i}, que é o
+ponto no plano complexo exatamente uma unidade acima de 0 --- isso é
+ilustrado em Figure 1. A multiplicação por \emph{i} tem o efeito de
+girar o plano um quarto de volta no sentido anti-horário. Em particular,
+temos \emph{i}2= \emph{i·i} = \emph{−}1; os números complexos têm a
+surpreendente propriedade de que existem raízes quadradas de
+\emph{todos} os números complexos (incluindo todos os números reais).
+
+Na verdade, todo número complexo pode ser escrito na forma \emph{a} +
+\emph{bi}, onde \emph{a,b ∈} R; este número corresponde ao ponto no
+plano complexo obtido movendo \emph{a} unidades para a direita e
+\emph{b} unidades para cima, invertendo as direções como de costume se
+\emph{a} ou \emph{b} for negativo. A aritmética nos números complexos
+funciona da mesma forma que nos números reais; em particular, usando o
+fato de que \emph{i}2= \emph{−}1, obtemos
+\end{quote}\strut
+\end{minipage}} \\
+\midrule()
+\endhead
+(\emph{a}+\emph{bi})+(\emph{c}+\emph{di}) =
+(\emph{a}+\emph{c})+(\emph{b}+\emph{d})\emph{i} & e &
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+(\emph{a}+\emph{bi})\emph{·}(\emph{c}+\emph{di}) =
+(\emph{ac−bd})+(\emph{anncio}+\emph{bc})\emph{i}
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Discutiremos números complexos mais detalhadamente na parte deste
+capítulo sobre polinômios abaixo.
+\end{quote}
+
+15
+
+\includegraphics[width=4.73611in,height=4.38889in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image11.png}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+16
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\includegraphics[width=\textwidth,height=0.11111in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image9.png}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+5\emph{i}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{Capítulo 0. Começando}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+4\emph{i}\\
+3\emph{i}\\
+2\emph{i}\\
+\emph{i}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0909}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+-5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+-4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+-3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+-2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+-1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+-\emph{i}
+
+-2\emph{i}
+
+-3\emph{i}
+
+-4\emph{i}
+
+\includegraphics[width=\textwidth,height=0.18056in]{vertopal_90446958eb2044f0ba6a30adb46b64c5/media/image10.png}-5\emph{i}
+
+Figure 1: Ilustração do plano complexo, com alguns pontos rotulados.
+
+16
+
+\begin{quote}
+\emph{Capítulo 0. Começando} 17
+
+\textbf{Polinômios}
+
+Os números naturais, inteiros, números racionais, números reais e
+números complexos são todos exemplos de \emph{semirings}, o que
+significa que eles vêm equipados com noções de adição e multiplicação
+bem comportadas.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.32}\\
+Seja S = N, Z, Q, R ou C. Um (\textbf{univariado}) \textbf{polinômio
+sobre} S no \textbf{indeterminado} \emph{x} é uma expressão da forma\\
+\emph{a}0 +\emph{a}1\emph{x}+\emph{···}+\emph{anxn}\\
+onde \emph{n ∈} N e cada \emph{ak ∈} S. Os números \emph{ak} são
+chamados de \textbf{coeficientes} do polinômio. Se nem todos os
+coeficientes forem zero, o maior valor de \emph{k} para o qual \emph{ak
+̸}= 0 é\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+chamado de \textbf{grau} do polinômio. Por convenção, o grau do
+polinômio 0 é \emph{−}∞.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Polinômios de grau 1, 2, 3, 4 e 5 são respectivamente chamados
+\emph{lineares}, \emph{quadrático}, \emph{cúbico}, \emph{quártico} e
+\emph{quíntico} polinomiais.
+\end{quote}
+
+✐ \textbf{Example 0.0.33}\\
+As seguintes expressões são todas polinômios:
+
+\begin{quote}
+3 2\emph{x−}1 (3+\emph{i})\emph{x}2\emph{−x}
+
+Seus diplomas são 0, 1 e 2, respectivamente. Os dois primeiros são
+polinômios sobre Z, e o terceiro é um polinômio sobre C. ◁
+\end{quote}
+
+✎ \textbf{Exercise 0.0.34}\\
+Escreva um polinômio de grau 4 sobre R que não seja um polinômio sobre
+Q. ◁
+
+\begin{quote}
+✦ \textbf{Notation 0.0.35}\\
+Em vez de escrever os coeficientes de um polinômio todas as vezes,
+podemos escrever algo como \emph{p}(\emph{x}) ou \emph{q}(\emph{x}). O
+`(\emph{x})' indica que \emph{x} é o indeterminado do polinômio. Se
+\emph{α} for um número{[}a{]}e \emph{p}(\emph{x}) é um polinômio em
+\emph{x} indeterminado, escrevemos \emph{p}(\emph{α}) para o resultado
+de \textbf{substituir} \emph{α} por \emph{x} na expressão
+\emph{p}(\emph{x}).
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Note que, se \emph{A} é qualquer um dos conjuntos N, Z, Q, R ou C, e
+\emph{p}(\emph{x}) é um polinômio sobre \emph{A}, então
+\emph{p}(\emph{α}) \emph{∈ A} para toda \emph{α ∈ A}.
+\end{quote}
+
+✐ \textbf{Example 0.0.36}
+
+\begin{quote}
+Seja \emph{p}(\emph{x}) = \emph{x}3\emph{−}3\emph{x}2+3\emph{x−}1. então
+\emph{p}(\emph{x}) é um polinômio sobre Z com indeterminado \emph{x}.
+Para qualquer número inteiro \emph{α}, o valor \emph{p}(\emph{α}) também
+será um número inteiro. Por
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+{[}a{]}Ao lidar com polinômios, normalmente reservaremos a letra
+\emph{x} para a variável indeterminada e usaremos as letras gregas
+\emph{α,β,γ} (LATEX code: \textbackslash alpha, \textbackslash beta,
+\textbackslash gamma) para números a serem substituídos em um polinômio.
+\end{quote}
+
+17
+
+\begin{quote}
+18 \emph{Capítulo 0. Começando}
+
+exemplo
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{p}(0) = 03\emph{−}3\emph{·}02+3\emph{·}0\emph{−}1 = \emph{−}1
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+e
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{p}(3) = 33\emph{−}3\emph{·}32+3\emph{·}3\emph{−}1 = 8
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+◁
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.0.37}\\
+Seja \emph{p}(\emph{x}) m polinômio. Uma \textbf{raiz} de
+\emph{p}(\emph{x}) é um número complexo \emph{α} de tal modo que
+\emph{p}(\emph{α}) = 0.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{1.0000} + 8\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+A \emph{fórmula quadrática} (\textbf{??}) nos diz que as raízes do
+polinômio \emph{x}2+\emph{ax}+\emph{b}, onde \emph{a,b ∈} C, são
+precisamente o complexo números
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\emph{−a}+ & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{√a}2\emph{−}4\emph{b}
+
+2
+\end{quote}
+\end{minipage} & e & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{−a−}
+\end{quote}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{√a}2\emph{−}4\emph{b}
+
+2
+\end{quote}
+\end{minipage} \\
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{1.0000} + 8\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Observe que evitamos o símbolo `\emph{±}', que é comumente encontrado em
+discussões sobre polinômios quadráticos. O símbolo `\emph{±}' é perigoso
+porque pode suprimir a palavra `e'ou a palavra `ou', dependendo do
+contexto --- este tipo de ambigüidade não é algo com
+
+o qual desejaremos lidar ao discutir a lógica estrutura de uma
+proposição em \textbf{??}!
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+✐ \textbf{Example 0.0.38}
+
+\begin{quote}
+Seja \emph{p}(\emph{x}) = \emph{x}2\emph{−}2\emph{x}+5. A fórmula
+quadrática nos diz que as raízes de \emph{p} são
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+2+
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{√}4\emph{−}4\emph{·}5
+
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+= 1+\emph{√−}4 = 1+2\emph{i}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+and
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2\emph{−}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{√}4\emph{−}4\emph{·}5
+
+\begin{quote}
+2
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+= 1\emph{−√−}4 = 1\emph{−}2\emph{i}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{7}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{1.0000} + 12\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Os números 1 + 2\emph{i} e 1 \emph{−} 2\emph{i} estão relacionados
+porque suas partes reais são iguais e suas partes imaginárias diferem
+apenas por um sinal. Exercise 0.0.39 generaliza esta
+\end{quote}
+\end{minipage}} \\
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2857} + 2\tabcolsep}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+observação.
+\end{quote}
+\end{minipage}} &
+\multicolumn{5}{>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.7143} + 8\tabcolsep}@{}}{%
+◁} \\
+\multicolumn{7}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{1.0000} + 12\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+✎ \textbf{Exercise 0.0.39}\\
+Seja \emph{α} = \emph{a} + \emph{bi} um número complexo, onde \emph{a,b
+∈} R. Prove que \emph{α} é a raiz de um polinômio quadrático sobre R e
+encontre a outra raiz desse polinômio. ◁\strut
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+O exercício a seguir prova o conhecido resultado que classifica o número
+de raízes reais
+
+de um polinômio sobre R em termos de seus coeficientes.
+\end{quote}
+
+✎ \textbf{Exercise 0.0.40}
+
+\begin{quote}
+Seja \emph{a,b ∈} C e seja \emph{p}(\emph{x}) =
+\emph{x}2+\emph{ax}+\emph{b}. O valor ∆ = \emph{a}2\emph{−}4\emph{b} é
+chamado de \textbf{discriminante}
+
+de \emph{p}. Prove que \emph{p} tem duas raízes se ∆ \emph{̸}= 0 e uma
+raiz se ∆ = 0. Além disso, se \emph{a,b ∈} R, prove que \emph{p} não tem
+raízes reais se ∆ \emph{\textless{}} 0, uma raiz real se ∆ = 0, e duas
+raízes reais se
+
+∆ \emph{\textgreater{}} 0. ◁
+\end{quote}
+
+18
+
+\begin{quote}
+\emph{Capítulo 0. Começando} 19
+\end{quote}
+
+✐ \textbf{Example 0.0.41}
+
+\begin{quote}
+Considere o polinômio \emph{x}2\emph{−} 2\emph{x} + 5. Seu discriminante
+é igual a (\emph{−}2)2\emph{−} 4 \emph{·} 5 = \emph{−}16, que é
+negativo. Exercise 0.0.40 nos diz que tem duas raízes, nenhuma das quais
+é real.
+
+Isto foi verificado por Example 0.0.38, onde descobrimos que as raízes
+de \emph{x}2\emph{−} 2\emph{x} + 5 are 1+2\emph{i} e 1\emph{−}2\emph{i}.
+
+Agora considere o polinômio \emph{x}2\emph{−}2\emph{x−}3. Seu
+discriminante é igual a (\emph{−}2)2\emph{−}4\emph{·}(\emph{−}3) = 16, o
+que é positivo. Exercise 0.0.40 nos diz que tem duas raízes, ambas
+reais; e real-
+
+mente
+\end{quote}
+
+\emph{x}2\emph{−}2\emph{x−}3 = (\emph{x}+1)(\emph{x−}3)
+
+\begin{quote}
+então as raízes de \emph{x}2\emph{−}2\emph{x−}3 são \emph{−}1 e 3. ◁
+\end{quote}
+
+19
+
+\begin{quote}
+20 \emph{Capítulo 0. Começando}
+
+Section 0.E
+
+\textbf{Chapter 0 exercises}
+
+\textbf{0.1.} O site de compartilhamento de vídeos \emph{YouTube}
+atribui a cada vídeo um identific-
+
+ador único, que é uma cadeia de 11 caracteres do conjunto
+
+\emph{\{}A\emph{,}B\emph{,...,}Z\emph{,}a\emph{,}b\emph{,...,}z\emph{,}0\emph{,}1\emph{,}2\emph{,}3\emph{,}4\emph{,}5\emph{,}6\emph{,}7\emph{,}8\emph{,}9\emph{,}-\emph{,}\_\emph{\}}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Esta cadeia é na verdade um número natural expresso em base 64, onde os
+caracteres no conjunto acima representam os números 0 a 63, na mesma
+ordem --- portanto C representa 2, \emph{mathttc} representa 28, 3
+representa 55 e \_ representa 63. De acordo com este esquema, encontre o
+número natural cuja expansão na base 64 é dQw4w9WgXcQ, e encontre a
+expansão na base 64 do número natural 7159047702620056984.
+
+\textbf{0.2.} Seja \emph{a,b,c,d ∈} Z. Sob quais condições
+(\emph{a}+\emph{b√}2)(\emph{c}+\emph{d√}2) é um número inteiro?
+
+\textbf{0.3.} Suponha que um inteiro \emph{m} deixe um resto de \emph{i}
+quando dividido por 3, e um inteiro \emph{n} deixe um resto de \emph{j}
+quando dividido por 3, onde 0 ⩽ \emph{i, j \textless{}} 3. Prove que
+\emph{m}+\emph{n} e \emph{i}+ \emph{j} deixam o mesmo resto quando
+divididos por 3.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{0.4.} Quais são os possíveis restos de \emph{n}2quando dividido
+por 3, onde \emph{n ∈} Z?
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.E.1}\\
+set \emph{X} é \textbf{closed} sob uma operação \emph{⊙} se, sempre que
+\emph{a} e \emph{b} são elementos de \emph{X}, \emph{a ⊙ b} também é um
+elemento de \emph{X}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule()
+\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{1.0000} + 6\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Em Questions 0.5 to 0.11, determine quais dos conjuntos de números N, Z,
+Q e R são fechados em a operação \emph{⊙} definida na pergunta.
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\multirow{2}{*}{\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{0.5.} \emph{a⊙b} = \emph{a}+\emph{b}\\
+\textbf{0.6.} \emph{a⊙b} = \emph{a−b}\\
+\textbf{0.7.} \emph{a⊙b} = (\emph{a−b})(\emph{a}+\emph{b})\\
+\textbf{0.8.} \emph{a⊙b} = (\emph{a−}1)(\emph{b−}1)+2(\emph{a}+\emph{b})
+\end{quote}\strut
+\end{minipage}} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{0.9.} \emph{a⊙b} =
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\emph{a}\\
+\emph{b}2+1\strut
+\end{minipage}} \\
+&
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\textbf{0.10.} \emph{a⊙b} = \textbf{0.11.} \emph{a⊙b} =
+\end{quote}
+\end{minipage}} & \begin{minipage}[t]{\linewidth}\raggedright
+\emph{a}\\
+\emph{√b}2+1
+
+\begin{quote}
+�\emph{ab}
+
+0\\
+if \emph{b \textgreater{}} 0
+\end{quote}
+
+if \emph{b ̸∈} Q\strut
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition 0.E.2}\\
+Um número complexo \emph{α} é \textbf{algébrico} se \emph{p}(\emph{α}) =
+0 para algum polinômio diferente de zero \emph{p}(\emph{x}) sobre
+Q.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{0.12.} SeJA \emph{x} seja um número racional. Prove que \emph{x}
+é um número algébrico.
+\end{quote}
+
+20
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule()
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.7500} + 4\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{Section 0.E. Chapter 0 exercises}
+\end{minipage}} &
+\multirow{3}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+21
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{0.13.} Prove que
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{√}2 é um número algébrico.
+\end{quote}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{0.14.} Prove que
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{√}2+
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{√}3 é um número algébrico.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\textbf{0.15.} Prove que \emph{x} + \emph{yi} é um número algébrico,
+onde \emph{x} e \emph{y} são dois números racionais quaisquer.
+
+\textbf{Perguntas verdadeiras-falsas}
+
+Nas questões 1.16 a 1.23, determine (com prova) se a afirmação é
+verdadeira ou falsa \textbf{0.16.} Todo número inteiro é um número
+natural.
+
+\textbf{0.17.} Todo número inteiro é um número racional.
+
+\textbf{0.18.} Todo número inteiro divide zero.
+
+\textbf{0.19.} Todo número inteiro divide seu quadrado.
+
+\textbf{0.20.} O quadrado de todo número racional é um número racional.
+
+\textbf{0.21.} O quadrado de todo número racional é um número racional.
+
+\textbf{0.22.} Quando um inteiro \emph{a} é dividido por um inteiro
+positivo \emph{b}, o resto é sempre menor que \emph{a}.
+
+\textbf{0.23.} Cada polinômio quadrático tem duas raízes complexas
+distintas.
+
+\textbf{Sempre - Às vezes - Nunca questiona}
+
+In Questions 0.24 to 0.32, determine (with proof) whether the conclusion
+is always, sometimes or never true under the given hypotheses.
+
+\textbf{0.24.} Seja \emph{n,b}1\emph{,b}2 \emph{∈} N com 1
+\emph{\textless{} n \textless{} b}1 \emph{\textless{} b}2. Então a
+expansão de base \emph{b}1 de \emph{n} é igual à expansão de base
+\emph{b}2 de \emph{n}.
+
+\textbf{0.25.} Seja \emph{n,b}1\emph{,b}2 \emph{∈} N com 1
+\emph{\textless{} b}1 \emph{\textless{} b}2 \emph{\textless{} n}. Então
+a expansão de base \emph{b}1 de \emph{n} é igual à expansão de base
+\emph{b}2 de \emph{n}.
+
+\textbf{0.26.} Seja \emph{a,b,c ∈} Z e suponha que \emph{a} divida
+\emph{c} e \emph{b} divida \emph{c}. Então \emph{ab} divide \emph{c}.
+\textbf{0.27.} Seja \emph{a,b,c ∈} Z e suponha que \emph{a} divida
+\emph{c} e \emph{b} divida \emph{c}. Então \emph{ab} divide \emph{c}2.
+
+\textbf{0.28.} Seja \emph{x,y ∈} Q e seja \emph{a,b,c,d ∈} Z com
+\emph{cy}+\emph{d ̸}= 0. Então\emph{ax}+\emph{b cy}+\emph{d∈} Q.
+\textbf{0.29.} Seja\emph{a b}um número racional. Então \emph{a ∈} Z e
+\emph{b ∈} Z.
+
+21
+
+22 \emph{Capítulo 0. Começando}
+
+\textbf{0.30.} Seja \emph{x ∈} R e assuma que \emph{x}2\emph{∈} Q. Então
+\emph{x ∈} Q.
+
+\textbf{0.31.} Seja \emph{x ∈} R e assuma que \emph{x}2+1 \emph{∈} Q e
+\emph{x}5+1 \emph{∈} Q. Então \emph{x ∈} Q.
+
+\textbf{0.32.} Seja \emph{p}(\emph{x}) = \emph{ax}2+ \emph{bx} +
+\emph{c} um polinômio com \emph{a,b,c ∈} R e \emph{a ̸}= 0, e suponha
+que \emph{u}+\emph{vi} seja uma raiz complexa de \emph{p}(\emph{x}) com
+\emph{v ̸}= 0. Então \emph{u−vi} é uma raiz de \emph{p}(\emph{x}).
+
+22
+
+\begin{quote}
+\textbf{Part I}\\
+\textbf{Conceitos centrais}
+\end{quote}
+
+23
+
+\textbf{Apêndices}
+
+25
+
+Appendix A
+
+\textbf{Miscelânea matemática}
+
+Houve diversas ocasiões no livro em que evitamos nos aprofundar muito
+nos aspec-tos mais técnicos ou obscuros de uma definição ou prova.
+Geralmente isso acontecia porque a exploração desses aspectos não era
+central para o tópico em questão, ou porque os detalhes envolvidos eram
+suficientemente confusos para que fornecer todos os detal-hes ofuscasse
+as ideias principais em discussão.
+
+Este apêndice fornece um espaço para os comentários que não fizemos, os
+teoremas que não provamos, os detalhes que não fornecemos e as
+obscuridades que não exploramos.
+
+Começamos com uma rápida olhada nos \emph{fundamentos da matemática} em
+Section A.1. Forneceremos os axiomas para a teoria dos conjuntos de
+Zermelo-Fraenkel (ZF), que codifica todos os objetos matemáticos como
+conjuntos e nos permite derivar todos os objetos matemáticos de uma
+coleção de axiomas. Também demonstraremos como co-dificar números
+naturais, inteiros, números racionais e números complexos dentro desta
+estrutura.
+
+27
+
+28 \emph{Appendix A. Miscelânea matemática}
+
+Section A.1
+
+\textbf{Definir fundamentos teóricos}
+
+\textbf{Teoria ingênua dos conjuntos e o Paradoxo de Russel}
+
+28
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 29
+
+Section A.2
+
+\textbf{Construções dos conjuntos de números}
+
+Na base da matemática mais comumente usada, a teoria dos conjuntos de
+Zermelo-Fraenkel com o axioma da escolha (discutido detalhadamente em
+Section A.1), todo objeto matemático é um conjunto. Isto levanta a
+questão: e os outros objetos matemáti-cos? Por exemplo, se os números
+são conjuntos, que conjuntos são eles? E quanto às funções e relações?
+
+Para funções e relações, existe uma solução fácil: simplesmente as
+identificamos com seus gráficos. Por exemplo, podemos fingir que a
+função \emph{f} : R \emph{→} R dada por \emph{f}(\emph{x}) = \emph{x}2
+para todo \emph{x ∈} R ` é' o conjunto \emph{\{}(\emph{x,y}) \emph{∈}
+R\emph{×}R \emph{\textbar{} y} = \emph{x}2\emph{\}}.
+
+Para números, entretanto, a resposta não é tão simples. Por exemplo, que
+conjunto deve ser o número 3? E faz diferença se considerarmos 3 um
+número natural ou um número real?
+
+Esta seção apresenta uma das muitas maneiras possíveis de codificar
+números -- isto é, números naturais, inteiros, números racionais,
+números reais e números complexos --como conjuntos.
+
+\textbf{Os Números Naturais}
+
+Podemos usar a estrutura fornecida pela teoria dos conjuntos de
+Zermelo-Fraenkel (Sec-tion A.1) para fornecer construções teóricas dos
+conjuntos de números N, Z, Q, R e C. Na verdade, se quisermos raciocinar
+sobre matemática dentro dos limites de ZF, deve-mos codificar tudo
+(incluindo números) como conjuntos!
+
+Começaremos com uma construção teórica dos conjuntos dos números
+naturais --- isto é, construiremos uma noção de números naturais no
+sentido de \textbf{??}. Codificaremos os números naturais como
+conjuntos, chamados \emph{números naturais de von Neumann}.
+Iden-tificaremos o número natural 0 com o conjunto vazio ∅, e
+identificaremos a operação sucessora s com uma operação envolvendo
+conjuntos.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.2.1}\\
+Um \textbf{número natural de Von Neuman} ié qualquer conjunto que pode
+ser obtido de ∅tomando repetidamente conjuntos sucessores (ver
+\textbf{??}). Escrito 0vN = ∅ e (\emph{n}+1)vN = (\emph{n}vN)+; que é
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+0vN = ∅\emph{,}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1vN = ∅+\emph{,}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2vN = ∅++\emph{,}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3vN = ∅+++\emph{,}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4vN = ∅++++\emph{,}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{...}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+29
+
+\begin{quote}
+30 \emph{Appendix A. Miscelânea matemática}
+\end{quote}
+
+✐ \textbf{Example A.2.2}\\
+Os três primeiros números naturais de von Neumann são:
+
+\begin{quote}
+• 0vN = ∅;
+
+• 1vN = ∅+= ∅\emph{∪\{}∅\emph{\}} = \emph{\{}∅\emph{\}};\\
+• 2vN = ∅++= \emph{\{}∅\emph{\}}+= \emph{\{}∅\emph{\}∪\{\{}∅\emph{\}\}}
+= \emph{\{}∅\emph{,\{}∅\emph{\}\}}.
+\end{quote}
+
+◁
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✎ \textbf{Exercise A.2.3}\\
+Escreva os elementos de 3vN (= ∅+++) e de 4vN.\strut
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+◁
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+✎ \textbf{Exercise A.2.4}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Lembre-se da definição dos números naturais de von Neumann em Definition
+A.2.1.
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Prove que \emph{\textbar n}vN\emph{\textbar{}} = \emph{n} para todos
+\emph{n ∈} N.
+\end{quote}
+\end{minipage} & ◁ \\
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Construction A.2.5}\\
+Construímos o conjunto NvN de todos os números naturais de von Neumann
+como segue. Seja \emph{X} um conjunto arbitrário que satisfaça o axioma
+do infinito (\textbf{??}) e então defina NvN como a interseção de todos
+os subconjuntos de \emph{X} que também satisfazem o axioma do infinito
+--- isto é:\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+NvN = \emph{\{x ∈ X \textbar{} ∀U ∈ P}(\emph{X})\emph{,} {[}\emph{U}
+satisfaz o axioma do infinito \emph{⇒ x ∈ U}{]}\emph{\}}
+\end{quote}\strut
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+A existência de NvN segue dos axiomas do conjunto de potências
+(\textbf{??}) e separação (\textbf{??}).
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Theorem A.2.6}\\
+O conjunto NvN, elemento zero 0vN e função sucessora \emph{s} : NvN
+\emph{para}NvN definido por s(\emph{n}vN) = \emph{n}+\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+vNpara todos \emph{n}vN \emph{∈} NvN, defina uma noção de números
+naturais.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{\textbf{Proof}}\\
+Devemos verificar os axiomas de Peano, que são condições (i)--(iii) de
+\textbf{??}.
+
+Para provar (i), observe que para todos os conjuntos \emph{X} temos
+\emph{X}+= \emph{X ∪\{X\}}, de modo que \emph{X ∈ X}+. Em particular,
+temos \emph{n}vN \emph{∈ n}+∅ = 0vN. vNpara todos \emph{n}vN \emph{∈}
+NvN e, portanto, \emph{n}+ vN\emph{̸}=
+
+Para (ii), seja \emph{m}vN\emph{,n}vN \emph{∈} NvN e assuma que
+\emph{m}+ vN= \emph{n}+ vN. Então \emph{m}vN = \emph{n}vN por
+\textbf{??}.
+
+Para (iii), seja \emph{X} um conjunto e suponha que 0vN \emph{∈ X} e,
+para todo \emph{n}vN \emph{∈} NvN, se \emph{n}vN\emph{X}, então
+\emph{n}+ struction A.2.5 temos NvN \emph{⊆ X}. vN\emph{∈ X}. Então
+\emph{X} satisfaz o axioma do infinito (\textbf{??}), e então por Con-□
+\end{quote}
+
+30
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 31
+
+À luz de Theorem A.2.6, podemos declarar que ``os números naturais'' são
+os números naturais de von Neumann, e pronto. Como tal, você pode - se
+quiser - pensar em todos os números naturais nessas notas como
+\emph{sendo} seu número natural de von Neumann cor-respondente. Com isto
+em mente, omitimos agora o subscrito `vN', deixando implícito o fato de
+que estamos nos referindo aos números naturais de von Neumann.
+
+No entanto, existem muitas outras noções possíveis de números naturais.
+Em The-orem A.2.8, provamos que quaisquer duas noções de números
+naturais são essencial-mente as mesmas e, portanto, as especificidades
+de como realmente definimos N, o elemento zero e a operação sucessora,
+são irrelevantes para a maioria dos propósitos. .
+
+Primeiro provaremos o seguinte lema útil, que fornece um meio
+conveniente de provar quando uma função é a função identidade
+(\textbf{??}).
+\end{quote}
+
+✣ \textbf{Lemma A.2.7}\\
+Seja (N\emph{,z,s}) seja uma noção de números naturais, e seja \emph{j}
+: N \emph{→} N uma função tal que \emph{j}(\emph{z}) = 0 e
+\emph{j}(\emph{s}(\emph{n})) = \emph{s}( \emph{j}(\emph{n})) para todo
+\emph{n ∈} N. Então \emph{j} = idN.
+
+\begin{quote}
+\emph{Proof.} Por \textbf{??}, existe uma função única \emph{i} : N
+\emph{→} N tal que \emph{i}(\emph{z}) = 0 e \emph{i}(\emph{s}(\emph{n}))
+= \emph{s}(\emph{i}(\emph{n})) para todo \emph{n ∈} N. Mas então:
+
+\emph{j} = \emph{i} pela unicidade de \emph{i}, já que \emph{j} satisfaz
+as mesmas condições que \emph{i}; e
+
+idN = \emph{i} pela exclusividade de \emph{i}, já que idN(\emph{z}) =
+\emph{z} e idN(\emph{s}(\emph{n})) = \emph{s}(\emph{n}) =
+\emph{s}(idN(\emph{n})) para todos \emph{n ∈} N. Portanto, \emph{j} =
+idN, conforme necessário.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Theorem A.2.8}\\
+Quaisquer duas noções de números naturais são essencialmente iguais, num
+sentido muito forte. Mais precisamente, se (N1\emph{,z}1\emph{,s}1) e
+(N2\emph{,z}2\emph{,s}2) são noções de números naturais, então existe
+uma bijeção única \emph{f} : N1 \emph{→} N2 tal que \emph{f}(\emph{z}1)
+= \emph{z}2 e \emph{f}(\emph{s}1(\emph{n})) =\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{s}2( \emph{f}(\emph{n})) para todo \emph{n ∈} N1.
+
+\emph{Proof.} Aplicando o teorema da recursão (\textbf{??}) para
+(N1\emph{,z}1\emph{,s}1), com \emph{X} = N2, \emph{a} = \emph{z}2 e
+
+\emph{h} : \emph{mathbbN}1 \emph{×} N2 \emph{→} N2 definido por
+\emph{h}(\emph{m,n}) = \emph{s}2(\emph{n}) para todos \emph{m ∈} N1 e
+\emph{n ∈} N2, obtemos uma função \emph{f} : N1 \emph{→} N2 tal que
+\emph{f}(\emph{z}1) = \emph{z}2 e \emph{f}(\emph{s}1(\emph{n})) =
+\emph{s}2( \emph{f}(\emph{n})) para todo \emph{n ∈} N1. Isso também nos
+dá a unicidade de \emph{f}, então resta apenas provar que \emph{f} é uma
+bijeção.
+
+Da mesma forma, aplicando \textbf{??} a (N2\emph{,z}2\emph{,s}2), com
+\emph{X} = N1, \emph{a} = \emph{z}1 e \emph{h} : N2 \emph{×}N1 \emph{→}
+N1 definido por \emph{h}(\emph{m,n}) = \emph{s}1(\emph{n}) para todos
+\emph{m ∈} N2 e \emph{n ∈} N1, obtemos uma função (única!)
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{g} : N2 \emph{→} N1 tal que \emph{g}(\emph{z}2) = \emph{z}1 e
+\emph{g}(\emph{s}2(\emph{n})) = \emph{s}1(\emph{g}(\emph{n})) para todos
+\emph{n ∈} N2.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+31
+
+\begin{quote}
+32 \emph{Appendix A. Miscelânea matemática}
+
+But then g( f (z1)) = g(z2) = z1 and, for all n N1, we have
+
+g( f (s1(n))) = g(s2( f (n))) = s2(g( f (n)))
+
+e assim g ◦ f = idN1 pelo Lema A.2.7. Com isso resolvido, vamos agora
+simplesmente
+
+trabalhar com uma noção fixa de números naturais (N\emph{,z,s}), e não
+nos preocupar muito
+
+com como ela é construída --- se quiser, pegue N = NvN, \emph{z} = 0vN =
+∅ and \emph{s}(\emph{n}) = \emph{n}+=
+
+\emph{n∪\{n\}} para todo \emph{n ∈} N.
+
+As operações aritméticas que conhecemos e amamos --- adição,
+multiplicação e ex-
+
+ponenciação --- são definidas usando recursão em \textbf{??}; assim como
+os fatoriais e os
+
+coeficientes binomiais.
+
+Podemos definir noções mais familiares envolvendo números naturais. Por
+exemplo,
+
+podemos definir a relação ⩽ em N definindo \emph{m} ⩽ \emph{n} como
+significando \emph{∃k ∈} N\emph{, m}+\emph{k} = \emph{n} . Uma abordagem
+alternativa seria definir `\emph{m} ⩽ \emph{n}' para \emph{m,n ∈} N por
+uma recursão iterada em \emph{m} e \emph{n} --- especificamente:
+
+• 0 ⩽ 0 é verdade;
+
+• For all \emph{m ∈} N, \emph{m}+1 ⩽ 0 é falso;
+
+• For all \emph{n ∈} N, 0 ⩽ \emph{n}+1 é verdade; e
+
+• For all \emph{m,n ∈} N, \emph{m}+1 ⩽ \emph{n}+1 é verdade se e somente
+se \emph{m} ⩽ \emph{n} é verdade.
+\end{quote}
+
+✎ \textbf{Exercise A.2.9}
+
+\begin{quote}
+Prove que a definição recursiva de ⩽ é equivalente à definição de
+`\emph{m} ⩽ \emph{n}' como `\emph{∃k ∈}N\emph{, m}+\emph{k} = \emph{n}'.
+◁
+
+\textbf{Inteiros}
+
+Agora que construímos os números naturais, é hora de construir os
+inteiros. A intuição
+
+por trás da definição que estamos prestes a dar é que um número inteiro
+nos diz a
+
+diferença entre dois números naturais. Assim, `3 como um número inteiro'
+refere-se ao
+
+aumento de 3 de um número natural para outro (digamos 0 a 3, ou 7 a 10);
+e `\emph{−}4 como um número inteiro' refere-se a uma diminuição de 4 de
+um número natural para outro
+
+(digamos 4 para 0, ou 10 para 6).
+
+Uma primeira tentativa pode ser definir Z como N \emph{×} N e
+interpretar (\emph{a,b}) \emph{∈} N \emph{×} N para representar o
+inteiro \emph{b − a}. Infelizmente, isso não funciona muito bem, pois,
+por exemplo, o número inteiro 3 seria representado como (0\emph{,}3) e
+como (7\emph{,}10)---e, mais
+
+geralmente, como (\emph{n,n}+3) para todos \emph{n ∈} N.
+
+Então, em vez disso, declararemos dois pares (\emph{a,b}), (\emph{c,d})
+\emph{∈} N \emph{×} N para representar
+\end{quote}
+
+32
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 33
+
+o mesmo número inteiro sempre que \emph{b − a} = \emph{d − c}. Para
+tornar isso formal, algumas coisas precisam acontecer:
+
+(1) Precisamos esclarecer o que queremos dizer com `declarar dois pares
+para repres-
+
+entar o mesmo número inteiro' --- isso será feito definindo uma relação
+de equival-
+
+ência em N\emph{×}N e depois passando para o quociente (veja
+\textbf{??}).
+
+(2) Não podemos usar subtração em nossa definição da relação de
+equivalência, ou em
+
+nossa prova de que \emph{é} uma relação de equivalência, pois ainda não
+definimos uma
+
+noção de subtração para N.
+
+Fortunately for us, (2) is easy to resolve: we can state the equation
+\emph{b − a} = \emph{d − c} for \emph{m,n ∈} N equivalently as
+\emph{a}+\emph{d} = \emph{b}+\emph{c}; this is the equation that we will
+use to define the equivalence relation on N\emph{×}N in (1).
+\end{quote}
+
+✣ \textbf{Lemma A.2.10}
+
+\begin{quote}
+A relação \emph{∼} em N \emph{×} N, definida para
+(\emph{a,b})\emph{,}(\emph{c,d}) \emph{∈} N \emph{×} N por (\emph{a,b})
+\emph{∼} (\emph{c,d}) se e somente se \emph{a}+\emph{d} =
+\emph{b}+\emph{c}, é uma relação de equivalência.
+
+\emph{\textbf{Proof}}
+\end{quote}
+
+• (\textbf{Reflexividade}) Seja (\emph{a,b}) \emph{∈} N\emph{×}N. Então
+\emph{a}+\emph{b} = \emph{b}+\emph{a}, para que (\emph{a,b}) \emph{∼}
+(\emph{a,b}).
+
+\begin{quote}
+• (\textbf{Simetria}) Seja (\emph{a,b})\emph{,}(\emph{c,d}) \emph{∈}
+N\emph{×}Ne assumindo que (\emph{a,b}) \emph{∼} (\emph{c,d}). Então
+\emph{a}+\emph{d} = \emph{b}+\emph{c}, e assim \emph{c}+\emph{b} =
+\emph{d} +\emph{a}, (\emph{c,d}) \emph{∼} (\emph{a,b}).
+
+• (\textbf{Transitividade}) Seja
+(\emph{a,b})\emph{,}(\emph{c,d})\emph{,}(\emph{e, f}) \emph{∈} N
+\emph{×} N e assuma que (\emph{a,b}) \emph{∼} (\emph{c,d}) e
+(\emph{c,d}) \emph{∼} (\emph{e, f}). Então \emph{a}+\emph{d} =
+\emph{b}+\emph{c} e \emph{c}+ \emph{f} = \emph{d} +\emph{e}. Mas então
+
+(\emph{a}+ \emph{f})+(\emph{c}+\emph{d}) =
+(\emph{a}+\emph{d})+(\emph{c}+ \emph{f}) = (\emph{b}+\emph{c})+(\emph{d}
++\emph{e}) = (\emph{b}+\emph{e})+(\emph{c}+\emph{d})
+
+então cancelando \emph{c} + \emph{d} de ambos os lados dá \emph{a} +
+\emph{f} = \emph{b} + \emph{e}, então (\emph{a,b}) \emph{∼} (\emph{e,
+f}), como requerido
+
+Devemos ter o cuidado de observar que não assumimos a existência de uma
+operação
+
+de subtração quando cancelamos \emph{c} + \emph{d} de ambos os lados da
+equação: o fato de
+
+\emph{u}+\emph{w} = \emph{v}+\emph{w} implica \emph{u} = \emph{v} pois
+todo \emph{u,v,w ∈} N pode ser provado por indução em \emph{w} usando
+apenas os axiomas de Peano. □
+
+Agora que temos uma relação de equivalência em N\emph{×}N, podemos
+considerar Z como o conjunto resultante de classes de equivalência (ou
+seja, o quociente).
+\end{quote}
+
+33
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+34
+\end{quote}
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6667} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{Appendix A. Miscelânea matemática}
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{1.0000} + 4\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Construction A.2.11}\\
+O \textbf{Conjunto dos inteiros} é o conjunto Z definido por
+
+\begin{quote}
+Z = (N\emph{×}N)\emph{/∼}\\
+onde \emph{∼} é a relação de equivalência em N\emph{×}N definida por\\
+(\emph{a,b}) \emph{∼} (\emph{c,d}) se e somente se \emph{a}+\emph{d} =
+\emph{b}+\emph{c}
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+for all (\emph{a,b})\emph{,}(\emph{c,d}) \emph{∈} N\emph{×}N.
+
+Interpretamos o elemento {[}(\emph{a,b}){]}\emph{∼ ∈} Z como o número
+inteiro \emph{b−a}. Então por exemplo temos
+\end{quote}\strut
+\end{minipage}} \\
+3 = {[}(0\emph{,}3){]}\emph{∼} = {[}(7\emph{,}10){]}\emph{∼} & e &
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{−}4 = {[}(4\emph{,}0){]}\emph{∼} = {[}(10\emph{,}6){]}\emph{∼}
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Algumas observações são agora necessárias.
+
+A primeira observação é que podemos definir operações de adição e
+multiplicação em Z usando aquelas em N. Formalmente, definimos:
+
+{[}(\emph{a,b}){]}\emph{∼} +{[}(\emph{c,d}){]}\emph{∼} =
+{[}(\emph{a}+\emph{c,b}+\emph{d}){]}\emph{∼}---o a intuição aqui é que
+para todo \emph{a,b,c,d ∈} N temos (\emph{b−a})+(\emph{d −c}) =
+(\emph{b}+\emph{d})\emph{−}(\emph{a}+\emph{c}).
+
+{[}(\emph{a,b}){]}\emph{∼·}{[}(\emph{c,d}){]}\emph{∼} =
+{[}(\emph{ad}+\emph{bc,ac}+\emph{bd}){]}\emph{∼}--- a intuição aqui é
+que para todo \emph{a,b,c,d ∈} N temos (\emph{b−a})(\emph{d −c}) =
+(\emph{ac}+\emph{bd})\emph{−}(\emph{ad} +\emph{bc}). Como as operações +
+e \emph{·} são definidas em termos de representantes de classes de
+equivalência, devemos (mas não iremos) verificar se essas operações
+estão bem definidas --- por exemplo, precisamos verificar se
+{[}(\emph{a,b}){]}\emph{∼} = {[}(\emph{a′,b′}){]}\emph{∼} e
+{[}(\emph{c,d}){]}\emph{∼} = {[}(\emph{c′,d′}){]}\emph{∼}, então
+{[}(\emph{a}+\emph{c,b}+\emph{d}){]}\emph{∼} =
+{[}(\emph{a′}+\emph{c′,b′}+ \emph{d′}){]}\emph{∼}.
+
+O que torna os números inteiros especiais é que também podemos negá-los,
+o que por sua vez nos permite subtraí-los. Com isso em mente, podemos
+definir operações de negação e subtração em Z da seguinte forma:
+
+\emph{−}{[}(\emph{a,b}){]}\emph{∼} = {[}(\emph{b,a}){]}\emph{∼}---a
+intuição aqui é que para todo \emph{a,b ∈} N temos \emph{−}(\emph{b−a})
+= \emph{a−b}.
+
+{[}(\emph{a,b}){]}\emph{∼ −}{[}(\emph{c,d}){]}\emph{∼} =
+{[}(\emph{a}+\emph{d,b}+\emph{c}){]}\emph{∼}---o a intuição aqui é que
+para todo \emph{a,b,c,d ∈} N temos (\emph{b − a}) \emph{−} (\emph{d −
+c}) = (\emph{b} + \emph{c}) \emph{−} (\emph{a} + \emph{d}). podem ser
+definidas uma em relação à outra: elas estão relacionadas pelas
+identidades As operações de negação e subtração
+
+\emph{−}{[}(\emph{a,b}){]}\emph{∼} = {[}(0\emph{,}0){]}\emph{∼
+−}{[}(\emph{a,b}){]}\emph{∼} e {[}(\emph{a,b}){]}\emph{∼
+−}{[}(\emph{c,d}){]}\emph{∼} = {[}(\emph{a,b}){]}\emph{∼}
++(\emph{−}{[}(\emph{c,d}){]}\emph{∼}) Novamente, devemos, mas não
+iremos, provar que as operações de negação e subtração estão bem
+definidas.
+\end{quote}
+
+34
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 35
+
+A segunda e talvez mais alarmante observação é que esta construção de Z
+significa
+
+que não temos N \emph{⊆} Z: os elementos de Z são classes de
+equivalência de pares de números naturais, o que significa que o número
+natural `3' não é igual ao inteiro `3'
+
+(que é realmente igual a {[}(0\emph{,}3){]}\emph{∼}). No entanto,
+consideraremos N como sendo um subconjunto de Z identificando cada
+número natural \emph{n} com o elemento {[}(0\emph{,n}){]}\emph{∼ ∈} Z. O
+que justifica esta identificação é o seguinte exercício.
+\end{quote}
+
+✎ \textbf{Exercise A.2.12}
+
+\begin{quote}
+Prove que cada elemento de Z, conforme definido em Construction A.2.11,
+é igual a
+
+exatamente um dos seguintes: {[}(0\emph{,}0){]}\emph{∼}, ou
+{[}(0\emph{,n}){]}\emph{∼} para alguns \emph{n \textgreater{}} 0, ou
+{[}(\emph{n,}0){]}\emph{∼} para alguns \emph{n \textgreater{}} 0. ◁
+
+Exercise A.2.12 implica que a função de `inclusão' \emph{i} : N \emph{→}
+Z definida por \emph{i}(\emph{n}) = {[}(0\emph{,n}){]}\emph{∼} para todo
+\emph{n ∈} N é injetivo. Quando \emph{n ∈} N, normalmente escreveremos
+apenas`\emph{n}' para denotar o inteiro \emph{i}(\emph{n}) =
+{[}(0\emph{,n}){]}\emph{∼}.
+
+Observe que \emph{i}(\emph{m}+\emph{n}) =
+\emph{i}(\emph{m})+\emph{i}(\emph{n}) e \emph{i}(\emph{mn}) =
+\emph{i}(\emph{m})\emph{i}(\emph{n}), então quando escrevemos algo
+
+como `\emph{m} + \emph{n}' para \emph{m,n ∈} N, não importa se estamos
+primeiro adicionando \emph{m} e \emph{n} como números naturais e depois
+interpretando o resultado como um número inteiro,
+
+ou primeiro interpretando \emph{m} e \emph{n} como inteiros e depois
+adicionando o resultado usando
+
+a operação de adição para inteiros.
+
+Observe também que a identificação de \emph{n ∈} N com
+\emph{i}(\emph{n}) = {[}(0\emph{,n}){]}\emph{∼ ∈} Z dá \emph{−n} =
+{[}(\emph{n,}0){]}\emph{∼}para todos \emph{n ∈} N, e então Exercise
+A.2.12 implica que todo número inteiro é igual a exatamente um de 0,
+\emph{n} ou \emph{−n} para algum número natural positivo \emph{n}.
+
+O próximo resultado prova que Z é um \emph{anel}---o que isso significa
+em essência é que as
+
+operações de adição, multiplicação e negação satisfazem as propriedades
+básicas que
+
+tomamos como certas ao fazer aritmética com inteiros.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Theorem A.2.13} (Z é um anel)
+
+\begin{quote}
+(a) (\textbf{Associatividade de adição}) (\emph{a}+\emph{b})+\emph{c} =
+\emph{a}+(\emph{b}+\emph{c}) para todo \emph{a,b,c ∈} Z. (b)
+(\textbf{Comutatividade de adição}) \emph{a}+\emph{b} =
+\emph{b}+\emph{a} para todo \emph{a,b ∈} Z.
+
+(c) (\textbf{Zero}) \emph{a}+0 = \emph{a} para todo \emph{a ∈} Z.
+
+(d) (\textbf{Negação}) \emph{a}+(\emph{−a}) = 0 para todo \emph{a ∈} Z.
+
+(e) (\textbf{Associatividade de multiplicação}) (\emph{a·b})\emph{·c} =
+\emph{a·}(\emph{b·c}) para todo \emph{a,b,c ∈} Z. (f)
+(\textbf{Comutatividade da multiplicação}) \emph{a·b} = \emph{b·a} para
+todo \emph{a,b ∈} Z.
+
+(g) (\textbf{Um}) \emph{a·}1 = \emph{a} para todo \emph{a ∈} Z.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+(h) (\textbf{Distributividade}) \emph{a·}(\emph{b}+\emph{c}) =
+(\emph{a·b})+(\emph{a·c}) para todo \emph{a,b,c ∈} Z.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+35
+
+36 \emph{Appendix A. Miscelânea matemática}
+
+\emph{\textbf{Proof}}\\
+Muitas páginas seriam desperdiçadas escrevendo a prova deste teorema em
+todos os detalhes. Em vez disso, provaremos apenas a parte (h); qualquer
+leitor particularmente masoquista é convidado a provar as partes
+(a)--(g) por conta própria.
+
+Para ver se a lei da distributividade é válida, seja \emph{a,b,c ∈} Z, e
+seja \emph{m,n, p,q,r,s ∈} N tal que \emph{a} =
+{[}(\emph{m,n}){]}\emph{∼}, \emph{b} = {[}(\emph{p,q}){]}\emph{∼} e
+\emph{c} = {[}(\emph{r,s}){]}\emph{∼}. (Omitiremos o subscrito \emph{∼}
+a seguir.)
+
+Então:
+
+\begin{quote}
+\emph{a·}(\emph{b}+\emph{c})\\
+= {[}(\emph{m,n}){]}\emph{·}({[}(\emph{p,q}){]}+{[}(\emph{r,s}){]})\\
+= {[}(\emph{m,n}){]}\emph{·}{[}(\emph{p}+\emph{r,q}+\emph{s}){]}\\
+=
+{[}(\emph{m}(\emph{q}+\emph{s})+\emph{n}(\emph{p}+\emph{r})\emph{,m}(\emph{p}+\emph{r})+\emph{n}(\emph{q}+\emph{s})){]}
+
+= {[}(\emph{mq}+\emph{ms}+\emph{np}+\emph{nr,mp}+\emph{mr}
++\emph{nq}+\emph{ns}){]}
+\end{quote}
+
+= {[}(\emph{mq}+\emph{np,mp}+\emph{nq}){]}+{[}(\emph{ms}+\emph{nr,mr}
++\emph{ns}){]}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+como requerido.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+=
+{[}(\emph{m,n}){]}\emph{·}{[}(\emph{p,q}){]}+{[}(\emph{m,n}){]}\emph{·}{[}(\emph{r,s}){]}
+= (\emph{a·b})+(\emph{a·c})
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+□
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\textbf{Números racionais}
+
+Assim como construímos os números inteiros a partir dos números
+naturais, formal-izando o que entendemos por ``diferença'' de dois
+números naturais, construiremos os números racionais a partir dos
+inteiros, formalizando o que entendemos por ``pro-porção'' de dois
+inteiros.
+
+Como os números racionais devem assumir a forma\emph{a b}com \emph{a,b
+∈} Z e \emph{b ̸}= 0, uma primeira tentativa de construir Q pode ser
+pegar Q = Z \emph{×} (Z \emph{\textbackslash{} \{}0\emph{\}}), e deixar
+o par (\emph{a,b}) representar a fração \emph{d fracab}. Mas assim como
+um número inteiro não pode ser expresso exclusivamente como a diferença
+de dois números naturais, um número racional não pode ser expresso
+exclusivamente como a razão de dois inteiros --- por exemplo, temos 1 2=
+2 4.
+
+Isso significa que devemos identificar (\emph{a,b}) \emph{∈}
+Z\emph{×}(Z\emph{\textbackslash\{}0\emph{\}}) com (\emph{c,d}) \emph{∈}
+Z\emph{×}(Z\emph{\textbackslash\{}0\emph{\}}) sempre que\emph{a b}=
+\emph{c d}. Mas espere! Ainda não definimos uma operação de divisão,
+port-anto não podemos usá-la em nossa construção de Q---então, em vez
+disso, identifi-caremos (\emph{a,b}) com (\emph{c,d}) sempre que
+\emph{ad} = \emph{bc}, observando que isso será equivalente a \emph{b}=
+\emph{c d}depois de definirmos uma operação de divisão.
+
+36
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 37
+
+✣ \textbf{Lemma A.2.14}\\
+A relação \emph{∼} em Z \emph{×} (Z \emph{\textbackslash{}
+\{}0\emph{\}}), definida para (\emph{a,b})\emph{,}(\emph{c,d}) \emph{∈}
+Z \emph{×} (Z \emph{\textbackslash{} \{}0\emph{\}}) deixando
+(\emph{a,b}) \emph{∼} (\emph{c,d}) se e somente se \emph{ad} =
+\emph{bc}, é uma relação de equivalência.
+
+\emph{\textbf{Sketch of proof}}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{1.0000} + 8\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+A prova é essencialmente a mesma de Lemma A.2.10, mas com adição
+substituída por
+
+multiplicação; a prova da transitividade usa o fato de que para
+\emph{u,v,w ∈} Z com \emph{u ̸}= 0, temos \emph{uv} = \emph{uw ⇒ v} =
+\emph{w}, o que pode ser provado por indução em
+\emph{\textbar voc\textbar{}} ⩾ 1 sem usar uma operação de divisão. □
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Construction A.2.15}\\
+O \textbf{conjunto de números racionais} é o conjunto Q definido por
+
+Q = (Z\emph{×}(Z\emph{\textbackslash\{}0\emph{\}}))\emph{/∼}
+
+\begin{quote}
+onde \emph{∼} é a relação de equivalência em
+Z\emph{×}(Z\emph{\textbackslash\{}0\emph{\}}) definida por
+\end{quote}
+
+(\emph{a,b}) \emph{∼} (\emph{c,d}) se e somente se \emph{ad} =
+\emph{bc}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+para todos (\emph{a,b})\emph{,}(\emph{c,d}) \emph{∈}
+Z\emph{×}(Z\emph{\textbackslash\{}0\emph{\}}).
+
+Escreveremos `\emph{a b}' para denotar o elemento
+{[}(\emph{a,b}){]}\emph{∼ ∈} Q, observando que \emph{a b}= \emph{c d}se
+
+e somente se \emph{ad} = \emph{bc}. Agora podemos definir operações de
+adição, multiplicação,
+
+negação e subtração em Q em termos daquelas em Z---ou seja, dado
+\emph{a,b,c,d ∈} Z com \emph{b,d ̸}= 0, definimos
+\end{quote}\strut
+\end{minipage}} \\
+\midrule()
+\endhead
+\emph{b}+ \emph{c d}= \emph{ad} +\emph{bc} &
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{,}
+\end{quote}
+\end{minipage} & \emph{b· c d}= \emph{ac bd,} & \emph{−a b}=
+\emph{\sout{−}a \sout{b},} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{b− c d}= \emph{ad −bc}
+\end{quote}
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Como sempre, devemos (mas não iremos) verificar se essas operações estão
+bem defin-idas.
+
+Novamente, não temos Z \emph{⊆} Q, mas podemos incorporar Z em Q de uma
+forma que respeite as operações aritméticas de adição , multiplicação,
+negação e subtração.
+\end{quote}
+
+✎ \textbf{Exercise A.2.16}\\
+Prove que a função \emph{i} : Z \emph{→} Q definida por
+\emph{i}(\emph{a}) =\emph{a} \sout{1} é uma injeção, e para todo
+\emph{a,b ∈} Z temos \emph{i}(\emph{a}+\emph{b}) =
+\emph{i}(\emph{a})+\emph{i}(\emph{b}), \emph{i}(\emph{ab}) =
+\emph{i}(\emph{a})\emph{i}(\emph{b}), \emph{i}(\emph{−a}) =
+\emph{−i}(\emph{a}) e \emph{i}(\emph{ab}) =
+\emph{i}(\emph{a})\emph{−i}(\emph{b}). ◁
+
+\begin{quote}
+À luz disso, dado \emph{a ∈} Z, normalmente escreveremos apenas
+`\emph{a}' para o número racional \emph{i}(\emph{a}) =\emph{a} o caso.
+1\emph{∈} Q, então podemos fingir que Z \emph{⊆} Q mesmo que este não
+seja estritamente
+\end{quote}
+
+37
+
+\begin{quote}
+38 \emph{Appendix A. Miscelânea matemática}
+
+A construção de Q também permite definir operações recíprocas e de
+divisão. Observe
+
+que\emph{c d}= 0 se e somente se \emph{c} = \emph{c·}1 = 0\emph{·d} = 0;
+então se \emph{a,b,c,d ∈} Q com \emph{b,c,d ̸}= 0,
+
+então definimos
+\end{quote}
+
+� \emph{c}�\emph{−}1 =\emph{d}
+
+\begin{quote}
+\emph{c} \textbf{e} \emph{b÷ fraccd} = \emph{ad}
+
+O comentário usual sobre bem-definição se aplica. Observe que para todo
+\emph{a,b ∈} Z com
+
+\emph{b ̸}= 0 temos
+\end{quote}
+
+\emph{a÷b} =\emph{a} 1\emph{÷ b} 1= \emph{a·}1 1\emph{·b}= \emph{a}
+
+\begin{quote}
+Portanto, dispensaremos o símbolo `\emph{÷}' e simplesmente usaremos a
+notação de fração.
+
+Observe também que as operações recíprocas e de divisão podem ser
+definidas uma em
+
+função da outra: elas são relacionadas pelas identidades
+
+{]} y\emph{−}1=1
+
+\emph{y}\\
+\textbf{e}\\
+\emph{x}
+
+\emph{y}= \emph{x·y−}1 para todo \emph{x,y ∈} Q com \emph{y ̸}= 0.
+
+Q é um campo
+
+\textbf{Números Reais}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.2.17} (A construção dos números reais por
+Dedekind) O \textbf{conjunto de} (\textbf{Dedekind}) \textbf{números
+reais} é o conjunto R definido por
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+R = \emph{\{D ⊆} Q \emph{\textbar{} D} é limitado acima e fechado para
+baixo\emph{\}}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{To do:} Operações aritméticas, ordem
+
+\textbf{To do:} Motivar Cauchy reais
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.2.18} (A construção dos números reais por Cauchy)
+O \textbf{conjunto de} (\textbf{Cauchy}) \textbf{números reais} é o
+conjunto R definido por
+
+\begin{quote}
+R = \emph{\{}(\emph{xn}) \emph{∈} QN\emph{\textbar{}} (\emph{xn}) é
+Cauchy\emph{\}/∼}onde \emph{∼} é a relação de equivalência definida
+por\\
+(\emph{xn}) \emph{∼} (\emph{yn}) se e somente se (\emph{xn −yn})
+\emph{→} 0 para todas as sequências de Cauchy
+(\emph{xn})\emph{,}(\emph{yn}) de números racionais.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+38
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 39
+
+\textbf{To do:} Operações aritméticas, ordem
+
+\textbf{To do:} Motivar a definição de números complexos
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.2.19}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+O \textbf{conjunto dos números complexos} é o conjunto C = R\emph{×}R.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\textbf{To do:} Operações aritimeticas
+
+\textbf{Estruturas algébricas}\\
+\textbf{To do:} Monóides, grupos, anéis
+
+\textbf{Axiomatizando os números reais}\\
+\textbf{To do:}
+\end{quote}
+
+39
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+40
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Appendix A. Miscelânea matemática}
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Axioms A.2.20} (Axiomas de campo)
+
+Seja \emph{X} um conjunto equipado com elementos 0 (`zero') e 1
+(`unidade'), e operações
+
+binárias + (`adição') e \emph{·} (`multiplicação'). A estrutura
+(\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) é um \textbf{campo} se
+satisfizer os seguintes axiomas:
+
+\begin{quote}
+• \textbf{Zero e unidade}
+
+(F1) 0 \emph{̸}= 1.
+
+• \textbf{Axiomas para adição}
+\end{quote}
+
+(F2) (Associatividade) \emph{x}+(\emph{y}+\emph{z}) =
+(\emph{x}+\emph{y})+\emph{z} para todo \emph{x,y,z ∈ X}. (F3)
+(Identidade) \emph{x}+0 = \emph{x} para todo \emph{x ∈ X}.
+
+(F4) (Inverso) Para todo \emph{x ∈ X}, onde existe \emph{y ∈ X} tanto
+que \emph{x}+\emph{y} = 0. (F5) (Comutatividade) \emph{x}+\emph{y} =
+\emph{y}+\emph{x} para todo \emph{x,y ∈ X}.
+
+\begin{quote}
+• \textbf{Axiomas por multiplicação}
+
+(F6) (Associatividade) \emph{x·}(\emph{y·z}) = (\emph{x·y})\emph{·z}
+para todo \emph{x,y,z ∈ X}.
+
+(F7) (Identidade) \emph{x·}1 = \emph{x} para todo \emph{x ∈ X}.
+
+(F8) (Inverso) Para todo \emph{x ∈ X} com \emph{x ̸}= 0, onde existe
+\emph{y ∈ X} tanto que \emph{x·y} = 1. (F9) (Comutatividade) \emph{x·y}
+= \emph{y·x} para todo \emph{x,y ∈ X}.
+
+• \textbf{Distributividade}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+(F10) \emph{x·}(\emph{y}+\emph{z}) = (\emph{x·y})+(\emph{x·z}) para todo
+\emph{x,y,z ∈ X}.
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+✐ \textbf{Example A.2.21}\\
+Os racionais Q e os reais R formam campos com suas noções usuais de
+zero, unidade, adição e multiplicação. No entanto, os inteiros Z não, já
+que por exemplo 2 não tem inverso multiplicativo. ◁
+
+✐ \textbf{Example A.2.22}\\
+Seja \emph{p \textgreater{}} 0 primo. O conjunto Z\emph{/p}Z (ver
+\textbf{??}) é um campo, com elemento zero {[}0{]}\emph{p} e elemento
+unitário {[}1{]}\emph{p}, e com adição e multiplicação definida por
+
+\begin{quote}
+{[}\emph{a}{]}\emph{p} +{[}\emph{b}{]}\emph{p} =
+{[}\emph{a}+\emph{b}{]}\emph{p} e {[}\emph{a}{]}\emph{p
+·}{[}\emph{b}{]}\emph{p} = {[}\emph{ab}{]}\emph{p}\\
+para todo \emph{a,b ∈} Z. A boa definição dessas operações é imediata
+desde \textbf{??} e o teorema da aritmética modular (\textbf{??}).
+
+O único axioma que não é fácil de verificar é o axioma do inverso
+multiplicativo (F8). Na verdade, se {[}\emph{a}{]}\emph{p ∈} Z\emph{/p}Z
+então {[}\emph{a}{]}\emph{p ̸}= {[}0{]}\emph{p} se e somente se \emph{p}
+∤ \emph{a}. Mas se \emph{p} ∤ \emph{a} então \emph{a ⊥ p}, então
+\emph{a} tem um inverso multiplicativo \emph{u} módulo \emph{p}. Isso
+implica que {[}\emph{a}{]}\emph{p ·}{[}\emph{u}{]}\emph{p} =
+{[}\emph{au}{]}\emph{p} = {[}1{]}\emph{p}. Então (F8) é válido. ◁
+\end{quote}
+
+40
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 41
+\end{quote}
+
+✎ \textbf{Exercise A.2.23}\\
+Seja \emph{n \textgreater{}} 0 composto. Prove que Z\emph{/n}Z não é um
+corpo, onde zero, unidade, adição e multiplicação são definidos como em
+Example A.2.22. ◁
+
+\begin{quote}
+Axioms A.2.20 diga-nos que todo elemento de um corpo tem um inverso
+aditivo, e todo elemento \emph{diferente de zero} de um corpo tem um
+inverso multiplicativo. Seria conveniente se os inversos fossem
+\emph{{[}úicos} sempre que existissem. Proposition A.2.24 prova que este
+é o caso.
+\end{quote}
+
+✣ \textbf{Proposition A.2.24} (Singularidade dos inversos) Seja
+(\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) e um campo e seja \emph{x ∈ X}.
+Então
+
+\begin{quote}
+(a) Suponha que \emph{y,z ∈ X} sejam tais que \emph{x}+\emph{y} = 0 e
+\emph{x}+\emph{z} = 0. Então \emph{y} = \emph{z}. (b) Suponha que
+\emph{x ̸}= 0 e \emph{y,z ∈ X} sejam tais que \emph{x·y} = 1 e
+\emph{x·z} = 1. Então \emph{y} = \emph{z}.
+
+\emph{\textbf{Proof} de (a)}\\
+Por cálculo, temos
+
+\emph{y} = \emph{y}+0 por (F3)
+
+= \emph{y}+(\emph{x}+\emph{z}) por definição de \emph{z}
+
+= (\emph{y}+\emph{x})+\emph{z} por associatividade (F2)
+
+= (\emph{x}+\emph{y})+\emph{z} by commutativity (F5)
+
+= 0+\emph{z} por definição de \emph{y}
+
+= \emph{z}+0 por comutatividade (F5)
+
+= \emph{z} by (F3)
+
+então de fato \emph{y} = \emph{z}.
+
+A prova de (b) é essencialmente a mesma e fica como exercício. □
+
+Como os inversos são únicos, faz sentido ter uma notação para se referir
+a eles.
+
+✦ \textbf{Notation A.2.25}\\
+Seja (\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) um campo e seja \emph{x ∈
+X}. Escreva \emph{−x} para o inverso aditivo (único) de \emph{x} e, se
+\emph{x ̸}= 0 escreva \emph{x−}1para o inverso multiplicativo (único) de
+\emph{x}.
+\end{quote}
+
+✐ \textbf{Example A.2.26}\\
+Nos campos Q e R, o inverso aditivo \emph{−x} de um elemento \emph{x} é
+simplesmente seu negativo, e o inverso multiplicativo \emph{x−}1de algum
+\emph{x ̸}= 0 é simplesmente seu recíproco\uline{1 \emph{x}}. ◁
+
+✐ \textbf{Example A.2.27}\\
+Seja \emph{p \textgreater{}} 0 primo e seja {[}\emph{a}{]}\emph{p ∈}
+Z\emph{/p}Z. Então \emph{−}{[}\emph{a}{]}\emph{p} =
+{[}\emph{−a}{]}\emph{p} e, se \emph{p} ∤ \emph{a}, então
+{[}\emph{a}{]}\emph{−}1 onde \emph{u} é qualquer número inteiro
+satisfatório \emph{au ≡} 1 mod \emph{p}. \emph{p}=
+{[}\emph{u}{]}\emph{p}, ◁
+
+✎ \textbf{Exercise A.2.28}
+
+41
+
+\begin{quote}
+42 \emph{Appendix A. Miscelânea matemática}
+
+Seja (\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) um campo. Prove que
+\emph{−}(\emph{−x}) = \emph{x} para todo \emph{x ∈ X}, e que
+(\emph{x−}1)\emph{−}1= \emph{x} para todo \emph{x ∈ X} diferente de
+zero. ◁
+\end{quote}
+
+✐ \textbf{Example A.2.29}
+
+\begin{quote}
+Seja (\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) um campo. Provamos que se
+\emph{x ∈ X} então \emph{x ·} 0 = 0. Bem, 0 = 0 + 0 por (F3). Portanto,
+\emph{x·}0 = \emph{x·}(0+0). Pela distributividade (F10), temos
+\emph{x·}(0+0) = (\emph{x·}0)+(\emph{x·}0). Por isso\\
+\emph{x·}0 = (\emph{x·}0)+(\emph{x·}0)
+
+Seja \emph{y} = \emph{−}(\emph{x·}0). Então
+
+0 = \emph{x·}0+\emph{y}\\
+= ((\emph{x·}0)+(\emph{x·}0))+\emph{y}\\
+= (\emph{x·}0)+((\emph{x·}0)+\emph{y})\\
+= (\emph{x·}0)+0\\
+= \emph{x·}0
+
+by (F4)\\
+como acima\\
+by associativity (F2)\\
+by (F4)\\
+by (F3)
+
+então de fato nós temos \emph{x·}0 = 0. ◁
+\end{quote}
+
+✎ \textbf{Exercise A.2.30}\\
+Seja (\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) um campo. Prove que
+(\emph{−}1)\emph{·x} = \emph{−x} para todo \emph{x ∈ X}, e que
+(\emph{−x})\emph{−}1= \emph{−}(\emph{x−}1) para todo \emph{di
+ferentedezeroxX}. ◁
+
+\begin{quote}
+O que torna os números reais úteis não é simplesmente a nossa capacidade
+de adicioná-los, subtraí-los, multiplicá-los e dividi-los; também
+podemos comparar seu tamanho ---na verdade, é isso que dá origem à noção
+informal de \emph{reta numérica}. Axioms A.2.31 esclarece exatamente o
+que significa os elementos de um campo serem montados em uma `reta
+numérica'.
+\end{quote}
+
+42
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+43
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Axioms A.2.31} (Axiomas de campo ordenados)
+
+Seja \emph{X} um conjunto, 0\emph{,}1 \emph{∈ X} sejam elementos,
++\emph{,·} sejam operações binárias e ⩽ seja uma relação em \emph{X}. A
+estrutura (\emph{X,}0\emph{,}1\emph{,}+\emph{,·,}⩽) é um \textbf{campo
+ordenado} se satisfaz os axiomas de campo (F1)--(F10) (veja \textbf{??})
+e, adicionalmente, satisfaz os seguintes
+
+\begin{quote}
+axiomas:
+
+• \textbf{Axiomas de ordem linear}
+
+(PO1) (Reflexitividade) \emph{x} ⩽ \emph{x} para todo \emph{x ∈ X}.
+
+(PO2) (Antissimétria) Para todo \emph{x,y ∈ X}, se \emph{x} ⩽ \emph{y} e
+\emph{y} ⩽ \emph{x}, então \emph{x} = \emph{y}. (PO3) (Transitividade)
+Para todo \emph{x,y,z ∈ X}, se \emph{x} ⩽ \emph{y} e \emph{y} ⩽
+\emph{z}, então \emph{x} ⩽ \emph{z}. (PO4) (Linearidade) Para todo
+\emph{x,y ∈ X}, qualquer \emph{x} ⩽ \emph{y} ou \emph{y} ⩽ \emph{x}.
+
+• \textbf{Interação de ordem com aritmética}
+
+(OF1) Para todo \emph{x,y,z ∈ X}, se \emph{x} ⩽ \emph{y}, então
+\emph{x}+\emph{z} ⩽ \emph{y}+\emph{z}.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+(OF2) Para todo \emph{x,y ∈ X}, se 0 ⩽ \emph{x} e 0 ⩽ \emph{y}, então 0
+⩽ \emph{xy}.
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+✐ \textbf{Example A.2.32}
+
+\begin{quote}
+O corpo Q dos números racionais e o campo R dos números reais, com suas
+noções usuais de ordenação, podem ser facilmente vistos como campos
+ordenados. ◁
+\end{quote}
+
+✐ \textbf{Example A.2.33}
+
+\begin{quote}
+Provamos que, em qualquer corpo ordenado, temos 0 ⩽ 1. Observe primeiro
+que 0 ⩽ 1 ou 1 ⩽ 0 por linearidade (PO4). Se 0 ⩽ 1 então terminamos,
+então suponha 1 ⩽ 0.
+
+Então 0 ⩽ \emph{−}1; de fato:
+
+0 = 1+(\emph{−}1) por (F4)
+
+⩽ 0+(\emph{−}1) por (OF1), desde 1 ⩽ 0
+
+= (\emph{−}1)+0 por comutatividade (F5)
+
+= \emph{−}1 by (F3)
+
+Por (OF2), segue-se que 0 ⩽ (\emph{−}1)(\emph{−}1). Mas
+(\emph{−}1)(\emph{−}1) = 1 por Exercise A.2.30 e, portanto, 0 ⩽ 1. Como
+1 ⩽ 0 e 0 ⩽ 1, temos 0 = 1 por antisimetria (PO2). Mas isso contradiz o
+axioma (F1). Portanto, 0 ⩽ 1. Na verdade, 0 \emph{\textless{}} 1 já que
+0 \emph{̸}= 1. ◁
+
+Vimos que Q e R são campos ordenados (Examples A.2.26 and A.2.32), e que
+Z\emph{/p}Z é um campo para \emph{p \textgreater{}} 0 prime (Example
+A.2.22). A seguinte proposição é um resultado
+
+interessante que prova que não existe noção de `ordenação' sob a qual o
+campo Z\emph{/p}Z possa ser transformado em um campo ordenado!
+
+✣ \textbf{Proposition A.2.34}
+\end{quote}
+
+43
+
+\begin{quote}
+44 \emph{Appendix A. Miscelânea matemática}
+
+Seja \emph{p \textgreater{}} 0 primo. Não há relação ⩽ em Z\emph{/p}Z
+que satisfaça os axiomas de campo ordenados.
+
+\emph{\textbf{Proof}}
+
+Acabamos de mostrar que {[}0{]} ⩽ {[}1{]}. Segue-se que, para todo
+\emph{a ∈} Z, temos {[}\emph{a}{]} ⩽ {[}\emph{a}{]}+{[}1{]}; de fato:
+{[}a{]} = {[}a{]}+{[}0{]} por (F3)\\
+⩽ {[}\emph{a}{]}+{[}1{]}by (OF1), já que {[}0{]} ⩽ {[}1{]}\\
+= {[}\emph{a} + 1{]}por definição de + em Z\emph{/p}Z É uma indução
+direta provar que {[}\emph{a}{]} ⩽ {[}\emph{a} + \emph{n}{]} para todo
+\emph{n ∈} N. Mas então temos
+\end{quote}
+
+{[}1{]} ⩽ {[}1+(\emph{p−}1){]} = {[}\emph{p}{]} = {[}0{]}
+
+\begin{quote}
+então {[}0{]} ⩽ {[}1{]} e {[}1{]} ⩽ {[}0{]}. Isso implica {[}0{]} =
+{[}1{]} por antissimetria (PO2), contradizendo o axioma (F1). □
+\end{quote}
+
+✎ \textbf{Exercise A.2.35}
+
+\begin{quote}
+Seja (\emph{X,}0\emph{,}1\emph{,}+\emph{,·}) um campo. Prove que se
+\emph{X} é finito, então não há relação ⩽ em \emph{X} tal que
+(\emph{X,}0\emph{,}1\emph{,}+\emph{,·,}⩽) seja um corpo ordenado. ◁
+
+Theorem A.2.36 abaixo resume algumas propriedades de campos ordenados
+que são
+
+usados em nossas provas. Observe, entretanto, que esta certamente
+\emph{não} é uma lista ex-
+
+austiva de propriedades elementares de campos ordenados que usamos ---
+para declarar
+
+explicitamente e provar que tudo isso não seria uma leitura brilhante.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Theorem A.2.36}\\
+Seja (\emph{X,}0\emph{,}1\emph{,}+\emph{,·,}⩽) seja um campo ordenado.
+Então
+
+\begin{quote}
+(a) Para todo \emph{x,y ∈ X}, \emph{x} ⩽ \emph{y} se e apenas se 0 ⩽
+\emph{y−x};\\
+(b) Para todo \emph{x ∈ X}, \emph{−x} ⩽ 0 ⩽ \emph{x} ou \emph{x} ⩽ 0 ⩽
+\emph{−x};\\
+(c) Para todo \emph{x,x′,y,y′∈ X}, se \emph{x} ⩽ \emph{x′}e \emph{y} ⩽
+\emph{y′}, então \emph{x}+\emph{y} ⩽ \emph{x′}+\emph{y′}; (d) Para todo
+\emph{x,y,z ∈ X}, se 0 ⩽ \emph{x} e \emph{y} ⩽ \emph{z}, então \emph{xy}
+⩽ \emph{xz};\\
+(e) Para todo nonzero \emph{x ∈ X}, if 0 ⩽ \emph{x}, então 0 ⩽
+\emph{x−}1.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+(f) Para todo nonzero \emph{x,y ∈ X}, if \emph{x} ⩽ \emph{y}, então
+\emph{y−}1⩽ \emph{x−}1.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{\textbf{Proof} de (a), (b) e (e)}
+
+(a) (\emph{⇒}) suponha \emph{x} ⩽ \emph{y}. Então, por aditividade
+(OF1), \emph{x} + (\emph{−x}) ⩽ \emph{y} + (\emph{−x}), isso é 0 ⩽
+\emph{y−x}. (\emph{⇐}) Suponha 0 ⩽ \emph{y−x}. Por aditividade (OF1),
+0+\emph{x} ⩽ (\emph{y−x})+\emph{x}; isto é, \emph{x} ⩽ \emph{y}.
+\end{quote}
+
+44
+
+\begin{quote}
+\emph{Section A.2. Construções dos conjuntos de números} 45
+
+(b) Sabemos por linearidade (PO4) que 0 ⩽ \emph{x} ou \emph{x} ⩽ 0. Se 0
+⩽ \emph{x}, então por (OF1) temos 0 + (\emph{−x}) ⩽ \emph{x} +
+(\emph{−x}), ou seja \emph{−x} ⩽ 0. Da mesma forma, se \emph{x} ⩽ 0
+então 0 ⩽ \emph{−x}.
+
+(e) Suponha 0 ⩽ \emph{x}. Por linearidade (PO4), 0 ⩽ \emph{x−}1ou
+\emph{x−}1⩽ 0. Se \emph{x−}1⩽ 0, então por (d) temos \emph{x−}1\emph{·
+x} ⩽ 0 \emph{· x}, que é 1 ⩽ 0. Isso contradiz Example A.2.33, então
+devemos ter 0 ⩽ \emph{x−}1.
+
+As demonstrações das demais propriedades ficam como exercício. □
+
+Queríamos caracterizar os reais completamente, mas até agora não
+conseguimos fazê-lo --- na verdade, Example A.2.32 mostrou que ambos Q e
+R são campos ordenados, então os axiomas de campo ordenados não são
+suficientes para distinguir Q de R. A peça final do quebra-cabeça é
+\emph{completude}. Este único axioma adicional distingue Q de R, e de
+fato caracteriza completamente R (veja Theorem A.2.38).
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Axioms A.2.37} (Axiomas de campo ordenados completos)
+
+Seja \emph{X} um conjunto, 0\emph{,}1 \emph{∈ X} sejam elementos,
++\emph{,·} sejam operações binárias e ⩽ seja uma relação em \emph{X}. A
+estrutura (\emph{X,}0\emph{,}1\emph{,}+\emph{,·,}⩽) é um \textbf{campo
+ordenado completo} se for um campo ordenado --- isto é, satisfaz os
+axiomas (F1) --(F10), (PO1)--(PO4) e (OF1)--
+
+(OF2) (veja Axioms A.2.20 and A.2.31)---e, além disso, satisfaz o
+seguinte \textbf{axioma de}
+
+\begin{quote}
+\textbf{completude} :
+
+(C1) Seja \emph{A ⊆ X}. Se \emph{A} tiver um limite superior, então terá
+um limite superior mínimo. Especificamente, se existe \emph{u ∈ X} tal
+que \emph{a} ⩽ \emph{u} para todo \emph{a ∈ A}, então existe \emph{s ∈
+X} tal que
+
+\emph{⋄ a} ⩽ \emph{s} para todo \emph{a ∈ A}; e
+
+\emph{⋄} Se \emph{s′∈ X} é tanto que \emph{a} ⩽ \emph{s′}para todo
+\emph{a ∈ A}, então \emph{s} ⩽ \emph{s′}.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Chamamos esse valor \emph{s ∈ X} a \textbf{supremo} for \emph{A}.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✣ \textbf{Theorem A.2.38}\\
+Os números reais (R\emph{,}0\emph{,}1\emph{,}+\emph{,·,}⩽) formam um
+campo ordenado completo. Além disso, quaisquer dois campos ordenados
+completos são essencialmente iguais.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+A noção de `semelhança' aludida em Theorem A.2.38 é mais apropriadamente
+chamada de \emph{isomorfismo}. Uma prova deste teorema é complexa e está
+muito além do escopo deste livro, por isso foi omitida. O que isso nos
+diz é que não importa exatamente como definimos os reais, pois qualquer
+campo ordenado completo serve. Podemos, portanto, prosseguir com a
+confiança de que, independentemente da noção de «números reais»
+\end{quote}
+
+45
+
+46 \emph{Appendix A. Miscelânea matemática}
+
+que escolhermos, tudo o que provarmos será verdadeiro relativamente a
+essa noção. Isso é melhor, já que na verdade ainda não definimos o
+conjunto R de números reais!
+
+As duas abordagens mais comuns para construir um conjunto de números
+reais são: \textbf{Reais de Dedekind.} Nesta abordagem, os números reais
+são identificados com subcon-juntos particulares de Q---falando
+informalmente, \emph{r ∈} R é identificado com o conjunto de números
+racionais menores que \emph{r}.
+
+\textbf{Reais de Cauchy.} Nesta abordagem, os números reais são
+identificados com classes é identificado com o conjunto de sequências de
+números racionais números que con-de equivalência de sequências de
+números racionais --- falando informalmente, \emph{r ∈} R vergem para
+\emph{r} (no sentido de \textbf{??}).
+
+46
+
+\begin{quote}
+\emph{Section A.3. Limites de funções} 47
+
+Section A.3
+
+\textbf{Limites de funções}
+
+No final de \textbf{??} mencionamos o uso de \emph{limites} de funções
+sem definir corretamente o que
+
+queríamos dizer. Esta seção reconhecidamente brusca é dedicada a tornar
+preciso o que
+
+queremos dizer com matemática.
+
+\textbf{Limites}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.3.1}\\
+Seja \emph{D ⊆} R. Um \textbf{ponto limite} de \emph{D} é um número real
+\emph{a} tal que, para todo \emph{δ \textgreater{}} 0, existe algum
+\emph{x ∈ D} tal que 0 \emph{\textless{} \textbar x−a\textbar{}
+\textless{} δ}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+✣ \textbf{Lemma A.3.2}
+
+\begin{quote}
+Seja \emph{D ⊆} R. Um número real \emph{a} é um ponto limite de \emph{D}
+se e somente se existe uma sequência (\emph{xn}) de elementos de
+\emph{D}, que não é eventualmente constante, tal que (\emph{xn}) \emph{→
+a} .
+
+\emph{\textbf{Proof}}
+\end{quote}
+
+□
+
+\begin{quote}
+(\emph{⇒}) Seja \emph{a ∈} R e assuma que \emph{a} é um ponto limite de
+\emph{D}. Para cada \emph{n} ⩾ 1, seja \emph{xn} algum elemento de
+\emph{D} tal que 0 \emph{\textless{} \textbar xn −a\textbar{}
+\textless{}}1 \emph{n}.
+
+Evidentemente (\emph{xn}) \emph{→ a}: de fato, dado \emph{ε
+\textgreater{}} 0, deixando \emph{N} ⩾ max\emph{\{}1\emph{,}\uline{1}
+\emph{ε} para todos \emph{n} ⩾ \emph{N}. \emph{ε\}} dá \emph{\textbar xn
+−uma\textbar{} \textless{}}
+
+Além disso, a sequência (\emph{xn}) não é eventualmente constante: se
+fosse, existiriam \emph{N} ⩾ 1
+
+e \emph{b ∈} R tais que \emph{xn} = \emph{b} para todos \emph{n geN}.
+Mas então, pelo teorema da compressão (\textbf{??}), teríamos
+
+1\\
+0 ⩽ lim \emph{n→}∞\emph{\textbar xn −a\textbar{}} =
+\emph{\textbar ba\textbar{}} ⩽ lim \emph{n}= 0
+
+e então \emph{b} = \emph{a}. Mas isso contradiz o fato de que
+\emph{\textbar xn −a\textbar{} \textgreater{}} 0 para todo \emph{n} ⩾ 1.
+
+(\emph{⇐}) Seja \emph{a ∈} R e assuma que existe uma sequência
+(\emph{xn}) de elementos de \emph{D}, que não é eventualmente constante,
+tal que (\emph{xn}) \emph{→ um}. Então para todo \emph{δ \textgreater{}}
+0 existe algum \emph{N ∈} N tal que \emph{\textbar xn −a\textbar{}
+\textless{} ε} para todos \emph{n} ⩾ \emph{N}. Como (\emph{xn}) não é
+eventualmente constante, existe algum \emph{n} ⩾ \emph{N} tal que
+\emph{\textbar xn − a\textbar{} \textgreater{}} 0---caso contrário
+(\emph{xn}) seria eventualmente constante com valor \emph{a}! Mas então
+\emph{xn ∈ D} e 0 \emph{\textless{} \textbar xn −a\textbar{} \textless{}
+δ}, então \emph{a} é um ponto limite de \emph{D}.
+\end{quote}
+
+47
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+48
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\emph{Appendix A. Miscelânea matemática}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.3.3}\\
+Seja \emph{D ⊆} R. O \textbf{fechamento} de \emph{D} é o conjunto
+\emph{D} (LATEX code: \textbackslash overline\{D\}) definido por\\
+\emph{D} = \emph{D∪\{a ∈} R \emph{\textbar{} a} é um ponto limite de
+\emph{D\}}\\
+Ou seja, \emph{D} é dado por \emph{D} junto com seus pontos
+limites.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+✐ \textbf{Example A.3.4}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Temos (0\emph{,}1) = {[}0\emph{,}1{]}. Na verdade, (0\emph{,}1) \emph{⊆}
+(0\emph{,}1) já que \emph{D ⊆ D} para todo \emph{D ⊆} R. Além disso, as
+sequências (\uline{1 \emph{n}}) e (1 \emph{−} \sout{1 \emph{n}}) não são
+constantes, assumem valores em (0\emph{,}1) e
+
+convergem para 0 e 1 respectivamente, de modo que 0 \emph{∈}
+(0\emph{,}1) e 1 \emph{∈} (0\emph{,}1). Portanto {[}0\emph{,}1{]}
+\emph{⊆} (0\emph{,}1).
+
+Dado \emph{a ∈} R, se \emph{a \textgreater{}} 1, então deixar \emph{δ} =
+1 \emph{− a \textgreater{}} 0 revela que \emph{\textbar x − a\textbar{}}
+⩾ \emph{δ} para todo \emph{x ∈ D}; e da mesma forma, se \emph{a
+\textless{}} 0, então deixar \emph{δ} = \emph{−a \textgreater{}} 0
+revela que \emph{\textbar x − a\textbar{}} ⩾ \emph{δ} para todo \emph{x
+∈ D}. Portanto, nenhum elemento de
+R\emph{\textbackslash{}}{[}0\emph{,}1{]} é um elemento de \emph{D}, de
+modo que (0\emph{,}1) = {[}0\emph{,}1{]}. ◁
+\end{quote}
+
+✎ \textbf{Exercise A.3.5}
+\end{minipage}} \\
+\midrule()
+\endhead
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Seja \emph{a,b ∈} R com \emph{a \textless{} b}. Prove que (\emph{a,b}) =
+(\emph{a,b}{]} = {[}\emph{a,b}) = {[}\emph{a,b}{]}.❖ \textbf{Convention
+A.3.6}
+\end{quote}
+\end{minipage} & ◁ \\
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Para o restante desta seção, sempre que declararmos \emph{f} : \emph{D
+→} R como uma função, será assumido que o domínio \emph{D} é um
+subconjunto de R, e que todo ponto de \emph{D} é um
+
+ponto limite de \emph{D}. Em outras palavras, \emph{D} não possui
+\emph{pontos isolados}, que são pontos
+
+separados de todos os outros elementos de \emph{D} por uma distância
+positiva. Por exemplo,
+\end{quote}
+\end{minipage}} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+no conjunto (0\emph{,}1{]}\emph{∪\{}2\emph{\}}, o elemento 2 \emph{∈} R
+é um ponto isolado.
+\end{quote}
+\end{minipage} & ◁ \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.3.7}
+
+Seja \emph{f} : \emph{D →} R uma função, seja \emph{a ∈ D}, e seja
+\emph{ℓ ∈} R. Dizemos que \emph{ℓ} é um \textbf{limit} de
+\emph{f}(\emph{x}) quando \emph{x} \textbf{se aproxima de} \emph{a} se
+
+\emph{∀ε \textgreater{}} 0\emph{, ∃δ \textgreater{}} 0\emph{, ∀x ∈ D,} 0
+\emph{\textless{} \textbar x−a\textbar{} \textless{} δ ⇒ \textbar{}
+f}(\emph{x})\emph{−ℓ\textbar{} \textless{} ε}
+
+Em outras palavras, para valores de \emph{x ∈ D} próximos de \emph{a}
+(mas não iguais a \emph{a}), os valores de \emph{f}(\emph{x}) tornam-se
+arbitrariamente próximos de \emph{ℓ}.
+
+Escrevemos `\emph{f}(\emph{x}) \emph{→ ℓ} como \emph{x → a}' (LATEX
+code: \textbackslash to) para denotar a afirmação de que \emph{ℓ} é um
+limite de \emph{f}(\emph{x}) conforme \emph{x} se aproxima \emph{a}.
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+✐ \textbf{Example A.3.8}\\
+Defina \emph{f} : R \emph{→} R por \emph{f}(\emph{x}) = \emph{x} para
+todo \emph{x ∈} R. Então \emph{f}(\emph{x}) \emph{→} 0 como \emph{x →}
+0. Para ver isso, seja \emph{ε \textgreater{}} 0 e defina \emph{δ} =
+\emph{ε \textgreater{}} 0. Então, para todo \emph{x ∈} R, se 0
+\emph{\textless{} \textbar x − a\textbar{} \textless{} δ} = \emph{ε},
+então\\
+\emph{\textbar f}(\emph{x})\emph{− f}(\emph{uma})\emph{\textbar{}} =
+\emph{\textbar x−a\textbar{} \textless{} ε}\\
+como requerido. ◁ 48
+
+\begin{quote}
+\emph{Section A.3. Limites de funções} 49
+\end{quote}
+
+✎ \textbf{Exercise A.3.9}
+
+\begin{quote}
+Seja \emph{f} : \emph{D →} R uma função, seja \emph{a ∈ D} e seja
+\emph{ℓ ∈} R. Corrija alguma sequência (\emph{xn}) de elementos de
+\emph{D}, não eventualmente constante, tal que (\emph{xn}) \emph{→ a}.
+Prove que se \emph{f}(\emph{x}) \emph{→ ℓ} como \emph{x → a}, então a
+sequência ( \emph{f}(\emph{xn})) converge para \emph{ℓ}. ◁
+
+O próximo exercício diz-nos que os limites das funções são únicos, desde
+que existam.
+
+Sua prova se parece muito com o resultado análogo que provamos para
+sequências em
+
+\textbf{??}.
+\end{quote}
+
+✎ \textbf{Exercise A.3.10}
+
+\begin{quote}
+Seja \emph{f} : \emph{D →} R uma função, seja \emph{a ∈ D}, e
+\emph{ℓ}1\emph{,ℓ}2 \emph{∈} R. Prove que se \emph{f}(\emph{x}) \emph{→
+ℓ}1 como \emph{x → a}, e \emph{f}(\emph{x}) \emph{→ ℓ}2 como \emph{x →
+a}, então \emph{ℓ}1 = \emph{ℓ}2. ◁
+
+Quando o domínio \emph{D} de uma função \emph{f} : \emph{D →} R é
+ilimitado, também podemos estar interessados em descobrir como os
+valores de \emph{f}(\emph{x}) se comportam como \emph{x ∈ D} fica
+(positiva ou negativamente) cada vez maior.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.3.11}\\
+Seja \emph{f} : \emph{D →} R uma função e seja \emph{ℓ ∈} R. Se \emph{D}
+é ilimitado acima --- isto é, para todo
+
+\textbf{aumenta sem limites} se \emph{p ∈} R, existe \emph{x ∈ D} com
+\emph{x \textgreater{} p} --- então dizemos \emph{ℓ} é um
+\textbf{limite} de \emph{f}(\emph{x}) à medida que \emph{x}
+
+\begin{quote}
+\emph{∀ε \textgreater{}} 0\emph{, ∃p ∈} R\emph{, ∀x ∈ D, x
+\textgreater{} p ⇒ \textbar{} f}(\emph{x})\emph{−ℓ\textbar{} \textless{}
+ε}\\
+Escrevemos `\emph{f}(\emph{x}) \emph{→ ℓ} as \emph{x →} ∞' (LATEX code:
+\textbackslash infty) para denotar a afirmação de que \emph{ℓ} é um
+limite de \emph{f}(\emph{x}) como \emph{x} aumenta sem limite.
+\end{quote}
+
+Da mesma forma, se \emph{D} é ilimitado abaixo --- isto é, para todo
+\emph{p ∈} R, existe \emph{x ∈ D} com \emph{x \textless{} p}--- então
+dizemos \emph{ell} é um \textbf{limite} de \emph{f}(\emph{x}) conforme
+\emph{x} \textbf{diminui sem limite} se
+
+\begin{quote}
+\emph{∀ε \textgreater{}} 0\emph{, ∃p ∈} R\emph{, ∀x ∈ D, x \textless{} p
+⇒ \textbar{} f}(\emph{x})\emph{−ℓ\textbar{} \textless{} ε}\\
+Escrevemos `\emph{f}(\emph{x}) \emph{→ ℓ} como \emph{x → −}∞' para
+denotar a afirmação de que \emph{ℓ} é um limite de \emph{f}(\emph{x}) à
+medida que \emph{x} diminui sem limite.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+✐ \textbf{Example A.3.12}\\
+Seja \emph{f} : R \emph{→} R a função definida por \emph{f}(\emph{x}) =
+
+\begin{quote}
+\emph{x}\\
+1+\emph{\textbar x\textbar{}}para todo \emph{x ∈} R. Então:
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule()
+\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{1.0000} + 6\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{f}(\emph{x}) \emph{→} 1 como \emph{x →} ∞. Para ver isso, seja
+\emph{ε \textgreater{}} 0 e defina \emph{p} =
+max\emph{\{}1\emph{,}\uline{1} \emph{x} \emph{ε\}}. Então, para
+
+todo \emph{x \textgreater{} p}, temos \emph{x \textgreater{}} 0, de modo
+que \emph{f}(\emph{x}) = 1+\emph{x}, e \emph{x \textgreater{}} \sout{1
+\emph{ε}}\emph{−}1. Por isso:
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\emph{\textbar{}} & 1+\emph{x−}1\emph{\textbar{}} = \emph{\textbar{} −}1
+1+\emph{x\textbar{}} = & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+1\\
+1+\emph{x\textless{}}
+\end{quote}\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+1\\
+1+(\uline{1 \emph{ε}}\emph{−}1) = \emph{ε}
+\end{quote}\strut
+\end{minipage} \\
+\bottomrule()
+\end{longtable}
+
+49
+
+\begin{quote}
+50 \emph{Appendix A. Miscelânea matemática}
+
+como requerido.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\multicolumn{6}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{1.0000} + 10\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{f}(\emph{x}) \emph{→ −}1 como \emph{x →} ∞. Para ver isso, seja
+\emph{ε \textgreater{}} 0 e defina \emph{p} =
+min\emph{\{−}1\emph{,\sout{−}}\uline{1 \emph{ε}}\emph{\}}. Então,
+
+para todo \emph{x \textless{} p}, temos \emph{x \textless{}} 0, de modo
+que \emph{f}(\emph{x}) = 1\emph{−x}, e \emph{x \textless{}
+\sout{−}}\uline{1 \emph{ε}}+1. Por isso:
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\emph{\textbar{}} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{x}\\
+1\emph{−x−}(\emph{−}1)\emph{\textbar{}} = \emph{\textbar{}}
+\end{quote}\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+1\\
+1\emph{−x\textbar{}} =
+\end{quote}\strut
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+1\\
+1\emph{−x\textless{}}
+\end{quote}\strut
+\end{minipage} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+1\\
+1\emph{−}(\emph{−}\uline{1 \emph{ε}}+1) = \emph{ε}
+\end{quote}\strut
+\end{minipage}} \\
+\multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.8333} + 8\tabcolsep}}{%
+como requerido. Então \emph{f}(\emph{x}) \emph{→} 1 como \emph{x →} ∞ e
+\emph{f}(\emph{x}) \emph{→ −}1 como \emph{x → −}∞.✎ \textbf{Exercise
+A.3.13}} & ◁ \\
+\multicolumn{6}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{1.0000} + 10\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+Seja \emph{f} : \emph{D →} R uma função e \emph{ℓ}1\emph{,ℓ}2 \emph{∈}
+R. Prove que se \emph{D} é ilimitado acima, e se análogo para limites
+como \emph{x → −}∞ no caso em que \emph{D} é ilimitado abaixo.
+\emph{f}(\emph{x}) \emph{→ ℓ}1 como \emph{x →} ∞ e \emph{f}(\emph{x})
+\emph{→ ℓ}2 como \emph{x →} ∞, então \emph{ℓ}1 = \emph{ℓ}2. Prove o
+resultado◁
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Os resultados de Exercises A.3.10 and A.3.13 justificam a seguinte
+definição.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+✦ \textbf{Definition A.3.14}\\
+Seja \emph{f} : \emph{D →} R e seja \emph{a ∈} {[}\emph{−}∞\emph{,}∞{]}.
+Supondo que os limites em questão sejam bem definidos e existam,
+escrevemos lim \emph{x→af}(\emph{x}) para denotar o único número real
+\emph{ℓ ∈} R tal\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+que \emph{f}(\emph{x}) \emph{→ ℓ} como \emph{x → a}.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+50
+
+Appendix B\\
+\textbf{Dicas para exercícios selecion-ados}
+
+\textbf{Chapter 0}\\
+\textbf{?? exercises}\\
+\textbf{Section A.1}\\
+\textbf{Section A.2}\\
+\textbf{Hint for Exercise A.2.9}\\
+Defina duas relações ⩽ e ⩽\emph{′}em N, uma usando a definição recursiva
+e a outra usando a definição como fórmula lógica; então use a indução
+para provar que \emph{m} ⩽ \emph{n ⇔ m} ⩽\emph{′n} para todo \emph{m,n
+∈} N.
+
+\textbf{Hint for Exercise A.2.28}\\
+Prove que \emph{x} é um inverso aditivo para \emph{−x} (no sentido de
+Axioms A.2.20(F4)) e use a unicidade dos inversos aditivos. Da mesma
+forma para \emph{x−}1.
+
+\textbf{Section A.3}
+
+51
+
+52 \emph{Appendix B. Hints for selected exercises}
+
+52
+
+\textbf{Índices}
+
+53
+
+\textbf{Index of topics}
+
+axioma da completude, 45
+
+base-\emph{b} expansion, 6
+
+campo, 40\\
+campo ordenado completo, 45
+
+discriminante, 18\\
+divisor, 8\\
+divisão, 8
+
+fator, 8
+
+\begin{quote}
+número, 29\\
+number base, 6\\
+numéro irracional, 14\\
+número natural, 29\\
+número natural\\
+von Neumann, 29\\
+número natural de von Neumann , 29
+
+polinômios, 17\\
+proposição, 1\\
+prova, 1
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Inteiro\\
+par, 9\\
+´impar, 9\strut
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+quociente, 10\\
+raiz, 18\\
+restante, 10
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+limites de umaa função, 48 múltiplo, 8
+
+\begin{quote}
+sistema de numeração\\
+Hindu--árabe, 5\\
+sistema numérico, 5
+\end{quote}
+
+natural teorema da divisão, 10
+
+55
+
+56 \emph{Index of topics}
+
+56
+
+\textbf{Index of notation}
+
+\emph{n}vN --- \emph{numéro natural de von}
+
+\begin{quote}
+\emph{neuman}, 29
+\end{quote}
+
+57
+
+58 \emph{Index of notation}
+
+58
+
+\textbf{Index of LATEX commands} Math mode commands
+
+\begin{quote}
+\textbackslash ge, ⩾ , 13
+
+\textbackslash in, \emph{∈}, 3 \textbackslash le, ⩽, 13
+
+\textbackslash mathbb, A\emph{,}B\emph{,...}, 4, 8, 12, 15
+\end{quote}
+
+59
+
+60 \emph{Index of LATEX commands}
+
+60
+
+\textbf{Licence}
+
+Este livro, tanto em formato físico quanto eletrônico, está licenciado
+sob uma Li-cença Pública Internacional Creative Commons
+Attribution-ShareAlike 4.0. A licença é replicada abaixo no site
+Creative Commons: Por favor, leia o conteúdo desta licença com r ou
+adaptar o material deste livro.
+
+Se você tiver dúvidas ou quiser solicitar permissões não concedidas por
+esta licença, entre em contato com o autor (Clive Newstead,
+clive@infinitedescent.xyz).
+
+\textbf{Licença Pública Internacional Creative Commons
+Attribution-ShareAlike 4.0}
+
+Ao exercer os Direitos Licenciados (definidos abaixo), Você aceita e
+concorda em ficar vinculado aos termos e condições desta Licença Pública
+Internacional Creative Com-mons Attribution-ShareAlike 4.0 (``Licença
+Pública''). Na medida em que esta Licença Pública possa ser interpretada
+como um contrato, são concedidos a Você os Direitos Li-cenciados em
+consideração à Sua aceitação destes termos e condições, e o Licenciador
+concede a Você tais direitos em consideração aos benefícios que o
+Licenciador recebe ao disponibilizar o Material Licenciado. sob estes
+termos e condições.
+
+\textbf{Section 1 --- Definitions.}
+
+\begin{quote}
+a. \textbf{Material Adaptado} significa material sujeito a Direitos
+Autorais e Direitos Simil-ares que é derivado ou baseado no Material
+Licenciado e no qual o Material Licen-ciado é traduzido, alterado,
+organizado, transformado ou de outra forma modificado de uma maneira que
+requer permissão sob os Direitos Autorais e Similares. Direitos detidos
+pelo Licenciante. Para os fins desta Licença Pública, quando o Material
+\end{quote}
+
+61
+
+62 \emph{Index of LATEX commands}
+
+\begin{quote}
+Licenciado for uma obra musical, performance ou gravação sonora, o
+Material Ad-aptado será sempre produzido quando o Material Licenciado
+for sincronizado em relação temporal com uma imagem em movimento.
+
+b. \textbf{Licença do Adaptador} significa a licença que Você aplica aos
+Seus Direitos Auto-rais e Direitos Similares em Suas contribuições ao
+Material Adaptado de acordo com os termos e condições desta Licença
+Pública.
+
+c. \textbf{Licença compatível com BY-SA} significa uma licença listada
+em\\
+, aprovada pela Creative Commons como a Pública Licença.
+
+d. \textbf{Direitos Autorais e Direitos Similares} significa direitos
+autorais e/ou direitos semelhantes intimamente relacionados aos direitos
+autorais, incluindo, sem limit-ação, desempenho, transmissão, gravação
+de som e Direitos de Banco de Dados Sui Generis, independentemente de
+como os direitos são rotulados ou categorizados. Para os fins desta
+Licença Pública, os direitos especificados na Seção 2(b)(1)-(2) não são
+Direitos Autorais e Direitos Similares.
+
+e. \textbf{Medidas Tecnológicas Eficazes} significa aquelas medidas que,
+na ausência de autoridade adequada, não podem ser contornadas sob leis
+que cumprem obrigações sob o Artigo 11 do Tratado de Direitos Autorais
+da OMPI adotado em 20 de dezem-bro de 1996, e/ou acordos internacionais
+semelhantes .
+
+f. \textbf{Exceções e Limitações} significa uso justo, negociação justa
+e/ou qualquer outra exceção ou limitação aos Direitos Autorais e
+Direitos Similares que se aplica ao Seu uso do Material Licenciado.
+
+g. \textbf{Elementos de Licença} significa os atributos de licença
+listados no nome de uma Li-cença Pública Creative Commons. Os Elementos
+de Licença desta Licença Pública são Atribuição e Compartilhamento pela
+mesma Licença.
+
+h. \textbf{Material Licenciado} significa a obra artística ou literária,
+banco de dados ou outro material ao qual o Licenciador aplicou esta
+Licença Pública.
+
+i. \textbf{Direitos Licenciados} significa os direitos concedidos a Você
+sujeitos aos termos e condições desta Licença Pública, que são limitados
+a todos os Direitos Autorais e Direitos Similares que se aplicam ao Seu
+uso do Material Licenciado e que o Licenciador tem autoridade para
+licença.
+
+j. \textbf{Licenciador} significa o(s) indivíduo(s) ou entidade(s) que
+concedem direitos sob esta Licença Pública.
+
+k. \textbf{Compartilhar} significa fornecer material ao público por
+qualquer meio ou pro-cesso que exija permissão sob os Direitos
+Licenciados, como reprodução, exib-ição pública, apresentação pública,
+distribuição, disseminação, comunicação ou im-portação, e tornar
+material disponível ao público, inclusive de maneiras pelas quais
+\end{quote}
+
+62
+
+\emph{Index of LATEX commands} 63
+
+\begin{quote}
+os membros do público possam acessar o material em um local e em um
+horário escolhido individualmente por eles.
+
+l. \textbf{Direitos Sui Generis sobre Bases de Dados} significa outros
+direitos que não os direitos de autor resultantes da Directiva 96/9/CE
+do Parlamento Europeu e do Con-selho, de 11 de Março de 1996, relativa à
+protecção jurídica das bases de dados, conforme alterada e/ou sucedida,
+bem como outros essencialmente direitos equi-valentes em qualquer parte
+do mundo.
+\end{quote}
+
+m. \textbf{Você} significa o indivíduo ou entidade que exerce os
+Direitos Licenciados sob esta Licença Pública. \textbf{Seu} tem um
+significado correspondente.
+
+\textbf{Seção 2 - Escopo..}
+
+\begin{quote}
+a. \textbf{Concessão de licença.}
+
+1. Sujeito aos termos e condições desta Licença Pública, o Licenciador
+concede a Você uma licença mundial, isenta de royalties, não
+sublicenciável, não exclusiva e irrevogável para exercer os Direitos
+Licenciados no Material Licenciado para:
+
+A. reproduzir e compartilhar o Material Licenciado, no todo ou em parte;
+e
+
+B. produzir, reproduzir e compartilhar material adaptado.
+
+2. Exceções e Limitações. Para evitar dúvidas, onde Exceções e
+Limitações se ap-licam ao Seu uso, esta Licença Pública não se aplica e
+Você não precisa cumprir seus termos e condições.
+
+3. \uline{Termo}. O prazo desta Licença Pública está especificado na
+Seção 6(a).
+
+4. Mídias e formatos; modificações técnicas permitidas. O Licenciante
+autoriza Você a exercer os Direitos Licenciados em todas as mídias e
+formatos, sejam agora conhecidos ou criados futuramente, e a fazer as
+modificações técnicas ne- cessárias para fazê-lo. O Licenciador renuncia
+e/ou concorda em não reivindicar qualquer direito ou autoridade para
+proibi-lo de fazer modificações técnicas ne- cessárias para exercer os
+Direitos Licenciados, incluindo modificações técnicas necessárias para
+contornar Medidas Tecnológicas Eficazes. Para os fins desta Licença
+Pública, simplesmente fazer modificações autorizadas por esta Seção
+2(a)(4) nunca produz Material Adaptado.
+
+5. Destinatários a jusante.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+A. \emph{Oferta do Licenciador -- Material Licenciado.}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{Cada destinatário do Ma-}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{quote}
+\emph{terial Licenciado recebe automaticamente uma oferta do Licenciante
+para}
+\end{quote}
+\end{minipage}} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{exercer os Direitos Licenciados sob os termos e condições desta
+Licença Pública.}
+\end{quote}
+
+63
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multirow{3}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+64
+\end{minipage}} &
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6667} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\emph{Index of LATEX commands}
+\end{minipage}} \\
+& \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+B. \emph{Oferta adicional do Licenciante -- Material Adaptado.}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{Cada destinatário}
+\end{quote}
+\end{minipage} \\
+&
+\multicolumn{2}{>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6667} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{do Material Adaptado seu recebe automaticamente uma oferta do
+Licen-ciante para exercer os Direitos Licenciados no Material Adaptado
+sob as}
+\end{quote}
+\end{minipage}} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{condições da Licença do Adaptador que Você aplica.}
+
+C. \emph{Sem restrições downstream. Você não poderá oferecer ou impor
+quaisquer termos ou condições adicionais ou diferentes, ou aplicar
+quaisquer Medidas Tecnológicas Eficazes ao Material Licenciado, se isso
+restringir o exercício dos Direitos Licenciados por qualquer
+destinatário do Material Licenciado.}
+
+6. \uline{Sem endosso}. Nada nesta Licença Pública constitui ou pode ser
+interpretado como permissão para afirmar ou sugerir que Você está, ou
+que Seu uso do Ma-terial Licenciado está, conectado ou patrocinado,
+endossado ou concedido status oficial pelo Licenciador ou outros
+designados para receber atribuição conforme previsto na Seção
+3(a)(1)(A)(i).
+
+b. \textbf{Outros direitos.}
+
+1. Os direitos morais, como o direito à integridade, não são licenciados
+sob esta Li-cença Pública, nem a publicidade, a privacidade e/ou outros
+direitos de person-alidade semelhantes; no entanto, na medida do
+possível, o Licenciante renuncia e/ou concorda em não fazer valer
+quaisquer direitos detidos pelo Licenciante na medida limitada
+necessária para permitir que Você exerça os Direitos Licencia-dos, mas
+não de outra forma.
+
+2. Os direitos de patentes e marcas registradas não são licenciados sob
+esta Licença Pública.
+
+3. Na medida do possível, o Licenciante renuncia a qualquer direito de
+cobrar royalties de Você pelo exercício dos Direitos Licenciados, seja
+diretamente ou por meio de uma sociedade de gestão coletiva sob qualquer
+esquema de licen-ciamento obrigatório ou legal voluntário ou
+dispensável. Em todos os outros casos, o Licenciante reserva-se
+expressamente qualquer direito de cobrar tais royalties.
+\end{quote}
+
+\textbf{Seção 3 -- Condições de Licença.}
+
+O exercício dos Direitos Licenciados está expressamente sujeito às
+seguintes condições.
+
+\begin{quote}
+a. \textbf{Atribuição.}
+
+1. Se você compartilhar o Material Licenciado (inclusive na forma
+modificada), deverá:
+
+A. reterá o seguinte se for fornecido pelo Licenciador com o Material
+Licen-ciado: identificação do(s) criador(es) do Material Licenciado e
+quaisquer
+\end{quote}
+
+64
+
+\emph{Index of LATEX commands} 65
+
+\begin{quote}
+outros designados para receber atribuição, de qualquer forma razoável
+soli-citada pelo Licenciante (inclusive por pseudônimo, se designado);
+um aviso de direitos autorais;\\
+i. um aviso referente a esta Licença Pública;
+
+ii. um aviso que se refere à isenção de garantias;
+
+iii. um URI ou hiperlink para o Material Licenciado na medida razoavel-
+mente praticável;
+
+B. indicar se Você modificou o Material Licenciado e reter uma indicação
+de quaisquer modificações anteriores; e
+
+C. indica que o Material Licenciado está licenciado sob esta Licença
+Pública e inclui o texto, ou o URI ou hiperlink para esta Licença
+Pública.
+
+2. Você pode satisfazer as condições da Seção 3(a)(1) de qualquer
+maneira razoável com base no meio, meio e contexto em que Você
+Compartilha o Material Licen-ciado. Por exemplo, pode ser razoável
+satisfazer as condições fornecendo um URI ou hiperlink para um recurso
+que inclua as informações necessárias.
+
+3. Se solicitado pelo Licenciador, Você deverá remover qualquer
+informação exi- gida pela Seção 3(a)(1)(A) na medida razoavelmente
+praticável.
+
+b. \textbf{ShareAlike.}
+
+Além das condições da Seção 3(a), se você compartilhar material adaptado
+que você produz, as condições a seguir também se aplicam.
+
+1. A licença do adaptador que você aplica deve ser uma licença Creative
+Commons com os mesmos elementos de licença, desta versão ou posterior,
+ou uma licença compatível com BY-SA.
+
+2. Você deve incluir o texto ou o URI ou hiperlink para a Licença do
+Adaptador que Você aplica. Você pode satisfazer esta condição de
+qualquer maneira razoável com base no meio, meio e contexto em que você
+compartilha o Material Ad-aptado.
+
+3. Você não pode oferecer ou impor quaisquer termos ou condições
+adicionais ou diferentes, nem aplicar quaisquer Medidas Tecnológicas
+Eficazes ao Material Adaptado que restrinja o exercício dos direitos
+concedidos sob a Licença do Adaptador que você aplica.
+\end{quote}
+
+\textbf{Seção 4 -- Direitos Sui Generis sobre Banco de Dados.}
+
+Onde os Direitos Licenciados incluem Direitos de Banco de Dados Sui
+Generis que se aplicam ao Seu uso do Material Licenciado:
+
+\begin{quote}
+a. para evitar dúvidas, a Seção 2(a)(1) concede a Você o direito de
+extrair, reutilizar, reproduzir e compartilhar todo ou uma parte
+substancial do conteúdo do banco de dados;
+\end{quote}
+
+65
+
+66 \emph{Index of LATEX commands}
+
+\begin{quote}
+b. se Você incluir todo ou uma parte substancial do conteúdo do banco de
+dados em um banco de dados no qual Você tem Direitos de Banco de Dados
+Sui Generis, então o banco de dados no qual Você tem Direitos de Banco
+de Dados Sui Generis (mas não seu conteúdo individual) é Material
+Adaptado, inclusive para fins da Seção 3(b); e
+
+c. Você deverá cumprir as condições da Seção 3(a) se compartilhar todo
+ou uma parte substancial do conteúdo do banco de dados.
+\end{quote}
+
+Para evitar dúvidas, esta Seção 4 complementa e não substitui Suas
+obrigações sob esta Licença Pública quando os Direitos Licenciados
+incluem outros Direitos Autorais e Direitos Similares.
+
+\textbf{Seção 5 -- Isenção de Garantias e Limitação de
+Responsabilidade.}
+
+\begin{quote}
+\textbf{a. A menos que de outra forma realizado separadamente pelo
+Licenciador, na medida do possível, o Licenciador oferece o Material
+Licenciado tal como está e conforme disponível, e não faz representações
+ou garantias de qualquer tipo em relação ao Material Licenciado, sejam
+expressas, implícitas, estatutárias ou outras . Isto inclui, sem
+limitação, garantias de título, comercialização, ad-equação a uma
+finalidade específica, não violação, ausência de defeitos latentes ou
+outros, precisão ou presença ou ausência de erros, conhecidos ou
+detectá-veis ou não. Quando isenções de garantia não forem permitidas,
+no todo ou em parte, esta isenção de responsabilidade poderá não se
+aplicar a Você.}
+
+\textbf{b. Na medida do possível, em nenhum caso o Licenciador será
+responsável per-ante Você em qualquer teoria legal (incluindo, sem
+limitação, negligência) ou de outra forma por quaisquer perdas diretas,
+especiais, indiretas, incidentais, consequenciais, punitivas, exemplares
+ou outras , custos, despesas ou danos de-correntes desta Licença Pública
+ou do uso do Material Licenciado, mesmo que o Licenciante tenha sido
+avisado da possibilidade de tais perdas, custos, despe-sas ou danos.
+Quando uma limitação de responsabilidade não for permitida, total ou
+parcialmente, esta limitação poderá não se aplicar a Você.}
+
+c. A isenção de garantias e limitação de responsabilidade fornecidas
+acima devem ser interpretadas de uma maneira que, na medida do possível,
+se aproxime mais de uma isenção de responsabilidade absoluta e renúncia
+de toda responsabilidade.
+\end{quote}
+
+\textbf{Seção 6 -- Vigência e Rescisão.}
+
+\begin{quote}
+a. Esta Licença Pública se aplica pela vigência dos Direitos Autorais e
+Similares aqui licenciados. No entanto, se Você não cumprir esta Licença
+Pública, Seus direitos sob esta Licença Pública terminarão
+automaticamente.
+\end{quote}
+
+66
+
+\emph{Index of LATEX commands} 67
+
+\begin{quote}
+b. Quando o Seu direito de usar o Material Licenciado for rescindido de
+acordo com a Seção 6(a), ele restabelecerá:
+
+{[}1.{]}
+
+c. automaticamente a partir da data em que a violação for sanada, desde
+que seja sanada dentro de 30 dias após a descoberta da violação; ou
+
+d. mediante reintegração expressa pela Licenciante.
+
+Para evitar dúvidas, esta Seção 6(b) não afeta nenhum direito que o
+Licenciador possa ter de buscar soluções para Suas violações desta
+Licença Pública.
+
+e. Para evitar dúvidas, o Licenciante também poderá oferecer o Material
+Licenciado sob termos ou condições separados ou interromper a
+distribuição do Material Li-cenciado a qualquer momento; no entanto,
+isso não encerrará esta Licença Pública.
+
+f. As Seções 1, 5, 6, 7 e 8 sobreviverão ao término desta Licença
+Pública.
+\end{quote}
+
+\textbf{Seção 7 -- Outros Termos e Condições.}
+
+\begin{quote}
+a. O Licenciante não estará vinculado a quaisquer termos ou condições
+adicionais ou diferentes comunicados por Você, a menos que expressamente
+acordado.
+
+b. Quaisquer acordos, entendimentos ou acordos relativos ao Material
+Licenciado não declarados aqui são separados e independentes dos termos
+e condições desta Li-cença Pública.
+\end{quote}
+
+\textbf{Seção 8 -- Interpretação.}
+
+\begin{quote}
+a. Para evitar dúvidas, esta Licença Pública não reduz e não deve ser
+interpretada como reduzindo, limitando, restringindo ou impondo
+condições a qualquer uso do Material Licenciado que possa ser feito
+legalmente sem permissão sob esta Licença Pública.
+
+b. Na medida do possível, se qualquer disposição desta Licença Pública
+for consid-erada inexequível, ela deverá ser automaticamente reformada
+na medida mínima necessária para torná-la exequível. Se a disposição não
+puder ser reformada, ela será separada desta Licença Pública sem afetar
+a aplicabilidade dos demais termos e condições.
+
+c. Nenhum termo ou condição desta Licença Pública será renunciado e
+nenhum des-cumprimento será consentido, a menos que expressamente
+acordado pelo Licen-ciador.
+\end{quote}
+
+67
+
+68 \emph{Index of LATEX commands}
+
+d. Nada nesta Licença Pública constitui ou pode ser interpretado como
+uma limitação
+
+\begin{quote}
+ou renúncia a quaisquer privilégios e imunidades que se apliquem ao
+Licenciador
+\end{quote}
+
+ou a Você, inclusive dos processos legais de qualquer jurisdição ou
+autoridade.
+
+68
+
+\end{document}
