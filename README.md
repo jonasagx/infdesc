@@ -5,7 +5,7 @@ This Git repository contains the TeX source for _An Infinite Descent into Pure M
 
 The main website for the book is [here](https://infinitedescent.xyz/).
 
-## Navigating the source
+## Nevegando o codigo
 
 To compile the source, you will need a LaTeX implementation on your computer, or a browser-based LaTeX editor such as [Overleaf](https://www.overleaf.com/), using the compiler pdfLaTeX.
 
