@@ -1,19 +1,148 @@
-% !TeX root = ../../infdesc.tex
-\chapter{Logical structure}
-\label{chLogicalStructure}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
-\input{book/logical-structure/intro.tex}
+\author{}
+\date{}
 
-\newpage
-\input{book/logical-structure/propositional-logic.tex}
+\begin{document}
 
-\newpage
-\input{book/logical-structure/variables-quantifiers.tex}
+\begin{quote}
+2 \emph{Index of LATEX commands}
+\end{quote}
 
-\newpage
-\input{book/logical-structure/logical-equivalence.tex}
+Chapter 1
 
-% Chapter exercises
-\chexbegin{chLogicalStructure}
-\input{book/logical-structure/q.tex}
-\chexend
+\textbf{Estrutura Lógica}
+
+\begin{quote}
+O objetivo desse capítulo é desenvolver uma maneira metódica de dividir
+uma preposição em componentes menores e ver como eles se encaixam---isso
+é chamado \emph{a estrutura lógica} de uma preposição. A \emph{estrutura
+lógica} de uma preposição é muito informática: nos diz o que precisamos
+fazer para prova-la, o que precisamos descrever para comunicar a nossa
+prova e como explorar as consequências da preposição depois da mesma ter
+sido provada.
+\end{quote}
+
+Estrutura lógica de uma
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\includegraphics[width=0.88889in,height=0.40278in]{vertopal_708b3db82b3347f88495d9245cd66f5b/media/image1.png}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+preposição
+\end{quote}
+\end{minipage} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=0.81944in,height=0.40278in]{vertopal_708b3db82b3347f88495d9245cd66f5b/media/image2.png}
+\end{quote}
+\end{minipage}} \\
+& \begin{minipage}[b]{\linewidth}\raggedright
+\includegraphics[width=\textwidth,height=0.38889in]{vertopal_708b3db82b3347f88495d9245cd66f5b/media/image3.png}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+estratégias para provar estrutura e redação da consequências da the
+propositi a preposição prova proposição
+
+Sections 1.1 e 1.2 são dedicadas ao desenvolver um sistema de
+\emph{lógicasimbólica} para raciocinar sobre preposições.Seremos capazes
+de representar uma preposição utilizando uma série de variáveis e
+símbolos, e esta expressão orientará como podemos provar a preposição e
+explorar as suas consequências. Na Sections 1.3
+
+preview\\
+preview
+\end{quote}
+
+2
+
+desenvolveremos técnicas para manipular essas expressões lógicas
+algebricamente -isso, por sua vez, produzirá novas provas técnicas
+(algumas têm nomes sofisticados como ``prova por contraposição''),mas
+outras não). Explorar como a estrutura lógica de uma proposição informa
+a estrutura e o texto de sua prova é o conteúdo do Apêndice A.2.
+
+3
+
+\end{document}
