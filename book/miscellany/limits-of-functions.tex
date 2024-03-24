@@ -1,307 +1,673 @@
-% !TeX root = ../../infdesc.tex
-\section{Limits of functions}
-\secbegin{secLimitsOfFunctions}
-
-At the end of \Cref{secInequalitiesMeans} we mentioned the use of \textit{limits} of functions without properly defining what we meant. This admittedly brusque section is dedicated to making what we meant mathematical precise.
-
-\subsection*{Limits}
-
-\begin{definition}
-\label{defLimitPoint}
-Let $D \subseteq \mathbb{R}$. A \textbf{limit point} of $D$ is a real number $a$ such that, for all $\delta > 0$, there exists some $x \in D$ such that $0 < |x-a| < \delta$.
-\end{definition}
-
-\begin{lemma}
-Let $D \subseteq \mathbb{R}$. A real number $a$ is a limit point of $D$ if and only if there is a sequence $(x_n)$ of elements of $D$, which is not eventually constant, such that $(x_n) \to a$.
-\end{lemma}
-
-\begin{cproof}
-($\Rightarrow$) Let $a \in \mathbb{R}$ and assume that $a$ is a limit point of $D$. For each $n \ge 1$, let $x_n$ be some element of $D$ such that $0 < |x_n-a| < \dfrac{1}{n}$.
-
-Evidently $(x_n) \to a$: indeed, given $\varepsilon > 0$, letting $N \ge \mathrm{max} \{ 1, \frac{1}{\varepsilon} \}$ gives $|x_n-a| < \varepsilon$ for all $n \ge N$.
-
-Moreover, the sequence $(x_n)$ is not eventually constant: if it were, there would exist $N \ge 1$ and $b \in \mathbb{R}$ such that $x_n=b$ for all $n \ge N$. But then by the squeeze theorem (\Cref{thmSqueeze}), we'd have
-\[ 0 ~\le~ \lim_{n \to \infty} |x_n-a| ~=~ |b-a| ~\le~ \lim_{n \to \infty} \dfrac{1}{n} ~=~ 0 \]
-and so $b=a$. But this contradicts the fact that $|x_n-a| > 0$ for all $n \ge 1$.
-
-($\Leftarrow$) Let $a \in \mathbb{R}$ and assume that there is a sequence $(x_n)$ of elements of $D$, which is not eventually constant, such that $(x_n) \to a$. Then for all $\delta > 0$ there exists some $N \in \mathbb{N}$ such that $|x_n-a| < \varepsilon$ for all $n \ge N$. Since $(x_n)$ is not eventually constant, there is some $n \ge N$ such that $|x_n-a| > 0$---otherwise $(x_n)$ would be eventually constant with value $a$! But then $x_n \in D$ and $0 < |x_n-a| < \delta$, so that $a$ is a limit point of $D$.
-\end{cproof}
-
-\begin{definition}
-\label{defClosure}
-Let $D \subseteq \mathbb{R}$. The \textbf{closure} of $D$ is the set $\overline{D}$ \inlatex{overline\{D\}} defined by
-\[ \overline{D} = D \cup \{ a \in \mathbb{R} \mid a \text{ is a limit point of } D \} \]
-That is, $\overline{D}$ is given by $D$ together with its limit points.
-\end{definition}
-
-\begin{example}
-We have $\overline{(0,1)} = [0,1]$. Indeed, $(0,1) \subseteq \overline{(0,1)}$ since $D \subseteq \overline{D}$ for all $D \subseteq \mathbb{R}$. Moreover the sequences $(\frac{1}{n})$ and $(1-\frac{1}{n})$ are non-constant, take values in $(0,1)$, and converge to $0$ and $1$ respectively, so that $0 \in \overline{(0,1)}$ and $1 \in \overline{(0,1)}$. Hence $[0,1] \subseteq \overline{(0,1)}$.
-
-Given $a \in \mathbb{R}$, if $a>1$, then letting $\delta = 1-a > 0$ reveals that $|x-a| \ge \delta$ for all $x \in D$; and likewise, if $a<0$, then letting $\delta = -a > 0$ reveals that $|x-a| \ge \delta$ for all $x \in D$. Hence no element of $\mathbb{R} \setminus [0,1]$ is an element of $D$, so that $\overline{(0,1)} = [0,1]$.
-\end{example}
-
-\begin{exercise}
-Let $a,b \in \mathbb{R}$ with $a<b$. Prove that $\overline{(a,b)} = \overline{(a,b]} = \overline{[a,b)} = [a,b]$.
-\end{exercise}
-
-\begin{convention}
-For the rest of this section, whenever we declare $f : D \to \mathbb{R}$ to be a function, it will be assumed that the domain $D$ is a subset of $\mathbb{R}$, and that every point of $D$ is a limit point of $D$. In other words, $D$ has no \textit{isolated points}, which are points separated from all other elements of $D$ by a positive distance. For instance, in the set $(0,1] \cup \{ 2 \}$, the element $2 \in \mathbb{R}$ is an isolated point.
-\end{convention}
-
-\begin{definition}
-\label{defLimitOfFunction}
-\index{limit!of a function}
-Let $f : D \to \mathbb{R}$ be a function, let $a \in \overline{D}$, and let $\ell \in \mathbb{R}$. We say $\ell$ is a \textbf{limit} of $f(x)$ as $x$ \textbf{approaches} $a$ if
-\[ \forall \varepsilon > 0,~ \exists \delta > 0,~ \forall x \in D,~ 0 < |x-a| < \delta ~ \Rightarrow ~ |f(x) - \ell| < \varepsilon \]
-In other words, for values of $x \in D$ near $a$ (but not equal to $a$), the values of $f(x)$ become arbitrarily close to $\ell$.
-
-We write `$f(x) \to \ell$ as $x \to a$' \inlatex{to} to denote the assertion that $\ell$ is a limit of $f(x)$ as $x$ approaches $a$.
-\end{definition}
-
-\begin{example}
-Define $f : \mathbb{R} \to \mathbb{R}$ by $f(x) = x$ for all $x \in \mathbb{R}$. Then $f(x) \to 0$ as $x \to 0$. To see this, let $\varepsilon > 0$, and define $\delta = \varepsilon > 0$. Then for all $x \in \mathbb{R}$, if $0 < |x-a| < \delta = \varepsilon$, then
-\[ |f(x) - f(a)| = |x-a| < \varepsilon \]
-as required.
-\end{example}
-
-\begin{exercise}
-Let $f : D \to \mathbb{R}$ be a function, let $a \in D$ and let $\ell \in \mathbb{R}$. Fix some sequence $(x_n)$ of elements of $D$, not eventually constant, such that $(x_n) \to a$. Prove that if $f(x) \to \ell$ as $x \to a$, then the sequence $(f(x_n))$ converges to $\ell$.
-\end{exercise}
-
-The next exercise tells us that limits of functions are unique, provided that they exist. Its proof looks much like the analogous result we proved for sequences in \Cref{thmUniquenessofLimits}.
-
-\begin{exercise}
-\label{exLimitsOfFunctionsAreUnique}
-Let $f : D \to \mathbb{R}$ be a function, let $a \in D$, and $\ell_1, \ell_2 \in \mathbb{R}$. Prove that if $f(x) \to \ell_1$ as $x \to a$, and $f(x) \to \ell_2$ as $x \to a$, then $\ell_1=\ell_2$.
-\end{exercise}
-
-When the domain $D$ of a function $f : D \to \mathbb{R}$ is unbounded, we might also be interested in finding out how the values of $f(x)$ behave as $x \in D$ gets (positively or negatively) larger and larger.
-
-\begin{definition}
-\label{defInfiniteLimitOfFunction}
-Let $f : D \to \mathbb{R}$ be a function and let $\ell \in \mathbb{R}$. If $D$ is unbounded above---that is, for all $p \in \mathbb{R}$, there exists $x \in D$ with $x > p$---then we say $\ell$ is a \textbf{limit} of $f(x)$ as $x$ \textbf{increases without bound} if
-\[ \forall \varepsilon > 0, ~ \exists p \in \mathbb{R},~ \forall x \in D,~ x > p ~\Rightarrow~ |f(x) - \ell| < \varepsilon\]
-We write `$f(x) \to \ell$ as $x \to \infty$' \inlatex{infty} to denote the assertion that $\ell$ is a limit of $f(x)$ as $x$ increases without bound.
-
-Likewise, if $D$ is unbounded below---that is, for all $p \in \mathbb{R}$, there exists $x \in D$ with $x < p$---then we say $\ell$ is a \textbf{limit} of $f(x)$ as $x$ \textbf{decreases without bound} if
-\[ \forall \varepsilon > 0, ~ \exists p \in \mathbb{R},~ \forall x \in D,~ x < p ~\Rightarrow~ |f(x) - \ell| < \varepsilon\]
-We write `$f(x) \to \ell$ as $x \to -\infty$' to denote the assertion that $\ell$ is a limit of $f(x)$ as $x$ decreases without bound.
-\end{definition}
-
-\begin{example}
-Let $f : \mathbb{R} \to \mathbb{R}$ be the function defined by $f(x) = \dfrac{x}{1+|x|}$ for all $x \in \mathbb{R}$. Then:
-\begin{itemize}
-\item $f(x) \to 1$ as $x \to \infty$. To see this, let $\varepsilon > 0$, and define $p = \mathrm{max} \{ 1, \frac{1}{\varepsilon} \}$. Then for all $x > p$, we have $x>0$, so that $f(x) = \dfrac{x}{1+x}$, and $x > \frac{1}{\varepsilon} - 1$. Hence:
-\[ \left| \frac{x}{1+x} - 1 \right| = \left| \frac{-1}{1+x} \right| = \frac{1}{1+x} < \frac{1}{1+ (\frac{1}{\varepsilon}-1) } = \varepsilon \]
-as required.
-\item $f(x) \to -1$ as $x \to \infty$. To see this, let $\varepsilon > 0$ and define $p = \mathrm{min} \{ -1, \frac{-1}{\varepsilon} \}$. Then for all $x < p$, we have $x<0$, so that $f(x) = \frac{1}{1-x}$, and $x < \frac{-1}{\varepsilon} + 1$. Hence:
-\[ \left| \frac{x}{1-x} - (-1) \right| = \left| \frac{1}{1-x} \right| = \frac{1}{1-x} < \frac{1}{1-(-\frac{1}{\varepsilon}+1)} = \varepsilon  \]
-as required.
-\end{itemize}
-So $f(x) \to 1$ as $x \to \infty$ and $f(x) \to -1$ as $x \to -\infty$.
-\end{example}
-
-\begin{exercise}
-\label{exInfiniteLimitsOfFunctionsAreUnique}
-Let $f : D \to \mathbb{R}$ be a function and $\ell_1, \ell_2 \in \mathbb{R}$. Prove that if $D$ is unbounded above, and if $f(x) \to \ell_1$ as $x \to \infty$ and $f(x) \to \ell_2$ as $x \to \infty$, then $\ell_1=\ell_2$. Prove the analogous result for limits as $x \to -\infty$ in the case when $D$ is unbounded below.
-\end{exercise}
-
-The results of \Cref{exLimitsOfFunctionsAreUnique,exInfiniteLimitsOfFunctionsAreUnique} justify the following definition.
-
-\begin{definition}
-\label{defLimitOfFunctionNotation}
-Let $f : D \to \mathbb{R}$ and let $a \in [-\infty, \infty]$. Assuming the limits in question are well-defined and exist, we write $\displaystyle \lim_{x \to a} f(x)$ to denote the unique real number $\ell \in \mathbb{R}$ such that $f(x) \to \ell$ as $x \to a$.
-\end{definition}
-
-% \subsection*{Continuity}
-
-% \begin{definition}
-% \label{defContinuousFunction}
-% \index{function!continuous}
-% \index{continuous function}
-% Let $f : D \to \mathbb{R}$ be a function and let $a \in D$. Then $f$ is \textbf{continuous at $a$} if, for all $\varepsilon > 0$, there exists $\delta > 0$ such that, for all $x \in D$, if $|x-a|<\delta$, then $|f(a) - f(x)| < \varepsilon$. That is:
-% \[ \forall \varepsilon > 0,\, \exists \delta > 0,\, \forall x \in D,\, (|x-a|<\delta \Rightarrow |f(x)-f(a)|<\varepsilon) \]
-% We say $f$ is \textbf{continuous} if $f$ is continuous at $a$ for all $a \in D$.
-% \end{definition}
-
-% \begin{definition}
-% \label{defInteriorPoint}
-% \nindex{interior}{$D^{\circ}$}{interior}
-% Let $D \subseteq \mathbb{R}$. An \textbf{interior point} of $D$ is an element $a \in D$ such that $(a-\delta, a+\delta) \subseteq D$ for some $\delta > 0$. Write $D^{\circ}$ \inlatexnb{D\^{}\{\textbackslash{}circ\}} \lindexmmc{circ}{$\circ$} for the set of all interior points of $D$, called the \textbf{interior} of $D$.
-% \end{definition}
-
-% \begin{example}
-% Consider the half-open interval $[0,1)$. The element $\frac{1}{2} \in [0,1)$ is an interior point of $[0,1)$, since $(\frac{1}{2}-\frac{1}{2}, \frac{1}{2}+\frac{1}{2}) = (0,1) \subseteq [0,1)$. However, the element $0$ is not a limit point of $[0,1)$, since for all $\delta > 0$ we have $-\frac{\delta}{2} \in (-\delta, \delta)$ but $-\frac{\delta}{2} \not\in [0,1)$.
-% \end{example}
-
-% \begin{exercise}
-% Prove that a subset $U \subseteq \mathbb{R}$ is open if and only if $U^{\circ} = U$.
-% \end{exercise}
-
-% \todo{}
-
-
-% \todo{}
-
-
-
-% \todo{}
-
-% \subsection*{Open sets}
-
-% \todo{}
-
-% \begin{definition}
-% \label{defOpenSubsetOfR}
-% A subset $U \subseteq \mathbb{R}$ is \textbf{open} if, for all $a \in U$, there exists some $\delta > 0$ such that $(a-\delta, a+\delta) \subseteq U$.
-% \end{definition}
-
-% \begin{example}
-% The subset $\mathbb{R}$ of $\mathbb{R}$ is open, since for all $a \in \mathbb{R}$, we have $(a-1,a+1) \subseteq \mathbb{R}$.
-% \end{example}
-
-% \begin{example}
-% The subset $\mathbb{Z} \subseteq \mathbb{R}$ is not open. To see this, let $a \in \mathbb{Z}$. Fix $\delta > 0$ and define $\delta' = \mathrm{min} \{ \delta, 1 \}$. Then
-% \[ a-\delta < a < a + \frac{\delta'}{2} < a+\delta' \le a+\delta \]
-% so $a+\frac{\delta'}{2} \in (a-\delta,a+\delta)$. However, $a < a+\frac{\delta'}{2} \le a+\frac{1}{2} < a+1$, and so $a+\frac{\delta'}{2} \not\in \mathbb{Z}$.
-
-% We have shown that there is no $\delta > 0$ such that $(a-\delta,a+\delta) \subseteq \mathbb{Z}$, so that $\mathbb{Z}$ is not open.
-% \end{example}
-
-% \begin{exercise}
-% Prove that $\varnothing$ and $(0,\infty)$ are open subsets of $\mathbb{R}$, and that $[0,\infty)$ and $\mathbb{Q}$ are not open subsets of $\mathbb{R}$.
-% \end{exercise}
-
-% Open sets are very closely related to open intervals, as we shall see in \Cref{thmOpenIffUnionOfOpenIntervals}.
-
-% \begin{proposition}
-% \label{propOpenIntervalsAreOpen}
-% Let $a,b \in \mathbb{R}$ with $a<b$. Then the open interval $(a,b)$ is open.
-% \end{proposition}
-
-% \begin{cproof}
-% Let $x \in (a,b)$, and define $\delta = \mathrm{min} \{ x-a, b-x \}$. Note that $\delta > 0$ since $a<x<b$.
-
-% To see that $(x-\delta, x+\delta) \subseteq (a,b)$, let $y \in (x-\delta, x+\delta)$. Then since $\delta \le x-a$, we have
-% \[ y > x-\delta \ge x-(x-a) = a \]
-% and since $\delta \le b-x$ we have
-% \[ y < x+\delta \le x+(b-x) = b \]
-% Hence $a<y<b$, so $y \in (a,b)$, as required.
-% \end{cproof}
-
-% \begin{exercise}[Arbitrary unions of open sets are open]
-% \label{exUnionOfOpenSetsIsOpen}
-% Let $\{ U_i \mid i \in I \}$ be a family of open subsets of $\mathbb{R}$. Prove that $\bigcup_{i \in I} U_i$ is open.
-% \end{exercise}
-
-% \begin{theorem}
-% \label{thmOpenIffUnionOfOpenIntervals}
-% A subset $U \subseteq \mathbb{R}$ is open if and only if it is a union of open intervals.
-% \end{theorem}
-
-% \begin{cproof}
-% Since open intervals are open (\Cref{propOpenIntervalsAreOpen}) and unions of open sets are open (\Cref{exUnionOfOpenSetsIsOpen}), it follows that if a subset $U \subseteq \mathbb{R}$ is a union of open intervals then it is open.
-
-% Conversely, suppose $U \subseteq \mathbb{R}$ is open. For each $a \in U$, let $\delta_a > 0$ be such that $(a-\delta_a, a+\delta_a) \subseteq U$.
-
-% We prove that $U = \bigcup_{a \in U} (a-\delta_a, a+\delta_a)$.
-% \begin{itemize}
-% \item ($\subseteq$) Let $x \in U$. Then $x \in (x-\delta_x, x+\delta_x)$, so $x \in \bigcup_{a \in U} (a-\delta_a, a+\delta_a)$.
-% \item ($\supseteq$) Let $x \in \bigcup_{a \in U} (a-\delta_a, a+\delta_a)$. Then $x \in (a-\delta_a, a+\delta_a)$ for some $a \in U$, and so $x \in U$ by our assumption that $(a-\delta_a, a+\delta_a) \subseteq U$.
-% \end{itemize}
-% Hence $U$ is a union of open intervals, as required.
-% \end{cproof}
-
-% \todo{}
-
-% \begin{proposition}[Finite intersections of open sets are open]
-% \label{propFiniteIntersectionOfOpenIsOpen}
-% Let $n \in \mathbb{N}$ and let $U_1, U_2, \dots, U_n$ be open subsets of $\mathbb{R}$. Then the intersection $\bigcap_{k=1}^n U_k$ is open.
-% \end{proposition}
-
-% \begin{cproof}
-% Define $U = \bigcap_{k=1}^n U_k$ and let $a \in U$. Then $a \in U_k$ for each $k \in [n]$.
-
-% Since each set $U_k$ is open, there exist positive real numbers $\delta_k > 0$ such that $(a-\delta_k, a+\delta_k) \subseteq U_k$. for each $k \in [n]$.
-
-% Now define $\delta = \mathrm{min} \{ \delta_k \mid k \in [n] \}$. Then $\delta > 0$. To see that $(a-\delta, a+\delta) \subseteq U$, let $x \in (a-\delta, a+\delta)$. Then for each $k \in [n]$ we have
-% \[ a - \delta_k \le a - \delta < x < a+\delta \le a+\delta_k \]
-% so that $x \in (a-\delta_k, a+\delta_k)$. But then $x \in U_k$ since $(a-\delta_k,a+\delta_k) \subseteq U_k$.
-
-% Since $x \in U_k$ for each $k \in [n]$, we have $x \in U$. So $(a-\delta,a+\delta) \subseteq U$, as required.
-% \end{cproof}
-
-% We have now proved that unions of arbitrarily many open sets are open (\Cref{exUnionOfOpenSetsIsOpen}) and intersections of \textit{finitely many} open sets are open (\Cref{propFiniteIntersectionOfOpenIsOpen}). It might be nice if the intersection of infinitely many open sets were open, but unfortunately this is not the case, as you will show in \Cref{exIntersectionOfInfinitelyManyOpenSetsMightNotBeOpen}.
-
-% \begin{exercise}
-% Find a family $\{ U_n \mid n \in \mathbb{N} \}$ of open subsets of $\mathbb{R}$ whose intersection is not open.
-% \hintlabel{exIntersectionOfInfinitelyManyOpenSetsMightNotBeOpen}{%
-% Try taking $\{ U_n \mid n \in \mathbb{N} \}$ to be a nested sequence of open intervals---that is, each $U_n \subseteq \mathbb{R}$ is an open interval, and $U_1 \supseteq U_2 \supseteq U_3 \supseteq \cdots$.
-% }
-% \end{exercise}
-
-% \todo{}
-
-% \subsection*{Continuous functions}
-
-% \todo{}
-
-% \begin{convention}
-% When discussing functions $f : D \to \mathbb{R}$ in this section, we assume that the domain $D$ is an inhabited interval in $\mathbb{R}$. Thus either $D = \mathbb{R}$, or $D$ is one of the subsets of the kind defined in \Cref{defIntervals}.
-% \end{convention}
-
-% \begin{definition}
-% \label{defContinuousFunction}
-% \index{function!continuous}
-% \index{continuous function}
-% Let $f : D \to \mathbb{R}$ be a function and let $a \in D$. Then $f$ is \textbf{continuous at $a$} if, for all $\varepsilon > 0$, there exists $\delta > 0$ such that, for all $x \in D$, if $|x-a|<\delta$, then $|f(a) - f(x)| < \varepsilon$. That is:
-% \[ \forall \varepsilon > 0,\, \exists \delta > 0,\, \forall x \in D,\, (|x-a|<\delta \Rightarrow |f(x)-f(a)|<\varepsilon) \]
-% We say $f$ is \textbf{continuous} if $f$ is continuous at $a$ for all $a \in D$.
-% \end{definition}
-
-% \todo{Examples, etc.}
-
-% \begin{theorem}
-% \label{thmContinuousIffPreimageOfOpenSetsAreOpen}
-% Let $f : D \to \mathbb{R}$ be a function. Then $f$ is continuous if and only if, for all open subsets $U \subseteq \mathbb{R}$, we have $f^{-1}[U] = V \cap D$ for some open $V \subseteq \mathbb{R}$.
-% \end{theorem}
-
-% \begin{cproof}
-% \fixlistskip
-% \begin{itemize}
-% \item ($\Rightarrow$) Suppose $f$ is continuous, and let $U \subseteq \mathbb{R}$ be open. If $f^{-1}[U] = \varnothing$, then we can take $V = \varnothing$. So assume that $f^{-1}[(a,b)]$ is inhabited and fix $p \in f^{-1}[U]$.
-
-% Since $f(p) \in U$ and $U$ is open, there exists $\varepsilon_p > 0$ such that
-% \[ (f(p)-\varepsilon_p, f(p)+\varepsilon_p) \subseteq U \]
-% By continuity of $f$, there exists $\delta_p > 0$ such that, for all $x \in D$, if $|x-p| < \delta_p$, then $|f(x)-f(p)| < \varepsilon_p$.
-
-% But this says precisely that if $x \in (p-\delta_p, p+\delta_p) \cap D$, then $f(x) \in (f(p)-\varepsilon_p, f(p)+\varepsilon_p)$.
-
-% Since $(f(p)-\varepsilon_p, f(p)+\varepsilon_p) \subseteq U$, it follows that $(p-\delta_p, p+\delta_p) \cap D \subseteq f^{-1}[U]$.
-
-% Define $V \subseteq \mathbb{R}$ by
-% \[ V = \bigcup_{p \in f^{-1}[U]} (p-\delta_p, p+\delta_p) \]
-% Then $V$ is open by \Cref{thmOpenIffUnionOfOpenIntervals}, and $V \cap D \subseteq f^{-1}[U]$ since each $(p-\delta_p, p+\delta_p) \subseteq f^{-1}[U]$.
-
-% To see that $f^{-1}[U] \subseteq V \cap D$, let $p \in f^{-1}[U]$. Then $p \in D$ and $p \in (p-\delta_p, p+\delta_p)$, so that $p \in V \cap D$ as required.
-
-% So we have $f^{-1}[U] = V \cap D$, with $V \subseteq \mathbb{R}$ open, as required.
-
-% \item ($\Leftarrow$) Suppose that for all open subsets $U \subseteq \mathbb{R}$, we have $f^{-1}[U] = V \cap D$ for some open $V \subseteq \mathbb{R}$.
-
-% Let $a \in D$ and let $\varepsilon > 0$. Let $V \subseteq \mathbb{R}$ be an open set such that
-% \[ f^{-1}[(f(a)-\varepsilon, f(a)+\varepsilon)] = V \cap D \]
-% In particular, we have $a \in V \cap D$, so $a \in V$, and so there is some $\delta > 0$ such that $(a-\delta, a+\delta) \subseteq V$.
-
-% Now let $x \in D$ with $|x-a| < \delta$. Then $x \in V \cap D$, and so $f(x) \in (f(a)-\varepsilon, f(a) + \varepsilon)$. But then $|f(x)-f(a)| < \varepsilon$, as required.
-
-% So $f$ is continuous.
-% \end{itemize}
-% \end{cproof}
-
-% \begin{exercise}
-% Prove that a function $f : D \to \mathbb{R}$ is continuous if and only if, for all sequences $(x_n)$ in $D$ such that $(x_n) \to a \in D$, we have $(f(x_n)) \to f(a)$.
-% \end{exercise}
-
-% \todo{}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{multirow}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{quote}
+\emph{Section A.3. Limites de funções}
+
+Section A.3\\
+\textbf{Limites de funções}
+
+No final da Section 9.1 mencionamos o uso de \emph{limites} de funções
+sem definir corretamente o que queríamos dizer. Esta seção
+reconhecidamente brusca é dedicada a tornar preciso o que queremos dizer
+com matemática.
+
+Limites
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦\textbf{Definition A.3.1}\\
+Seja \emph{D} ⊆ R. Um ponto limite de \emph{D} é um número real \emph{a}
+tal que, para todo \emph{δ \textgreater{}} 0, existe algum \emph{x D}
+tal que 0 \emph{\textless{} x a \textless{} δ}.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}\strut
+\end{minipage}} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦
+\end{quote}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+∈
+\end{quote}
+\end{minipage} \\
+& & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbar{} − \textbar{}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+✣\textbf{Lemma A.3.2}\\
+Seja \emph{D} ⊆ R. Um número real \emph{a} é um ponto limite de \emph{D}
+se e somente se existe uma sequência (\emph{xn}) de elementos de
+\emph{D}, que não é eventualmente constante, tal que (\emph{xn}) →
+\emph{a}
+
+.
+
+\emph{\textbf{Proof}}\\
+□
+
+(⇒) Seja \emph{a} ∈ R e assuma que \emph{a} é um ponto limite de
+\emph{D}. Para cada \emph{n} ⩾ 1, seja \emph{xn} algum 1
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+elemento de \emph{D} tal que 0 \emph{\textless{}} \textbar{}\emph{xn}
+−\emph{a}\textbar{} \emph{\textless{}}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\emph{n}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Evidentemente (\emph{xn})→ \emph{a}: de fato, dado \emph{ε
+\textgreater{}} 0, deixando \emph{N} ⩾
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\includegraphics[width=1.47222in,height=0.17917in]{vertopal_a41b353a673949349e90465009d25ea6/media/image1.png}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{ε} para todos \emph{n} ⩾
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\emph{N}.
+
+Além disso, a sequência (\emph{xn}) não é eventualmente constante: se
+fosse, existiriam \emph{N} ⩾ 1 e \emph{b} ∈ R tais que \emph{xn} =
+\emph{b} para todos \emph{n geN}. Mas então, pelo teorema da compressão
+(??), teríamos
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+0
+⩽\emph{n}\includegraphics[width=1.975in,height=0.29305in]{vertopal_a41b353a673949349e90465009d25ea6/media/image2.png}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+∞
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{n} ∞
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+e então \emph{b} = \emph{a}. Mas isso contradiz o fato de que
+\textbar{}\emph{xn} −\emph{a}\textbar{} \emph{\textgreater{}} 0 para
+todo \emph{n} ⩾ 1.
+
+(⇐) Seja \emph{a} ∈ R e assuma que existe uma sequência (\emph{xn}) de
+elementos de \emph{D}, que não é eventualmente constante, tal que
+(\emph{xn})→ \emph{um}. Então para todo \emph{δ \textgreater{}} 0 existe
+algum \emph{N} ∈N tal que \textbar{}\emph{xn} −\emph{a}\textbar{}
+\emph{\textless{} ε} para todos \emph{n} ⩾\emph{N}. Como (\emph{xn}) não
+é eventualmente constante, existe algum \emph{n} ⩾\emph{N} tal que
+\textbar{}\emph{xn} −\emph{a}\textbar{} \emph{\textgreater{}} 0---caso
+contrário (\emph{xn}) seria eventualmente constante com valor \emph{a}!
+Mas então \emph{xn} ∈ \emph{D} e 0 \emph{\textless{}}
+\textbar{}\emph{xn} −\emph{a}\textbar{} \emph{\textless{} δ}, então
+\emph{a} é um ponto
+
+limite de \emph{D}.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦\textbf{Definition A.3.3}
+\end{quote}
+
+Seja \emph{D} ⊆R. O fechamento de \emph{D} é o conjunto \emph{D} (LATEX
+code: \textbackslash overline\{D\}) definido por
+
+\emph{D} = \emph{D}∪\{\emph{a} ∈ R \textbar{} \emph{a} é um ponto limite
+de \emph{D}\}
+
+\begin{quote}
+Ou seja, \emph{D} é dado por \emph{D} junto com seus pontos limites.
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦
+
+✐\textbf{Example}
+
+\textbf{A.3.4}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{1.0000} + 2\tabcolsep}@{}}{%
+} \\
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+Temos (0\emph{,}1) = {[}0\emph{,}1{]}. Na verdade, (0\emph{,}1) ⊆
+(0\emph{,}1) já que \emph{D} ⊆ \emph{D} para todo \emph{D} ⊆ R. Além
+disso, as sequências
+
+\includegraphics[width=0.75in,height=0.18056in]{vertopal_a41b353a673949349e90465009d25ea6/media/image3.png}
+não são constantes, assumem valores em (0\sout{\emph{,}1) e
+c}onver\sout{gem p}ara 0 e 1 respectivamente, de modo que 0 ∈
+(0\emph{,}1) e 1 ∈ (0\emph{,}1). Portanto
+
+{[}0\emph{,}1{]} ⊆ (0\emph{,}1).
+
+Dado \emph{a} ∈ R, se \emph{a \textgreater{}} 1, então deixar \emph{δ} =
+1 − \emph{a \textgreater{}} 0 revela que \textbar{}\emph{x} −
+\emph{a}\textbar{} ⩾\emph{δ} para todo \emph{x} ∈ \emph{D}; e da mesma
+
+forma, se \emph{a \textless{}} 0, então deixar \emph{δ} = −\emph{a
+\textgreater{}} 0 revela que \textbar{}\emph{x}−\emph{a}\textbar{}
+⩾\emph{δ}
+
+para todo \emph{x} ∈ \emph{D}. Portanto, nenhum elemento de
+R\textbackslash{[}0\emph{,}1{]} é um elemento de \emph{D}, de modo
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+que (0\emph{,}1) = {[}0\emph{,}1{]}.
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+◁
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+✎\textbf{Exercise A.3.5}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+Seja \emph{a,b} ∈ R com \emph{a \textless{} b}. Prove que (\emph{a,b}) =
+(\emph{a,b}{]} = {[}\emph{a,b}) = {[}\emph{a,b}{]}.
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+◁
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+❖\textbf{Convention A.3.6}\\
+Para o restante desta seção, sempre que declararmos \emph{f} : \emph{D}
+→ R como uma função, será assumido que
+
+o domínio \emph{D} é um subconjunto de R, e que todo ponto de \emph{D} é
+um ponto limite de \emph{D}. Em outras palavras,
+
+\emph{D} não possui \emph{pontos isolados}, que são pontos separados de
+todos os outros elementos de \emph{D} por uma
+
+distância positiva. Por exemplo, no conjunto (0\emph{,}1{]}∪\{2\}, o
+elemento 2 ∈ R é um ponto isolado. ◁
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦\textbf{Definition A.3.7}
+\end{quote}
+
+Seja \emph{f} : \emph{D} → R uma função, seja \emph{a} ∈ \emph{D}, e
+seja \emph{ℓ} ∈ R. Dizemos que \emph{ℓ} é um limit de \emph{f}(\emph{x})
+
+\begin{quote}
+quando \emph{x} se aproxima de \emph{a} se
+\end{quote}
+
+∀\emph{ε \textgreater{}} 0\emph{,} ∃\emph{δ \textgreater{}} 0\emph{,}
+∀\emph{x} ∈ \emph{D,} 0 \emph{\textless{}}
+\textbar{}\emph{x}−\emph{a}\textbar{} \emph{\textless{} δ} ⇒
+\textbar{}\emph{f}(\emph{x})−\emph{ℓ}\textbar{} \emph{\textless{} ε}\\
+Em outras palavras, para valores de \emph{x} ∈ \emph{D} próximos de
+\emph{a} (mas não iguais a \emph{a}), os
+
+\begin{quote}
+valores de \emph{f}(\emph{x}) tornam-se arbitrariamente próximos de
+\emph{ℓ}.
+\end{quote}
+
+Escrevemos `\emph{f}(\emph{x}) → \emph{ℓ} como \emph{x} → \emph{a}'
+(LATEX code: \textbackslash to) para denotar a afirmação de que
+
+\begin{quote}
+\emph{ℓ} é um limite de \emph{f}(\emph{x}) conforme \emph{x} se aproxima
+\emph{a}.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}\strut
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦
+
+✐\textbf{Example}
+
+\textbf{A.3.8}
+\end{quote}
+
+Defina \emph{f} : R → R
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+por \emph{f}(\emph{x}) = \emph{x} para todo \emph{x} ∈ R. Então
+\emph{f}(\emph{x}) → 0 como \emph{x} → 0. Para ver isso, seja \emph{ε
+\textgreater{}} 0 e defina \emph{δ} = \emph{ε \textgreater{}} 0.
+
+Então, para todo \emph{x} ∈ R, se 0 \emph{\textless{}}
+\textbar{}\emph{x}−\emph{a}\textbar{} \emph{\textless{} δ} = \emph{ε},
+então
+\end{quote}
+
+\textbar{}\emph{f}(\emph{x})− \emph{f}(\emph{uma})\textbar{} =
+\textbar{}\emph{x}−\emph{a}\textbar{} \emph{\textless{} ε}
+
+\begin{quote}
+como requerido. ◁\emph{Section A.3. Limites de funções} 49
+
+✎\textbf{Exercise A.3.9}\\
+Seja \emph{f} : \emph{D} → R uma função, seja \emph{a} ∈ \emph{D} e seja
+\emph{ℓ} ∈ R. Corrija alguma sequência (\emph{xn}) de elementos de
+\emph{D}, não eventualmente constante, tal que (\emph{xn}) → \emph{a}.
+Prove que se \emph{f}(\emph{x}) → \emph{ℓ} como \emph{x} → \emph{a},
+então a sequência (\emph{f}(\emph{xn})) converge para \emph{ℓ}. ◁
+
+O próximo exercício diz-nos que os limites das funções são únicos, desde
+que existam. Sua prova se parece muito com o resultado análogo que
+provamos para sequências em ??.
+
+✎\textbf{Exercise A.3.10}\\
+Seja \emph{f} : \emph{D} → R uma função, seja \emph{a} ∈ \emph{D}, e
+\emph{ℓ}1\emph{,ℓ}2 ∈ R. Prove que se \emph{f}(\emph{x}) → \emph{ℓ}1
+como \emph{x} → \emph{a}, e \emph{f}(\emph{x}) → \emph{ℓ}2 como \emph{x}
+→ \emph{a}, então \emph{ℓ}1 = \emph{ℓ}2. ◁
+
+Quando o domínio \emph{D} de uma função \emph{f} : \emph{D} → R é
+ilimitado, também podemos estar interessados em descobrir como os
+valores de \emph{f}(\emph{x}) se comportam como \emph{x} ∈ \emph{D} fica
+(positiva ou negativamente) cada vez maior.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Definition A.3.11}\\
+Seja \emph{f} : \emph{D} → R uma função e seja \emph{ℓ} ∈ R. Se \emph{D}
+é ilimitado acima --- isto é, para todo \emph{p} ∈
+\end{quote}
+
+R, existe \emph{x} ∈ \emph{D} com \emph{x \textgreater{} p} --- então
+dizemos \emph{ℓ} é um limite de \emph{f}(\emph{x}) à medida que \emph{x}
+
+\begin{quote}
+aumenta sem limites se
+\end{quote}
+
+∀\emph{ε \textgreater{}} 0\emph{,} ∃\emph{p} ∈ R\emph{,} ∀\emph{x} ∈
+\emph{D, x \textgreater{} p} ⇒
+\textbar{}\emph{f}(\emph{x})−\emph{ℓ}\textbar{} \emph{\textless{} ε}
+
+Escrevemos `\emph{f}(\emph{x}) → \emph{ℓ} as \emph{x} → ∞' (LATEX code:
+\textbackslash infty) para denotar a afirmação de que
+
+\begin{quote}
+\emph{ℓ} é um limite de \emph{f}(\emph{x}) como \emph{x} aumenta sem
+limite.
+\end{quote}
+
+Da mesma forma, se \emph{D} é ilimitado abaixo --- isto é, para todo
+\emph{p} ∈ R, existe \emph{x} ∈ \emph{D} com
+
+\begin{quote}
+\emph{x \textless{} p}--- então dizemos \emph{ell} é um limite de
+\emph{f}(\emph{x}) conforme \emph{x} diminui sem limite se
+\end{quote}
+
+∀\emph{ε \textgreater{}} 0\emph{,} ∃\emph{p} ∈ R\emph{,} ∀\emph{x} ∈
+\emph{D, x \textless{} p} ⇒
+\textbar{}\emph{f}(\emph{x})−\emph{ℓ}\textbar{} \emph{\textless{} ε}
+
+\begin{quote}
+Escrevemos `\emph{f}(\emph{x}) → \emph{ℓ} como \emph{x} → −∞' para
+denotar a afirmação de que \emph{ℓ} é um limite de \emph{f}(\emph{x}) à
+medida que \emph{x} diminui sem limite.
+\end{quote}\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+→ R a função definida por \emph{f}(\emph{x}) =\strut
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦
+
+✐\textbf{Example}
+
+\textbf{A.3.12}
+
+Seja \emph{f} : R
+
+\emph{x}\textbar{} \textbar{} para
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+todo \emph{x} ∈ R. Então: 1+ \emph{x}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6000} + 4\tabcolsep}}{%
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{f}(\emph{x}) → 1 como \emph{x} → ∞. Para ver isso, seja \emph{ε
+\textgreater{}} 0 e defina \emph{p}
+\includegraphics[width=0.71528in,height=0.18056in]{vertopal_a41b353a673949349e90465009d25ea6/media/image4.png}
+\end{quote}
+\end{minipage}} & \begin{minipage}[b]{\linewidth}\raggedright
+. Então, para
+\end{minipage} &
+\multirow{2}{*}{\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+1. Por isso:
+\end{quote}
+\end{minipage}} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+todo \emph{x \textgreater{} p}, temos \emph{x \textgreater{}} 0, de modo
+que \emph{f}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=0.5375in,height=0.26528in]{vertopal_a41b353a673949349e90465009d25ea6/media/image5.png}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\includegraphics[width=0.33611in,height=0.17917in]{vertopal_a41b353a673949349e90465009d25ea6/media/image6.png}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+, e \emph{x}
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\emph{x}
+
+\begin{quote}
+\includegraphics[width=2.68889in,height=0.34861in]{vertopal_a41b353a673949349e90465009d25ea6/media/image7.png}
+
+como requerido.
+
+\emph{f}(\emph{x}) → −1 como \emph{x} → ∞. Para ver isso, seja \emph{ε
+\textgreater{}} 0 e defina \emph{p} = min\{−1\emph{,}
+\uline{−}\emph{ε}\uline{1}\}. Então,
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+para todo \emph{x \textless{} p}, temos \emph{x \textless{}} 0, de modo
+que
+\emph{f}\includegraphics[width=0.46944in,height=0.17639in]{vertopal_a41b353a673949349e90465009d25ea6/media/image8.png}
+\end{quote}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\emph{x}, e \emph{x \textless{}} \uline{−}\emph{ε}\uline{1} +1. Por
+isso:
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\begin{quote}
+\includegraphics[width=3.00556in,height=0.35278in]{vertopal_a41b353a673949349e90465009d25ea6/media/image9.png}
+
+como requerido. Então \emph{f}(\emph{x}) → 1 como \emph{x} → ∞ e
+\emph{f}(\emph{x}) → −1 como \emph{x} → −∞. ◁
+
+✎\textbf{Exercise A.3.13}\\
+Seja \emph{f} : \emph{D} → R uma função e \emph{ℓ}1\emph{,ℓ}2 ∈ R. Prove
+que se \emph{D} é ilimitado acima, e se \emph{f}(\emph{x}) → \emph{ℓ}1
+como \emph{x} → ∞ e
+
+\emph{f}(\emph{x}) → \emph{ℓ}2 como \emph{x} → ∞, então \emph{ℓ}1 =
+\emph{ℓ}2. Prove o resultado análogo para limites como \emph{x} → −∞ no
+caso em
+
+que \emph{D} é ilimitado abaixo. ◁
+
+Os resultados de Exercises A.3.10 and A.3.13 justificam a seguinte
+definição.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{1.0000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+\textbf{Definition A.3.14}\\
+Seja f : D → R e seja a ∈ {[}−∞,∞{]}. Supondo que os limites sejam bem
+alinhados e existam, escrevemos Lim f(x) para denotar o único número
+real \emph{ℓ} ∈ R tal que: x→a
+\end{quote}
+
+f(\emph{x})→\emph{ℓ} como \emph{x}→\emph{a}.\strut
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}\strut
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\begin{quote}
+✦
+\end{quote}
+\end{minipage} \\
+\midrule()
+\endhead
+\bottomrule()
+\end{longtable}
+
+\end{document}
 
