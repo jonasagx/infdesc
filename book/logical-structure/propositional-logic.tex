@@ -72,7 +72,7 @@ Como agora estamos tentando expressar $a$ em termos de $c$, faz sentido usar as 
 \[
 b=qc \quad \text{e} \quad a=rb
 \]
-para alguns inteiros qq e rr.} Usando a primeira equação, podemos substituir qcqc por bb na segunda equação, para obter
+Para alguns inteiros $q$ e $r$.} Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter
 \[
 a=r(qc)
 \]
@@ -93,11 +93,11 @@ $a=r(qc)$ &
 Nosso passo final foi observar que o objetivo foi finalmente alcançado:
 
 \begin{quote}
-{\color{gray} suponha que $c$ divida $b$ e $b$ divida $a$. Por \Cref{defDivisionPreliminary}, segue que
+{\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$. By \Cref{defDivisionPreliminary}, segue que
 \[
 b=qc \quad \text{e} \quad a=rb
 \]
-para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter}
+Para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter}
 \[
 {\color{gray} a=r(qc)}
 \]
@@ -119,27 +119,27 @@ $rq \in \mathbb{Z}$ &
 Agora que não há mais nada a provar, é útil reiterar esse ponto para que o leitor tenha alguma conclusão sobre o assunto.
 
 \begin{quote}
-{\color{gray} Suponha que cc divide bb e bb divide aa. Por \Cref{defDivisionPreliminary}, segue que
+{\color{gray} Suponha que $c$ divide $b$ e $b$ dividee $a$. By \Cref{defDivisionPreliminary}, segue que
 \[
 b=qc \quad \text{e} \quad a=rb
 \]
-para alguns inteiros $q$ e $r$. Usando a primira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter
+Para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter
 \[
 a=r(qc)
 \]
-Mas $r(qc) = (rq)c$, e $rq$ é um inteiro,então segue que  \Cref{defDivisionPreliminary} que $c$ divide $a$.
+Mas $r(qc) = (rq)c$, e $rq$ é um inteiros,} então segue de \Cref{defDivisionPreliminary} que $c$ divide $a$.
 \end{quote}
 \end{example}
 
 \subsection*{Lógica simbólica}
 
-Considere novamente a proposição que provamos em \Cref{propDivisibilityIsTransitive} (para dados inteiros $a,b,c$):
+Considere novamente a proposição que provamos em\Cref{propDivisibilityIsTransitive} (para dados inteiros $a,b,c$):
 
 \begin{center}
-Se cc divide bb e bb divide aa, enão cc divide aa.
+Se $c$ divide $b$ e $b$ divide $a$, então $c$ divide $a$.
 \end{center}
 
-As três afirmações `$c$ divide $b$', `$b$ divide $a$' e `$c$ divide $a$' são todas proposições por seu próprio direto, apesar do fato de que todas elas aparecem dentro de uma estrutura mais proposta complexa. Podemos examinar a estrutura lógica da proposição substituindo estas proposições mais simples por símbolos, chamados \textit{variáveis ​​proposicionais}. Escrevendo $P$ para representar `$c$ divide $b$', $Q$ para representar `$b$ divide $a$' e $R$ para representar `$c$ divide $a$', obtemos:
+As três afirmações `$c$ divide $b$', `$b$ divide $a$' e `$c$ divide $a$' são todas proposições por direito próprio, apesar do fato de que todas elas aparecem dentro de uma estrutura mais proposta complexa. Podemos examinar a estrutura lógica da proposição substituindo estas proposições mais simples por símbolos, chamados \textit{variáveis ​​proposicionais}. Escrevendo $P$ para representar `$c$ divide $b$', $Q$ para representar `$b$ divide $a$' e $R$ para representar `$c$ divide $a$', obtemos:
 
 \begin{center}
 Se $P$ e $Q$, então $R$.
@@ -151,11 +151,11 @@ Dividir a proposição desta forma deixa claro que uma maneira viável de prová
 Se n>2n > 2 e nn é primo, então nn é ímpar.
 \end{center}
 
-Observe que as proposições mais simples são unidas para formar uma proposição mais complexa usando a linguagem, ou seja, a palavra `e' e a construção `Se\dots{} então\dots{}' --- representaremos essas construções simbolicamente usando \textit {operadores lógicos}, que serão introduzidos em \Cref{defLogicalOperator}.
+Observe que as proposições mais simples são unidas para formar uma proposição mais complexa usando a linguagem, ou seja, a palavra `e' e a construção `if\dots{} then\dots{}' --- representaremos essas construções simbolicamente usando \textit {operadores lógicos}, que serão introduzidos em \Cref{defLogicalOperator}.
 
-Aumentando ainda mais o zoom, podemos usar \Cref{defDivisionPreliminary} para observar que `$c$ divide $b$' realmente significa `$b = qc$ para algum $q \in \mathbb{Z}$'. A expressão `para alguns $q \in \mathbb{Z}$' introduz uma nova variável $q$, com a qual devemos lidar apropriadamente em nossa prova. Palavras que atribuímos às variáveis ​​em nossas provas --- como `qualquer', `existe', `todos', `alguma', `única' e `apenas' ---serão representadas simbolicamente usando \textit{quantificadores} , que estudaremos em \Cref{secVariablesQuantifiers}.
+Aumentando ainda mais o zoom, podemos usar \Cref{defDivisionPreliminary} para observar que `$c$ divide $b$' realmente significa `$b = qc$ para algum $q \in \mathbb{Z}$'. A expressão `for some $q \in \mathbb{Z}$' introduz uma nova variável $q$, com a qual devemos lidar adequadamente em nossa prova. Palavras que atribuímos às variáveis ​​em nossas provas --- como `any', `exists', `all', `some', `unique' e `only' ---serão representadas simbolicamente usando \textit{quantificadores} , que estudaremos em \Cref{secVariablesQuantifiers}.
 
-Ao dividir uma proposição complexa em afirmações mais simples que são conectadas entre si usando operadores lógicos e quantificadores, podemos identificar com mais precisão quais suposições podemos fazer em qualquer estágio de uma prova da proposição, e quais etapas são necessárias para terminar a proposição. prova.
+Ao dividir uma proposição complexa em afirmações mais simples que são conectadas entre si usando operadores lógicos e quantificadores, podemos identificar com mais precisão quais suposições podemos fazer em qualquer estágio de uma prova da proposição, e quais etapas são necessárias para terminar a prova.
 
 \subsection*{Fórmulas proposicionais}
 
@@ -165,12 +165,12 @@ Começamos nosso desenvolvimento da lógica simbólica com algumas definições 
 \label{defPropositionalVariable}
 \index{propositional variable}
 \index{truth value}
-A \textbf{variável proposicional} é um símbolo que representa uma proposição. Variáveis ​​proposicionais podem receber \textbf{valores verdadeiros} (`true' ou `false').
+Uma \textbf{variável preposicional} é um símbolo que representa uma proposição. Variáveis ​​proposicionais podem receber \textbf{valores verdadeiros} (`verdadeiro' ou `falso').
 \end{definition}
 
 Normalmente usaremos as letras minúsculas $p$, $q$, $r$ e $s$ como nossas variáveis ​​proposicionais.
 
-Seremos capazes de formar expressões mais complexas representando proposições conectando as mais simples usando \textit{operadores lógicos} como ∧\wedge (que representa `e'), ∨\vee (que representa `ou'), ⇒ \Rightarrow (que representa `Se\dots{}então\dots{}') e ¬\neg (que representa `não').
+Seremos capazes de formar expressões mais complexas representando proposições conectando as mais simples usando \textit{operadores lógicos} como $\wedge$ (que representa `e'), $\vee$ (que representa `ou'), $ \Rightarrow$ (que representa `if\dots{}then\dots{}') e $\neg$ (que representa `não').
 
 A definição das noções de \textit{operador lógico} e \textit{fórmula proposicional} dada abaixo é um pouco difícil de digerir, por isso é melhor compreendida considerando exemplos de fórmulas proposicionais e instâncias de operadores lógicos. Felizmente veremos muitos deles, já que são os objetos centrais de estudo do restante desta seção.
 
@@ -180,7 +180,7 @@ A definição das noções de \textit{operador lógico} e \textit{fórmula propo
 \index{logical operator}
 \index{propositional formula}
 \index{subformula}
-Uma \textbf{fórmula roposicional} é uma expressão que é uma variável proposicional ou é construída a partir de fórmulas proposicionais mais simples (`subfórmulas') usando um operador \textbf{\mbox{lógico} \mbox{}}. Neste último caso, o valor verdade da fórmula proposicional é determinado pelos valores verdade das subfórmulas de acordo com as regras do operador lógico.
+Uma \textbf{Fórmula proposicional} é uma expressão que é uma variável proposicional ou é construída a partir de fórmulas proposicionais mais simples (`subfórmulas') usando um operador \textbf{\mbox{lógico} \mbox{}}. Neste último caso, o valor verdade da fórmula proposicional é determinado pelos valores verdade das subfórmulas de acordo com as regras do operador lógico.
 \end{definition}
 
 À primeira vista, \Cref{defPropositionalFormula} parece circular – ele define o termo “fórmula proposicional” em termos de fórmulas proposicionais! Mas na verdade não é circular; é um exemplo de definição \textit{recursiva} (evitamos circularidade com a palavra `mais simples'). Para ilustrar, considere o seguinte exemplo de uma fórmula proposicional:
@@ -213,22 +213,22 @@ Nem sempre é óbvio quando a conjunção está sendo usada; às vezes ele apare
 
 \begin{example}
 \label{exSevenDividesTwentyEightConjunction}
-Podemos expressar a proposição `$7$ é um fator primordial de $28$' na forma $p \wedge q$, deixando $p$ representar a proposição `$7$ é primo' e deixando $q$ representar a proposição `$7$ divide $28$'.
+Podemos expressar a proposição `$7$ é um fator primo de $28$' na forma $p \wedge q$, deixando $p$ representar a proposição `$7$ é primo' e deixando $q$ representar a proposição `$7$ $ divide $28$'.
 \end{example}
 
 \begin{exercise}
 \label{exJohnMathematicianPittsburgh}
+Expresse a proposição `John é um matemático que mora em Pittsburgh' na forma $p \wedge q$, para as proposições $p$ e $q$.
+\end{exercise}
 
-Expresse a proposição `John é um matemático que mora em Pittsburgh' na forma $p \wedge q$, para as proposições $p$ e $q$.\end{exercise}
-
-As regras em \Cref{defConjunction} são exemplos de \textit{regras de inferência}---eles nos dizem como deduzir (ou “inferir”) a verdade de uma fórmula proposicional a partir da verdade de outras fórmulas proposicionais. Em particular, as regras de inferência nunca nos dizem diretamente quando uma proposição é \textit{falso}---para provar que algo é falso, provaremos que sua \textit{negação} é verdadeira (see \Cref{defNegation}).
+As regras em \Cref{defConjunction} são exemplos de \textit{regras de inferência}---elas nos dizem como deduzir (ou `inferir') a verdade de uma fórmula proposicional a partir da verdade de outras fórmulas proposicionais. Em particular, as regras de inferência nunca nos dizem diretamente quando uma proposição é \textit{falsa} --- para provar que algo é falso, provaremos que sua \textit{negação} é verdadeira (veja \Cref{defNegation}).
 
 As regras de inferência nos dizem como usar a estrutura lógica das proposições nas provas:
 
-\begin{itemize}
-\item A regra \introrule{\wedge} é uma \textit{regra de introdução}, o que significa que nos diz como \textit{provar um objetivo} da forma $p \wedge q$---de fato, se queremos provar isso $p \wedge q$ é verdade, \introrule{\wedge} nos diz que basta provar que $p$ é verdadeiro e provar que $q$ é verdadeiro.
+\begin{itemizar}
+\item A regra \introrule{\wedge} é uma \textit{regra de introdução}, o que significa que ela nos diz como \textit{provar um objetivo} da forma $p \wedge q$---de fato, se quisermos para provar que $p \wedge q$ é verdadeiro, \introrule{\wedge} nos diz que basta provar que $p$ é verdadeiro e provar que $q$ é verdadeiro.
 
-\item As regras \elimrulesub{\wedge}{1} e \elimrulesub{\wedge}{2} são \textit{regras de eliminação}, o que significa que eles nos dizem como \textit{usar uma suposição} da forma $p \wedge q$ --- na verdade, se estivermos assumindo que $p \wedge q$ é verdade, somos então livres para usar o fato de que $p$ é verdadeiro e o fato de que $q$ é verdadeiro.
+\item As regras \elimrulesub{\wedge}{1} e \elimrulesub{\wedge}{2} são \textit{regras de eliminação}, o que significa que elas nos dizem como \textit{usar uma suposição} na forma p∧qp \wedge q---na verdade, se estamos assumindo que p∧qp \wedge q é verdadeiro, somos então livres para usar o fato de que pp é verdadeiro e o fato de que qq é verdadeiro.
 \end{itemize}
 
 Cada operador lógico virá equipado com algumas regras de introdução e/ou eliminação, que nos dizem como provar objetivos ou usar suposições que incluam o operador lógico em questão. É desta forma que a estrutura lógica de uma proposição informa \textit{estratégias de prova}, como a seguir:
@@ -331,10 +331,10 @@ Além da sua natureza limpa e compacta, esta forma de escrever regras de inferê
 \end{prooftree}
 \end{center}
 
-A partir desta árvore de prova, obtemos uma estratégia para provar uma proposição da forma (p∧q)∧r(p \wedge q) \wedge r. Ou seja, primeiro prove pp e prove qq, para concluir p∧qp \wedge q; e então prove rr, para concluir (p∧q)∧r(p \wedge q) \wedge r. Isto ilustra que a estrutura lógica de uma proposição informa como podemos estruturar uma prova da proposição.
+A partir desta árvore de provas, obtemos uma estratégia para provar uma proposição da forma $(p \wedge q) \wedge r$. Ou seja, primeiro prove $p$ e prove $q$, para concluir $p \wedge q$; e então prove $r$, para concluir $(p \wedge q) \wedge r$. Isto ilustra que a estrutura lógica de uma proposição informa como podemos estruturar uma prova da proposição.
 
-\begin{exercise}
-Escreva uma árvore de prova cuja conclusão seja a fórmula proposicional (p∧q)∧(r∧s)(p \wedge q) \wedge (r \wedge s), onde p,q,r,sp,q,r,s são variáveis ​​proposicionais. Expresse '22 é um número primo par e 33 é um número primo ímpar' na forma (p∧q)∧(r∧s)(p \wedge q) \wedge (r \wedge s), para proposições apropriadas pp, qq, rr e ss, e descreva como sua árvore de provas sugere a aparência de uma prova.
+\começo{exercício}
+Escreva uma árvore de prova cuja conclusão seja a fórmula proposicional $(p \wedge q) \wedge (r \wedge s)$, onde $p,q,r,s$ são variáveis ​​proposicionais. Expresse `$2$ é um número primo par e $3$ é um número primo ímpar' na forma $(p \wedge q) \wedge (r \wedge s)$, para proposições apropriadas $p$, $q$, $ r$ e $s$, e descreva como sua árvore de provas sugere a aparência de uma prova.
 \end{exercise}
 
 \subsubsection*{Disjunction (`or', ∨\vee)}
@@ -398,7 +398,7 @@ As regras de introdução e eliminação para disjunção são representadas dia
 
 Discutiremos o que as notações $[p] \leadsto r$ e $[q] \leadsto r$ significam momentaneamente. Primeiro, examinamos como as regras de introdução de disjunção informam provas de proposições da forma `$p$ ou $q$'.
 
-\begin{strategy}[Proving disjunctions]
+\begin{strategy}[Provando disjunções]
 \label{strProvingDisjunctionsDirect}
 Para provar uma proposição da forma $p \vee q$, basta provar apenas uma de $p$ ou $q$.
 \end{strategy}
@@ -460,7 +460,7 @@ Se você ainda não misturou $\wedge$ e $\vee$, provavelmente o fará em breve, 
 \begin{center} \vspace{-10pt} \large \textbf{peixe com batatas fritas} \end{center}
 \vspace{-10pt} Se você esquecer se $\wedge$ ou $\vee$ significa `e', basta escrever no lugar do `n' em `fish n chips':
 \begin{center} \vspace{-10pt} peixe $\wedge$ chips \qquad \qquad fish $\vee$ chips \end{center}
-\vspace{-10pt} Claramente o primeiro parece mais correto, então ∧\wedge significa `e'. Se você não come peixe (ou batatas fritas), não se preocupe, pois esse mnemônico pode ser modificado para acomodar uma ampla variedade de restrições alimentares; por exemplo, “mac n cheese” ou “quinoa n kale” ou, para os amantes de carne, “costelas e peito”.
+\vspace{-10pt} Claramente o primeiro parece mais correto, então $\wedge$ significa `e'. Se você não come peixe (ou batatas fritas), não se preocupe, pois esse mnemônico pode ser modificado para acomodar uma ampla variedade de restrições alimentares; por exemplo, “mac n cheese” ou “quinoa n kale” ou, para os amantes de carne, “costelas e peito”.
 \end{aside}
 
 Lembre-se da declaração diagramática da regra de eliminação de disjunção:
@@ -483,17 +483,17 @@ Lembre-se da declaração diagramática da regra de eliminação de disjunção:
 \end{prooftree}
 \end{center}
 
-A curiosa notação [p]⇝[p] \leadsto r indica que pp é uma \textit{suposição temporária}. Na parte da prova correspondente a [p] \leadsto r[p] \leadsto r, assumiríamos que pp é verdadeiro e derivaríamos rr dessa suposição, e removeríamos a suposição de que pp é verdadeiro desse ponto em diante. Da mesma forma para [q] \leadsto r[q] \leadsto r.
+A curiosa notação $[p] \leadsto r$ indica que $p$ é uma \textit{suposição temporária}. Na parte da prova correspondente a $[p] \leadsto r$, assumiríamos que $p$ é verdadeiro e derivaríamos $r$ dessa suposição, e removeríamos a suposição de que $p$ é verdadeiro desse ponto em diante. Da mesma forma para $[q] \leadsto r$.
 
 A estratégia de prova obtida a partir da regra de eliminação de disjunções é chamada de \textit{prova por casos}.
 
-\begin{estratégia}[Assumindo disjunções --- prova por casos]
+\begin{strategy}[[Assumindo disjunções --- prova por casos]
 \label{strAssumingDisjunctionsDirect}
-\index{prova!por casos}
+\index{proof!by cases}
 Se uma suposição em uma prova tem a forma $p \vee q$, então podemos derivar uma proposição $r$ dividindo-a em dois casos: primeiro, derivar $r$ da suposição temporária de que $p$ é verdadeiro, e então deriva $r$ da suposição de que $q$ é verdadeiro.
 \end{strategy}
 
-O exemplo a seguir ilustra como \Cref{strProvingDisjunctionsDirect,strAssumingDisjunctionsDirect} podem ser usados ​​juntos em uma prova.
+O exemplo a seguir ilustra como \Cref{strProvingDisjunctionsDirect,strAssumingDisjunctionsDirect} pode ser usado junto em uma prova.
 
 \begin{example}
 \label{exPositiveProperFactorOfFourEvenOrPerfectSquare}
@@ -503,7 +503,7 @@ Seja $n$ um fator próprio positivo de $4$ e suponha que queremos provar que $n$
 \item Nosso objetivo é provar que a disjunção `$n \text{ é par} \vee n \text{ é um quadrado perfeito}$'.
 \end{itemize}
 
-According to \Cref{strAssumingDisjunctionsDirect}, dividimos em dois casos, um em que $n=1$ e outro em que $n=2$. Em cada caso, devemos derivar `$n \text{ é par} \vee n \text{ é um quadrado perfeito}$', para o qual basta por \Cref{strProvingDisjunctionsDirect} derivar que $n$ é par ou que $n$ é um quadrado perfeito. Assim, uma prova pode ser mais ou menos assim:
+De acordo com \Cref{strAssumingDisjunctionsDirect}, dividimos em dois casos, um em que $n=1$ e outro em que $n=2$. Em cada caso, devemos derivar que `$n \text{ é par} \vee n \text{ é um quadrado perfeito}$', para o qual é suficiente por \Cref{strProvingDisjunctionsDirect} derivar que $n$ é par ou que $n$ é um quadrado perfeito. Assim, uma prova pode ser mais ou menos assim:
 
 \begin{quote}
 Como $n$ é um fator próprio positivo de $4$, $n=1$ ou $n=2$.
@@ -525,7 +525,7 @@ Seja $n \in \mathbb{Z}$. Então $n^2$ deixa um resto de $0$ ou $1$ quando dividi
 \end{proposition}
 
 \begin{cproof}
-Seja $n \in \mathbb{Z}$. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}), uma das seguintes afirmações deve ser verdadeira para alguns $k \in \mathbb{Z}$:
+Seja $n \in \mathbb{Z}$. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}),uma das seguintes afirmações deve ser verdadeira para alguns $k \in \mathbb{Z}$:
 \[
 n=3k \quad \text{or} \quad n=3k+1 \quad \text{or} \quad n=3k+2
 \]
@@ -534,29 +534,29 @@ n=3k \quad \text{or} \quad n=3k+1 \quad \text{or} \quad n=3k+2
 \[
 n^2 = (3k)^2 = 9k^2 = 3 \cdot (3k^2)
 \]
-Então $n^2$ deixa um resto de $0$ quando divide $3$.
-\item Suponha que $n=3k+1$. Então
+Então $n^2$ deixa um lembrete de $0$ quando dividido por $3$.
+\item Suppose $n=3k+1$. Then
 \[
 n^2 = (3k+1)^2 = 9k^2+6k+1 = 3(3k^2+2k)+1
 \]
-Então $n^2$ deixa um resto de $1$ quando dividio por $3$.
-\item Suppose $n=3k+2$. Então
+Então $n^2$ deixa um lembrete de $1$ quando dividido por $3$.
+\item Suppose $n=3k+2$. Then
 \[
 n^2 = (3k+2)^2 = 9k^2+12k+4 = 3(3k^2+4k+1)+1
 \]
-Então $n^2$ deixa um resto de $1$ quando dividido por $3$.
+Então $n^2$ deixa um lembrete de $1$ quando dividido por $3$.
 \end{itemize}
 Em todos os casos, $n^2$ deixa um resto de $0$ ou $1$ quando dividido por $3$.
 \end{cproof}
 
-Observe que na prova de \Cref{propRemainderOfSquaresModulo3}, diferentemente de \Cref{exPositiveProperFactorOfFourEvenOrPerfectSquare}, não usamos explicitamente a palavra `case', embora estivéssemos usando prova por casos. Depende de você tornar ou não suas estratégias de prova explícitas --- discussões sobre esse tipo de assunto podem ser encontradas em \Cref{secVocabulary}.
+Observe que na prova de \Cref{propRemainderOfSquaresModulo3}, ao contrário de \Cref{exPositiveProperFactorOfFourEvenOrPerfectSquare}, não usamos explicitamente a palavra `case', embora estivéssemos usando prova por casos. Depende de você tornar ou não suas estratégias de prova explícitas --- discussões sobre esse tipo de assunto podem ser encontradas em \Cref{secVocabulary}.
 
-Ao completar os exercícios a seguir, tente controlar exatamente onde você usa as regras de introdução e eliminação que vimos até agora.
+Ao completar os exercícios a seguir, tente acompanhar exatamente onde você usa as regras de introdução e eliminação que vimos até agora.
 
 \begin{exercise}
 Seja $n$ um número inteiro. Prove que $n^2$ deixa um resto de $0$, $1$ ou $4$ quando dividido por $5$.
 \hintlabel{exSquareRemainderModuloFive}{f
-Imite a prova de \Cref{propRemainderOfSquaresModulo3}.
+Imitar a prova de \Cref{propRemainderOfSquaresModulo3}.
 }
 \end{exercise}
 
@@ -641,19 +641,19 @@ A regra de eliminação para implicação \elimrule{\Rightarrow} é mais comumen
 Se uma suposição em uma prova tem a forma $p \Rightarrow q$, e $p$ também é assumido como verdadeiro, então podemos deduzir que $q$ é verdadeiro.
 \end{strategy}
 
-\Cref{strAssumingDisjunctionsDirect} é freqüentemente usado para reduzir uma meta mais complicada a uma mais simples. Na verdade, se sabemos que p⇒qp \Rightarrow q é verdadeiro, e se pp é fácil de verificar, então isso nos permite provar qq provando pp.
+\Cref{strAssumingDisjunctionsDirect} é freqüentemente usado para reduzir uma meta mais complicada a uma mais simples. Na verdade, se sabemos que $p \Rightarrow q$ é verdadeiro, e se $p$ é fácil de verificar, então isso nos permite provar $q$ provando $p$.
 
 \begin{example}
-Seja f(x)=x2+ax+bf(x) = x^2+ax+b um polinômio com a,b∈Ra,b \in \mathbb{R}, e seja Δ=a2−4b\Delta = a^2-4b seu discriminante. Parte do \Cref{exDiscriminantRealRoots} era provar que:
+Seja $f(x) = x^2+ax+b$ seja um polinômio com $a,b \in \mathbb{R}$, e seja $\Delta = a^2-4b$ seja seu discriminante. Parte de \Cref{exDiscriminantRealRoots} era provar que:
 \begin{enumerate}[(i)]
-\item Se Δ>0\Delta > 0, então ff tem duas raízes reais;
-\item Se Δ=0\Delta = 0, então ff tem uma raíze real;
-\item Se Δ<0\Delta < 0,então ff não tem raízes reais.
+\item Se $\Delta > 0$, então $f$ tem duas raízes reais;
+\item Se $\Delta = 0$, então $f$ tem uma raiz real;
+\item Se $\Delta < 0$, então $f$ não tem raízes reais.
 \end{enumerate}
-Dado o polinômio f(x)=x2−68x+1156f(x) = x^2-68x+1156, seria difícil passar pelo processo de resolução da equação f(x)=0f(x)=0 para determinar quantas raízes reais ff  tem. No entanto, cada uma das proposições (i), (ii) e (iii) assume a forma p⇒qp \Rightarrow q, então \Cref{strAssumingImplicationsDirect} reduz o problema de encontrar quantas raízes reais ff tem ao de avaliar Δ\Delta e comparando com 00. E de fato, (−68)2−4×1156=0(-68)^2 - 4 \times 1156 = 0, então a implicação (ii) junto com \elimrule{\Rightarrow} nos diz que ff tem uma raiz real.
+Dado o polinômio $f(x) = x^2-68x+1156$, seria difícil passar pelo processo de resolução da equação $f(x)=0$ para determinar quantas raízes reais $f $ tem. No entanto, cada uma das proposições (i), (ii) e (iii) assume a forma $p \Rightarrow q$, então \Cref{strAssumingImplicationsDirect} reduz o problema de encontrar quantas raízes reais $f$ tem ao de avaliar $\Delta$ e comparando com $0$. E de fato, $(-68)^2 - 4 \times 1156 = 0$, então a implicação (ii) junto com \elimrule{\Rightarrow} nos diz que $f$ tem uma raiz real.
 \end{example}
 
-Uma tarefa comum enfrentada pelos matemáticos é provar que duas condições são equivalentes. Por exemplo, dado um polinômio f(x)=x2+ax+bf(x) = x^2+ax+b com a,b∈Ra,b \in \mathbb{R}, sabemos que \textit{se} a2−4b>0a^2-4b>0 \textit{então} ff tem duas raízes reais, mas também é verdade que se ff tem duas raízes reais então a2−4b>0a^2-4b>0? (A resposta é “sim”.) A relação entre estas duas implicações é que cada uma é a \textit{converse} da outra.
+ADado o polinômio $f(x) = x^2-68x+1156$, seria difícil passar pelo processo de resolução da equação $f(x)=0$ para determinar quantas raízes reais $f $ tem. No entanto, cada uma das proposições (i), (ii) e (iii) assume a forma $p \Rightarrow q$, então \Cref{strAssumingImplicationsDirect} reduz o problema de encontrar quantas raízes reais $f$ tem ao de avaliar $\Delta$ e comparando com $0$. E de fato, $(-68)^2 - 4 \times 1156 = 0$, então a implicação (ii) junto com \elimrule{\Rightarrow} nos diz que $f$ tem uma raiz real.
 
 \begin{definition}
 \label{defConverse}
@@ -683,7 +683,7 @@ O operador \textbf{bicondidicional} é o operador lógico $\Leftrightarrow$ \inl
 
 Muitos exemplos de declarações bicondicionais vêm da resolução de equações; na verdade, dizer que os valores $\alpha_1,\dots,\alpha_n$ são as soluções para uma equação particular é precisamente dizer que
 \[
-x \text{ is a solution} \quad \Leftrightarrow \quad x = \alpha_1 \text{ or } x = \alpha_2 \text{ or } \cdots \text{ or } x = \alpha_n
+x \text{ é uma solução} \quad \Leftrightarrow \quad x = \alpha_1 \text{ or } x = \alpha_2 \text{ or } \cdots \text{ or } x = \alpha_n
 \]
 
 \begin{example}
@@ -804,17 +804,17 @@ Agora $n-n' = 1000 \cdot d_rd_{r-1} \dots d_4d_3$ e $1000 = 8 \cdot 125$, então
 
 %% BEGIN EXTRACT (xtrStepsExample) %%
 Nosso objetivo agora é provar que $8$ divide $n$ se e somente se $8$ divide $n'$.
-
-\begin{itemizar}
+\begin{itemize}
 \item ($\Rightarrow$) Suponha que $8$ divida $n$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
 \[
 n' = n-(nn') = nn'' = 1 \cdot n + (-1) \cdot n''
 \]
 então, de fato, $8$ divide $n'$, conforme necessário.
-\item ($\Leftarrow$) Suponha que $8$ divida $n'$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an'+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
+\item ($\Leftarrow$)  Suponha que $8$ divida $n'$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an'+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
 \[
 n = n'+(n-n') = n'+n'' = 1 \cdot n' + 1 \cdot n''
 \]
+
 então, de fato, $8$ divide $n$, conforme necessário.
 \end{itemize}
 %% END EXTRACT
@@ -823,7 +823,8 @@ então, de fato, $8$ divide $n$, conforme necessário.
 \begin{exercise}
 Prove que um número natural $n$ é divisível por $3$ se e somente se a soma de seus dígitos de base $10$ for divisível por $3$.
 \hintlabel{exSumOfDigitsDivisibleByThree}{%
-Suponha que $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ e seja $s = d_r + \cdots + d_1 + d_0$. Comece provando que $3 \mid n-s$.
+Suppose $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ and let $s = d_r + \cdots + d_1 + d_0$. Comece provando que
+$3 \mid n-s$.
 }
 \end{exercise}
 
@@ -846,12 +847,12 @@ Alguns exemplos de contradições incluem a afirmação de que $0=1$, ou que $\s
 \label{defNegation}
 \index{negation}
 \nindex{negation}{$\neg$}{negation}
-O operador \textbf{negation} é o operador lógico $\neg$ \inlatex{neg}\lindexmmc{neg}{$\neg$}, definido de acordo com as seguintes regras:
-\begin{itemizar}
+O operador \textbf{negação} é o operador lógico $\neg$ \inlatex{neg}\lindexmmc{neg}{$\neg$}, definido de acordo com as seguintes regras:
+\begin{itemize}
 \item \introrule{\neg} Se uma contradição pode ser derivada da suposição de que $p$ é verdadeiro, então $\neg p$ é verdadeiro;
-\item \elimrule{\neg} Se $\neg p$ e $p$ forem ambos verdadeiros, então uma contradição pode ser derivada.
+\item \elimrule{\neg} Se $\neg p$ e $p$ forem ambos verdadeiros, então uma contradição pode ser derivada
 \end{itemize}
-A expressão $\neg p$ representa `não $p$' (ou `$p$ é falso').
+The expression $\neg p$ representa `não $p$' (ou `$p$ é falso').
 \end{definition}
 
 \begin{center}
@@ -874,13 +875,13 @@ A expressão $\neg p$ representa `não $p$' (ou `$p$ é falso').
   \AxiomC{$\neg p$}
   \AxiomC{$p$}
 \TagC{\elimrule{\neg}}
-\BinaryInfC{$\bot$}
+\BinaryInfC{⊥\bot}
 \end{prooftree}
 \end{minipage}
 \end{center}
 
 \begin{aside}
-As regras \introrule{\neg} e \elimrule{\neg} se assemelham muito a \introrule{\Rightarrow} e \elimrule{\Rightarrow}---na verdade, poderíamos simplesmente definir $\neg p$ para significar `$p \ Rightarrow \bot$', onde $\bot$ representa uma contradição arbitrária, mas será mais fácil mais tarde ter uma noção primitiva de negação.
+As regras \introrule{\neg} e \elimrule{\neg} se assemelham muito a \introrule{\Rightarrow} e \elimrule{\Rightarrow}---na verdade, poderíamos simplesmente definir ¬p\neg p como significando `p⇒⊥ p \Rightarrow \bot', onde ⊥\bot representa uma contradição arbitrária, mas será mais fácil mais tarde ter uma noção primitiva de negação.
 \end{aside}
 
 A regra de introdução para negação \introrule{\neg} dá origem a uma estratégia de prova chamada \textit{prova por contradição}, que se revela extremamente útil.
@@ -913,47 +914,45 @@ Agora você pode tentar provar alguns fatos elementares por contradição.
 
 \begin{exercise}
 \label{exNegationAndReciprocalOfIrrationalNumbers}
-Let $x \in \mathbb{R}$. Prove por contradição que se $x$ é irracional então $-x$ e $\frac{1}{x}$ são irracionais.
+Seja $x \in \mathbb{R}$. Prove por contradição que se $x$ é irracional então $-x$ e $\frac{1}{x}$ são irracionais.
 \end{exercise}
 
 \begin{exercise}
 \label{exNoLeastPositiveReal}
-Prove por contradição que não existe nenhum número real menos positivo. Ou seja, prove que não existe um número real positivo $a$ tal que $a \le b$ para todos os números reais positivos $b$.
-\end{exercise}
+Prove por contradição que não existe nenhum número real menos positivo. Ou seja, prove que não existe um número real positivo $a$ tal que $a \le b$ para todos os números reais positivos $b$.\end{exercise}
 
 Uma prova não precisa ser uma “prova por contradição” na sua totalidade – na verdade, pode acontecer que apenas uma pequena parte da prova utilize contradição. Isso é exibido na prova da seguinte proposição.
 
 \begin{proposition}
 \label{propOddIffRemainderOfOne}
-Seja $a$ um número inteiro. Então $a$ é ímpar se e somente se $a=2b+1$ para algum número inteiro $b$.
-\end{proposition}
-\begin{cproof}
-
+Seja $a$ um número inteiro. Então $a$ é ímpar se e somente se $a=2b+1$ para algum inteiro $b$.
+\end{proposição}
+\begin{cprova}
 Suponha que $a$ seja ímpar. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}), ou $a=2b$ ou $a=2b+1$, para algum $b \in \mathbb{Z}$. Se $a=2b$, então $2$ divide $a$, contradizendo a suposição de que $a$ é ímpar; então deve ser o caso de $a=2b+1$.
 
 Por outro lado, suponha $a=2b+1$. Então $a$ deixa um resto de $1$ quando dividido por $2$. Porém, pelo teorema da divisão, os números pares são justamente aqueles que deixam resto $0$ quando divididos por $2$. Segue-se que $a$ não é par, então é ímpar.
-\end{cproof}
-
+\end{cprova}
 
 A regra de eliminação para o operador de negação \elimrule{\neg} simplesmente diz que uma proposição não pode ser verdadeira e falsa ao mesmo tempo.
-
-\begin{strategy}[Assuming negations]
+\begin{strategy}[Assumindo negações]
 \label{strAssumingNegations}
 Se uma suposição em uma prova tem a forma $\neg p$, então qualquer derivação de $p$ leva a uma contradição.
 \end{strategy}
 
 O principal uso de \Cref{strAssumingNegations} é para obter a contradição em uma prova por contradição — na verdade, já a usamos em nossos exemplos de prova por contradição! Como tal, não nos deteremos mais no assunto.
 
-\subsection*{Axiomas lógicos}
+\subsection*{Axiomas Lógicos}
 
 Encerramos esta seção introduzindo algumas regras lógicas adicionais (\textit{axiomas}) que usaremos em nossas provas.
 
 A primeira é a chamada \textit{lei do terceiro excluído}, que parece tão óbvia que nem vale a pena afirmar (muito menos nomear) --- o que ela diz é que toda proposição é verdadeira ou falsa. Mas cuidado, pois as aparências enganam; a lei do terceiro excluído é um axioma não construtivo, o que significa que não deve ser aceito em ambientes onde é importante acompanhar como uma proposição é provada - o simples fato de saber que uma proposição é verdadeira ou falsa não nos diz nada sobre como isso pode ser provado ou refutado. Na maioria dos contextos matemáticos, porém, isso é aceito sem pensar duas vezes.
-\begin{axiom}[Law of excluded middle]
+
+\begin{axiom}[Lei do meio excluído]
 \label{axLEM}
 \index{law of excluded middle}
 Seja $p$ uma formula proposicional. Então $p \vee (\neg p)$ é verdadeiro.
 \end{axiom}
+
 
 A lei do terceiro excluído pode ser representada esquematicamente como segue; não há premissas acima da linha, pois estamos simplesmente afirmando que ela é verdadeira.
 
