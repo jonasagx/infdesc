@@ -54,10 +54,10 @@ Isso introduz duas novas variáveis $q,e$ e nos permite substituir as suposiçõ
 
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Suposições} & \textbf{Objetivos} \\ \hline
-a,b,c,q,r∈Za,b,c,q,r \in \mathbb{Z} & cc divide aa \\
-b=qcb=qc & \\
-a=rba=rb &
+\textbf{Assumptions} & \textbf{Goals} \\ \hline
+$a,b,c,q,r \in \mathbb{Z}$ & $c$ divide $a$ \\
+$b=qc$ & \\
+$a=rb$ &
 \end{tabular}
 \end{center}
 
@@ -82,8 +82,8 @@ Estamos agora muito próximos, conforme indicado na tabela a seguir.
 
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Suposições} & \textbf{Objetivos} \\ \hline
-$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum número inteiro}] \cdot c$ \\
+\textbf{Assumptions} & \textbf{Goals} \\ \hline
+$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum inteiro}] \cdot c$ \\
 $b=qc$ & \\
 $a=rb$ & \\
 $a=r(qc)$ & 
@@ -119,7 +119,7 @@ $rq \in \mathbb{Z}$ &
 Agora que não há mais nada a provar, é útil reiterar esse ponto para que o leitor tenha alguma conclusão sobre o assunto.
 
 \begin{quote}
-{\color{gray} Suponha que $c$ divide $b$ e $b$ dividee $a$. By \Cref{defDivisionPreliminary}, segue que
+{\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$. Por \Cref{defDivisionPreliminary}, segue que
 \[
 b=qc \quad \text{e} \quad a=rb
 \]
@@ -148,10 +148,10 @@ Se $P$ e $Q$, então $R$.
 Dividir a proposição desta forma deixa claro que uma maneira viável de prová-la é \textit{assumir} $P$ e $Q$, e então \textit{derivar} $R$ dessas suposições --- isso é exatamente o que fizemos na prova, que examinamos detalhadamente em \Cref{exAssumptionsGoals}. Mas o mais importante é que sugere que a mesma estratégia de prova pode funcionar para outras proposições que também são da forma `se $P$ e $Q$, então $R$', como a seguinte proposição (para um dado inteiro $n$ ):
 
 \begin{center}
-Se n>2n > 2 e nn é primo, então nn é ímpar.
+Se $n > 2$ e $n$ é primo, então $n$ é ímpar.
 \end{center}
 
-Observe que as proposições mais simples são unidas para formar uma proposição mais complexa usando a linguagem, ou seja, a palavra `e' e a construção `if\dots{} then\dots{}' --- representaremos essas construções simbolicamente usando \textit {operadores lógicos}, que serão introduzidos em \Cref{defLogicalOperator}.
+Observe que as proposições mais simples são unidas para formar uma proposição mais complexa usando a linguagem, ou seja, a palavra `e' e a construção `se\dots{} então\dots{}' --- representaremos essas construções simbolicamente usando \textit {operadores lógicos}, que serão introduzidos em \Cref{defLogicalOperator}.
 
 Aumentando ainda mais o zoom, podemos usar \Cref{defDivisionPreliminary} para observar que `$c$ divide $b$' realmente significa `$b = qc$ para algum $q \in \mathbb{Z}$'. A expressão `for some $q \in \mathbb{Z}$' introduz uma nova variável $q$, com a qual devemos lidar adequadamente em nossa prova. Palavras que atribuímos às variáveis ​​em nossas provas --- como `any', `exists', `all', `some', `unique' e `only' ---serão representadas simbolicamente usando \textit{quantificadores} , que estudaremos em \Cref{secVariablesQuantifiers}.
 
@@ -337,7 +337,7 @@ A partir desta árvore de provas, obtemos uma estratégia para provar uma propos
 Escreva uma árvore de prova cuja conclusão seja a fórmula proposicional $(p \wedge q) \wedge (r \wedge s)$, onde $p,q,r,s$ são variáveis ​​proposicionais. Expresse `$2$ é um número primo par e $3$ é um número primo ímpar' na forma $(p \wedge q) \wedge (r \wedge s)$, para proposições apropriadas $p$, $q$, $ r$ e $s$, e descreva como sua árvore de provas sugere a aparência de uma prova.
 \end{exercise}
 
-\subsubsection*{Disjunction (`or', ∨\vee)}
+\subsubsection*{Disjunction (`ou', ∨\vee)}
 
 \begin{idefinition}
 \label{defDisjunction}
