@@ -13,7 +13,7 @@ A cada frase que escrevemos, nossas suposições e objetivos mudam. Isto talvez 
 
 \begin{example}
 \label{exAssumptionsGoals}
-The statement of \Cref{propDivisibilityIsTransitive} was as follows:
+A declaração de \Cref{propDivisibilityIsTransitive} foi o seguinte:
 \begin{quote}
 Se $a,b,c \in \mathbb{Z}$. If $c$ divide $b$ and $b$ divide $a$, então $c$ divide $a$.
 \end{quote}
@@ -26,7 +26,7 @@ $a,b,c \in \mathbb{Z}$ & Se $c$ divide $b$ e $b$ divide $a$, então $c$ divide $
 \end{center}
 Prosseguiremos agora com a prova, linha por linha, para ver que efeito as palavras que escrevemos tiveram nas suposições e objetivos.
 
-Como nosso objetivo era uma expressão na forma `if\dots{}then\dots{}', fazia sentido começar assumindo a declaração `if' e usar essa suposição para provar a declaração `then'. Como tal, a primeira coisa que escrevemos em nossa prova foi:
+Como nosso objetivo era uma expressão na forma `se\dots{}então\dots{}', fazia sentido começar assumindo a declaração `se' e usar essa suposição para provar a declaração `então'. Como tal, a primeira coisa que escrevemos em nossa prova foi:
 \begin{quote}
 Suponha que $c$ divide $b$ e $b$ divide $a$.
 \end{quote}
@@ -42,7 +42,7 @@ $b$ divide $a$ &
 Nosso próximo passo na prova foi descompactar as definições de `$c$ divide $b$' e `$b$ divide $a$', nos dando mais com que trabalhar.
 
 \begin{quote}
-{\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$.} By \Cref{defDivisionPreliminary}, segue que
+{\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$.} Por \Cref{defDivisionPreliminary}, segue que
 \[
 b=qc \quad \text{e} \quad a=rb
 \]
@@ -54,7 +54,7 @@ Isso introduz duas novas variáveis ​​$q,r$ e nos permite substituir as supo
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
 \textbf{Assumptions} & \textbf{Goals} \\ \hline
-$a,b,c,q,r \in \mathbb{Z}$ & $c$ divides $a$ \\
+$a,b,c,q,r \in \mathbb{Z}$ & $c$ divide $a$ \\
 $b=qc$ & \\
 $a=rb$ &
 \end{tabular}
@@ -80,7 +80,7 @@ Estamos agora muito próximos, conforme indicado na tabela a seguir.
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
 \textbf{Assumptions} & \textbf{Goals} \\ \hline
-$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{some integer}] \cdot c$ \\
+$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum inteiro}] \cdot c$ \\
 $b=qc$ & \\
 $a=rb$ & \\
 $a=r(qc)$ & 
@@ -98,7 +98,7 @@ Para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir 
 \[
 {\color{gray} a=r(qc)}
 \]
-But $r(qc) = (rq)c$, and $rq$ is an integer,
+But $r(qc) = (rq)c$, and $rq$ é um inteiro,
 \end{quote}
 
 \begin{center}
@@ -116,7 +116,7 @@ $rq \in \mathbb{Z}$ &
 Agora que não há mais nada a provar, é útil reiterar esse ponto para que o leitor tenha alguma conclusão sobre o assunto.
 
 \begin{quote}
-{\color{gray} Suponha que $c$ divide $b$ e $b$ dividee $a$. By \Cref{defDivisionPreliminary}, segue que
+{\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$. Por \Cref{defDivisionPreliminary}, segue que
 \[
 b=qc \quad \text{and} \quad a=rb
 \]
@@ -145,10 +145,10 @@ Se $P$ e $Q$, então $R$.
 Dividir a proposição desta forma deixa claro que uma maneira viável de prová-la é \textit{assumir} $P$ e $Q$, e então \textit{derivar} $R$ dessas suposições --- isso é exatamente o que fizemos na prova, que examinamos detalhadamente em \Cref{exAssumptionsGoals}. Mas o mais importante é que sugere que a mesma estratégia de prova pode funcionar para outras proposições que também são da forma `se $P$ e $Q$, então $R$', como a seguinte proposição (para um dado inteiro $n$ ):
 
 \begin{center}
-If $n > 2$ and $n$ is prime, then $n$ is odd.
+Se $n > 2$ e $n$ é primo, então $n$ é ímpar.
 \end{center}
 
-Observe que as proposições mais simples são unidas para formar uma proposição mais complexa usando a linguagem, ou seja, a palavra `e' e a construção `if\dots{} then\dots{}' --- representaremos essas construções simbolicamente usando \textit {operadores lógicos}, que serão introduzidos em \Cref{defLogicalOperator}.
+Observe que as proposições mais simples são unidas para formar uma proposição mais complexa usando a linguagem, ou seja, a palavra `e' e a construção `se\dots{} então\dots{}' --- representaremos essas construções simbolicamente usando \textit {operadores lógicos}, que serão introduzidos em \Cref{defLogicalOperator}.
 
 Aumentando ainda mais o zoom, podemos usar \Cref{defDivisionPreliminary} para observar que `$c$ divide $b$' realmente significa `$b = qc$ para algum $q \in \mathbb{Z}$'. A expressão `for some $q \in \mathbb{Z}$' introduz uma nova variável $q$, com a qual devemos lidar adequadamente em nossa prova. Palavras que atribuímos às variáveis ​​em nossas provas --- como `any', `exists', `all', `some', `unique' e `only' ---serão representadas simbolicamente usando \textit{quantificadores} , que estudaremos em \Cref{secVariablesQuantifiers}.
 
@@ -337,7 +337,7 @@ A partir desta árvore de provas, obtemos uma estratégia para provar uma propos
 Escreva uma árvore de prova cuja conclusão seja a fórmula proposicional $(p \wedge q) \wedge (r \wedge s)$, onde $p,q,r,s$ são variáveis ​​proposicionais. Expresse `$2$ é um número primo par e $3$ é um número primo ímpar' na forma $(p \wedge q) \wedge (r \wedge s)$, para proposições apropriadas $p$, $q$, $ r$ e $s$, e descreva como sua árvore de provas sugere a aparência de uma prova.
 \end{exercise}
 
-\subsubsection*{Disjunction (`or', $\vee$)}
+\subsubsection*{Disjunction (`ou', ∨\vee)}
 
 \begin{idefinition}
 \label{defDisjunction}
@@ -678,7 +678,7 @@ Deparamo-nos tantas vezes com o problema de provar tanto uma implicação como a
 \label{defBiconditional}
 \index{biconditional}
 \nindex{biconditional}{⇔\Leftrightarrow}{biconditional}
-The \textbf{biconditional} operator is the logical operator ⇔\Leftrightarrow \inlatex{Leftrightarrow}\lindexmmc{Leftrightarrow}{⇔\Leftrightarrow}, defined by declaring p⇔qp \Leftrightarrow q to mean (p⇒q)∧(q⇒p)(p \Rightarrow q) \wedge (q \Rightarrow p). The expression p⇔qp \Leftrightarrow q represents `pp if and only if qq'.
+O \textbf{biconditional} operador é o operador lógico ⇔\Leftrightarrow \inlatex{Leftrightarrow}\lindexmmc{Leftrightarrow}{⇔\Leftrightarrow}, definido pela declaração p⇔qp \Leftrightarrow q para significar (p⇒q)∧(q⇒p)(p \Rightarrow q) \wedge (q \Rightarrow p). A expressão p⇔qp \Leftrightarrow q representa `pp se e somente se qq'.
 \end{definition}
 
 Muitos exemplos de declarações bicondicionais vêm da resolução de equações; na verdade, dizer que os valores α1,…,αn\alpha_1,\dots,\alpha_n são as soluções para uma equação particular é precisamente dizer que
@@ -703,7 +703,7 @@ Vamos reorganizar a equação para descobrir quais podem ser as soluções poss�
 &\Rightarrow x=12 && \text{dividing by 196196}
 \end{align*}
 Você pode estar inclinado a parar por aqui. Infelizmente, tudo o que provamos é que, dado um número real xx, \textit{if} xx resolve a equação √x−3+√x+4=7\sqrt{x-3} + \sqrt{x+4} = 7, \textit{então} x=12x=12. Isso restringe o conjunto de soluções possíveis a apenas um candidato --- mas ainda precisamos verificar o inverso, ou seja, que \textit{if} x=12x=12, \textit{then} xx é uma solução para a equação.
-As such, to finish off the proof, note that
+Assim, para finalizar a prova, observe que
 \[
 \sqrt{12-3} + \sqrt{12+4} = \sqrt{9} + \sqrt{16} = 3 + 4 = 7
 \]
@@ -784,7 +784,7 @@ Complete a prova da fórmula quadrática. Isto é, para $a,b \in \mathbb{C}$ fix
 \[
 \alpha = \frac{-a+\sqrt{a^2-4b}}{2} \quad \text{or} \quad \alpha =\frac{-a-\sqrt{a^2-4b}}{2}
 \]
-then $\alpha$ is a root of the polynomial $x^2+ax+b$.
+então α\alpha é uma raiz do polinômio x2+ax+bx^2+ax+b.
 \end{exercise}
 
 Outra classe de exemplos de proposições bicondicionais surge ao encontrar critérios necessários e suficientes para que um inteiro $n$ seja divisível por algum número - por exemplo, que um inteiro é divisível por $10$ se e somente se sua expansão de base $10$ termina com o dígito $0$.
