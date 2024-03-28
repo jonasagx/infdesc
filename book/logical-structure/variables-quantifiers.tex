@@ -2,15 +2,15 @@
 \section{Variables and quantifiers}
 \secbegin{secVariablesQuantifiers}
 
-\subsection*{Free and bound variables}
+\subsection*{Variáveis ​​livres e vinculadas}
 
-Everything we did in \Cref{secPropositionalLogic} concerned \textit{propositions} and the logical rules concerning their proofs. Unfortunately if all we have to work with is propositions then our ability to do mathematical reasoning will be halted pretty quickly. For example, consider the following statement:
+Tudo o que fizemos em \Cref{secPropositionalLogic} em questão \textit{propositions} e as regras lógicas relativas às suas provas. Infelizmente, se tudo o que temos para trabalhar são proposições, então a nossa capacidade de fazer raciocínio matemático será interrompida muito rapidamente. Por exemplo, considere a seguinte afirmação:
 \begin{center}
 $x$ is divisible by $7$
 \end{center}
-This statement seems like the kind of thing we should probably be able to work with if we're doing mathematics. It makes sense if $x$ is a integer, such as $28$ or $41$; but it doesn't make sense at all if $x$ is a parrot called Alex.\footnote{Alex the parrot is the only non-human animal to have ever been observed to ask an existential question; he died in September 2007 so we may never know if he was divisible by $7$, but it is unlikely. According to \textit{Time}, his last words were `you be good, see you tomorrow, I love you'. The reader is advised to finish crying before they continue reading about variables and quantifiers.} In any case, even when it does make sense, its truth value depends on $x$; indeed, `$28$ is divisible by $7$' is a true proposition, but `$41$ is divisible by $7$' is a false proposition.
+Esta afirmação parece ser o tipo de coisa com a qual provavelmente deveríamos ser capazes de trabalhar se estivéssemos fazendo matemática. Faz sentido se $x$ for um número inteiro, como $28$ ou $41$; mas não faz nenhum sentido se $x$ for um papagaio chamado Alex.\footnote{Alex, o papagaio, é o único animal não-humano que já foi observado fazendo uma pergunta existencial; ele morreu em setembro de 2007, então talvez nunca saibamos se ele era divisível por US$ 7,00, mas é improvável. De acordo com a \textit{Time}, suas últimas palavras foram `você se comporta bem, até amanhã, eu te amo'. O leitor é aconselhado a parar de chorar antes de continuar lendo sobre variáveis ​​e quantificadores.} Em qualquer caso, mesmo quando faz sentido, seu valor verdade depende de $x$; na verdade, “$28$ é divisível por $7$” é uma proposição verdadeira, mas “$41$ é divisível por $7$” é uma proposição falsa.
 
-This means that the statement `$x$ is divisible by $7$' isn't a proposition---\textit{quel horreur}! But it \textit{almost} is a proposition: if we know that $x$ refers somehow to an integer, then it becomes a proposition as soon as a particular numerical value of $x$ is specified. The symbol $x$ is called a \textit{free variable}.
+Isso significa que a afirmação `$x$ é divisível por $7$' não é uma proposição---\textit{quel horreur}! Mas \textit{quase} é uma proposição: se sabemos que $x$ se refere de alguma forma a um número inteiro, então ela se torna uma proposição assim que um valor numérico particular de $x$ é especificado. O símbolo $x$ é chamado de \textit{variável livre}.
 
 \begin{definition}
 \label{defFreeVariable}
@@ -18,20 +18,20 @@ This means that the statement `$x$ is divisible by $7$' isn't a proposition---\t
 \index{bound variable}
 \index{variable!free}
 \index{variable!bound}
-Let $x$ be a variable that is understood to refer to an element of a set $X$. In a statement involving $x$, we say $x$ is \textbf{free} if it makes sense to substitute particular elements of $X$ in the statement; otherwise, we say $x$ is \textbf{bound}.
+Seja $x$ uma variável que se refere a um elemento de um conjunto $X$. Numa declaração envolvendo $x$, dizemos que $x$ é \textbf{livre} se faz sentido substituir elementos particulares de $X$ na declaração; caso contrário, dizemos que $x$ está \textbf{vínculado}.
 \end{definition}
 
-To represent statements that have free variables in them abstractly, we generalise the notion of a propositional variable (\Cref{defPropositionalVariable}) to that of a \textit{predicate}.
+Para representar abstratamente declarações que contêm variáveis ​​livres, generalizamos a noção de uma variável proposicional (\Cref{defPropositionalVariable}) para a de um \textit{predicado}.
 
 \begin{definition}
 \label{defPredicate}
 \index{predicate}
 \index{domain of discourse}
 \index{range!of a variable}
-A \textbf{predicate} is a symbol $p$ together with a specified list of free variables $x_1, x_2, \dots, x_n$ (where $n \in \mathbb{N}$) and, for each free variable $x_i$, a specification of a set $X_i$ called the \textbf{domain of discourse} (or \textbf{range}) of $x_i$. We will typically write $p(x_1,x_2,\dots,x_n)$ in order to make the variables explicit.
+Um \textbf{predicado} é um símbolo $p$ junto com uma lista especificada de variáveis ​​livres $x_1, x_2, \dots, x_n$ (onde $n \in \mathbb{N}$) e, para cada variável livre $ x_i$, uma especificação de um conjunto $X_i$ chamado \textbf{domínio do discurso} (ou \textbf{intervalo}) de $x_i$. Normalmente escreveremos $p(x_1,x_2,\dots,x_n)$ para tornar as variáveis ​​explícitas.
 \end{definition}
 
-The statements represented by predicates are those that become propositions when specific values are substituted for their free variables from their respective domains of discourse. For example, `$x$ is divisible by $7$' is not a proposition, but it becomes a proposition when specific integers (such as $28$ or $41$) are substituted for $x$.
+Os enunciados representados por predicados são aqueles que se tornam proposições quando valores específicos são substituídos por suas variáveis ​​livres de seus respectivos domínios de discurso. Por exemplo, `$x$ é divisível por $7$' não é uma proposição, mas se torna uma proposição quando números inteiros específicos (como $28$ ou $41$) são substituídos por $x$.
 
 This is a lot to take in, so let's look at some examples.
 
@@ -39,115 +39,114 @@ This is a lot to take in, so let's look at some examples.
 \label{exFirstExamplesOfPredicates}
 \fixlistskip
 \begin{enumerate}[(i)]
-\item We can represent the statement `$x$ is divisible by $7$' discussed above by a predicate $p(x)$ whose only free variable $x$ has $\mathbb{Z}$ as its domain of discourse. Then $p(28)$ is the true proposition `$28$ is divisible by $7$' and $p(41)$ is the false proposition `$41$ is divisible by $7$'.
-\item A predicate with no free variables is precisely a propositional variable. This means that the notion of a predicate generalises that of a propositional variable.
-\item The expression `$2^n-1$ is prime' can be represented by a predicate $p(n)$ with one free variable $n$, whose domain of discourse is the set $\mathbb{N}$ of natural numbers. Then $p(3)$ is the true proposition `$2^3-1$ is prime' and $p(4)$ is the false proposition `$2^4-1$ is prime'.
-\item The expression `$x-y$ is rational' can be represented by a predicate $q(x,y)$ with free variables $x$ and $y$, whose domain of discourse is the set $\mathbb{R}$ of real numbers.
-\item The expression `there exist integers $a$ and $b$ such that $x = a^2+b^2$' has free variable $x$ and bound variables $a,b$. It can be represented by a predicate $r(x)$ with one free variable $x$, whose domain of discourse is $\mathbb{Z}$.
-\item The expression `every even natural number $n \ge 2$ is divisible by $k$' has free variable $k$ and bound variable $n$. It can be represented by a predicate $s(k)$ with one free variable $k$, whose domain of discourse is $\mathbb{N}$.
+\item Podemos representar a afirmação `xx é divisível por 77' discutida acima por um predicado p(x)p(x) cuja única variável livre xx tem Z\mathbb{Z} como seu domínio de discurso. Então p(28)p(28) é a proposição verdadeira `2828 é divisível por 77' e p(41)p(41) é a proposição falsa `4141 é divisível por 77'.
+\item Um predicado sem variáveis ​​livres é precisamente uma variável proposicional. Isso significa que a noção de predicado generaliza a de variável proposicional.
+\item A expressão `$2^n-1$ é primo' pode ser representada por um predicado $p(n)$ com uma variável livre $n$, cujo domínio de discurso é o conjunto $\mathbb{N}$ de números. Então $p(3)$ é a proposição verdadeira `$2^3-1$ é primo' e $p(4)$ é a proposição falsa `$2^4-1$ é primo'.
+\item A expressão `$x-y$ é racional' pode ser representada por um predicado $q(x,y)$ com variáveis ​​livres $x$ e $y$, cujo domínio de discurso é o conjunto $\mathbb{R}$ de números reais.
+\item A expressão `existem inteiros $a$ e $b$ tais que $x = a^2+b^2$' tem variável livre $x$ e variáveis ​​vinculadas $a,b$. Pode ser representado por um predicado $r(x)$ com uma variável livre $x$, cujo domínio de discurso é $\mathbb{Z}$.
+\item A expressão `todo número natural par $n \ge 2$ é divisível por $k$' tem variável livre $k$ e variável vinculada $n$. Pode ser representado por um predicado $s(k)$ com uma variável livre $k$, cujo domínio de discurso é $\mathbb{N}$.
 \end{enumerate}
 \end{example}
 
 
 
-\subsection*{Quantifiers}
+\subsection*{Quantificadores}
 
-Look again at the statements in parts (v) and (vi) of \Cref{exFirstExamplesOfPredicates}. Both contained bound variables, which were so because we used words like `there exists' and `every'---had we not used these words, those variables would be free, as in `$x=a^2+b^2$' and `$n$ is divisible by $k$'.
+Veja novamente as declarações nas partes (v) e (vi) de \Cref{exFirstExamplesOfPredicates}. Ambos continham variáveis ​​vinculadas, o que acontecia porque usamos palavras como `existe' e `todo' --- se não tivéssemos usado essas palavras, essas variáveis ​​seriam livres, como em `$x=a^2+b^2 $' e `$n$ é divisível por $k$'.
 
-Expressions that refer to \textit{how many} elements of a set make a statement true, such as `there exists' and `every', turn free variables into bound variables. We represent such expressions using symbols called \textit{quantifiers}, which are the central objects of study of this section.
+Expressões que se referem a \textit{quantos} elementos de um conjunto tornam uma afirmação verdadeira, como 'existe' e 'todos', transformam variáveis ​​livres em variáveis ​​ligadas. Representamos tais expressões usando símbolos chamados \textit{quantificadores}, que são os objetos centrais de estudo desta seção.
 
-The two main quantifiers used throughout mathematics are the \textit{universal} quantifier $\forall$ and the \textit{existential} quantifier $\exists$. We will define these quantifiers formally later in this section, but for now, the following informal definitions suffice:
+Os dois principais quantificadores usados ​​em toda a matemática são o quantificador \textit{universal} $\forall$ e o quantificador \textit{existencial} $\exists$. Definiremos esses quantificadores formalmente mais adiante nesta seção, mas por enquanto, as seguintes definições informais são suficientes:
 
 \begin{itemize}
-\item The expression `$\forall x \in X,\, \dots{}$' denotes `for all $x \in X$, \dots{}' and will be defined formally in \Cref{defUniversalQuantifier};
-\item The expression `$\exists x \in X,\, \dots{}$' denotes `there exists $x \in X$ such that \dots{}' and will be defined formally in \Cref{defExistentialQuantifier}.
+\item A expressão `$\forall x \in X,\, \dots{}$' denota `para todo $x \in X$, \dots{}' e será definida formalmente em \Cref{defUniversalQuantifier};
+\item A expressão `$\exists x \in X,\, \dots{}$' denota `existe $x \in X$ tal que \dots{}' e será definida formalmente em \Cref{defExistentialQuantifier}.
 \end{itemize}
 
-Note that we always place the quantifier \textit{before} the statement, so even though we might write or say things like `$n=2k$ for some integer $k$' or `$x^2 \ge 0$ for all $x \in \mathbb{R}$', we would express these statements symbolically as `$\exists k \in \mathbb{Z},\, n=2k$' and `$\forall x \in \mathbb{R},\, x^2 \ge 0$', respectively.
+Observe que sempre colocamos o quantificador \textit{antes} da declaração, portanto, mesmo que possamos escrever ou dizer coisas como `$n=2k$ para algum número inteiro $k$' ou `$x^2 \ge 0$ para todos $x \in \mathbb{R}$', expressaríamos essas declarações simbolicamente como `$\exists k \in \mathbb{Z},\, n=2k$' e `$\forall x \in \mathbb{ R},\, x^2 \ge 0$', respectivamente.
 
-We will define a third quantifier $\exists !$ in terms of $\forall$ and $\exists$ to say that there is \textit{exactly one} element of a set making a statement true. There are plenty of other quantifiers out there, but they tend to be specific to particular fields---examples include `almost everywhere' in measure theory, `almost surely' in probability theory, `for all but finitely many' in set theory and related disciplines, and `for fresh' in the theory of nominal sets.
+Definiremos um terceiro quantificador $\exists !$ em termos de $\forall$ e $\exists$ para dizer que existe \textit{exatamente um} elemento de um conjunto que torna uma afirmação verdadeira. Existem muitos outros quantificadores por aí, mas eles tendem a ser específicos para campos específicos - exemplos incluem "quase em todos os lugares" na teoria da medida, "quase certamente" na teoria da probabilidade, "para todos, exceto um número finito" na teoria dos conjuntos e disciplinas relacionadas e “para novidades” na teoria dos conjuntos nominais.
 
-Using predicates, logical formulae and quantifiers, we are able to build up more complicated expressions, called \textit{logical formulae}. Logical formulae generalise propositional formulae (\Cref{defPropositionalFormula}) in by allowing (free and bound) variables and quantification to occur.
-
+Usando predicados, fórmulas lógicas e quantificadores, podemos construir expressões mais complicadas, chamadas \textit{fórmulas lógicas}. As fórmulas lógicas generalizam as fórmulas proposicionais (\Cref{defPropositionalFormula}) permitindo que variáveis ​​​​(livres e vinculadas) e quantificação ocorram.
 \begin{definition}
 \label{defLogicalFormula}
 \index{logical formula}
-A \textbf{logical formula} is an expression that is built from predicates using logical operators and quantifiers; it may have both free and bound variables. The truth value of a logical formula depends on its free variables according to the rules for logical operators and quantifiers.
+Uma \textbf{fórmula lógica} é uma expressão construída a partir de predicados usando operadores lógicos e quantificadores; pode ter variáveis ​​livres e vinculadas. O valor verdade de uma fórmula lógica depende de suas variáveis ​​livres de acordo com as regras para operadores lógicos e quantificadores.
 \end{definition}
 
-Translating between plain English statements and purely symbolic logical formulae is an important skill to obtain:
+Traduzir entre declarações simples em inglês e fórmulas lógicas puramente simbólicas é uma habilidade importante a ser obtida:
 \begin{itemize}
-\item The plain English statements are easier to understand and are the kinds of things you would speak aloud or write down when discussing the mathematical ideas involved.
-\item The symbolic logical formulae are what provide the precision needed to guide a proof of the statement being discussed---we will see strategies for proving statements involving quantifiers soon.
+\item As declarações simples em inglês são mais fáceis de entender e são o tipo de coisas que você falaria em voz alta ou escreveria ao discutir as ideias matemáticas envolvidas.
+\item As fórmulas lógicas simbólicas são o que fornecem a precisão necessária para guiar uma prova da afirmação que está sendo discutida --- veremos estratégias para provar afirmações envolvendo quantificad
 \end{itemize}
 
-The following examples and exercise concern translating between plain English statements and purely symbolic logical formulae.
-
+Os exemplos e exercícios a seguir referem-se à tradução entre declarações simples em inglês e fórmulas lógicas puramente simbólicas.
 \begin{example}
-Recall that an integer $n$ is even if and only if it is divisible by $2$. According to \Cref{defDivisionPreliminary}, that is to say that `$n$ is even' means `$n=2k$ for some integer $k$'. Using quantifiers, we can express `$n$ is even' as `$\exists k \in \mathbb{Z},\, n=2k$'.
+Lembre-se de que um inteiro $n$ é par se e somente se for divisível por $2$. De acordo com \Cref{defDivisionPreliminary}, isso quer dizer que `$n$ é par' significa `$n=2k$ para algum inteiro $k$'. Usando quantificadores, podemos expressar `$n$ é par' como `$\exists k \in \mathbb{Z},\, n=2k$'.
 
-The (false) proposition `every integer is even' can then be written symbolically as follows. First introduce a variable $n$ to refer to an integer; to say `every integer is even' is to say `$\forall n \in \mathbb{Z},\, n \text{ is even}$', and so using the symbolic representation of `$n$ is even', we can express `every integer is even' as $\forall n \in \mathbb{Z},\, \exists k \in \mathbb{Z},\, n=2k$'.
+A proposição (falsa) “todo número inteiro é par” pode então ser escrita simbolicamente como segue. Primeiro introduza uma variável $n$ para se referir a um número inteiro; dizer que 'todo número inteiro é par' é dizer que `$\forall n \in \mathbb{Z},\, n \text{ é par}$' e, portanto, usar a representação simbólica de `$n$ é par' , podemos expressar `todo número inteiro é par' como $\forall n \in \mathbb{Z},\, \exists k \in \mathbb{Z},\, n=2k$'.
 \end{example}
 
 \begin{exercise}
 \label{exEnglishToLogicalFormulae}
-Find logical formulae that represent each of the following English statements.
+Encontre fórmulas lógicas que representem cada uma das seguintes afirmações em inglês.
 \begin{enumerate}[(a)]
-\item There is an integer that is divisible by every integer.
-\item There is no greatest odd integer.
-\item Between any two distinct rational numbers is a third distinct rational number.
-\item If an integer has a rational square root, then that root is an integer.
+\item Existe um número inteiro que é divisível por todo número inteiro.
+\item Não existe maior número inteiro ímpar.
+\item Entre quaisquer dois números racionais distintos existe um terceiro número racional distinto.
+\item Se um número inteiro tem uma raiz quadrada racional, então essa raiz é um número inteiro.
 \end{enumerate}
 \end{exercise}
 
 \begin{example}
-Consider the following logical formula.
+Considere a seguinte fórmula lógica.
 
 \[\forall a \in \mathbb{R},\, (a \ge 0 \Rightarrow \exists b \in \mathbb{R},\, a = b^2)\]
 
-If we translate this expression symbol-for-symbol, what it says is:
+Se traduzirmos esta expressão símbolo por símbolo, o que ela diz é:
 \begin{center}
-For every real number $a$, if $a$ is non-negative,\\
-then there exists a real number $b$ such that $a=b^2$.
+Para cada número real $a$, se $a$ for não negativo,\\
+então existe um número real $b$ tal que $a=b^2$.
 \end{center}
 
-Read in this way, it is not a particularly enlightening statement. However, we can distill the robotic nature of the symbol-for-symbol reading by thinking more carefully about what the statement \textit{really} means.
+Lida desta forma, não é uma afirmação particularmente esclarecedora. Contudo, podemos destilar a natureza robótica da leitura símbolo por símbolo pensando mais cuidadosamente sobre o que a afirmação \textit{realmente} significa.
 
-Indeed, to say `$a = b^2$ for some real number $b$' is exactly to say that $a$ has a real square root---after all, what is a square root of $a$ if not a real number whose square is equal to $a$? This translation eliminates explicit reference to the bound variable $b$, so that the statement now reads:
-
-\begin{center}
-For every real number $a$, if $a$ is non-negative, then $a$ has a real square root.
-\end{center}
-
-We're getting closer. Next note that instead of the clunky expression `for every real number $a$, if $a$ is non-negative, then \dots{}', we could just say `for every non-negative real number $a$, \dots{}'.
+Na verdade, dizer `$a = b^2$ para algum número real $b$' é exatamente dizer que $a$ tem uma raiz quadrada real --- afinal, o que é uma raiz quadrada de $a$ se não um número real cujo quadrado é igual a $a$? Esta tradução elimina a referência explícita à variável vinculada $b$, de modo que a instrução agora é:
 
 \begin{center}
-For every non-negative real number $a$, $a$ has a real square root.
+Para cada número real $a$, se $a$ for não negativo, então $a$ terá uma raiz quadrada real.
 \end{center}
 
-Finally, we can eliminate the bound variable $a$ by simply saying:
+
+Estamos nos aproximando. Em seguida, observe que em vez da expressão desajeitada `para cada número real $a$, se $a$ for não negativo, então \dots{}', poderíamos apenas dizer `para cada número real não negativo $a$, \dots{}'.
 
 \begin{center}
-Every non-negative real number has a real square root.
+Para todo número real não negativo $a$, $a$ tem uma raiz quadrada real.
 \end{center}
 
-This is now a meaningful expression that is much easier to understand than the logical formula we started with.
+Finalmente, podemos eliminar a variável vinculada $a$ simplesmente dizendo:
+
+\begin{center}
+Todo número real não negativo tem uma raiz quadrada real.
+\end{center}
+
+Esta é agora uma expressão significativa que é muito mais fácil de entender do que a fórmula lógica com a qual começamos.
 \end{example}
 
 \begin{exercise}
 \label{exLogicalFormulaeToEnglish}
-Find statements in plain English, involving as few variables as possible, that are represented by each of the following logical formulae. (The domains of discourse of the free variables are indicated in each case.)
+Encontre declarações em linguagem simples, envolvendo o menor número possível de variáveis, que sejam representadas por cada uma das seguintes fórmulas lógicas. (Os domínios de discurso das variáveis ​​livres são indicados em cada caso.)
 \begin{enumerate}[(a)]
 \item $\exists q \in \mathbb{Z},\, a = qb$ --- free variables $a, b \in \mathbb{Z}$
 \item $\exists a \in \mathbb{Z},\, \exists b \in \mathbb{Z},\, (b \ne 0 \wedge bx = a)$ --- free variable $x \in \mathbb{R}$
-\item $\forall d \in \mathbb{N},\, [(\exists q \in \mathbb{Z},\, n=qd) \Rightarrow (d = 1 \vee d = n)]$ --- free variable $n \in \mathbb{N}$
-\item $\forall a \in \mathbb{R},\, [a > 0 \Rightarrow \exists b \in \mathbb{R},\, (b > 0 \wedge a < b)]$ --- no free variables
+\item $\forall d \in \mathbb{N},\, [(\exists q \in \mathbb{Z},\, n=qd) \Rightarrow (d = 1 \vee d = n)]$ --- variável livre $n \in \mathbb{N}$
+\item $\forall a \in \mathbb{R},\, [a > 0 \Rightarrow \exists b \in \mathbb{R},\, (b > 0 \wedge a < b)]$ --- sem variáveis ​​livres
 \end{enumerate}
 \end{exercise}
 
-Now that we have a better understanding of how to translate between plain English statements and logical formulae, we are ready to give a precise mathematical treatment of quantifiers. Just like with logical operators in \Cref{secPropositionalLogic}, quantifiers will be defined according to \textit{introduction rules}, which tell us how to prove a quantified formula, and \textit{elimination rules}, which tell us how to use an assumption that involves a quantifier.
+Agora que entendemos melhor como traduzir declarações simples em inglês e fórmulas lógicas, estamos prontos para fornecer um tratamento matemático preciso dos quantificadores. Assim como com os operadores lógicos em \Cref{secPropositionalLogic}, os quantificadores serão definidos de acordo com \textit{regras de introdução}, que nos dizem como provar uma fórmula quantificada, e \textit{regras de eliminação}, que nos dizem como usar uma fórmula quantificada. suposição que envolve um quantificador.
 
-\subsubsection*{Universal quantification (`for all', $\forall$)}
+\subsubsection*{Quantificação universal (`para todos', $\forall$)}
 
 The universal quantifier makes precise what we mean when we say `for all', or `$p(x)$ is always true no matter what value $x$ takes'.
 
@@ -155,12 +154,12 @@ The universal quantifier makes precise what we mean when we say `for all', or `$
 \label{defUniversalQuantifier}
 \index{universal quantifier}
 \index{quantifier!universal}
-The \textbf{universal quantifier} is the quantifier $\forall$ \inlatex{forall}\lindexmmc{forall}{$\forall$}; if $p(x)$ is a logical formula with free variable $x$ with range $X$, then $\forall x \in X,\, p(x)$ is the logical formula defined according to the following rules:
-\begin{itemize}
-\item \introrule{\forall} If $p(x)$ can be derived from the assumption that $x$ is an arbitrary element of $X$, then $\forall x \in X,\, p(x)$;
-\item \elimrule{\forall} If $a \in X$ and $\forall x \in X,\, p(x)$ is true, then $p(a)$ is true.
-\end{itemize}
-The expression $\forall x \in X,\, p(x)$ represents `for all $x \in X$, $p(x)$'.
+O \textbf{quantificador universal} é o quantificador $\forall$ \inlatex{forall}\lindexmmc{forall}{$\forall$}; se $p(x)$ é uma fórmula lógica com variável livre $x$ com intervalo $X$, então $\forall x \in X,\, p(x)$ é a fórmula lógica definida de acordo com as seguintes regras:
+\begin{itemizar}
+\item \introrule{\forall} Se $p(x)$ pode ser derivado da suposição de que $x$ é um elemento arbitrário de $X$, então $\forall x \in X,\, p(x)$ ;
+\item \elimrule{\forall} Se $a \in X$ e $\forall x \in X,\, p(x)$ for verdadeiro, então $p(a)$ é verdadeiro.
+\end{itemizar}
+A expressão $\forall x \in X,\, p(x)$ representa `para todo $x \in X$, $p(x)$'.
 \end{definition}
 
 \begin{center}
@@ -188,97 +187,98 @@ The expression $\forall x \in X,\, p(x)$ represents `for all $x \in X$, $p(x)$'.
 \end{minipage}
 \end{center}
 
-\begin{strategy}[Proving universally quantified statements]
+\begin{strategy}[Provando declarações universalmente quantificadas]
 \label{strProvingUniversal}
-To prove a proposition of the form $\forall x \in X,\, p(x)$, it suffices to prove $p(x)$ for an arbitrary element $x \in X$---in other words, prove $p(x)$ whilst assuming nothing about the variable $x$ other than that it is an element of $X$.
+Para provar uma proposição da forma $\forall x \in X,\, p(x)$, basta provar $p(x)$ para um elemento arbitrário $x \in X$---em outras palavras, prove $p(x)$ assumindo nada sobre a variável $x$ além de que ela é um elemento de $X$.
 \end{strategy}
 
-Useful phrases for introducing an arbitrary variable of a set $X$ in a proof include `fix $x \in X$' or `let $x \in X$' or `take $x \in X$'---more on this is discussed in \Cref{secVocabulary}.
+Frases úteis para introduzir uma variável arbitrária de um conjunto $X$ em uma prova incluem `fix $x \in X$' ou `let $x \in X$' ou `take $x \in X$'---mais sobre isso é discutido em \Cref{secVocabulary}.
 
-The proofs of the following propositions illustrate how a proof of a universally quantified statement might look.
+As provas das seguintes proposições ilustram como poderia parecer uma prova de uma afirmação universalmente quantificada.
 
 \begin{proposition}
 \label{exSquareOfOddIntegerIsOdd}
-The square of every odd integer is odd.
+O quadrado de todo inteiro ímpar é ímpar.
 \end{proposition}
 
 \begin{cproof}
-Let $n$ be an odd integer. Then $n=2k+1$ for some $k \in \mathbb{Z}$ by the division theorem (\Cref{thmDivisionPreliminary}), and so
+Seja $n$ um número inteiro ímpar. Então $n=2k+1$ para algum $k \in \mathbb{Z}$ pelo teorema da divisão (\Cref{thmDivisionPreliminary}), e assim
 \[n^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k) + 1\]
-Since $2k^2+2k \in \mathbb{Z}$, we have that $n^2$ is odd, as required.
+Como $2k^2+2k \in \mathbb{Z}$, temos que $n^2$ é ímpar, conforme necessário.
 \end{cproof}
 
-Note that in the proof of \Cref{exSquareOfOddIntegerIsOdd}, we did not assume anything about $n$ other than that it is an odd integer.
+Observe que na prova de \Cref{exSquareOfOddIntegerIsOdd}, não assumimos nada sobre $n$ além de que é um número inteiro ímpar.
 
 \begin{proposition}
-The base-$10$ expansion of the square of every natural number ends in one of the digits $0$, $1$, $4$, $5$, $6$ or $9$.
+A expansão de base $10$ do quadrado de cada número natural termina em um dos dígitos $0$, $1$, $4$, $5$, $6$ ou $9$.
 \end{proposition}
 
 \begin{cproof}
-Fix $n \in \mathbb{N}$, and let
-\[n=d_rd_{r-1} \dots d_0\]
-be its base-$10$ expansion. Write
+Corrija $n \in \mathbb{N}$ e deixe
+\[n=d_rd_{r-1} \pontos d_0\]
+seja sua expansão base de $ 10$. Escrever
 \[n=10m+d_0\]
-where $m \in \mathbb{N}$---that is, $m$ is the natural number obtained by removing the final digit from $n$. Then
+onde $m \in \mathbb{N}$---isto é, $m$ é o número natural obtido removendo o dígito final de $n$. Então
 \[n^2=100m^2+20md_0+d_0^2 = 10m(10m+2d_0)+d_0^2\]
-Hence the final digit of $n^2$ is equal to the final digit of $d_0^2$. But the possible values of $d_0^2$ are
+Portanto, o dígito final de $n^2$ é igual ao dígito final de $d_0^2$. Mas os valores possíveis de $d_0^2$ são
 \[0 \quad 1 \quad 4 \quad 9 \quad 16 \quad 25 \quad 36 \quad 49 \quad 64 \quad 81\]
-all of which end in one of the digits $0$, $1$, $4$, $5$, $6$ or $9$.
+todos terminando em um dos dígitos $0$, $1$, $4$, $5$, $6$ ou $9$.
 \end{cproof}
 
 \begin{exercise}
 \label{exEveryIntegerIsRational}
-Prove that every integer is rational.
+Prove que todo número inteiro é racional.
 \end{exercise}
 
 \begin{exercise}
-Prove that every linear polynomial over $\mathbb{Q}$ has a rational root.
+Prove que todo polinômio linear sobre $\mathbb{Q}$ tem uma raiz racional.
 \end{exercise}
 
 \begin{exercise}
-Prove that, for all real numbers $x$ and $y$, if $x$ is irrational, then $x+y$ and $x-y$ are not both rational.
+Prove que, para todos os números reais $x$ e $y$, se $x$ é irracional, então $x+y$ e $x-y$ não são ambos racionais.
 \hintlabel{exIrrationalPlusMinusRealNotBothRational}{%
-Consider the sum of $x+y$ and $x-y$.
+Considere a soma de $x+y$ e $x-y$.
 }
 \end{exercise}
 
-Before advancing too much further, beware of the following common error that arises when dealing with universal quantifiers.
+Antes de avançar muito, tome cuidado com o seguinte erro comum que surge ao lidar com quantificadores universais.
 
 \begin{commonerror}
-Consider the following (non-)proof of the proposition $\forall n \in \mathbb{Z},\, n^2 \ge 0$.
+Considere a seguinte (não) prova da proposição $\forall n \in \mathbb{Z},\, n^2 \ge 0$.
 
 \begin{quote}
-Let $n$ be an arbitrary integer, say $n=17$. Then $17^2 = 289 \ge 0$, so the statement is true.
+Seja $n$ um número inteiro arbitrário, digamos $n=17$. Então $17^2 = 289 \ge 0$, então a afirmação é verdadeira.
+
 \end{quote}
 
-The error made here is that the \textit{writer} has picked an arbitrary value of $n$, not the \textit{reader}. (In fact, the above argument actually proves $\exists n \in \mathbb{Z},\, n^2 \ge 0$.)
+O erro cometido aqui é que o \textit{writer} escolheu um valor arbitrário de $n$, não o \textit{leitor}. (Na verdade, o argumento acima prova $\exists n \in \mathbb{Z},\, n^2 \ge 0$.)
 
-The proof should make no assumptions about the value of $n$ other than that it is an integer. Here is a correct proof:
+A prova não deve fazer suposições sobre o valor de $n$, exceto que é um número inteiro. Aqui está uma prova correta:
 
 \begin{quote}
-Let $n$ be an arbitrary integer. Either $n \ge 0$ or $n < 0$. If $n \ge 0$ then $n^2 \ge 0$, since the product of two nonnegative numbers is nonnegative; if $n<0$ then $n^2 \ge 0$, since the product of two negative numbers is positive.
+Seja $n$ um número inteiro arbitrário. Ou $n \ge 0$ ou $n < 0$. Se $n \ge 0$ então $n^2 \ge 0$, já que o produto de dois números não negativos é não negativo; se $n<0$ então $n^2 \ge 0$, já que o produto de dois números negativos é positivo.
 \end{quote}
 \end{commonerror}
 
-The strategy suggested by the elimination rule for the universal quantifier is one that we use almost without thinking about it.
+A estratégia sugerida pela regra de eliminação para o quantificador universal é aquela que utilizamos quase sem pensar nela.
 
 \begin{strategy}[Assuming universally quantified statements]
 \label{strAssumingUniversal}
-If an assumption in a proof has the form $\forall x \in X,\, p(x)$, then we may assume that $p(a)$ is true whenever $a$ is an element of $X$.
+Se uma suposição em uma prova tiver a forma $\forall x \in X,\, p(x)$, então podemos assumir que $p(a)$ é verdadeiro sempre que $a$ for um elemento de $X$.
 \end{strategy}
 
-\subsubsection*{Existential quantification (`there exists', $\exists$)}
+\subsubsection*{Quantificação existencial (`existe', $\exists$)}
 
 \begin{definition}
 \label{defExistentialQuantifier}
 \index{existential quantifier}
 \index{quantifier!existential}
-The \textbf{existential quantifier} is the quantifier $\exists$ \inlatex{exists}\nindex{exists}{$\exists$}; if $p(x)$ is a logical formula with free variable $x$ with range $X$, then $\exists x \in X,\, p(x)$ is the logical formula defined according to the following rules:
+O \textbf{quantificador existencial} é o quantificador $\exists$ \inlatex{exists}\nindex{exists}{$\exists$}; se $p(x)$ é uma fórmula lógica com variável livre $x$ com intervalo $X$, então $\exists x \in X,\, p(x)$ é a fórmula lógica definida de acordo com as seguintes regras:
 \begin{itemize}
-\item \introrule{\exists} If $a \in X$ and $p(a)$ is true, then $\exists x \in X,\, p(x)$;
-\item \elimrule{\exists} If $\exists x \in X,\, p(x)$ is true, and $q$ can be derived from the assumption that $p(a)$ is true for some fixed $a \in X$, then $q$ is true.
+\item \introrule{\exists} Se $a \in X$ e $p(a)$ forem verdadeiros, então $\exists x \in X,\, p(x)$;
+\item \elimrule{\exists} Se $\exists x \in X,\, p(x)$ é verdadeiro, e $q$ pode ser derivado da suposição de que $p(a)$ é verdadeiro para algum $ fixo a \in X$, então $q$ é verdadeiro.
 \end{itemize}
-The expression $\exists x \in X,\, p(x)$ represents `there exists $x \in X$ such that $p(x)$'.
+A expressão $\exists x \in X,\, p(x)$ representa `existe $x \in X$ tal que $p(x)$'.
 \end{definition}
 
 \begin{center}
@@ -309,62 +309,62 @@ The expression $\exists x \in X,\, p(x)$ represents `there exists $x \in X$ such
 \end{minipage}
 \end{center}
 
-\begin{strategy}[Proving existentially quantified statements]
+\begin{strategy}[Provando afirmações existencialmente quantificadas]
 \label{strProvingExistential}
-To prove a proposition of the form $\exists x \in X,\, p(x)$, it suffices to prove $p(a)$ for some specific element $a \in X$, which should be explicitly defined.
+Para provar uma proposição da forma $\exists x \in X,\, p(x)$, basta provar $p(a)$ para algum elemento específico $a \in X$, que deve ser explicitamente definido.
 \end{strategy}
 
 \begin{example}
-We prove that there is a natural number that is a perfect square and is one more than a perfect cube. That is, we prove
-\[\exists n \in \mathbb{N},\, ([\exists k \in \mathbb{Z},\, n=k^2] \wedge [\exists \ell \in \mathbb{Z},\, n=\ell^3 + 1])\]
-So define $n=9$. Then $n=3^2$ and $n=2^3+1$, so that $n$ is a perfect square and is one more than a perfect cube, as required.
+Provamos que existe um número natural que é um quadrado perfeito e é um a mais que um cubo perfeito. Ou seja, provamos
+\[\exists n \in \mathbb{N},\, ([\exists k \in \mathbb{Z},\, n=k^2] \wedge [\exists \ell \in \mathbb{Z} ,\, n=\ell^3 + 1])\]
+Então defina $n=9$. Então $n=3^2$ e $n=2^3+1$, de modo que $n$ seja um quadrado perfeito e seja um a mais que um cubo perfeito, conforme necessário.
 \end{example}
 
-The following proposition involves an existentially quantified statement---indeed, to say that a polynomial $f(x)$ has a real root is to say $\exists x \in \mathbb{R},\, f(x) = 0$.
+A seguinte proposição envolve uma afirmação existencialmente quantificada - na verdade, dizer que um polinômio $f(x)$ tem uma raiz real é dizer que $\existe x \in \mathbb{R},\, f(x) = 0$.
 
 \begin{proposition}
-Fix $a \in \mathbb{R}$. The cubic polynomial $x^3 + (1-a^2)x - a$ has a real root.
+Fixe $a \in \mathbb{R}$. O polinômio cúbico $x^3 + (1-a^2)x - a$ tem uma raiz real.
 \end{proposition}
 \begin{cproof}
-Let $f(x)=x^3+(1-a^2)x-a$. Define $x=a$; then
+Seja $f(x)=x^3+(1-a^2)x-a$. Define $x=a$; então
 \[f(x) = f(a) = a^3 + (1-a^2)a - a = a^3 + a - a^3 - a = 0\]
-Hence $a$ is a root of $f(x)$. Since $a$ is real, $f(x)$ has a real root.
+Portanto, $a$ é uma raiz de $f(x)$. Como $a$ é real, $f(x)$ tem uma raiz real.
 \end{cproof}
 
-The following exercises require you to prove existentially quantified statements.
+Os exercícios a seguir exigem que você prove afirmações existencialmente quantificadas.
 
 \begin{exercise}
-Prove that there is a real number which is irrational but whose square is rational.
-\end{exercise}
+Prove que existe um número real que é irracional, mas cujo quadrado é racional.\end
+{exercise}
 
 \begin{exercise}
-Prove that there is an integer which is divisible by zero.
+Prove que existe um número inteiro divisível por zero.
 \hintlabel{exZeroDividesSomeInteger}{%
-Look carefully at the definition of divisibility (\Cref{defDivisionPreliminary}).
+Observe atentamente a definição de divisibilidade (\Cref{defDivisionPreliminary}).
 }
 \end{exercise}
 
 \begin{example}
-Prove that, for all $x,y \in \mathbb{Q}$, if $x < y$ then there is some $z \in \mathbb{Q}$ with $x<z<y$.
+Prove que, para todo $x,y \in \mathbb{Q}$, se $x < y$ então existe algum $z \in \mathbb{Q}$ com $x<z<y$.
 \end{example}
 
-The elimination rule for the existential quantifier gives rise to the following proof strategy.
+A regra de eliminação para o quantificador existencial dá origem à seguinte estratégia de prova.
 
-\begin{strategy}[Assuming existentially quantified statements]
+\begin{strategy}[Assumindo declarações existencialmente quantificadas]
 \label{strAssumingExistential}
-If an assumption in the proof has the form $\exists x \in X,\, p(x)$, then we may introduce a new variable $a \in X$ and assume that $p(a)$ is true.
+Se uma suposição na prova tiver a forma $\exists x \in X,\, p(x)$, então podemos introduzir uma nova variável $a \in X$ e assumir que $p(a)$ é verdadeira.
 \end{strategy}
 
-It ought to be said that when using existential elimination in a proof, the variable $a$ used to denote a particular element of $X$ for which $p(a)$ is true should not already be in use earlier in the proof.
+Deve-se dizer que ao usar a eliminação existencial em uma prova, a variável $a$ usada para denotar um elemento particular de $X$ para o qual $p(a)$ é verdadeiro não deveria já estar em uso anteriormente na prova.
 
-\Cref{strAssumingExistential} is very useful in proofs of divisibility, since the expression `$a$ divides $b$' is an existentially quantified statement---this was \Cref{exLogicalFormulaeToEnglish}(a).
+\Cref{strAssumingExistential} é muito útil em provas de divisibilidade, uma vez que a expressão `$a$ divide $b$' é uma afirmação existencialmente quantificada --- isso foi\Cref{exLogicalFormulaeToEnglish}(a).
 
 \begin{proposition}
 Let $n \in \mathbb{Z}$. If $n^3$ is divisible by $3$, then $(n+1)^3 - 1$ is divisible by $3$.
 \end{proposition}
 
 \begin{cproof}
-Suppose $n^3$ is divisible by $3$. Take $q \in \mathbb{Z}$ such that $n^3 = 3q$. Then
+Suponha que $n^3$ seja divisível por $3$. Tome $q \in \mathbb{Z}$ tal que $n^3 = 3q$. Então
 \begin{align*}
 & (n+1)^3 - 1 && \\
 &= (n^3 + 3n^2 + 3n + 1) - 1 && \text{expanding} \\
@@ -372,143 +372,142 @@ Suppose $n^3$ is divisible by $3$. Take $q \in \mathbb{Z}$ such that $n^3 = 3q$.
 &= 3q + 3n^2 + 3n && \text{since $n^3 = 3q$} \\
 &= 3(q+n^2+n) && \text{factorising}
 \end{align*}
-Since $q+n^2+n \in \mathbb{Z}$, we have proved that $(n+1)^3 - 1$ is divisible by $3$, as required.
+Como $q+n^2+n \in \mathbb{Z}$, provamos que $(n+1)^3 - 1$ é divisível por $3$, conforme necessário.
 \end{cproof}
 
 \subsubsection*{Uniqueness}
 
-The concept of uniqueness arises whenever we want to use the word `the'. For example, in \Cref{defBaseBExpansionPreliminary} we defined the base-$b$ expansion of a natural number $n$ to be \textit{the} string $d_r d_{r-1} \dots d_1 d_0$ satisfying some properties. The issue with the word `the' here is that we don't know ahead of time whether a natural number $n$ may have base-$b$ expansions other than $d_r d_{r-1} \dots d_1 d_0$---this fact actually requires proof. To prove this fact, we would need to assume that $e_s e_{s-1} \dots e_1 e_0$ were another base-$b$ expansion of $n$, and prove that the strings $d_r d_{r-1} \dots d_1 d_0$ and $e_s e_{s-1} \dots e_1 e_0$ are the same---this is done in \Cref{thmBaseBExpansion}.
+O conceito de singularidade surge sempre que queremos usar a palavra “o”. Por exemplo, em \Cref{defBaseBExpansionPreliminary} definimos a expansão base-$b$ de um número natural $n$ como \textit{a} string $d_r d_{r-1} \dots d_1 d_0$ satisfazendo algumas propriedades. O problema com a palavra `o' aqui é que não sabemos de antemão se um número natural $n$ pode ter expansões de base $b$ diferentes de $d_r d_{r-1} \dots d_1 d_0$- -este fato realmente requer prova. Para provar esse fato, precisaríamos assumir que $e_s e_{s-1} \dots e_1 e_0$ ​​eram outra expansão de base $b$ de $n$, e provar que as strings $d_r d_{r-1} \dots d_1 d_0$ e $e_s e_{s-1} \dots e_1 e_0$ ​​são iguais --- isso é feito em \Cref{thmBaseBExpansion}.
 
-Uniqueness is typically coupled with \textit{existence}, since we usually want to know if there is \textit{exactly one} object satisfying a property. This motivates the definition of the \textit{unique existential} quantifier, which encodes what we mean when we say `there is exactly one $x \in X$ such that $p(x)$ is true'. The `existence' part ensures that at least one $x \in X$ makes $p(x)$ true; the `uniqueness' part ensures that $x$ is the only element of $X$ making $p(x)$ true.
+A unicidade é normalmente associada a \textit{existência}, já que geralmente queremos saber se existe \textit{exatamente um} objeto que satisfaça uma propriedade. Isto motiva a definição do quantificador \textit{existencial único}, que codifica o que queremos dizer quando dizemos “há exatamente um $x \in X$ tal que $p(x)$ é verdadeiro”. A parte da `existência' garante que pelo menos um $x \in X$ torne $p(x)$ verdadeiro; a parte da `singularidade' garante que $x$ é o único elemento de $X$ que torna $p(x)$ verdadeiro.
 
 \begin{definition}
 \label{defUniqueExistentialQuantifier}
 \index{quantifier!unique existential}
-The \textbf{unique existential quantifier} is the quantifier $\exists !$ (\inlatex{exists!}\lindexmmc{\exists!}{$\exists!$}) defined such that $\exists ! x \in X,\, p(x)$ is shorthand for
+O \textbf{quantificador existencial único} é o quantificador $\exists !$ (\inlatex{exists!}\lindexmmc{\exists!}{$\exists!$}) definido de forma que $\exists ! x \in X,\, p(x)$ é uma abreviação de
 \[(\underbrace{\exists x \in X,\, p(x)}_{\text{existence}}) ~ \wedge ~ (\underbrace{\forall a \in X,\, \forall b \in X,\, [(p(a) \wedge p(b)) \Rightarrow a=b]}_{\text{uniqueness}})\]
 \end{definition}
 
 \begin{example}
 \label{exEveryPositiveRealHasUniqueSquareRoot}
-Every positive real number has a unique positive square root. We can write this symbolically as
+Todo número real positivo tem uma única raiz quadrada positiva. Podemos escrever isso simbolicamente como
 \[\forall a \in \mathbb{R},\, (a > 0 \Rightarrow \exists ! b \in \mathbb{R},\, (b > 0 \wedge b^2=a))\]
-Reading this from left to right, this says: for every real number $a$, if $a$ is positive, then there exists a unique real number $b$, which is positive and whose square is $a$. 
+Lendo isto da esquerda para a direita, diz-se: para cada número real $a$, se $a$ for positivo, então existe um único número real $b$, que é positivo e cujo quadrado é $a$.
 \end{example}
 
 \begin{discussion}
-Explain why \Cref{defUniqueExistentialQuantifier} captures the notion of there being `exactly one' element $x \in X$ making $p(x)$ true. Can you think of any other ways that $\exists ! x \in X,\, p(x)$ could be defined?
+Explique por que \Cref{defUniqueExistentialQuantifier} captura a noção de que existe `exatamente um' elemento $x \in X$ tornando $p(x)$ verdadeiro. Você consegue pensar em alguma outra maneira de $\exists ! x \in X,\, p(x)$ poderia ser definido?
 \end{discussion}
 
-\begin{strategy}[Proving unique-existentially quantified statements]
-A proof of a statement of the form $\exists ! x \in X,\, p(x)$, consists of two parts:
-\begin{itemize}
-\item \textbf{Existence} --- prove that $\exists x \in X,\, p(x)$ is true (e.g.\ using \Cref{strProvingExistential});
-\item \textbf{Uniqueness} --- let $a,b \in X$, assume that $p(a)$ and $p(b)$ are true, and derive $a=b$.
+\begin{strategy}[Provando declarações quantificadas existencialmente únicas]
+Uma prova de uma declaração da forma $\exists ! x \in X,\, p(x)$, consiste em duas partes:
+\begin{itemizar}
+\item \textbf{Existence} --- provar que $\exists x \in X,\, p(x)$ é verdadeiro (por exemplo\ usando \Cref{strProvingExistential});
+\item \textbf{Unicidade} --- deixe $a,b \in X$, assumir que $p(a)$ e $p(b)$ são verdadeiros, e derivar $a=b$.
 \end{itemize}
 
-Alternatively, prove existence to obtain a fixed $a \in X$ such that $p(a)$ is true, and then prove $\forall x \in X,\, [p(x) \Rightarrow x=a]$.
+Alternativamente, prove a existência para obter um $a \in X$ fixo tal que $p(a)$ seja verdadeiro, e então prove $\forall x \in X,\, [p(x) \Rightarrow x=a]$ .
 \end{strategy}
 
 \begin{example}
 \label{exEveryPositiveRealHasUniqueSquareRootProof}
-We prove \Cref{exEveryPositiveRealHasUniqueSquareRoot}, namely that for each real $a>0$ there is a unique $b>0$ such that $b^2=a$. So first fix $a > 0$.
-\begin{itemize}
-\item (\textbf{Existence}) The real number $\sqrt{a}$ is positive and satisfies $(\sqrt{a})^2=a$ by definition. Its existence will be deferred to a later time, but an informal argument for its existence could be provided using `number line' arguments as in \Cref{chGettingStarted}.
-\item (\textbf{Uniqueness}) Let $y,z > 0$ be real numbers such that $y^2=a$ and $z^2=a$. Then $y^2=z^2$. Rearranging and factorising yields
+Nós provamos \Cref{exEveryPositiveRealHasUniqueSquareRoot}, ou seja, para cada real $a>0$ existe um único $b>0$ tal que $b^2=a$. Então primeiro corrija $a > 0$.
+\begin{itemizar}
+\item (\textbf{Existence}) O número real $\sqrt{a}$ é positivo e satisfaz $(\sqrt{a})^2=a$ por definição. Sua existência será adiada para um momento posterior, mas um argumento informal para sua existência poderia ser fornecido usando argumentos de `reta numérica' como em \Cref{chGettingStarted}.
+\item (\textbf{Unicidade}) Sejam $y,z > 0$ números reais tais que $y^2=a$ e $z^2=a$. Então $y^2=z^2$. Reorganizando e fatorando rendimentos
 \[(y-z)(y+z)=0\]
-so either $y-z=0$ or $y+z=0$. If $y+z=0$ then $z=-y$, and since $y>0$, this means that $z<0$. But this contradicts the assumption that $z>0$. As such, it must be the case that $y-z=0$, and hence $y=z$, as required.
+então $y-z=0$ ou $y+z=0$. Se $y+z=0$ então $z=-y$, e como $y>0$, isso significa que $z<0$. Mas isso contradiz a suposição de que $z>0$. Como tal, deve ser o caso de $y-z=0$ e, portanto, $y=z$, conforme necessário.
 \end{itemize}
 \end{example}
 
 \begin{exercise}
 \label{exExamplesOfUniqueExistentialQuantifier}
-For each of the propositions, write it out as a logical formula involving the $\exists !$ quantifier and then prove it, using the structure of the logical formula as a guide.
-\begin{enumerate}[(a)]
-\item For each real number $a$, the equation $x^2+2ax+a^2=0$ has exactly one real solution $x$.
-\item There is a unique real number $a$ for which the equation $x^2+a^2=0$ has a real solution $x$.
-\item There is a unique natural number with exactly one positive divisor.
+Para cada uma das proposições, escreva-a como uma fórmula lógica envolvendo o quantificador $\exists !$ e depois prove-a, usando a estrutura da fórmula lógica como guia.
+\begin{enumerar}[(a)]
+\item Para cada número real $a$, a equação $x^2+2ax+a^2=0$ tem exatamente uma solução real $x$.
+\item Existe um único número real $a$ para o qual a equação $x^2+a^2=0$ tem uma solução real $x$.
+\item Existe um número natural único com exatamente um divisor positivo.
 \end{enumerate}
 \end{exercise}
 
-The unique existential quantifier will play a large role when we study functions in \Cref{secFunctions}.
+O quantificador existencial único desempenhará um papel importante quando estudarmos funções em \Cref{secFunctions}.
 
 \subsection*{Quantifier alternation}
 \index{quantifier alternation}
-Compare the following two statements:
+Compare as duas afirmações a seguir:
 \begin{enumerate}[(i)] 
-\item For every door, there is a key that can unlock it.
-\item There is a key that can unlock every door.
+\item Para cada porta existe uma chave que pode destrancá-la.
+\item Existe uma chave que pode destrancar todas as portas.
 \end{enumerate}
 
-Letting the variables $x$ and $y$ refer to doors and keys, respectively, and letting $p(x,y)$ be the statement `door $x$ can be unlocked by key $y$', we can formulate these statements as:
+Deixando as variáveis ​​$x$ e $y$ referirem-se a portas e chaves, respectivamente, e sendo $p(x,y)$ a afirmação `a porta $x$ pode ser destrancada pela chave $y$', podemos formular estas declarações como:
 \begin{enumerate}[(i)] 
 \item $\forall x,\, \exists y,\, p(x,y)$
 \item $\exists y,\, \forall x,\, p(x,y)$
 \end{enumerate}
 
-This is a typical `real-world' example of what is known as \textit{quantifier alternation}---the two statements differ only by the order of the front-loaded quantifiers, and yet they say very different things. Statement (i) requires every door to be unlockable, but the keys might be different for different doors; statement (ii), however, implies the existence of some kind of `master key' that can unlock all the doors.
+Este é um exemplo típico do "mundo real" do que é conhecido como \textit{alternância de quantificadores} --- as duas afirmações diferem apenas pela ordem dos quantificadores carregados antecipadamente e, ainda assim, dizem coisas muito diferentes. A afirmação (i) exige que todas as portas possam ser destrancadas, mas as chaves podem ser diferentes para portas diferentes; a afirmação (ii), contudo, implica a existência de algum tipo de “chave mestra” que pode destrancar todas as portas.
 
-Here's another example with a more mathematical nature:
+Aqui está outro exemplo com uma natureza mais matemática:
 
 \begin{exercise}
-Let $p(x,y)$ be the statement `$x + y$ is even'.
+Seja $p(x,y)$ a afirmação `$x + y$ é par'.
 \begin{itemize}
-\item Prove that $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.
-\item Prove that $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is false.
+\item Prova que $\forall x \in \mathbb{Z},\, \exists y \in \mathbb{Z},\, p(x,y)$ is true.
+\item Prova que $\exists y \in \mathbb{Z},\, \forall x \in \mathbb{Z},\, p(x,y)$ is false.
 \end{itemize}
 \end{exercise}
 
-In both of the foregoing examples, you might have noticed that the `$\forall\exists$' statement says something \textit{weaker} than the `$\exists\forall$' statement---in some sense, it is easier to make a $\forall\exists$ statement true than it is to make an $\exists\forall$ statement true.
+Em ambos os exemplos anteriores, você deve ter notado que a instrução `$\forall\exists$' diz algo \textit{mais fraco} do que a instrução `$\exists\forall$' --- em certo sentido, é mais fácil para tornar uma declaração $\forall\exists$ verdadeira do que tornar uma declaração $\exists\forall$ verdadeira.
 
-This idea is formalised in \Cref{thmQuantifierAlternation} below, which despite its abstract nature, has an extremely simple proof.
+Esta ideia está formalizada no \Cref{thmQuantifierAlternation} abaixo, que apesar de sua natureza abstrata, possui uma prova extremamente simples.
 
 \begin{theorem}
 \label{thmQuantifierAlternation}
-Let $p(x,y)$ be a logical formula with free variables $x \in X$ and $y \in Y$. Then
-\[\exists y \in Y,\, \forall x \in X,\, p(x,y) \Rightarrow \forall x \in X,\, \exists y \in Y,\, p(x,y)\]
+Seja $p(x,y)$ uma fórmula lógica com variáveis ​​livres $x \in X$ e $y \in Y$. Então
+\[\existe y \in Y,\, \forall x \in X,\, p(x,y) \Rightarrow \forall x \in X,\, \existe y \in Y,\, p(x, e)\]
 \end{theorem}
 
 \begin{cproof}
-Suppose $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ is true. We need to prove $\forall x \in X,\, \exists y \in Y,\, p(x,y)$, so fix $a \in X$---our goal is now to prove $\exists y \in Y,\, p(a,y)$.
+Suponha que $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ seja verdadeiro. Precisamos provar $\forall x \in X,\, \exists y \in Y,\, p(x,y)$, então fixe $a \in X$---nosso objetivo agora é provar $\ existe y \in Y,\, p(a,y)$.
 
-Using our assumption $\exists y \in Y,\, \forall x \in X,\, p(x,y)$, we may choose $b \in Y$ such that $\forall x,\, p(x,b)$ is true. But then $p(a, b)$ is true, so we have proved $\exists y \in Y,\, p(a,y)$, as required.
+Usando nossa suposição $\exists y \in Y,\, \forall x \in X,\, p(x,y)$, podemos escolher $b \in Y$ tal que $\forall x,\, p( x,b)$ é verdadeiro. Mas então $p(a, b)$ é verdadeiro, então provamos que $\exists y \in Y,\, p(a,y)$, conforme necessário.
 \end{cproof}
 
-Statements of the form $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ imply some kind of \textit{uniformity}: a value of $y$ making $\forall x \in X,\, p(x,y)$ true can be thought of as a `one size fits all' solution to the problem of proving $p(x,y)$ for a given $x \in X$. Later in your studies, it is likely that you will encounter the word `uniform' many times---it is precisely this notion of quantifier alternation that the word `uniform' refers to.
-
+Declarações da forma $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ implicam algum tipo de \textit{uniformidade}: um valor de $y$ fazendo $\forall x \in X,\, p(x,y)$ true pode ser pensado como uma solução "tamanho único" para o problema de provar $p(x,y)$ para um dado $x \in X$ . Mais tarde em seus estudos, é provável que você encontre a palavra “uniforme” muitas vezes – é precisamente a essa noção de alternância de quantificadores que a palavra “uniforme” se refere.
 \begin{tldr}{secVariablesQuantifiers}
 
 \subsubsection*{Variables and logical formulae}
 
 \begin{tldrlist}
 \tldritem{defFreeVariable}
-A variable is \textit{free} if a value can be substituted for it; otherwise it is \textit{bound}.
+Uma variável é \textit{free} se um valor puder substituí-la; caso contrário, é \textit{vinculado}.
 
 \tldritem{defPredicate}
-A \textit{predicate} $p(x,y,z,\dots)$ represents a statement involving some free variables $x,y,z,\dots{}$ that becomes a proposition when values for the variables are substituted.
+Um \textit{predicado} $p(x,y,z,\dots)$ representa uma declaração envolvendo algumas variáveis ​​livres $x,y,z,\dots{}$ que se torna uma proposição quando os valores das variáveis ​​são substituídos.
 
 \tldritem{defLogicalFormula}
-A \textit{logical formula} is an expression built using predicates, logical operators and quantifiers.
+Uma \textit{fórmula lógica} é uma expressão construída usando predicados, operadores lógicos e quantificadores.
 \end{tldrlist}
 
-\subsubsection*{Quantifiers}
+\subsubsection*{Quantificadores}
 
 \begin{tldrlist}
 \tldritem{defUniversalQuantifier}
-The \textit{universal quantifier} ($\forall$) represents `for all'. We prove $\forall x \in X,\, p(x)$ by introducing a variable $x \in X$ and, assuming nothing about $x$ other than that it is an element of $X$, deriving $p(x)$; we can use an assumption of the form $\forall x \in X,\, p(x)$ by deducing $p(a)$ whenever we know that $a \in X$.
+O \textit{quantificador universal} ($\forall$) representa `para todos'. Provamos $\forall x \in X,\, p(x)$ introduzindo uma variável $x \in X$ e, assumindo nada sobre $x$ além de que é um elemento de $X$, derivando $p (x)$; podemos usar uma suposição da forma $\forall x \in X,\, p(x)$ deduzindo $p(a)$ sempre que soubermos que $a \in X$.
 
 \tldritem{defExistentialQuantifier}
-The \textit{existential quantifier} ($\exists$) represents `there exists\dots{} such that\dots{}'. We prove $\exists x \in X,\, p(x)$ by finding (with proof) an element $a \in X$ for which $p(a)$ is true; we can use an assumption of the form $\exists x \in X,\, p(x)$ by introducing a variable $a \in X$ and assuming that $p(a)$ is true.
+O \textit{quantificador existencial} ($\exists$) representa `existem\pontos{} tais que\pontos{}'. Provamos $\exists x \in X,\, p(x)$ encontrando (com prova) um elemento $a \in X$ para o qual $p(a)$ é verdadeiro; podemos usar uma suposição da forma $\exists x \in X,\, p(x)$ introduzindo uma variável $a \in X$ e assumindo que $p(a)$ é verdadeiro.
 
 \tldritem{defUniqueExistentialQuantifier}
-The \textit{unique existential quantifier} ($\exists !)$ represents `there exists a unique\dots{} such that\dots{}'. We prove $\exists ! x \in X,\, p(x)$ in two parts: (1) Prove $\exists x \in X,\, p(x)$; and (2) Let $a,b \in X$, assume that $p(a)$ and $p(b)$ are true, and derive $a=b$.
+O \textit{quantificador existencial único} ($\exists !)$ representa `existe um único\dots{} tal que\dots{}'. Provamos que $\existe! x \in X,\, p(x)$ em duas partes: (1) Prove que $\existe x \in X,\, p(x)$; e (2) Seja $a,b \in X$, assuma que $p(a)$ e $p(b)$ são verdadeiros e derive $a=b$.
 \end{tldrlist}
 
 \subsubsection*{Quantifier alternation}
 
 \begin{tldrlist}
 \tldritem{thmQuantifierAlternation}
-For any logical formula $p(x,y)$, we have that $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ implies $\forall x \in X,\, \exists y \in Y,\, p(x,y)$, but not necessarily vice versa.
+Para qualquer fórmula lógica $p(x,y)$, temos que $\exists y \in Y,\, \forall x \in X,\, p(x,y)$ implica $\forall x \in X ,\, \existe y \in Y,\, p(x,y)$, mas não necessariamente vice-versa.
 \end{tldrlist}
 
 \end{tldr}
