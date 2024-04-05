@@ -82,8 +82,8 @@ Estamos agora muito próximos, conforme indicado na tabela a seguir.
 
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Assumptions} & \textbf{Goals} \\ \hline
-$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum inteiro}] \cdot c$ \\
+\textbf{Suposições} & \textbf{Objetivos} \\ \hline
+$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum número inteiro}] \cdot c$ \\
 $b=qc$ & \\
 $a=rb$ & \\
 $a=r(qc)$ & 
@@ -213,7 +213,7 @@ Nem sempre é óbvio quando a conjunção está sendo usada; às vezes ele apare
 
 \begin{example}
 \label{exSevenDividesTwentyEightConjunction}
-Podemos expressar a proposição `$7$ é um fator primo de $28$' na forma $p \wedge q$, deixando $p$ representar a proposição `$7$ é primo' e deixando $q$ representar a proposição `$7$ $ divide $28$'.
+Podemos expressar a proposição `$7$ é um fator primordial de $28$' na forma $p \wedge q$, deixando $p$ representar a proposição `$7$ é primo' e deixando $q$ representar a proposição `$7$ divide $28$'.
 \end{example}
 
 \begin{exercise}
@@ -525,7 +525,7 @@ Seja $n \in \mathbb{Z}$. Então $n^2$ deixa um resto de $0$ ou $1$ quando dividi
 \end{proposition}
 
 \begin{cproof}
-Seja $n \in \mathbb{Z}$. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}),uma das seguintes afirmações deve ser verdadeira para alguns $k \in \mathbb{Z}$:
+Seja $n \in \mathbb{Z}$. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}), uma das seguintes afirmações deve ser verdadeira para alguns $k \in \mathbb{Z}$:
 \[
 n=3k \quad \text{or} \quad n=3k+1 \quad \text{or} \quad n=3k+2
 \]
@@ -556,7 +556,7 @@ Ao completar os exercícios a seguir, tente acompanhar exatamente onde você usa
 \begin{exercise}
 Seja $n$ um número inteiro. Prove que $n^2$ deixa um resto de $0$, $1$ ou $4$ quando dividido por $5$.
 \hintlabel{exSquareRemainderModuloFive}{f
-Imitar a prova de \Cref{propRemainderOfSquaresModulo3}.
+Imite a prova de \Cref{propRemainderOfSquaresModulo3}.
 }
 \end{exercise}
 
@@ -810,11 +810,10 @@ Nosso objetivo agora é provar que $8$ divide $n$ se e somente se $8$ divide $n'
 n' = n-(nn') = nn'' = 1 \cdot n + (-1) \cdot n''
 \]
 então, de fato, $8$ divide $n'$, conforme necessário.
-\item ($\Leftarrow$)  Suponha que $8$ divida $n'$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an'+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
+\item ($\Leftarrow$) Suponha que $8$ divida $n'$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an'+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
 \[
 n = n'+(n-n') = n'+n'' = 1 \cdot n' + 1 \cdot n''
 \]
-
 então, de fato, $8$ divide $n$, conforme necessário.
 \end{itemize}
 %% END EXTRACT
@@ -823,8 +822,7 @@ então, de fato, $8$ divide $n$, conforme necessário.
 \begin{exercise}
 Prove que um número natural $n$ é divisível por $3$ se e somente se a soma de seus dígitos de base $10$ for divisível por $3$.
 \hintlabel{exSumOfDigitsDivisibleByThree}{%
-Suppose $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ and let $s = d_r + \cdots + d_1 + d_0$. Comece provando que
-$3 \mid n-s$.
+Suponha que $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ e seja $s = d_r + \cdots + d_1 + d_0$. Comece provando que $3 \mid n-s$.
 }
 \end{exercise}
 
@@ -919,40 +917,42 @@ Seja $x \in \mathbb{R}$. Prove por contradição que se $x$ é irracional então
 
 \begin{exercise}
 \label{exNoLeastPositiveReal}
-Prove por contradição que não existe nenhum número real menos positivo. Ou seja, prove que não existe um número real positivo $a$ tal que $a \le b$ para todos os números reais positivos $b$.\end{exercise}
+Prove por contradição que não existe nenhum número real menos positivo. Ou seja, prove que não existe um número real positivo $a$ tal que $a \le b$ para todos os números reais positivos $b$.
+\end{exercise}
 
 Uma prova não precisa ser uma “prova por contradição” na sua totalidade – na verdade, pode acontecer que apenas uma pequena parte da prova utilize contradição. Isso é exibido na prova da seguinte proposição.
 
 \begin{proposition}
 \label{propOddIffRemainderOfOne}
-Seja $a$ um número inteiro. Então $a$ é ímpar se e somente se $a=2b+1$ para algum inteiro $b$.
-\end{proposição}
-\begin{cprova}
+Seja $a$ um número inteiro. Então $a$ é ímpar se e somente se $a=2b+1$ para algum número inteiro $b$.
+\end{proposition}
+\begin{cproof}
+
 Suponha que $a$ seja ímpar. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}), ou $a=2b$ ou $a=2b+1$, para algum $b \in \mathbb{Z}$. Se $a=2b$, então $2$ divide $a$, contradizendo a suposição de que $a$ é ímpar; então deve ser o caso de $a=2b+1$.
 
 Por outro lado, suponha $a=2b+1$. Então $a$ deixa um resto de $1$ quando dividido por $2$. Porém, pelo teorema da divisão, os números pares são justamente aqueles que deixam resto $0$ quando divididos por $2$. Segue-se que $a$ não é par, então é ímpar.
-\end{cprova}
+\end{cproof}
+
 
 A regra de eliminação para o operador de negação \elimrule{\neg} simplesmente diz que uma proposição não pode ser verdadeira e falsa ao mesmo tempo.
-\begin{strategy}[Assumindo negações]
+
+\begin{strategy}[Assuming negations]
 \label{strAssumingNegations}
 Se uma suposição em uma prova tem a forma $\neg p$, então qualquer derivação de $p$ leva a uma contradição.
 \end{strategy}
 
 O principal uso de \Cref{strAssumingNegations} é para obter a contradição em uma prova por contradição — na verdade, já a usamos em nossos exemplos de prova por contradição! Como tal, não nos deteremos mais no assunto.
 
-\subsection*{Axiomas Lógicos}
+\subsection*{Axiomas lógicos}
 
 Encerramos esta seção introduzindo algumas regras lógicas adicionais (\textit{axiomas}) que usaremos em nossas provas.
 
 A primeira é a chamada \textit{lei do terceiro excluído}, que parece tão óbvia que nem vale a pena afirmar (muito menos nomear) --- o que ela diz é que toda proposição é verdadeira ou falsa. Mas cuidado, pois as aparências enganam; a lei do terceiro excluído é um axioma não construtivo, o que significa que não deve ser aceito em ambientes onde é importante acompanhar como uma proposição é provada - o simples fato de saber que uma proposição é verdadeira ou falsa não nos diz nada sobre como isso pode ser provado ou refutado. Na maioria dos contextos matemáticos, porém, isso é aceito sem pensar duas vezes.
-
-\begin{axiom}[Lei do meio excluído]
+\begin{axiom}[Law of excluded middle]
 \label{axLEM}
 \index{law of excluded middle}
 Seja $p$ uma formula proposicional. Então $p \vee (\neg p)$ é verdadeiro.
 \end{axiom}
-
 
 A lei do terceiro excluído pode ser representada esquematicamente como segue; não há premissas acima da linha, pois estamos simplesmente afirmando que ela é verdadeira.
 
