@@ -30,11 +30,11 @@ Pense no que `$a \in X$' \textit{realmente significa}---não se deixe enganar pe
 }
 \end{exercise}
 
-Evitaremos nos referir explicitamente ao conjunto universal $\mathcal{U}$ sempre que possível, mas ele sempre estará lá em segundo plano. Isto é conveniente porque não precisamos mais nos preocupar com o domínio de discurso das variáveis ​​livres (como fizemos em \Cref{defPredicate}), para que possamos abreviar `$\forall x \in \mathcal{U},\, p(x)$' por `$\forall x,\, p(x)$', and `$\exists x \in \mathcal{U},\, p(x)$' by `$\exists x,\, p(x)$'.
+Evitaresmos nos referir explicitamente ao conjunto universal $\mathcal{U}$ sempre que possível, mas ele sempre estará lá em segundo plano. Isto é conveniente porque não precisamos mais nos preocupar com o domínio de discursos das variáves ​​çivres (como fizemos em \Cref{defPredicate}), para que possamos abreviar `$\forall x \in \mathcal{U},\, p(x)$' por `$\forall x,\, p(x)$', e `$\exists x \in \mathcal{U},\, p(x)$' por `$\exists x,\, p(x)$'.
 
 Observe que sob esta convenção:
 \begin{itemize}
-\item $\forall x \in X,\, p(x)$ is logically equivalent to $\forall x,\, (x \in X \Rightarrow p(x))$; and
+\item $\forall x \in X,\, p(x)$ is logically equivalent to $\forall x,\, (x \in X \Rightarrow p(x))$; e
 \item $\exists x \in X,\, p(x)$ is logically equivalent to $\exists x,\, (x \in X \wedge p(x))$.
 \end{itemize}
 
@@ -133,7 +133,7 @@ Seja $a,b \in \mathbb{R}$. O \textbf{intervalo aberto} $(a,b)$, o \textbf{interv
 &
 [a,b] &= \{ x \in \mathbb{R} \mid a \le x \le b \}
 \end{align*}
-Definimos ainda os \textbf{intervalos ilimitados} $(-\infty, a)$, $(-\infty, a]$, $[a, \infty)$ and $(a, \infty)$ \inlatex{infty}\lindexmmc{infty}{$\infty$} por
+Definimos ainda os \textbf{intervalos ilimitados} $(-\infty, a)$, $(-\infty, a]$, $[a, \infty)$ e $(a, \infty)$ \inlatex{infty}\lindexmmc{infty}{$\infty$} por
 \begin{align*}
 \hspace{35pt} (-\infty,a) &= \{ x \in \mathbb{R} \mid x < a \}
 &
@@ -215,7 +215,7 @@ Para cada uma das ilustrações a seguir, encontre o intervalo que ela represent
 
 Muitas vezes acontece que tudo que também é elemento de um conjunto é elemento de outro conjunto. Por exemplo, todo número inteiro é um número racional; aquilo é
 \[ \forall n \in \mathbb{Z},\, n \in \mathbb{Q} \]
-We can say this more concisely by saying that $\mathbb{Z}$ is a \textit{subconjunto} de $\mathbb{Q}$.
+Podemos dizer de forma mais concisa dizendo que $\mathbb{Z}$ é um \textit{subconjunto} de $\mathbb{Q}$.
 
 \begin{definition}
 \label{defSubset}
@@ -254,7 +254,7 @@ A seguinte proposição prova uma propriedade de subconjunto conhecida como \tex
 
 \begin{proposition}
 \label{propSubsetTransitive}
-Seja $X,Y,Z$ conjuntos. Se $X \subseteq Y$ and $Y \subseteq Z$, then $X \subseteq Z$.
+Seja $X,Y,Z$ conjuntos. Se $X \subseteq Y$ e $Y \subseteq Z$, then $X \subseteq Z$.
 \end{proposition}
 
 \begin{cproof}
@@ -271,10 +271,10 @@ Esta seção trata de definir conjuntos, comparar conjuntos e construir novos co
 
 \begin{discussion}
 \label{dscSetEquality}
-Sejam $X$ e $Y$ conjuntos. O que deveria significar dizer que $X$ e $Y$ são iguais? Tente fornecer uma definição precisa de igualdade de conjuntos antes de continuar lendo.
+Sejam XX e YY conjuntos. O que deveria significar dizer que XX e YY são iguais? Tente fornecer uma definição precisa de igualdade de conjuntos antes de continuar lendo.
 \end{discussion}
 
-Existem diferentes noções possíveis de “semelhança” para conjuntos: poderíamos querer dizer que dois conjuntos $X$ e $Y$ são iguais quando têm literalmente a mesma definição; ou podemos querer dizer que $X$ e $Y$ são iguais quando contêm os mesmos objetos que elementos. Por exemplo, suponha que $X$ seja `o conjunto de todos os números naturais ímpares' e $Y$ seja `o conjunto de todos os inteiros que são diferenças de quadrados perfeitos consecutivos' --- neste caso, a primeira destas caracterizações de igualdade pode nos levar a dizer $X \ne Y$, enquanto o segundo nos levaria a dizer $X = Y$.
+Existem diferentes noções possíveis de “semelhança” para conjuntos: poderíamos querer dizer que dois conjuntos XX e YY são iguais quando têm literalmente a mesma definição; ou podemos querer dizer que XX e YY são iguais quando contêm os mesmos objetos que elementos. Por exemplo, suponha que XX seja `o conjunto de todos os números naturais ímpares' e YY seja `o conjunto de todos os inteiros que são diferenças de quadrados perfeitos consecutivos' --- neste caso, a primeira destas caracterizações de igualdade pode nos levar a dizer X≠YX \ne Y, enquanto o segundo nos levaria a dizer X=YX = Y.
 
 Claramente, teremos que declarar nossos termos em algum momento. E esse ponto é agora.
 
@@ -300,10 +300,10 @@ Frequentemente escrevemos `(⊆\subseteq)' e `(⊇\supseteq)' para indicar a dir
 \label{exPositiveNegativeSetBuilderNotation}
 Provamos que {x∈R∣x2≤1}=[−1,1]\{ x \in \mathbb{R} \mid x^2 \le 1 \} = [-1,1] por dupla contenção.
 \begin{itemize}
-\item (⊆\subseteq) Seja a∈{x∈R∣x2≤1}a \in \{ x \in \mathbb{R} \mid x^2 \le 1 \}. Então a∈Ra \in \mathbb{R} and a2≤1a^2 \le 1, para que (1−a)(1+a)=1−a2≥0(1-a)(1+a) = 1-a^2 \ge 0. Segue-se que ou:
+\item (⊆\subseteq) Seja a∈{x∈R∣x2≤1}a \in \{ x \in \mathbb{R} \mid x^2 \le 1 \}. Então a∈Ra \in \mathbb{R} e a2≤1a^2 \le 1, para que (1−a)(1+a)=1−a2≥0(1-a)(1+a) = 1-a^2 \ge 0. Segue-se que ou:
 \begin{itemize}
 \item 1−a≥01-a \ge 0 e 1+a≥01+a \ge 0, nesse caso a≤1a \le 1 e a≥−1a \ge -1, para que a∈[−1,1]a \in [-1,1].
-\item 1−a≤01-a \le 0 e 1+a≤01+a \le 0, nesse caso a≥1a \ge 1 and a≤−1a \le -1, o que é uma contradição já que −1<1-1 < 1.
+\item 1−a≤01-a \le 0 e 1+a≤01+a \le 0, nesse caso a≥1a \ge 1 e a≤−1a \le -1, o que é uma contradição já que −1<1-1 < 1.
 \end{itemize}
 Então devemos ter a∈[−1,1]a \in [-1,1], como requerido.
 
@@ -318,7 +318,7 @@ Prove que {x∈R∣x2<x}=(0,1)\{ x \in \mathbb{R} \mid x^2 < x \} = (0,1).
 O axioma da extensionalidade dos conjuntos tem como consequência que os conjuntos são independentes da ordem em que seus elementos aparecem na notação de lista e são independentes de quantas vezes um único elemento é escrito --- isto é, um elemento de um conjunto é apenas ` contado' uma vez, mesmo que apareça várias vezes na notação de lista. Isso é ilustrado no exercício a seguir.
 
 \begin{exercise}
-Prove por dupla contenção que {0,1}={1,0}\{ 0, 1 \} = \{ 1, 0 \} and {0,0}={0}\{ 0, 0 \} = \{ 0 \}.
+Prove por dupla contenção que {0,1}={1,0}\{ 0, 1 \} = \{ 1, 0 \} e {0,0}={0}\{ 0, 0 \} = \{ 0 \}.
 \end{exercise}
 
 \subsection*{Habitação e vazio}
@@ -375,7 +375,7 @@ Seja $E$ e $E'$ sejam conjuntos. Se $E$ e $E'$ são vazios, então $E=E'$.
 \begin{proof}
 Suponha que $E$ e $E'$ estejam vazios. A afirmação de que $E=E'$ é equivalente a
 \[ (\forall a \in E,\, a \in E') \wedge (\forall a \in E',\, a \in E) \]
-Mas $\forall a \in E,\, a \in E'$ and $\forall a \in E',\, a \in E$ são ambos verdadeiros por \Cref{exEverythingIsTrueOfElementsOfEmptySet} desde que $E$ e $E'$ sejam vazios. Então $E=E'$, como afirmado.
+Mas $\forall a \in E,\, a \in E'$ e $\forall a \in E',\, a \in E$ são ambos verdadeiros por \Cref{exEverythingIsTrueOfElementsOfEmptySet} desde que $E$ e $E'$ sejam vazios. Então $E=E'$, como afirmado.
 \end{proof}
 
 Saber que existe um e apenas um conjunto vazio significa que podemos agora fazer a seguinte definição, sem nos preocupar se a palavra “o” é problemática.
@@ -414,7 +414,7 @@ Escreva os elementos de $\mathcal{P}(\{1, 2, 3\})$.
 \end{exercise}
 
 \begin{exercise}
-Seja $X$ um conjunto. Mostre isso $\varnothing \in \mathcal{P}(X)$ and $X \in \mathcal{P}(X)$.
+Seja $X$ um conjunto. Mostre isso $\varnothing \in \mathcal{P}(X)$ e $X \in \mathcal{P}(X)$.
 \end{exercise}
 
 \begin{exercise}
