@@ -274,7 +274,7 @@ Esta seção trata de definir conjuntos, comparar conjuntos e construir novos co
 Sejam XX e YY conjuntos. O que deveria significar dizer que XX e YY são iguais? Tente fornecer uma definição precisa de igualdade de conjuntos antes de continuar lendo.
 \end{discussion}
 
-Existem diferentes noções possíveis de “semelhança” para conjuntos: poderíamos querer dizer que dois conjuntos XX e YY são iguais quando têm literalmente a mesma definição; ou podemos querer dizer que XX e YY são iguais quando contêm os mesmos objetos que elementos. Por exemplo, suponha que XX seja `o conjunto de todos os números naturais ímpares' e YY seja `o conjunto de todos os inteiros que são diferenças de quadrados perfeitos consecutivos' --- neste caso, a primeira destas caracterizações de igualdade pode nos levar a dizer X≠YX \ne Y, enquanto o segundo nos levaria a dizer X=YX = Y.
+Existem diferentes noções possíveis de “semelhança” para conjuntos: poderíamos querer dizer que dois conjuntos $X$ e $Y$ são iguais quando têm literalmente a mesma definição; ou podemos querer dizer que $X$ e $Y$ são iguais quando contêm os mesmos objetos que elementos. Por exemplo, suponha que $X$ seja `o conjunto de todos os números naturais ímpares' e YY seja `o conjunto de todos os inteiros que são diferenças de quadrados perfeitos consecutivos' --- neste caso, a primeira destas caracterizações de igualdade pode nos levar a dizer $X \ne Y$, enquanto o segundo nos levaria a dizer $X = Y$.
 
 Claramente, teremos que declarar nossos termos em algum momento. E esse ponto é agora.
 
@@ -282,7 +282,7 @@ Claramente, teremos que declarar nossos termos em algum momento. E esse ponto é
 \label{axSetEquality}
 \index{set equality}
 \index{extensionality}
-Sejam XX e YY conjuntos. Então X=YX=Y se e somente se ∀a,(a∈X⇔a∈Y)\forall a,\, (a \in X \Leftrightarrow a \in Y), ou equivalentemente, se X⊆YX \subseteq Y e Y⊆XY \subseteq X.
+Sejam XX e YY conjuntos. Então $X=Y$ se e somente se $\forall a,\, (a \in X \Leftrightarrow a \in Y)$, ou equivalentemente, se $X \subseteq Y$ e $Y \subseteq X$.
 \end{axiom}
 
 Esta caracterização da igualdade de conjuntos sugere a seguinte estratégia para provar que dois conjuntos são iguais.
@@ -290,24 +290,24 @@ Esta caracterização da igualdade de conjuntos sugere a seguinte estratégia pa
 \begin{strategy}[Prova por dupla contenção]
 Para provar que um conjunto XX é igual a um conjunto YY, basta:
 \begin{itemize}
-\item Prove X⊆YX \subseteq Y, i.e.\ Seja a∈Xa \in X um elemento arbitrário e derive a∈Ya \in Y; e então
-\item Prove X⊇YX \supseteq Y, i.e.\ Seja a∈Ya \in Y um elemento arbitrário e derive a∈Xa \in X.
+\item Prove $X \subseteq Y$, i.e.\ Seja $a \in X$ um elemento arbitrário e derive $a \in Y$; e então
+\item Prove $X \supseteq Y$, i.e.\ Seja $a \in Y$ um elemento arbitrário e derive $a \in X$.
 \end{itemize}
-Frequentemente escrevemos `(⊆\subseteq)' e `(⊇\supseteq)' para indicar a direção da contenção que está sendo provada.
+Frequentemente escrevemos `($\subseteq$)' e `($\supseteq$)' para indicar a direção da contenção que está sendo provada.
 \end{strategy}
 
 \begin{example}
 \label{exPositiveNegativeSetBuilderNotation}
-Provamos que {x∈R∣x2≤1}=[−1,1]\{ x \in \mathbb{R} \mid x^2 \le 1 \} = [-1,1] por dupla contenção.
+Provamos que $\{ x \in \mathbb{R} \mid x^2 \le 1 \} = [-1,1]$ por dupla contenção.
 \begin{itemize}
-\item (⊆\subseteq) Seja a∈{x∈R∣x2≤1}a \in \{ x \in \mathbb{R} \mid x^2 \le 1 \}. Então a∈Ra \in \mathbb{R} e a2≤1a^2 \le 1, para que (1−a)(1+a)=1−a2≥0(1-a)(1+a) = 1-a^2 \ge 0. Segue-se que ou:
+\item ($\subseteq$) Seja $a \in \{ x \in \mathbb{R} \mid x^2 \le 1 \}$. Então $a \in \mathbb{R}$ e $a^2 \le 1$, para que $(1-a)(1+a) = 1-a^2 \ge 0$. Segue-se que ou:
 \begin{itemize}
-\item 1−a≥01-a \ge 0 e 1+a≥01+a \ge 0, nesse caso a≤1a \le 1 e a≥−1a \ge -1, para que a∈[−1,1]a \in [-1,1].
-\item 1−a≤01-a \le 0 e 1+a≤01+a \le 0, nesse caso a≥1a \ge 1 e a≤−1a \le -1, o que é uma contradição já que −1<1-1 < 1.
+\item $1-a \ge 0$ e $1+a \ge 0$, nesse caso $a \le 1$ e $a \ge -1$, para que $a \in [-1,1]$.
+\item $1-a \le 0$ e $1+a \le 0$, nesse caso $a \ge 1$ e $a \le -1$, o que é uma contradição já que $-1 < 1$.
 \end{itemize}
-Então devemos ter a∈[−1,1]a \in [-1,1], como requerido.
+Então devemos ter $a \in [-1,1]$, como requerido.
 
-\item (⊇\supseteq) Seja a∈[−1,1]a \in [-1,1]. Então −1≤a≤1-1 \le a \le 1, então |a|≤1|a| \le 1, e desde então a2=|a|2≤1a^2 = |a|^2 \le 1, para que a∈{x∈R∣x2≤1}a \in \{ x \in \mathbb{R} \mid x^2 \le 1 \}, como requerido.
+\item ($\supseteq$) Seja $a \in [-1,1]$. Então $-1 \le a \le 1$, então $|a| \le 1$, e desde então $a^2 = |a|^2 \le 1$, para que $a \in \{ x \in \mathbb{R} \mid x^2 \le 1 \}$, como requerido.
 \end{itemize}
 \end{example}
 
