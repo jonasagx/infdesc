@@ -15,71 +15,71 @@ Esses paradoxos lógicos podem ser superados restringindo-nos a trabalhar dentro
 \index{universe!of discourse}
 Um \textbf{conjunto}\index{set} é uma coleção de \textbf{elementos} de um \textbf{universo de discurso}\index{universo de discurso} especificado. A coleção de tudo no universo do discurso é chamada de \textbf{conjunto universal}\index{set!universal}, denotado por U\mathcal{U}\nindex{U}{U\mathcal{U}}{ conjunto universal} \inlatex{mathcal\{U\}}\lindexmmc{mathcal}{A,B,…\mathcal{A}, \mathcal{B}, \dots}.
 
-A expressão $x \in X$\nindex{in}{$\in$}{element} \inlatex{in}\lindexmmc{in}{$\in$} denota a afirmação de que $x$ é um elemento de $ X$; escrevemos $x \not \in X$ \inlatex{not\textbackslash{}in}\lindexmmc{not}{$\not\in, \not\equiv, \dots$} para significar $\neg (x \in X)$, ou seja, $x$ não é um elemento de $X$.
+A expressão x∈Xx \in X\nindex{in}{∈\in}{element} \inlatex{in}\lindexmmc{in}{∈\in} denota a afirmação de que xx é um elemento de X X; escrevemos x∉Xx \not \in X \inlatex{not\textbackslash{}in}\lindexmmc{not}{\not\in, \not\equiv, \dots\not\in, \not\equiv, \dots} para significar \neg (x \in X)\neg (x \in X), ou seja, xx não é um elemento de XX.
 \end{definition}
 
 \begin{example}
-Em \Cref{chGettingStarted}, introduzimos cinco conjuntos: o conjunto $\mathbb{N}$ de números naturais, o conjunto $\mathbb{Z}$ de inteiros, o conjunto $\mathbb{Q}$ de números racionais, o conjunto $\mathbb{R}$ de números reais e o conjunto $\mathbb{C}$ de números complexos.
+Em \Cref{chGettingStarted}, introduzimos cinco conjuntos: o conjunto \mathbb{N}\mathbb{N} de números naturais, o conjunto \mathbb{Z}\mathbb{Z} de inteiros, o conjunto \mathbb{Q}\mathbb{Q} de números racionais, o conjunto \mathbb{R}\mathbb{R} de números reais e o conjunto \mathbb{C}\mathbb{C} de números complexos.
 \end{example}
 
 \begin{exercise}
 Quais das seguintes proposições são verdadeiras e quais são falsas?
-\[ \frac{1}{2} \in \mathbb{Z} \qquad \frac{1}{2} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathcal{U} \qquad \frac{1}{2} \in \mathcal{U} \]
+ \frac{1}{2} \in \mathbb{Z} \qquad \frac{1}{2} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathcal{U} \qquad \frac{1}{2} \in \mathcal{U}  \frac{1}{2} \in \mathbb{Z} \qquad \frac{1}{2} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathbb{Q} \qquad \mathbb{Z} \in \mathcal{U} \qquad \frac{1}{2} \in \mathcal{U} 
 \hintlabel{exElementsOfSets}{%
-Pense no que `$a \in X$' \textit{realmente significa}---não se deixe enganar pela sua intuição.
+Pense no que `a \in Xa \in X' \textit{realmente significa}---não se deixe enganar pela sua intuição.
 }
 \end{exercise}
 
-Evitaresmos nos referir explicitamente ao conjunto universal $\mathcal{U}$ sempre que possível, mas ele sempre estará lá em segundo plano. Isto é conveniente porque não precisamos mais nos preocupar com o domínio de discursos das variáves livres (como fizemos em \Cref{defPredicate}), para que possamos abreviar `$\forall x \in \mathcal{U},\, p(x)$' por `$\forall x,\, p(x)$', e `$\exists x \in \mathcal{U},\, p(x)$' por `$\exists x,\, p(x)$'.
+Evitaresmos nos referir explicitamente ao conjunto universal \mathcal{U}\mathcal{U} sempre que possível, mas ele sempre estará lá em segundo plano. Isto é conveniente porque não precisamos mais nos preocupar com o domínio de discursos das variáves livres (como fizemos em \Cref{defPredicate}), para que possamos abreviar `\forall x \in \mathcal{U},\, p(x)\forall x \in \mathcal{U},\, p(x)' por `\forall x,\, p(x)\forall x,\, p(x)', e `\exists x \in \mathcal{U},\, p(x)\exists x \in \mathcal{U},\, p(x)' por `\exists x,\, p(x)\exists x,\, p(x)'.
 
 Observe que sob esta convenção:
 \begin{itemize}
-\item $\forall x \in X,\, p(x)$ is logically equivalent to $\forall x,\, (x \in X \Rightarrow p(x))$; e
-\item $\exists x \in X,\, p(x)$ is logically equivalent to $\exists x,\, (x \in X \wedge p(x))$.
+\item \forall x \in X,\, p(x)\forall x \in X,\, p(x) é lógicamente equivalente a \forall x,\, (x \in X \Rightarrow p(x))\forall x,\, (x \in X \Rightarrow p(x)); e
+\item \exists x \in X,\, p(x)\exists x \in X,\, p(x) é logicamente equivalente a  \exists x,\, (x \in X \wedge p(x))\exists x,\, (x \in X \wedge p(x)).
 \end{itemize}
 
 \subsection*{Specifying a set}
 Uma forma de definir um conjunto é simplesmente descrevê-lo em palavras, como fizemos até agora. Existem outras formas mais concisas de especificar conjuntos, que também eliminam essa ambiguidade do processo.
 
 \textbf{Lists.}\index{list notation}
-Uma maneira é simplesmente fornecer uma \textbf{lista} dos elementos do conjunto. Para especificar que a lista denota um conjunto, colocamos a lista entre $\{$colchetes$\}$\nindex{set}{$\{ \cdots \}$}{set notation} \inlatex{\{,\ barra de texto{}\}}\lindexmmc{\{\dots\textbackslash{}\}}{$\{\dots\}$}. Por exemplo, o seguinte é uma especificação de um conjunto $X$, cujos elementos são os números naturais entre $0$ e $5$ (inclusive):
-\[ X = \{ 0, 1, 2, 3, 4, 5 \} \]
+Uma maneira é simplesmente fornecer uma \textbf{lista} dos elementos do conjunto. Para especificar que a lista denota um conjunto, colocamos a lista entre \{\{colchetes\}\}\nindex{set}{\{ \cdots \}\{ \cdots \}}{set notation} \inlatex{\{,\ barra de texto{}\}}\lindexmmc{\{\dots\textbackslash{}\}}{\{\dots\}\{\dots\}}. Por exemplo, o seguinte é uma especificação de um conjunto XX, cujos elementos são os números naturais entre 00 e 55 (inclusive):
+ X = \{ 0, 1, 2, 3, 4, 5 \}  X = \{ 0, 1, 2, 3, 4, 5 \} 
 
-\textbf{Listas implícitas.}\index{implied list notation}
+\textbf{Listas implícitas.}\index{notaçao de listas impllícitas}
 Às vezes, uma lista pode ser muito longa para ser escrita — talvez até infinita — ou o comprimento da lista pode depender de uma variável. Nestes casos será conveniente usar uma \textbf{lista implícita}, na qual alguns elementos da lista são escritos, e o resto fica implícito escrevendo reticências `$\dots$' \inlatex{pontos} \lindexmmc{pontos}{$\dots$}. Por exemplo, a afirmação
 \[ X = \{ 1, 4, 9, \dots, n^2 \} \]
 significa que $X$ é o conjunto cujos elementos são todos os números quadrados de $1$ a $n^2$, onde $n$ é algum número. As listas implícitas podem ser ambíguas, pois dependem da capacidade do leitor de inferir o padrão que está sendo seguido, portanto, use-as com cautela!
 
 \textbf{Set-builder notation.}\index{set-builder notation}
-Em geral, as listas implícitas podem ser ambíguas, portanto, na prática, elas são evitadas, a menos que a lista implícita seja muito simples, como um conjunto de números consecutivos como $\{3, 4, \dots, 9 \}$. Na verdade, muitos conjuntos nem sequer podem ser listados desta forma.
+Em geral, as listas implícitas podem ser ambíguas, portanto, na prática, elas são evitadas, a menos que a lista implícita seja muito simples, como um conjunto de números consecutivos como {3,4,…,9}\{3, 4, \dots, 9 \}. Na verdade, muitos conjuntos nem sequer podem ser listados desta forma.
 
-Para contornar isso, podemos usar \textit{notação set-builder}, que é um meio de especificar um conjunto em termos das propriedades que seus elementos satisfazem. Dado um conjunto $X$, o conjunto de elementos de $X$ que satisfazem alguma propriedade $p(x)$ é denotado
-\[ \{ x \in X \mid p(x) \} \]
-A barra `$\mid$' \inlatex{mid}\lindexmmc{mid}{$\mid$} separa o nome da variável da fórmula que eles tornam verdadeira --- alguns autores usam dois pontos (como em $\{ x \in X : p(x) \}$).
+Para contornar isso, podemos usar \textit{notação set-builder}, que é um meio de especificar um conjunto em termos das propriedades que seus elementos satisfazem. Dado um conjunto XX, o conjunto de elementos de XX que satisfazem alguma propriedade p(x)p(x) é denotado
+{x∈X∣p(x)} \{ x \in X \mid p(x) \} 
+A barra `∣\mid' \inlatex{mid}\lindexmmc{mid}{∣\mid} separa o nome da variável da fórmula que eles tornam verdadeira --- alguns autores usam dois pontos (como em {x∈X:p(x)}\{ x \in X : p(x) \}).
 
-O conjunto $\{ x \in X \mid p(x) \}$ é lido em voz alta como `o conjunto de $x \in X$ tal que $p(x)$', mas cuidado --- nem a barra `$\mid$' nem os dois pontos `$:$' significam `tal que' em outros contextos.
+O conjunto {x∈X∣p(x)}\{ x \in X \mid p(x) \} é lido em voz alta como `o conjunto de x∈Xx \in X tal que p(x)p(x)', mas cuidado --- nem a barra `∣\mid' nem os dois pontos `::' significam `tal que' em outros contextos.
 
 \begin{example}
 \label{exSetsSpecifyUniverses}
 O conjunto de todos os inteiros pares pode ser escrito em notação de construtor de conjuntos como
-\[ \{ n \in \mathbb{Z} \mid n \text{ é par} \} \]
+{n∈Z∣n é par} \{ n \in \mathbb{Z} \mid n \text{ é par} \} 
 Para efeito de comparação, o conjunto de todos os números naturais pares pode ser escrito como
-\[ \{ n \in \mathbb{N} \mid n \text{ é par} \} = \{ 0, 2, 4, 6, \dots \} \]
-Observe que $-6$ é um elemento do primeiro conjunto, mas não do último conjunto, já que $-6$ é um número inteiro, mas não é um número natural.
+{n∈N∣n é par}={0,2,4,6,…} \{ n \in \mathbb{N} \mid n \text{ é par} \} = \{ 0, 2, 4, 6, \dots \} 
+Observe que −6-6 é um elemento do primeiro conjunto, mas não do último conjunto, já que −6-6 é um número inteiro, mas não é um número natural.
 
 Observe ainda que a expressão
-\[ \{ n \in \mathbb{Q} \mid n \text{ é par} \} \]
+{n∈Q∣n é par} \{ n \in \mathbb{Q} \mid n \text{ é par} \} 
 não tem sentido, uma vez que não definimos uma noção de “igualdade” para números racionais.
 \end{example}
 
 \begin{strategy}
-Seja $X$ um conjunto e $p(x)$ uma fórmula lógica com variável livre $x \in X$. Para provar $a \in \{ x \in X \mid p(x) \}$, basta provar $a \in X$ e que $p(a)$ é verdadeiro.
+Seja XX um conjunto e p(x)p(x) uma fórmula lógica com variável livre x∈Xx \in X. Para provar a∈{x∈X∣p(x)}a \in \{ x \in X \mid p(x) \}, basta provar a∈Xa \in X e que p(a)p(a) é verdadeiro.
 \end{strategy}
 
 \begin{exercise}
 \label{exDyadicRatioal}
 \index{rational number!dyadic}
-Um \textbf{racional diádico} é um número racional que pode ser expresso como um número inteiro dividido por uma potência de $2$. Expresse o conjunto de todos os racionais diádicos usando a notação construtora de conjuntos.
+Um \textbf{racional diádico} é um número racional que pode ser expresso como um número inteiro dividido por uma potência de 22. Expresse o conjunto de todos os racionais diádicos usando a notação construtora de conjuntos.
 \end{exercise}
 
 Uma forma alternativa de notação de construtor de conjunto usa uma expressão envolvendo uma ou mais variáveis à esquerda da barra vertical e o intervalo da(s) variável(is) à direita. Os elementos do conjunto são então os valores da expressão à medida que as variáveis variam conforme indicado --- isto é:
@@ -274,7 +274,7 @@ Esta seção trata de definir conjuntos, comparar conjuntos e construir novos co
 Sejam XX e YY conjuntos. O que deveria significar dizer que XX e YY são iguais? Tente fornecer uma definição precisa de igualdade de conjuntos antes de continuar lendo.
 \end{discussion}
 
-Existem diferentes noções possíveis de “semelhança” para conjuntos: poderíamos querer dizer que dois conjuntos $X$ e $Y$ são iguais quando têm literalmente a mesma definição; ou podemos querer dizer que $X$ e $Y$ são iguais quando contêm os mesmos objetos que elementos. Por exemplo, suponha que $X$ seja `o conjunto de todos os números naturais ímpares' e YY seja `o conjunto de todos os inteiros que são diferenças de quadrados perfeitos consecutivos' --- neste caso, a primeira destas caracterizações de igualdade pode nos levar a dizer $X \ne Y$, enquanto o segundo nos levaria a dizer $X = Y$.
+Existem diferentes noções possíveis de “semelhança” para conjuntos: poderíamos querer dizer que dois conjuntos XX e YY são iguais quando têm literalmente a mesma definição; ou podemos querer dizer que XX e YY são iguais quando contêm os mesmos objetos que elementos. Por exemplo, suponha que XX seja `o conjunto de todos os números naturais ímpares' e YY seja `o conjunto de todos os inteiros que são diferenças de quadrados perfeitos consecutivos' --- neste caso, a primeira destas caracterizações de igualdade pode nos levar a dizer X≠YX \ne Y, enquanto o segundo nos levaria a dizer X=YX = Y.
 
 Claramente, teremos que declarar nossos termos em algum momento. E esse ponto é agora.
 
