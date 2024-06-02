@@ -312,13 +312,13 @@ Então devemos ter $a \in [-1,1]$, como requerido.
 \end{example}
 
 \begin{exercise}
-Prove que {x∈R∣x2<x}=(0,1)\{ x \in \mathbb{R} \mid x^2 < x \} = (0,1).
+Prove que $\{ x \in \mathbb{R} \mid x^2 < x \} = (0,1)$.
 \end{exercise}
 
 O axioma da extensionalidade dos conjuntos tem como consequência que os conjuntos são independentes da ordem em que seus elementos aparecem na notação de lista e são independentes de quantas vezes um único elemento é escrito --- isto é, um elemento de um conjunto é apenas ` contado' uma vez, mesmo que apareça várias vezes na notação de lista. Isso é ilustrado no exercício a seguir.
 
 \begin{exercise}
-Prove por dupla contenção que {0,1}={1,0}\{ 0, 1 \} = \{ 1, 0 \} e {0,0}={0}\{ 0, 0 \} = \{ 0 \}.
+Prove por dupla contenção que $\{ 0, 1 \} = \{ 1, 0 \}$ e $\{ 0, 0 \} = \{ 0 \}$.
 \end{exercise}
 
 \subsection*{Habitação e vazio}
@@ -385,7 +385,7 @@ Saber que existe um e apenas um conjunto vazio significa que podemos agora fazer
 \nindex{O}{$\varnothing$}{empty set}
 \index{empty set}
 \index{set!empty}
-The \textbf{conjunto vazio} (também conhecido como \textbf{conjunto nulo}) é o conjunto sem elementos e é denotado por $\varnothing$ \inlatex{varnothing}\lindexmmc{varnothing}{$\varnothing$}.
+O \textbf{conjunto vazio} (também conhecido como \textbf{conjunto nulo}) é o conjunto sem elementos e é denotado por $\varnothing$ \inlatex{varnothing}\lindexmmc{varnothing}{$\varnothing$}.
 \end{definition}
 
 Alguns autores escrevem $\{ \}$ em vez de $\varnothing$, já que $\{ \}$ é simplesmente o conjunto vazio expresso em notação de lista.
@@ -400,7 +400,7 @@ Seja $X$ um conjunto. Prove que $\varnothing \subseteq X$.
 \begin{definition}
 \label{defPowerSet}
 \index{power set}
-Se $X$ o conjunto. o \textbf{conjunto de potência} de $X$, escrito $\mathcal{P}(X)$\nindex{PX}{$\mathcal{P}(X)$}{conjunto de potência} \inlatex{mathcal\{ P\}}\lindexmmc{mathcal}{$\mathcal{A}, \mathcal{B}, \dots$}, é o conjunto de todos os subconjuntos de $X$.
+Se $X$ o conjunto. o \textbf{conjunto de potência} de $X$, escrito $\mathcal{P}(X)$\nindex{PX}{$\mathcal{P}(X)$}{conjunto de potência} \inlatex{mathcal\{P\}}\lindexmmc{mathcal}{$\mathcal{A}, \mathcal{B}, \dots$}, é o conjunto de todos os subconjuntos de $X$.
 \end{definition}
 
 \begin{example}
@@ -451,20 +451,20 @@ Repita o exercício com todas as instâncias de `$\in$' substituídas por `$\sub
 \subsubsection*{Conjuntos e subconjuntos}
 
 \begin{tldrlist}
-\tldritem{defSet} Um \textit{set} é uma coleção de objetos (chamados \textit{elementos}) de um \textit{universo de discurso} fixo U\mathcal{U}; escrevemos x∈Xx \in X para significar que xx é um elemento do conjunto XX. Os conjuntos podem ser especificados (explícita ou implicitamente) listando seus elementos {x1,x2,…,xn,…}\{ x_1, x_2, \dots, x_n, \dots \}, ou usando \textit{notação set-builder} {x∈X meiop(x)}\{ x \in X \ meio p(x) \}.
-\tldritem{defSubset} Um conjunto UU é um \textit{subconjunto} de um conjunto XX, escrito U⊆XU \subseteq X, se ∀a,(a∈U⇒a∈X)\forall a,\, (a \in U \Rightarrow a \in X). Para provar que U⊆XU \subseteq X, basta introduzir uma variável aa, assumir que a∈Ua \in U, e derivar a∈Xa \in X.
-\tldritem{axSetEquality} Os conjuntos XX e YY são iguais se e somente se ∀a,(a∈X⇔a∈Y)\forall a,\, (a \in X \Leftrightarrow a \in Y). Para provar que X=YX = Y, basta provar separadamente que X⊆YX \subseteq Y e Y⊆XY \subseteq X --- este método é chamado \textit{dupla contenção}.
+\tldritem{defSet} Um \textit{conjunto} é uma coleção de objetos (chamados \textit{elementos}) de um \textit{universo de discurso} fixo $\mathcal{U}$; escrevemos $x \in X$ para significar que $x$ é um elemento do conjunto $X$. Os conjuntos podem ser especificados (explícita ou implicitamente) listando seus elementos $\{ x_1, x_2, \dots, x_n, \dots \}$, ou usando \textit{notação set-builder} $\{ x \in X \mid p(x) \}$.
+\tldritem{defSubset} Um conjunto $U$ é um \textit{subconjunto} de um conjunto $X$, escrito $U \subseteq X$, se $\forall a,\, (a \in U \Rightarrow a \in X)$. Para provar que $U \subseteq X$, basta introduzir uma variável $a$, assumir que $a \in U$, e derivar $a \in X$.
+\tldritem{axSetEquality} Os conjuntos $X$ e $Y$ são iguais se e somente se $\forall a,\, (a \in X \Leftrightarrow a \in Y)$. Para provar que $X = Y$, basta provar separadamente que $X \subseteq Y$ e $Y \subseteq X$ --- este método é chamado \textit{dupla contenção}.
 \end{tldrlist}
 
 \subsubsection*{Habitação e vazio}
 
 \begin{tldrlist}
-\tldritem{defInhabited} Um conjunto XX é \textit{habitado} se tiver pelo menos um elemento; caso contrário, está \textit{vazio}.
-\tldritem{thmEmptySetIsUnique} Existe um conjunto vazio único, denotado por ∅\varnothing or {}\{ \}.
+\tldritem{defInhabited} Um conjunto $X$ é \textit{habitado} se tiver pelo menos um elemento; caso contrário, está \textit{vazio}.
+\tldritem{thmEmptySetIsUnique} Existe um conjunto vazio único, denotado por $\varnothing$ or $\{ \}$.
 \end{tldrlist}
 
 \subsubsection*{Conjuntos de energia}
 \begin{tldrlist}
-\tldritem{defPowerSet} O \textit{conjunto de potências} de um conjunto XX é o conjunto de todos os subconjuntos de XX.
+\tldritem{defPowerSet} O \textit{conjunto de potências} de um conjunto $X$ é o conjunto de todos os subconjuntos de $X$.
 \end{tldrlist}
 \end{tldr}
