@@ -15,12 +15,12 @@ A cada frase que escrevemos, nossas suposições e objetivos mudam. Isto talvez 
 \label{exAssumptionsGoals}
 A declaração de \Cref{propDivisibilityIsTransitive} foi o seguinte:
 \begin{quote}
-Se $a,b,c \in \mathbb{Z}$. If $c$ divide $b$ and $b$ divide $a$, então $c$ divide $a$.
+Seja $a,b,c \in \mathbb{Z}$. Se $c$ divide $b$ e $b$ divide $a$, então $c$ divide $a$.
 \end{quote}
 A configuração da proposição nos dá instantaneamente nossas suposições e objetivos iniciais:
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Assumptions} & \textbf{Goals} \\ \hline
+\textbf{Suposições} & \textbf{Objetivo} \\ \hline
 $a,b,c \in \mathbb{Z}$ & Se $c$ divide $b$ e $b$ divide $a$, então $c$ divide $a$
 \end{tabular}
 \end{center}
@@ -28,11 +28,12 @@ Prosseguiremos agora com a prova, linha por linha, para ver que efeito as palavr
 
 Como nosso objetivo era uma expressão na forma `se\dots{}então\dots{}', fazia sentido começar assumindo a declaração `se' e usar essa suposição para provar a declaração `então'. Como tal, a primeira coisa que escrevemos em nossa prova foi:
 \begin{quote}
-Suponha que $c$ divide $b$ e $b$ divide $a$.
+Supponha que $c$ divide $b$ e $b$ divide $a$.
 \end{quote}
-\begin{center} Nossas premissas e metas atualizadas estão refletidas na tabela a seguir.
+Nossas premissas e metas atualizadas estão refletidas na tabela a seguir.
+\begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Assumptions} & \textbf{Goals} \\ \hline
+\textbf{Suposições} & \textbf{Obejetivos} \\ \hline
 $a,b,c \in \mathbb{Z}$ & $c$ divide $a$ \\
 $c$ divide $b$ & \\
 $b$ divide $a$ & 
@@ -67,7 +68,7 @@ Como agora estamos tentando expressar $a$ em termos de $c$, faz sentido usar as 
 \begin{quote}
 {\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$. By \Cref{defDivisionPreliminary}, segue que
 \[
-b=qc \quad \text{and} \quad a=rb
+b=qc \quad \text{e} \quad a=rb
 \]
 Para alguns inteiros $q$ e $r$.} Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter
 \[
@@ -79,8 +80,8 @@ Estamos agora muito próximos, conforme indicado na tabela a seguir.
 
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Assumptions} & \textbf{Goals} \\ \hline
-$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum inteiro}] \cdot c$ \\
+\textbf{Suposições} & \textbf{Objetivos} \\ \hline
+$a,b,c,q,r \in \mathbb{Z}$ & $a = [\text{algum número inteiro}] \cdot c$ \\
 $b=qc$ & \\
 $a=rb$ & \\
 $a=r(qc)$ & 
@@ -92,7 +93,7 @@ Nosso passo final foi observar que o objetivo foi finalmente alcançado:
 \begin{quote}
 {\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$. By \Cref{defDivisionPreliminary}, segue que
 \[
-b=qc \quad \text{and} \quad a=rb
+b=qc \quad \text{e} \quad a=rb
 \]
 Para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter}
 \[
@@ -103,7 +104,7 @@ But $r(qc) = (rq)c$, and $rq$ é um inteiro,
 
 \begin{center}
 \begin{tabular}{C{150pt}|C{150pt}}
-\textbf{Assumptions} & \textbf{Goals} \\ \hline
+\textbf{Premissas} & \textbf{Objetivos} \\ \hline
 $a,b,c,q,r \in \mathbb{Z}$ &  \\
 $b=qc$ & \\
 $a=rb$ & \\
@@ -118,7 +119,7 @@ Agora que não há mais nada a provar, é útil reiterar esse ponto para que o l
 \begin{quote}
 {\color{gray} Suponha que $c$ divide $b$ e $b$ divide $a$. Por \Cref{defDivisionPreliminary}, segue que
 \[
-b=qc \quad \text{and} \quad a=rb
+b=qc \quad \text{e} \quad a=rb
 \]
 Para alguns inteiros $q$ e $r$. Usando a primeira equação, podemos substituir $qc$ por $b$ na segunda equação, para obter
 \[
@@ -128,7 +129,7 @@ Mas $r(qc) = (rq)c$, e $rq$ é um inteiros,} então segue de \Cref{defDivisionPr
 \end{quote}
 \end{example}
 
-\subsection*{Symbolic logic}
+\subsection*{Lógica simbólica}
 
 Considere novamente a proposição que provamos em\Cref{propDivisibilityIsTransitive} (para dados inteiros $a,b,c$):
 
@@ -154,7 +155,7 @@ Aumentando ainda mais o zoom, podemos usar \Cref{defDivisionPreliminary} para ob
 
 Ao dividir uma proposição complexa em afirmações mais simples que são conectadas entre si usando operadores lógicos e quantificadores, podemos identificar com mais precisão quais suposições podemos fazer em qualquer estágio de uma prova da proposição, e quais etapas são necessárias para terminar a prova.
 
-\subsection*{Propositional formulae}
+\subsection*{Fórmulas proposicionais}
 
 Começamos nosso desenvolvimento da lógica simbólica com algumas definições para fixar nossa terminologia.
 
@@ -194,24 +195,25 @@ Se tudo isso parece um pouco abstrato, é porque \textit{é} abstrato, e você e
 
 A conjunção é o operador lógico que torna preciso o que queremos dizer quando dizemos “e”.
 
+A conjunção é o operador lógico que torna preciso o que queremos dizer quando dizemos “e”.
 \begin{idefinition}
 \label{defConjunction}
 \index{conjunction}
 \nindex{conjunction}{$\wedge$}{conjunction}
-Um operador \textbf{conjunção} é o operador lógico $\wedge$ \inlatex{wedge}\lindexmmc{wedge}{$\wedge$}, definido de acordo com as seguintes regras:
+O operador \textbf{conjunção} é o operador lógico $\wedge$ \inlatex{wedge}\lindexmmc{wedge}{$\wedge$}, definido de acordo com as seguintes regras:
 \begin{itemize}
-\item \introrule{\wedge} Se $p$ é verdadeiro e $q$ é verdedeiro, então $p \wedge q$ é verdade;
-\item \elimrulesub{\wedge}{1} If $p \wedge q$ é verdadeiro, então $p$ é verdade;
-\item \elimrulesub{\wedge}{2} If $p \wedge q$ é verdadeiro, então $q$ é verdade.
+\item \introrule{\wedge} Se $p$ é verdadeiro,então $q$ é verdade, então $p \wedge q$ é verdade;
+\item \elimrulesub{\wedge}{1} Se $p \wedge q$ é verdadeiro, então $p$ é verdade;
+\item \elimrulesub{\wedge}{2} Se $p \wedge q$ é verdadeiro, então $q$ é verdade.
 \end{itemize}
-A expreção $p \wedge q$ representa `$p$ e $q$'.
+A expressão $p \wedge q$ representa `$p$ e $q$'.
 \end{idefinition}
 
 Nem sempre é óbvio quando a conjunção está sendo usada; às vezes ele aparece sem que a palavra “e” seja mencionada! Esteja atento a ocasiões como esta, como no exercício a seguir.
 
 \begin{example}
 \label{exSevenDividesTwentyEightConjunction}
-Podemos expressar a proposição `$7$ é um fator primo de $28$' na forma $p \wedge q$, deixando $p$ representar a proposição `$7$ é primo' e deixando $q$ representar a proposição `$7$ $ divide $28$'.
+Podemos expressar a proposição `$7$ é um fator primordial de $28$' na forma $p \wedge q$, deixando $p$ representar a proposição `$7$ é primo' e deixando $q$ representar a proposição `$7$ divide $28$'.
 \end{example}
 
 \begin{exercise}
@@ -233,7 +235,7 @@ Cada operador lógico virá equipado com algumas regras de introdução e/ou eli
 
 \begin{strategy}[Proving conjunctions]
 \label{strProvingConjunctionsDirect}
-Uma prova da proposição p∧qp \wedge q pode ser obtida juntando duas provas, sendo uma uma prova de que pp é verdadeira e a outra uma prova de que qq é verdadeira.
+Uma prova da proposição $p \wedge q$ pode ser obtida juntando duas provas, uma sendo uma prova de que $p$ é verdadeira e a outra sendo uma prova de que $q$ é verdadeira.
 \end{strategy}
 
 \begin{example}
@@ -241,22 +243,20 @@ Uma prova da proposição p∧qp \wedge q pode ser obtida juntando duas provas, 
 Suponha que sejamos obrigados a provar que 77 é um fator primo de 2828. Em \Cref{exSevenDividesTwentyEightConjunction} expressamos `77 é um fator primo de 2828' como a conjunção das proposições `77 é primo' e `77 divide 2828', e assim \Cref{strProvingConjunctionsDirect} divide a prova em duas etapas: primeiro prove que 77 é primo e depois prove que 77 divide 2828.
 \end{example}
 
-Assim como \Cref{strProvingConjunctionsDirect} foi informado pela regra de introdução para ∧\wedge, as regras de eliminação informam como podemos fazer uso de uma suposição envolvendo uma conjunção.
-
+Muito parecido \Cref{strProvingConjunctionsDirect} foi informado pela regra de introdução para $\wedge$, as regras de eliminação informam como podemos fazer uso de uma suposição que envolve uma conjunção.
 \begin{strategy}[Assuming conjunctions]
 \label{strAssumingConjunctionsDirect}
-Se uma suposição em uma prova tiver a forma p∧qp \wedge q, então podemos assumir pp e assumir qq na prova.
+Se uma suposição em uma prova tiver a forma $p \wedge q$, então podemos assumir $p$ e $q$ na prova.
 \end{strategy}
 
 \begin{example}
 \label{exSevenDividesTwentyEightConjunctionAssumption}
-Suponha que, em algum momento do processo de prova de uma proposição, cheguemos ao fato de que 77 é um fator primo de 2.828. \Cref{strAssumingConjunctionsDirect} nos permite então usar os fatos separados de que 77 é primo e que 77 divide 2828.
+Suponha que, em algum momento do processo de prova de uma proposição, cheguemos ao fato de que $7$ é um fator primo de $28$. \Cref{strAssumingConjunctionsDirect} então nos permite usar os fatos separados de que $7$ é primo e que $7$ divide $28$.
 \end{example}
 
-\Cref{strProvingConjunctionsDirect,strAssumingConjunctionsDirect} parece \textit{óbvio} demais. Até certo ponto eles são óbvios, e é por isso que os declaramos primeiro. Mas a verdadeira razão pela qual estamos a passar pelo processo de definir com precisão os operadores lógicos, as suas regras de introdução e eliminação, e as estratégias de prova correspondentes, é que quando estamos no meio da prova de um resultado complicado, é muito fácil perder de vista o que você já provou e o que ainda precisa ser provado. Acompanhar as suposições e objetivos de uma prova e compreender o que deve ser feito para completá-la é uma tarefa difícil.
+\Cref{strProvingConjunctionsDirect,strAssumingConjunctionsDirect} parece quase \textit{óbvio}. Até certo ponto eles são óbvios, e é por isso que os declaramos primeiro. Mas a verdadeira razão pela qual estamos a passar pelo processo de definir com precisão os operadores lógicos, as suas regras de introdução e eliminação, e as estratégias de prova correspondentes, é que quando estamos no meio da prova de um resultado complicado, é muito fácil perder de vista o que você já provou e o que ainda precisa ser provado. Acompanhar as suposições e objetivos de uma prova e compreender o que deve ser feito para completá-la é uma tarefa difícil.
 
-Para evitar prolongar demasiado este processo, precisamos de uma forma compacta de expressar regras de inferência que nos permita simplesmente ler as estratégias de prova correspondentes. Nós \textit{poderíamos} usar tabelas de suposições e objetivos como em \Cref{exAssumptionsGoals}, mas isso rapidamente se torna desajeitado --- na verdade, mesmo a regra de introdução de conjunção muito simples \introrule{\wedge} não parece muito boa em este formato:
-
+Para evitar prolongar demasiado este processo, precisamos de uma forma compacta de expressar regras de inferência que nos permita simplesmente ler as estratégias de prova correspondentes. Nós \textit{poderíamos} usar tabelas de suposições e objetivos como em \Cref{exAssumptionsGoals}, mas isso rapidamente se torna desajeitado --- na verdade, mesmo a regra de introdução de conjunção muito simples \introrule{\wedge} não parece muito boa neste formato:
 \begin{center}
 \begin{tabular}{C{60pt}|C{60pt}}
 {\small \textbf{Assumptions}} & {\small \textbf{Goals}} \\ \hline
@@ -323,11 +323,11 @@ Além da sua natureza limpa e compacta, esta forma de escrever regras de inferê
 
 \begin{center}
 \begin{prooftree}
-    \AxiomC{$p$}
-    \AxiomC{$q$}
-  \BinaryInfC{$p \wedge q$}
-  \AxiomC{$r$}
-\BinaryInfC{$(p \wedge q) \wedge r$}
+    \AxiomC{pp}
+    \AxiomC{qq}
+  \BinaryInfC{p∧qp \wedge q}
+  \AxiomC{rr}
+\BinaryInfC{(p∧q)∧r(p \wedge q) \wedge r}
 \end{prooftree}
 \end{center}
 
@@ -342,15 +342,14 @@ Escreva uma árvore de prova cuja conclusão seja a fórmula proposicional $(p \
 \begin{idefinition}
 \label{defDisjunction}
 \index{disjunction}
-\nindex{disjunction}{$\vee$}{disjunction}
-Um operador de \textbf{disjunção} é o operador lógicao $\vee$ \inlatex{vee}\lindexmmc{vee}{$\vee$}, definido de acordo com as seguintes regras:
+\nindex{disjunction}{∨\vee}{disjunction}
+O operador \textbf{disjunção} é o operador lógico $\vee$ \inlatex{vee}\lindexmmc{vee}{$\vee$}, definido de acordo com as seguintes regras:
 \begin{itemize}
-\item \introrulesub{\vee}{1} Se $p$ é verdadeiro, então $p \vee q$ é verdadeiro;
-\item \introrulesub{\vee}{2} Se qq é verdade, então p∨qp \vee q é verdadeiro;
-\item \introrulesub{\vee}{2} Se $q$ é verdadeiro, então $p \vee q$ é verdadeiro;
-\item \elimrule{\vee} Se $p \vee q$ é verdadeiro, e se $r$ pode ser derivado de $p$ e apartir de $q$, então $r$ é verdade.
+\item \introrulesub{\vee}{1} Se $p$ é verdadeiro, então $p \vee q$ é verdade;
+\item \introrulesub{\vee}{2} Se $q$ é verdadeiro, então $p \vee q$ é verdade;
+\item \elimrule{\vee} Se $p \vee q$ for verdadeiro, e se $r$ puder ser derivado de $p$ e de $q$, então $r$ é verdadeiro
 \end{itemize}
-A expressão $p \vee q$ representa `$p$ ou $q$'.
+A expressão $p \vee q$ representa `$p$ que $q$'.
 \end{idefinition}
 
 As regras de introdução e eliminação para disjunção são representadas diagramaticamente a seguir.
@@ -409,10 +408,10 @@ Suponha que queiramos provar que $8192$ não é divisível por $3$. Sabemos pelo
 \[
 \begin{matrix} 8192 \text{ deixa um resto de } 1 \\ \text{quando dividido por } 3 \end{matrix}
 \quad \vee \quad
-\begin{matriz} 8192 \text{ deixa um resto de } 2 \\
+\begin{matrix} 8192 \text{ deixa um resto de } 2 \\
 \text{quando dividido por } 3 \end{matrix}
 \]
-Um cálculo rápido revela que $8192 = 2730 \times 3 + 2$, para que $8192$ deixe um resto de $2$ quando dividido por $3$. Por \Cref{strProvingDisjunctionsDirect}, a prova agora está completa, já que a disjunção completa segue por \introrulesub{\vee}{2}
+Um cálculo rápido revela que $8192 = 2730 \times 3 + 2$, de modo que $8192$ deixa um resto de $2$ quando dividido por $3$. Por \Cref{strProvingDisjunctionsDirect}, a prova agora está completa, já que a disjunção completa segue por \introrulesub{\vee}{2}.
 \end{example}
 
 \begin{example}
@@ -453,6 +452,7 @@ Sejam $p,q,r,s$ variáveis ​​proposicionais. A fórmula proposicional $(p \v
 A árvore de prova à esquerda sugere a seguinte estratégia de prova para $(p \vee q) \wedge (r \vee s)$. Primeiro prove $p$ e deduza $p \vee q$; então prove $r$ e deduza $r \vee s$; e finalmente deduza $(p \vee q) \wedge (r \vee s)$. A árvore de prova à direita sugere uma estratégia diferente, onde $p \vee q$ é deduzido provando $q$ em vez de $p$, e $r \vee s$ é deduzido provando $s$ em vez de $r$ .
 
 A seleção de quais (se houver) usar em uma prova pode depender do que estamos tentando provar. Por exemplo, para um número natural fixo $n$, deixe $p$ representar `$n$ é par', deixe $q$ representar `$n$ é ímpar', deixe $r$ representar `$n \ge 2$ ' e deixe $s$ representar `$n$ é um quadrado perfeito'. Provar $(p \vee q) \wedge (r \vee s)$ quando $n=2$ seria feito mais facilmente usando a árvore de prova à esquerda acima, uma vez que $p$ e $r$ são evidentemente verdadeiros quando $ n=2$. No entanto, a segunda árvore de prova seria mais apropriada para provar $(p \vee q) \wedge (r \vee s)$ quando $n=1$.
+
 \end{example}
 
 \begin{aside}
@@ -467,19 +467,19 @@ Lembre-se da declaração diagramática da regra de eliminação de disjunção:
 
 \begin{center}
 \begin{prooftree}
-  \AxiomC{$p \vee q$}
-    \AxiomC{$[p]$}
+  \AxiomC{p∨qp \vee q}
+    \AxiomC{[p][p]}
     \noLine
-    \UnaryInfC{$\downleadsto$}
+    \UnaryInfC{\downleadsto\downleadsto}
   \noLine
-  \UnaryInfC{$r$}
-    \AxiomC{$[q]$}
+  \UnaryInfC{rr}
+    \AxiomC{[q][q]}
     \noLine
-    \UnaryInfC{$\downleadsto$}
+    \UnaryInfC{\downleadsto\downleadsto}
   \noLine
-  \UnaryInfC{$r$}
+  \UnaryInfC{rr}
 \TagC{\elimrule{\vee}}
-\TrinaryInfC{$r$}
+\TrinaryInfC{rr}
 \end{prooftree}
 \end{center}
 
@@ -525,12 +525,12 @@ Seja $n \in \mathbb{Z}$. Então $n^2$ deixa um resto de $0$ ou $1$ quando dividi
 \end{proposition}
 
 \begin{cproof}
-Seja $n \in \mathbb{Z}$. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}),uma das seguintes afirmações deve ser verdadeira para alguns $k \in \mathbb{Z}$:
+Seja $n \in \mathbb{Z}$. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}), uma das seguintes afirmações deve ser verdadeira para alguns $k \in \mathbb{Z}$:
 \[
 n=3k \quad \text{or} \quad n=3k+1 \quad \text{or} \quad n=3k+2
 \]
 \begin{itemize}
-\item Suppose $n=3k$. Then
+\item Suponha que $n=3k$. então
 \[
 n^2 = (3k)^2 = 9k^2 = 3 \cdot (3k^2)
 \]
@@ -556,7 +556,7 @@ Ao completar os exercícios a seguir, tente acompanhar exatamente onde você usa
 \begin{exercise}
 Seja $n$ um número inteiro. Prove que $n^2$ deixa um resto de $0$, $1$ ou $4$ quando dividido por $5$.
 \hintlabel{exSquareRemainderModuloFive}{f
-Imitar a prova de \Cref{propRemainderOfSquaresModulo3}.
+Imite a prova de \Cref{propRemainderOfSquaresModulo3}.
 }
 \end{exercise}
 
@@ -564,7 +564,7 @@ Imitar a prova de \Cref{propRemainderOfSquaresModulo3}.
 Seja $a,b \in \mathbb{R}$ e suponha $a^2-4b \ne 0$. Sejam $\alpha$ e $\beta$ as raízes (distintas) do polinômio $x^2+ax+b$. Prove que existe um número real $c$ tal que $\alpha-\beta = c$ ou $\alpha - \beta = ci$.
 \end{exercise}
 
-\subsubsection*{Implicação (`if\dots{}then\dots{}', $\Rightarrow$)}
+\subsubsection*{Implicações (`se\dots{}então\dots{}', $\Rightarrow$)}
 
 \begin{definition}
 \label{defImplication}
@@ -575,7 +575,7 @@ O operador \textbf{implicação} é o operador lógico $\Rightarrow$ \inlatex{Ri
 \item \introrule{\Rightarrow} Se $q$ pode ser derivado da suposição de que $p$ é verdadeiro, então $p \Rightarrow q$ é verdadeiro;
 \item \elimrule{\Rightarrow} Se $p \Rightarrow q$ for verdadeiro e $p$ for verdadeiro, então $q$ é verdadeiro.
 \end{itemize}
-The expression $p \Rightarrow q$ represents `if $p$, then $q$'.
+A expressão $p \Rightarrow q$ representa `se $p$, então $q$.
 \end{definition}
 
 \begin{center}
@@ -618,7 +618,7 @@ Sejam $x$ e $y$ números reais. Se $x$ e $x+y$ são racionais, então $y$ é rac
 \begin{cproof}
 Suponha que $x$ e $x+y$ sejam racionais. Então existem inteiros $a,b,c,d$ com $b,d \ne 0$ tais que
 \[
-x = \frac{a}{b} \quad \text{and} \quad x+y = \frac{c}{d}
+x = \frac{a}{b} \quad \text{e} \quad x+y = \frac{c}{d}
 \]
 Segue-se então que
 \[
@@ -635,7 +635,7 @@ Seja $p(x)$ um polinômio sobre $\mathbb{C}$. Prove que se $\alpha$ é uma raiz 
 
 A regra de eliminação para implicação \elimrule{\Rightarrow} é mais comumente conhecida pelo nome latino \textit{modus ponens}.
 
-\begin{strategy}[Assumindo Implicações---modus ponens]
+\begin{strategy}[Assumindo implicações --- modus ponens]
 \label{strAssumingImplicationsDirect}
 \index{modus ponens}
 Se uma suposição em uma prova tem a forma $p \Rightarrow q$, e $p$ também é assumido como verdadeiro, então podemos deduzir que $q$ é verdadeiro.
@@ -658,17 +658,17 @@ ADado o polinômio $f(x) = x^2-68x+1156$, seria difícil passar pelo processo de
 \begin{definition}
 \label{defConverse}
 \index{converse}
-O \textbf{inverso de uma proposição da forma p⇒qp \Rightarrow q é a proposição q⇒pq \Rightarrow p.
+O \textbf{converse} de uma proposição da forma p⇒qp \Rightarrow q é a proposição q⇒pq \Rightarrow p.
 \end{definition}
 
-Uma rápida observação sobre a terminologia é pertinente. A tabela a seguir resume algumas maneiras comuns de se referir às proposições `p⇒qp \Rightarrow q' and `q⇒pq \Rightarrow p'.
+Uma rápida observação sobre a terminologia é pertinente. A tabela a seguir resume algumas maneiras comuns de se referir às proposições `p⇒qp \Rightarrow q' e `q⇒pq \Rightarrow p'.
 
 \begin{center}
 \begin{tabular}{c|c}
-p⇒qp \Rightarrow q & q⇒pq \Rightarrow p \\ \hline
-se pp, então qq & se qq, então pp \\
-pp apenas se qq & pp if qq \\
-pp é suficiente para qq & pp é necessário para qq
+$p \Rightarrow q$ & $q \Rightarrow p$ \\ \hline
+Se $p$, então $q$ & se $q$, então $p$ \\
+$p$ apenas se $q$ & $p$ se $q$ \\
+$p$ é suficiente para $q$ & $p$ é necessário para $q$
 \end{tabular}
 \end{center}
 
@@ -677,22 +677,22 @@ Deparamo-nos tantas vezes com o problema de provar tanto uma implicação como a
 \begin{definition}
 \label{defBiconditional}
 \index{biconditional}
-\nindex{biconditional}{⇔\Leftrightarrow}{biconditional}
-O \textbf{biconditional} operador é o operador lógico ⇔\Leftrightarrow \inlatex{Leftrightarrow}\lindexmmc{Leftrightarrow}{⇔\Leftrightarrow}, definido pela declaração p⇔qp \Leftrightarrow q para significar (p⇒q)∧(q⇒p)(p \Rightarrow q) \wedge (q \Rightarrow p). A expressão p⇔qp \Leftrightarrow q representa `pp se e somente se qq'.
+\nindex{biconditional}{$\Leftrightarrow$}{biconditional}
+O operador \textbf{bicondidicional} é o operador lógico $\Leftrightarrow$ \inlatex{Leftrightarrow}\lindexmmc{Leftrightarrow}{$\Leftrightarrow$}, definido pela declaração $p \Leftrightarrow q$ to mean $(p \Rightarrow q) \wedge (q \Rightarrow p)$. A expressão $p \Leftrightarrow q$ representa `$p$ se e apenas se $q$'.
 \end{definition}
 
-Muitos exemplos de declarações bicondicionais vêm da resolução de equações; na verdade, dizer que os valores α1,…,αn\alpha_1,\dots,\alpha_n são as soluções para uma equação particular é precisamente dizer que
+Muitos exemplos de declarações bicondicionais vêm da resolução de equações; na verdade, dizer que os valores $\alpha_1,\dots,\alpha_n$ são as soluções para uma equação particular é precisamente dizer que
 \[
 x \text{ é uma solução} \quad \Leftrightarrow \quad x = \alpha_1 \text{ or } x = \alpha_2 \text{ or } \cdots \text{ or } x = \alpha_n
 \]
 
 \begin{example}
 \label{exSolveSqrtFirstExample}
-Encontramos todas as soluções reais xx para a equação
+Encontramos todas as soluções reais $x$ para a equação
 \[
 \sqrt{x-3} + \sqrt{x+4} = 7
 \]
-Vamos reorganizar a equação para descobrir quais podem ser as soluções possíveis.
+Vamos reorganizar a equação para descobrir quais podem ser as possíveis soluções.
 \begin{align*}
 &\phantom{\Rightarrow\;\;} \sqrt{x-3} + \sqrt{x+4} = 7 && \\
 &\Rightarrow (x-3) + 2\sqrt{(x-3)(x+4)} + (x+4) = 49 && \text{squaring} \\
@@ -700,21 +700,21 @@ Vamos reorganizar a equação para descobrir quais podem ser as soluções poss�
 &\Rightarrow 4(x-3)(x+4) = (48-2x)^2 && \text{squaring} \\
 &\Rightarrow 4x^2+4x-48 = 2304-192x+4x^2 && \text{expanding} \\
 &\Rightarrow 196x = 2352 && \text{rearranging} \\
-&\Rightarrow x=12 && \text{dividing by 196196}
+&\Rightarrow x=12 && \text{dividindo por $196$}
 \end{align*}
-Você pode estar inclinado a parar por aqui. Infelizmente, tudo o que provamos é que, dado um número real xx, \textit{if} xx resolve a equação √x−3+√x+4=7\sqrt{x-3} + \sqrt{x+4} = 7, \textit{então} x=12x=12. Isso restringe o conjunto de soluções possíveis a apenas um candidato --- mas ainda precisamos verificar o inverso, ou seja, que \textit{if} x=12x=12, \textit{then} xx é uma solução para a equação.
+Você pode estar inclinado a parar por aqui. Infelizmente, tudo o que provamos é que, dado um número real $x$, \textit{se} $x$ resolve a equação $\sqrt{x-3} + \sqrt{x+4} = 7$, \textit {então} $x=12$. Isso restringe o conjunto de soluções possíveis a apenas um candidato --- mas ainda precisamos verificar o inverso, ou seja, que \textit{se} $x=12$, \textit{então} $x$ é uma solução para o equação.
 Assim, para finalizar a prova, observe que
 \[
 \sqrt{12-3} + \sqrt{12+4} = \sqrt{9} + \sqrt{16} = 3 + 4 = 7
 \]
-e então o valor x=12x=12 é de fato uma solução para a equação.
+e então o valor $x=12$ é de fato uma solução para a equação.
 \end{example}
 
 O último passo em \Cref{exSolveSqrtFirstExample} pode ter parecido um pouco bobo; mas \Cref{exSolveSqrtSecondExample} demonstra que é realmente necessário provar o inverso ao resolver equações.
 
 \begin{example}
 \label{exSolveSqrtSecondExample}
-Encontramos todas as soluções reais xx para a equação
+Encontramos todas as soluções reais $x$ para a equação
 \[
 x+\sqrt{x}=0
 \]
@@ -739,12 +739,11 @@ Portanto, é realmente o caso que, dado um número real $x$, temos
 x+\sqrt{x} = 0 \quad \Leftrightarrow \quad x=0
 \]
 Verificar o inverso aqui foi vital para o nosso sucesso na resolução da equação!
-\end{exemplo}
+\end{example}
 
 Um exemplo um pouco mais complicado de uma afirmação bicondicional que surge da solução de uma equação – na verdade, uma classe de equações – é a prova da fórmula quadrática.
 
-
-\begin{itheorem}[Fórmula Quadrática]
+\begin{itheorem}[Fórmula quadrática]
 \label{thmQuadraticFormula}
 Seja $a,b \in \mathbb{C}$. Um número complexo $\alpha$ é uma raiz do polinômio $x^2+ax+b$ se e somente se
 \[
@@ -784,7 +783,7 @@ Complete a prova da fórmula quadrática. Isto é, para $a,b \in \mathbb{C}$ fix
 \[
 \alpha = \frac{-a+\sqrt{a^2-4b}}{2} \quad \text{or} \quad \alpha =\frac{-a-\sqrt{a^2-4b}}{2}
 \]
-então α\alpha é uma raiz do polinômio x2+ax+bx^2+ax+b.
+então $\alpha$ é uma raiz do polinômio $x^2+ax+b$.
 \end{exercise}
 
 Outra classe de exemplos de proposições bicondicionais surge ao encontrar critérios necessários e suficientes para que um inteiro $n$ seja divisível por algum número - por exemplo, que um inteiro é divisível por $10$ se e somente se sua expansão de base $10$ termina com o dígito $0$.
@@ -799,7 +798,7 @@ n = d_r \cdot 10^r + d_{r-1} \cdot 10^{r-1} + \cdots + d_1 \cdot 10 + d_0
 \]
 Define
 \[
-n' = d_2d_1d_0 \quad \text{and} \quad n'' = n-n' = d_rd_{r-1}\dots{}d_4d_3000
+n' = d_2d_1d_0 \quad \text{e} \quad n'' = n-n' = d_rd_{r-1}\dots{}d_4d_3000
 \]
 Agora $n-n' = 1000 \cdot d_rd_{r-1} \dots d_4d_3$ e $1000 = 8 \cdot 125$, então segue que $8$ divide $n''$.
 
@@ -808,14 +807,13 @@ Nosso objetivo agora é provar que $8$ divide $n$ se e somente se $8$ divide $n'
 \begin{itemize}
 \item ($\Rightarrow$) Suponha que $8$ divida $n$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
 \[
-n' = n-(n-n') = n-n'' = 1 \cdot n + (-1) \cdot n''
+n' = n-(nn') = nn'' = 1 \cdot n + (-1) \cdot n''
 \]
 então, de fato, $8$ divide $n'$, conforme necessário.
-\item ($\Leftarrow$)  Suponha que $8$ divida $n'$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an'+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
+\item ($\Leftarrow$) Suponha que $8$ divida $n'$. Como $8$ divide $n''$, segue de \Cref{exDivisibilityIsLinear} que $8$ divide $an'+bn''$ para todos $a,b \in \mathbb{Z}$. Mas
 \[
 n = n'+(n-n') = n'+n'' = 1 \cdot n' + 1 \cdot n''
 \]
-
 então, de fato, $8$ divide $n$, conforme necessário.
 \end{itemize}
 %% END EXTRACT
@@ -824,8 +822,7 @@ então, de fato, $8$ divide $n$, conforme necessário.
 \begin{exercise}
 Prove que um número natural $n$ é divisível por $3$ se e somente se a soma de seus dígitos de base $10$ for divisível por $3$.
 \hintlabel{exSumOfDigitsDivisibleByThree}{%
-Suppose $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ and let $s = d_r + \cdots + d_1 + d_0$. Comece provando que
-$3 \mid n-s$.
+Suponha que $n = d_r \cdot 10^r + \cdots + d_1 \cdot 10 + d_0$ e seja $s = d_r + \cdots + d_1 + d_0$. Comece provando que $3 \mid n-s$.
 }
 \end{exercise}
 
@@ -892,14 +889,17 @@ A regra de introdução para negação \introrule{\neg} dá origem a uma estrat�
 \label{strProofByContradictionDirect}
 \index{proof!by contradiction (direct)}
 \index{contradiction!(direct) proof by}
-Para provar que uma proposição pp é falsa (isto é, que ¬p\neg p é verdadeira), basta assumir que pp é verdadeira e derivar uma contradição.
+Para provar que uma proposição $p$ é falsa (ou seja, que $\neg p$ é verdadeira), basta assumir que $p$ é verdadeira e derivar uma contradição.
 \end{strategy}
 
-Seja rr um número racional e aa um número irracional. Então r+ar+a é irracional.
+A seguinte proposição tem uma prova clássica por contradição.
+
+\begin{proposition}
+Seja $r$ um número racional e $a$ um número irracional. Então $r+a$ é irracional.
 \end{proposition}
 
 \begin{cproof}
-Por \Cref{defIrrationalNumber}, precisamos provar que r+ar+a é real e não racional. É certamente real, uma vez que rr e aa são reais, então resta provar que r+ar+a não é racional.
+Por \Cref{defIrrationalNumber}, precisamos provar que $r+a$ é real e não racional. É certamente real, uma vez que $r$ e $a$ são reais, então resta provar que $r+a$ não é racional.
 
 Suponha que $r+a$ seja racional. Como $r$ é racional, segue de \Cref{propRationalTwoOfThree} que $a$ é racional, já que
 \[
@@ -917,40 +917,42 @@ Seja $x \in \mathbb{R}$. Prove por contradição que se $x$ é irracional então
 
 \begin{exercise}
 \label{exNoLeastPositiveReal}
-Prove por contradição que não existe nenhum número real menos positivo. Ou seja, prove que não existe um número real positivo $a$ tal que $a \le b$ para todos os números reais positivos $b$.\end{exercise}
+Prove por contradição que não existe nenhum número real menos positivo. Ou seja, prove que não existe um número real positivo $a$ tal que $a \le b$ para todos os números reais positivos $b$.
+\end{exercise}
 
 Uma prova não precisa ser uma “prova por contradição” na sua totalidade – na verdade, pode acontecer que apenas uma pequena parte da prova utilize contradição. Isso é exibido na prova da seguinte proposição.
 
 \begin{proposition}
 \label{propOddIffRemainderOfOne}
-Seja $a$ um número inteiro. Então $a$ é ímpar se e somente se $a=2b+1$ para algum inteiro $b$.
-\end{proposição}
-\begin{cprova}
+Seja $a$ um número inteiro. Então $a$ é ímpar se e somente se $a=2b+1$ para algum número inteiro $b$.
+\end{proposition}
+\begin{cproof}
+
 Suponha que $a$ seja ímpar. Pelo teorema da divisão (\Cref{thmDivisionPreliminary}), ou $a=2b$ ou $a=2b+1$, para algum $b \in \mathbb{Z}$. Se $a=2b$, então $2$ divide $a$, contradizendo a suposição de que $a$ é ímpar; então deve ser o caso de $a=2b+1$.
 
 Por outro lado, suponha $a=2b+1$. Então $a$ deixa um resto de $1$ quando dividido por $2$. Porém, pelo teorema da divisão, os números pares são justamente aqueles que deixam resto $0$ quando divididos por $2$. Segue-se que $a$ não é par, então é ímpar.
-\end{cprova}
+\end{cproof}
+
 
 A regra de eliminação para o operador de negação \elimrule{\neg} simplesmente diz que uma proposição não pode ser verdadeira e falsa ao mesmo tempo.
-\begin{strategy}[Assumindo negações]
+
+\begin{strategy}[Assuming negations]
 \label{strAssumingNegations}
 Se uma suposição em uma prova tem a forma $\neg p$, então qualquer derivação de $p$ leva a uma contradição.
 \end{strategy}
 
 O principal uso de \Cref{strAssumingNegations} é para obter a contradição em uma prova por contradição — na verdade, já a usamos em nossos exemplos de prova por contradição! Como tal, não nos deteremos mais no assunto.
 
-\subsection*{Axiomas Lógicos}
+\subsection*{Axiomas lógicos}
 
 Encerramos esta seção introduzindo algumas regras lógicas adicionais (\textit{axiomas}) que usaremos em nossas provas.
 
 A primeira é a chamada \textit{lei do terceiro excluído}, que parece tão óbvia que nem vale a pena afirmar (muito menos nomear) --- o que ela diz é que toda proposição é verdadeira ou falsa. Mas cuidado, pois as aparências enganam; a lei do terceiro excluído é um axioma não construtivo, o que significa que não deve ser aceito em ambientes onde é importante acompanhar como uma proposição é provada - o simples fato de saber que uma proposição é verdadeira ou falsa não nos diz nada sobre como isso pode ser provado ou refutado. Na maioria dos contextos matemáticos, porém, isso é aceito sem pensar duas vezes.
-
-\begin{axiom}[Lei do meio excluído]
+\begin{axiom}[Law of excluded middle]
 \label{axLEM}
 \index{law of excluded middle}
-Let $p$ be a propositional formula. Then $p \vee (\neg p)$ is true.
+Seja $p$ uma formula proposicional. Então $p \vee (\neg p)$ é verdadeiro.
 \end{axiom}
-
 
 A lei do terceiro excluído pode ser representada esquematicamente como segue; não há premissas acima da linha, pois estamos simplesmente afirmando que ela é verdadeira.
 
@@ -971,15 +973,15 @@ A prova de \Cref{propIfProductEvenThenSomeFactorEven} abaixo faz uso da lei do t
 
 \begin{proposition}
 \label{propIfProductEvenThenSomeFactorEven}
-Seja $a,b \in \mathbb{Z}$. Se $ab$ é par,então qualquer $a$ é par ou $b$ é par (ou ambos).
-\end{proposition}
-\begin{cproof}
-Suppose $a,b \in \mathbb{Z}$ with $ab$ even.
+Seja $a,b \in \mathbb{Z}$. Se $ab$ for par, então $a$ é par ou $b$ é par (ou ambos).
+\end{proposição}
+\begin{cprova}
+Suponha $a,b \in \mathbb{Z}$ com $ab$ par.
 \begin{itemize}
-\item Suppose $a$ is even---then we're done.
-\item Suppose $a$ is odd. If $b$ is also odd, then by \Cref{propOddIffRemainderOfOne} can write
+\item Suponha que $a$ seja par --- então terminamos.
+\item Suponha que $a$ seja ímpar. Se $b$ também for ímpar, então por \Cref{propOddIffRemainderOfOne} podemos escrever
 \[
-a = 2k+1 \quad \text{and} \quad b=2\ell+1
+a = 2k+1 \quad \text{e} \quad b=2\ell+1
 \]
 para alguns inteiros $k,\ell$. Isso implica que
 \[
@@ -1002,7 +1004,7 @@ Use a lei do meio excluído de acordo com se a proposição `$\sqrt{2}^{\sqrt{2}
 
 Outra regra lógica que usaremos é o \textit{princípio da explosão}, que também é conhecido pelo seu nome latino, \textit{ex falso sequitur quodlibet}, que se traduz aproximadamente como `\textit{da falsidade segue o que você quiser} '.
 
-\begin{axiom}[Principle of explosion]
+\begin{axiom}[Princípio da explosão]
 \label{axPrincipleOfExplosion}
 Se uma contradição for assumida, qualquer consequência pode ser derivada.
 \end{axiom}
@@ -1021,7 +1023,7 @@ Raramente usaremos o princípio da explosão diretamente em nossas provas matem�
 
 \begin{tldr}{secPropositionalLogic}
 
-\subsubsection*{Propositional formulae}
+\subsubsection*{Fórmulas proposicionais}
 
 \begin{tldrlist}
 \tldritem{defPropositionalVariable}
@@ -1031,7 +1033,7 @@ Variáveis ​​proposicionais $p,q,r,\dots$ são usadas para expressar proposi
 Fórmulas proposicionais são expressões mais complicadas construídas a partir de variáveis ​​proposicionais usando operadores lógicos, que representam frases como `e', `ou' e `se\pontos{} então\pontos{}'.
 \end{tldrlist}
 
-\subsubsection*{Logical operators}
+\subsubsection*{Operadores lógicos}
 
 \begin{tldrlist}
 \tldritem{defConjunction}
@@ -1058,6 +1060,6 @@ O operador \textit{bicondicional} ($\Leftrightarrow$) representa “se e somente
 A \textit{lei do meio excluído} diz que $p \vee (\neg p)$ é sempre verdadeiro. Portanto, em qualquer ponto de uma prova, podemos dividir em dois casos: um em que $p$ é assumido como verdadeiro e outro em que $p$ é assumido como falso.
 
 \tldritem{axPrincipleOfExplosion}
-O\textit{ princio da explosão} diz que se uma contradição for introduzida como uma suposição, então qualquer conclusão pode ser derivada.
+O \textit{princípio da explosão} diz que se uma contradição for introduzida como uma suposição, então qualquer conclusão pode ser derivada.
 \end{tldrlist}
 \end{tldr}
