@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: infdesc.tex
+          latexmk_use_lualatex: true
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
